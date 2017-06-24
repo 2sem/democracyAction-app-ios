@@ -7,14 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D54BC78C97999657FBAB677 /* Pods_democracyactionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC3D84832FC4ED0DBB0C7B /* Pods_democracyactionTests.framework */; };
+		2C0455461EFE8BE5003E94ED /* DAModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0455451EFE8BE5003E94ED /* DAModelController.swift */; };
+		2C0455491EFE8C51003E94ED /* DAModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C0455471EFE8C51003E94ED /* DAModel.xcdatamodeld */; };
+		2C04B6ED1EF146C20084A82F /* icon_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6EC1EF146C10084A82F /* icon_call.png */; };
+		2C04B6EF1EF150710084A82F /* icon_msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6EE1EF150710084A82F /* icon_msg.png */; };
+		2C04B6F31EF151280084A82F /* icon_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6F21EF151280084A82F /* icon_twitter.png */; };
+		2C04B6F51EF151580084A82F /* icon_instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6F41EF151580084A82F /* icon_instagram.png */; };
+		2C04B6F71EF151840084A82F /* icon_youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6F61EF151840084A82F /* icon_youtube.png */; };
+		2C04B6F91EF151CC0084A82F /* icon_homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6F81EF151CC0084A82F /* icon_homepage.png */; };
+		2C04B6FB1EF1520F0084A82F /* icon_blog.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6FA1EF1520F0084A82F /* icon_blog.png */; };
+		2C04B6FD1EF152520084A82F /* icon_cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6FC1EF152520084A82F /* icon_cafe.png */; };
+		2C04B6FF1EF152820084A82F /* icon_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6FE1EF152820084A82F /* icon_search.png */; };
+		2C04B7011EF154A90084A82F /* icon_sms.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B7001EF154A90084A82F /* icon_sms.png */; };
+		2C04B7031EF155CA0084A82F /* icon_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B7021EF155CA0084A82F /* icon_facebook.png */; };
+		2C04B7081EF16E870084A82F /* FABButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04B7071EF16E870084A82F /* FABButton+.swift */; };
+		2C05841B1EFA747400D45AC8 /* icon_asc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C05841A1EFA747400D45AC8 /* icon_asc.png */; };
+		2C05841D1EFA74A100D45AC8 /* icon_desc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C05841C1EFA74A100D45AC8 /* icon_desc.png */; };
+		2C05841F1EFA927D00D45AC8 /* icon_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C05841E1EFA927D00D45AC8 /* icon_up.png */; };
+		2C0584211EFA92A100D45AC8 /* icon_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C0584201EFA92A100D45AC8 /* icon_down.png */; };
+		2C06DE401EF24A8B00EF40CC /* FABMenu+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C06DE3F1EF24A8A00EF40CC /* FABMenu+.swift */; };
+		2C06DE421EF283EF00EF40CC /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C06DE411EF283EF00EF40CC /* Character+.swift */; };
+		2C06DE441EF2840200EF40CC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C06DE431EF2840200EF40CC /* String+.swift */; };
+		2C06DE481EF2A06700EF40CC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C06DE471EF2A06700EF40CC /* UIViewController+.swift */; };
+		2C06DE4A1EF2A07A00EF40CC /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C06DE491EF2A07A00EF40CC /* UIApplication+.swift */; };
+		2C0822191EF50F5900F042F5 /* icon_web.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C0822181EF50F5800F042F5 /* icon_web.png */; };
+		2C08221B1EF510F700F042F5 /* icon_email.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C08221A1EF510F700F042F5 /* icon_email.png */; };
+		2C10CBBD1EF66607002A07C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */; };
+		2C10CBC01EF668F0002A07C5 /* GADInterstialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */; };
+		2C10CBC11EF668F0002A07C5 /* GADInterstitial+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */; };
+		2C10CBC31EF66901002A07C5 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBC21EF66901002A07C5 /* ReviewManager.swift */; };
+		2C10CBC51EF66ECB002A07C5 /* DADefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */; };
 		2C14CBCD1EE9552A003BB329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CBCC1EE9552A003BB329 /* AppDelegate.swift */; };
-		2C14CBCF1EE9552A003BB329 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CBCE1EE9552A003BB329 /* FirstViewController.swift */; };
-		2C14CBD11EE9552A003BB329 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CBD01EE9552A003BB329 /* SecondViewController.swift */; };
 		2C14CBD41EE9552A003BB329 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C14CBD21EE9552A003BB329 /* Main.storyboard */; };
 		2C14CBD61EE9552B003BB329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C14CBD51EE9552B003BB329 /* Assets.xcassets */; };
 		2C14CBD91EE9552B003BB329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C14CBD71EE9552B003BB329 /* LaunchScreen.storyboard */; };
 		2C14CBE41EE9552B003BB329 /* democracyactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CBE31EE9552B003BB329 /* democracyactionTests.swift */; };
 		2C14CBEF1EE9552B003BB329 /* democracyactionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CBEE1EE9552B003BB329 /* democracyactionUITests.swift */; };
+		2C14CBFF1EE95E3D003BB329 /* DAExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CBFE1EE95E3D003BB329 /* DAExcelController.swift */; };
+		2C14CC021EE9640C003BB329 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC011EE9640C003BB329 /* MainViewController.swift */; };
+		2C14CC041EE9645B003BB329 /* DAInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC031EE9645B003BB329 /* DAInfoTableViewController.swift */; };
+		2C14CC081EE97BCF003BB329 /* DAExcelGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC071EE97BCF003BB329 /* DAExcelGroupInfo.swift */; };
+		2C14CC0A1EE97D8E003BB329 /* DAExcelPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC091EE97D8E003BB329 /* DAExcelPersonInfo.swift */; };
+		2C14CC0D1EE98AA9003BB329 /* DAInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC0C1EE98AA9003BB329 /* DAInfoTableViewCell.swift */; };
+		2C14CC0F1EE99472003BB329 /* DAPhoneInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC0E1EE99472003BB329 /* DAPhoneInfo.swift */; };
+		2C20A7881EF427D700E14173 /* DATheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20A7871EF427D700E14173 /* DATheme.swift */; };
+		2C6F08001EFB6FA700E07D8C /* direct_democracy.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F07FF1EFB6FA000E07D8C /* direct_democracy.xlsx */; };
+		2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF495081EF6B09A00FDC401 /* Icons8.png */; };
+		2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */; };
+		2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950C1EF6B4DA00FDC401 /* logo.png */; };
+		B6E3862D3C3CDD7B717F4F84 /* Pods_democracyaction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F0BFD2CFDF8D262583B398 /* Pods_democracyaction.framework */; };
+		C20B97D59A61DA535B64A89D /* Pods_democracyactionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88969698CAC0E95C763C67B /* Pods_democracyactionUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +78,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		176988D46AFB6DC434D33CFC /* Pods-democracyactionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionUITests/Pods-democracyactionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		27DC20E2AA1C1101A8C7B390 /* Pods-democracyactionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionUITests/Pods-democracyactionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2C0455451EFE8BE5003E94ED /* DAModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAModelController.swift; sourceTree = "<group>"; };
+		2C0455481EFE8C51003E94ED /* DAModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DAModel.xcdatamodel; sourceTree = "<group>"; };
+		2C04B6EC1EF146C10084A82F /* icon_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_call.png; sourceTree = "<group>"; };
+		2C04B6EE1EF150710084A82F /* icon_msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_msg.png; sourceTree = "<group>"; };
+		2C04B6F21EF151280084A82F /* icon_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_twitter.png; sourceTree = "<group>"; };
+		2C04B6F41EF151580084A82F /* icon_instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_instagram.png; sourceTree = "<group>"; };
+		2C04B6F61EF151840084A82F /* icon_youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_youtube.png; sourceTree = "<group>"; };
+		2C04B6F81EF151CC0084A82F /* icon_homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_homepage.png; sourceTree = "<group>"; };
+		2C04B6FA1EF1520F0084A82F /* icon_blog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_blog.png; sourceTree = "<group>"; };
+		2C04B6FC1EF152520084A82F /* icon_cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_cafe.png; sourceTree = "<group>"; };
+		2C04B6FE1EF152820084A82F /* icon_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_search.png; sourceTree = "<group>"; };
+		2C04B7001EF154A90084A82F /* icon_sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sms.png; sourceTree = "<group>"; };
+		2C04B7021EF155CA0084A82F /* icon_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_facebook.png; sourceTree = "<group>"; };
+		2C04B7071EF16E870084A82F /* FABButton+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FABButton+.swift"; sourceTree = "<group>"; };
+		2C05841A1EFA747400D45AC8 /* icon_asc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_asc.png; sourceTree = "<group>"; };
+		2C05841C1EFA74A100D45AC8 /* icon_desc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_desc.png; sourceTree = "<group>"; };
+		2C05841E1EFA927D00D45AC8 /* icon_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_up.png; sourceTree = "<group>"; };
+		2C0584201EFA92A100D45AC8 /* icon_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_down.png; sourceTree = "<group>"; };
+		2C06DE3F1EF24A8A00EF40CC /* FABMenu+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FABMenu+.swift"; sourceTree = "<group>"; };
+		2C06DE411EF283EF00EF40CC /* Character+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+.swift"; sourceTree = "<group>"; };
+		2C06DE431EF2840200EF40CC /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		2C06DE471EF2A06700EF40CC /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		2C06DE491EF2A07A00EF40CC /* UIApplication+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		2C0822181EF50F5800F042F5 /* icon_web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_web.png; sourceTree = "<group>"; };
+		2C08221A1EF510F700F042F5 /* icon_email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_email.png; sourceTree = "<group>"; };
+		2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADInterstialManager.swift; sourceTree = "<group>"; };
+		2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GADInterstitial+.swift"; sourceTree = "<group>"; };
+		2C10CBC21EF66901002A07C5 /* ReviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
+		2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DADefaults.swift; sourceTree = "<group>"; };
 		2C14CBC91EE9552A003BB329 /* democracyaction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = democracyaction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C14CBCC1EE9552A003BB329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C14CBCE1EE9552A003BB329 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		2C14CBD01EE9552A003BB329 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2C14CBD31EE9552A003BB329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C14CBD51EE9552B003BB329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C14CBD81EE9552B003BB329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +122,25 @@
 		2C14CBEA1EE9552B003BB329 /* democracyactionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = democracyactionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C14CBEE1EE9552B003BB329 /* democracyactionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = democracyactionUITests.swift; sourceTree = "<group>"; };
 		2C14CBF01EE9552B003BB329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C14CBFE1EE95E3D003BB329 /* DAExcelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExcelController.swift; path = ../controller/DAExcelController.swift; sourceTree = "<group>"; };
+		2C14CC011EE9640C003BB329 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2C14CC031EE9645B003BB329 /* DAInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAInfoTableViewController.swift; sourceTree = "<group>"; };
+		2C14CC071EE97BCF003BB329 /* DAExcelGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExcelGroupInfo.swift; path = ../data/DAExcelGroupInfo.swift; sourceTree = "<group>"; };
+		2C14CC091EE97D8E003BB329 /* DAExcelPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExcelPersonInfo.swift; path = ../data/DAExcelPersonInfo.swift; sourceTree = "<group>"; };
+		2C14CC0C1EE98AA9003BB329 /* DAInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAInfoTableViewCell.swift; sourceTree = "<group>"; };
+		2C14CC0E1EE99472003BB329 /* DAPhoneInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAPhoneInfo.swift; sourceTree = "<group>"; };
+		2C20A7871EF427D700E14173 /* DATheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATheme.swift; sourceTree = "<group>"; };
+		2C6F07FF1EFB6FA000E07D8C /* direct_democracy.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = direct_democracy.xlsx; sourceTree = "<group>"; };
+		2CF495081EF6B09A00FDC401 /* Icons8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icons8.png; sourceTree = "<group>"; };
+		2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Y2K.PNG; sourceTree = "<group>"; };
+		2CF4950C1EF6B4DA00FDC401 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		33F0BFD2CFDF8D262583B398 /* Pods_democracyaction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_democracyaction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38D7D6B6330D42D5B800B772 /* Pods-democracyactionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionTests/Pods-democracyactionTests.release.xcconfig"; sourceTree = "<group>"; };
+		42E494EB53D1C97B72252D36 /* Pods-democracyaction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyaction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction.debug.xcconfig"; sourceTree = "<group>"; };
+		4BBC3D84832FC4ED0DBB0C7B /* Pods_democracyactionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_democracyactionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A19F1CD9991CA82D11E1184 /* Pods-democracyactionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionTests/Pods-democracyactionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		83351BE3805D290A40A14604 /* Pods-democracyaction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyaction.release.xcconfig"; path = "Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction.release.xcconfig"; sourceTree = "<group>"; };
+		F88969698CAC0E95C763C67B /* Pods_democracyactionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_democracyactionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E3862D3C3CDD7B717F4F84 /* Pods_democracyaction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D54BC78C97999657FBAB677 /* Pods_democracyactionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +164,83 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20B97D59A61DA535B64A89D /* Pods_democracyactionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0455431EFE84A8003E94ED /* excel */ = {
+			isa = PBXGroup;
+			children = (
+				2C14CC071EE97BCF003BB329 /* DAExcelGroupInfo.swift */,
+				2C14CC091EE97D8E003BB329 /* DAExcelPersonInfo.swift */,
+				2C14CBFE1EE95E3D003BB329 /* DAExcelController.swift */,
+			);
+			path = excel;
+			sourceTree = "<group>";
+		};
+		2C0455441EFE88C5003E94ED /* database */ = {
+			isa = PBXGroup;
+			children = (
+				2C0455451EFE8BE5003E94ED /* DAModelController.swift */,
+				2C0455471EFE8C51003E94ED /* DAModel.xcdatamodeld */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		2C04B6EB1EF140E90084A82F /* image */ = {
+			isa = PBXGroup;
+			children = (
+				2CF495071EF6AF9700FDC401 /* logo */,
+				2C05841A1EFA747400D45AC8 /* icon_asc.png */,
+				2C05841C1EFA74A100D45AC8 /* icon_desc.png */,
+				2C04B6EC1EF146C10084A82F /* icon_call.png */,
+				2C04B6EE1EF150710084A82F /* icon_msg.png */,
+				2C04B7001EF154A90084A82F /* icon_sms.png */,
+				2C04B6F21EF151280084A82F /* icon_twitter.png */,
+				2C04B7021EF155CA0084A82F /* icon_facebook.png */,
+				2C04B6F41EF151580084A82F /* icon_instagram.png */,
+				2C04B6F61EF151840084A82F /* icon_youtube.png */,
+				2C04B6F81EF151CC0084A82F /* icon_homepage.png */,
+				2C04B6FA1EF1520F0084A82F /* icon_blog.png */,
+				2C04B6FC1EF152520084A82F /* icon_cafe.png */,
+				2C04B6FE1EF152820084A82F /* icon_search.png */,
+				2C0822181EF50F5800F042F5 /* icon_web.png */,
+				2C08221A1EF510F700F042F5 /* icon_email.png */,
+				2C05841E1EFA927D00D45AC8 /* icon_up.png */,
+				2C0584201EFA92A100D45AC8 /* icon_down.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		2C04B7061EF16E480084A82F /* leesam */ = {
+			isa = PBXGroup;
+			children = (
+				2C06DE491EF2A07A00EF40CC /* UIApplication+.swift */,
+				2C06DE471EF2A06700EF40CC /* UIViewController+.swift */,
+				2C06DE431EF2840200EF40CC /* String+.swift */,
+				2C06DE411EF283EF00EF40CC /* Character+.swift */,
+				2C04B7071EF16E870084A82F /* FABButton+.swift */,
+				2C06DE3F1EF24A8A00EF40CC /* FABMenu+.swift */,
+				2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */,
+				2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */,
+				2C10CBC21EF66901002A07C5 /* ReviewManager.swift */,
+			);
+			path = leesam;
+			sourceTree = "<group>";
+		};
 		2C14CBC01EE9552A003BB329 = {
 			isa = PBXGroup;
 			children = (
+				2C04B7061EF16E480084A82F /* leesam */,
 				2C14CBCB1EE9552A003BB329 /* democracyaction */,
 				2C14CBE21EE9552B003BB329 /* democracyactionTests */,
 				2C14CBED1EE9552B003BB329 /* democracyactionUITests */,
 				2C14CBCA1EE9552A003BB329 /* Products */,
+				F26F3167D6D1C41C7BB48327 /* Pods */,
+				E90BEA404F7C011F48F4355F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +257,21 @@
 		2C14CBCB1EE9552A003BB329 /* democracyaction */ = {
 			isa = PBXGroup;
 			children = (
+				2C0455441EFE88C5003E94ED /* database */,
+				2C0455431EFE84A8003E94ED /* excel */,
+				2C04B6EB1EF140E90084A82F /* image */,
+				2C14CC061EE97B0C003BB329 /* data */,
+				2C14CC001EE96330003BB329 /* view */,
+				2C14CBFD1EE95BF7003BB329 /* controller */,
 				2C14CBCC1EE9552A003BB329 /* AppDelegate.swift */,
-				2C14CBCE1EE9552A003BB329 /* FirstViewController.swift */,
-				2C14CBD01EE9552A003BB329 /* SecondViewController.swift */,
 				2C14CBD21EE9552A003BB329 /* Main.storyboard */,
 				2C14CBD51EE9552B003BB329 /* Assets.xcassets */,
 				2C14CBD71EE9552B003BB329 /* LaunchScreen.storyboard */,
 				2C14CBDA1EE9552B003BB329 /* Info.plist */,
+				2C14CC011EE9640C003BB329 /* MainViewController.swift */,
+				2C20A7871EF427D700E14173 /* DATheme.swift */,
+				2C6F07FF1EFB6FA000E07D8C /* direct_democracy.xlsx */,
+				2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */,
 			);
 			path = democracyaction;
 			sourceTree = "<group>";
@@ -128,6 +294,64 @@
 			path = democracyactionUITests;
 			sourceTree = "<group>";
 		};
+		2C14CBFD1EE95BF7003BB329 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		2C14CC001EE96330003BB329 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2C14CC031EE9645B003BB329 /* DAInfoTableViewController.swift */,
+				2C14CC0C1EE98AA9003BB329 /* DAInfoTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2C14CC061EE97B0C003BB329 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				2C14CC0E1EE99472003BB329 /* DAPhoneInfo.swift */,
+				2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		2CF495071EF6AF9700FDC401 /* logo */ = {
+			isa = PBXGroup;
+			children = (
+				2CF4950C1EF6B4DA00FDC401 /* logo.png */,
+				2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */,
+				2CF495081EF6B09A00FDC401 /* Icons8.png */,
+			);
+			name = logo;
+			sourceTree = "<group>";
+		};
+		E90BEA404F7C011F48F4355F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33F0BFD2CFDF8D262583B398 /* Pods_democracyaction.framework */,
+				4BBC3D84832FC4ED0DBB0C7B /* Pods_democracyactionTests.framework */,
+				F88969698CAC0E95C763C67B /* Pods_democracyactionUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F26F3167D6D1C41C7BB48327 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42E494EB53D1C97B72252D36 /* Pods-democracyaction.debug.xcconfig */,
+				83351BE3805D290A40A14604 /* Pods-democracyaction.release.xcconfig */,
+				7A19F1CD9991CA82D11E1184 /* Pods-democracyactionTests.debug.xcconfig */,
+				38D7D6B6330D42D5B800B772 /* Pods-democracyactionTests.release.xcconfig */,
+				176988D46AFB6DC434D33CFC /* Pods-democracyactionUITests.debug.xcconfig */,
+				27DC20E2AA1C1101A8C7B390 /* Pods-democracyactionUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +359,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C14CBF31EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyaction" */;
 			buildPhases = (
+				5F8DB126D76822535F8C7AE7 /* [CP] Check Pods Manifest.lock */,
 				2C14CBC51EE9552A003BB329 /* Sources */,
 				2C14CBC61EE9552A003BB329 /* Frameworks */,
 				2C14CBC71EE9552A003BB329 /* Resources */,
+				697F09C524EAD3017B2B2F0D /* [CP] Embed Pods Frameworks */,
+				CBE3BA8028E1D8C8EC0F0586 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +379,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C14CBF61EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyactionTests" */;
 			buildPhases = (
+				8B4021BF9134E25D80A66236 /* [CP] Check Pods Manifest.lock */,
 				2C14CBDB1EE9552B003BB329 /* Sources */,
 				2C14CBDC1EE9552B003BB329 /* Frameworks */,
 				2C14CBDD1EE9552B003BB329 /* Resources */,
+				ADBA83034CB7B53CB47D4C78 /* [CP] Embed Pods Frameworks */,
+				243D50998587F9FAB0F745A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +400,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C14CBF91EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyactionUITests" */;
 			buildPhases = (
+				21CD7B131A381FC2422104BD /* [CP] Check Pods Manifest.lock */,
 				2C14CBE61EE9552B003BB329 /* Sources */,
 				2C14CBE71EE9552B003BB329 /* Frameworks */,
 				2C14CBE81EE9552B003BB329 /* Resources */,
+				E4F130837C8846DDE4CF8E46 /* [CP] Embed Pods Frameworks */,
+				EF4B3FD63D06F8715062DD98 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,9 +471,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C04B6F91EF151CC0084A82F /* icon_homepage.png in Resources */,
 				2C14CBD91EE9552B003BB329 /* LaunchScreen.storyboard in Resources */,
+				2C04B6F71EF151840084A82F /* icon_youtube.png in Resources */,
+				2C04B7011EF154A90084A82F /* icon_sms.png in Resources */,
+				2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */,
 				2C14CBD61EE9552B003BB329 /* Assets.xcassets in Resources */,
+				2C0584211EFA92A100D45AC8 /* icon_down.png in Resources */,
+				2C04B6FB1EF1520F0084A82F /* icon_blog.png in Resources */,
+				2C04B6FD1EF152520084A82F /* icon_cafe.png in Resources */,
 				2C14CBD41EE9552A003BB329 /* Main.storyboard in Resources */,
+				2C05841F1EFA927D00D45AC8 /* icon_up.png in Resources */,
+				2C05841B1EFA747400D45AC8 /* icon_asc.png in Resources */,
+				2C04B6F31EF151280084A82F /* icon_twitter.png in Resources */,
+				2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */,
+				2C04B6ED1EF146C20084A82F /* icon_call.png in Resources */,
+				2C04B6F51EF151580084A82F /* icon_instagram.png in Resources */,
+				2C10CBBD1EF66607002A07C5 /* GoogleService-Info.plist in Resources */,
+				2C6F08001EFB6FA700E07D8C /* direct_democracy.xlsx in Resources */,
+				2C05841D1EFA74A100D45AC8 /* icon_desc.png in Resources */,
+				2C04B7031EF155CA0084A82F /* icon_facebook.png in Resources */,
+				2C04B6FF1EF152820084A82F /* icon_search.png in Resources */,
+				2C0822191EF50F5900F042F5 /* icon_web.png in Resources */,
+				2C08221B1EF510F700F042F5 /* icon_email.png in Resources */,
+				2C04B6EF1EF150710084A82F /* icon_msg.png in Resources */,
+				2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,14 +515,170 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21CD7B131A381FC2422104BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		243D50998587F9FAB0F745A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-democracyactionTests/Pods-democracyactionTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F8DB126D76822535F8C7AE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		697F09C524EAD3017B2B2F0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B4021BF9134E25D80A66236 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ADBA83034CB7B53CB47D4C78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-democracyactionTests/Pods-democracyactionTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBE3BA8028E1D8C8EC0F0586 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4F130837C8846DDE4CF8E46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-democracyactionUITests/Pods-democracyactionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF4B3FD63D06F8715062DD98 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-democracyactionUITests/Pods-democracyactionUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C14CBC51EE9552A003BB329 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C14CBD11EE9552A003BB329 /* SecondViewController.swift in Sources */,
+				2C06DE421EF283EF00EF40CC /* Character+.swift in Sources */,
+				2C06DE401EF24A8B00EF40CC /* FABMenu+.swift in Sources */,
+				2C06DE4A1EF2A07A00EF40CC /* UIApplication+.swift in Sources */,
+				2C0455491EFE8C51003E94ED /* DAModel.xcdatamodeld in Sources */,
+				2C14CC021EE9640C003BB329 /* MainViewController.swift in Sources */,
+				2C0455461EFE8BE5003E94ED /* DAModelController.swift in Sources */,
+				2C10CBC11EF668F0002A07C5 /* GADInterstitial+.swift in Sources */,
+				2C14CC0A1EE97D8E003BB329 /* DAExcelPersonInfo.swift in Sources */,
+				2C14CBFF1EE95E3D003BB329 /* DAExcelController.swift in Sources */,
+				2C14CC0D1EE98AA9003BB329 /* DAInfoTableViewCell.swift in Sources */,
+				2C10CBC51EF66ECB002A07C5 /* DADefaults.swift in Sources */,
+				2C04B7081EF16E870084A82F /* FABButton+.swift in Sources */,
+				2C14CC041EE9645B003BB329 /* DAInfoTableViewController.swift in Sources */,
+				2C14CC081EE97BCF003BB329 /* DAExcelGroupInfo.swift in Sources */,
+				2C06DE481EF2A06700EF40CC /* UIViewController+.swift in Sources */,
+				2C10CBC01EF668F0002A07C5 /* GADInterstialManager.swift in Sources */,
 				2C14CBCD1EE9552A003BB329 /* AppDelegate.swift in Sources */,
-				2C14CBCF1EE9552A003BB329 /* FirstViewController.swift in Sources */,
+				2C06DE441EF2840200EF40CC /* String+.swift in Sources */,
+				2C10CBC31EF66901002A07C5 /* ReviewManager.swift in Sources */,
+				2C14CC0F1EE99472003BB329 /* DAPhoneInfo.swift in Sources */,
+				2C20A7881EF427D700E14173 /* DATheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +830,7 @@
 		};
 		2C14CBF41EE9552B003BB329 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42E494EB53D1C97B72252D36 /* Pods-democracyaction.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M29A6H95KD;
@@ -432,6 +844,7 @@
 		};
 		2C14CBF51EE9552B003BB329 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83351BE3805D290A40A14604 /* Pods-democracyaction.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M29A6H95KD;
@@ -445,6 +858,7 @@
 		};
 		2C14CBF71EE9552B003BB329 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A19F1CD9991CA82D11E1184 /* Pods-democracyactionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,6 +874,7 @@
 		};
 		2C14CBF81EE9552B003BB329 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38D7D6B6330D42D5B800B772 /* Pods-democracyactionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +890,7 @@
 		};
 		2C14CBFA1EE9552B003BB329 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 176988D46AFB6DC434D33CFC /* Pods-democracyactionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = M29A6H95KD;
@@ -489,6 +905,7 @@
 		};
 		2C14CBFB1EE9552B003BB329 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27DC20E2AA1C1101A8C7B390 /* Pods-democracyactionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = M29A6H95KD;
@@ -520,6 +937,7 @@
 				2C14CBF51EE9552B003BB329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C14CBF61EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyactionTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +946,7 @@
 				2C14CBF81EE9552B003BB329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C14CBF91EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyactionUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,8 +955,22 @@
 				2C14CBFB1EE9552B003BB329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2C0455471EFE8C51003E94ED /* DAModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2C0455481EFE8C51003E94ED /* DAModel.xcdatamodel */,
+			);
+			currentVersion = 2C0455481EFE8C51003E94ED /* DAModel.xcdatamodel */;
+			path = DAModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2C14CBC11EE9552A003BB329 /* Project object */;
 }

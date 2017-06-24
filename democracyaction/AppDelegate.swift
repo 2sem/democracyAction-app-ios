@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import GoogleMobileAds
+import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDelegate, ReviewManagerDelegate {
 
     var window: UIWindow?
-
+    var fullAd : GADInterstialManager?;
+    var reviewManager : ReviewManager?;
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-9684378399371172~5739040449");
+        FirebaseApp.configure()
+        
+        self.reviewManager = ReviewManager(self.window!, interval: 60.0 * 60 * 24 * 3);
+        self.reviewManager?.delegate = self;
+        //self.reviewManager?.show();
+        
+        self.fullAd = GADInterstialManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "FullAd") ?? "", interval: 60.0 * 60 * 3);
+        self.fullAd?.delegate = self;
+        self.fullAd?.canShowFirstTime = false;
+        self.fullAd?.show();
         return true
     }
 
@@ -31,8 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        self.reviewManager?.show();
+        self.fullAd?.show();
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
@@ -41,6 +57,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // MARK: GADInterstialManagerDelegate
+    func GADInterstialGetLastShowTime() -> Date {
+        return DADefaults.LastFullADShown;
+    }
+    
+    func GADInterstialUpdate(showTime: Date) {
+        DADefaults.LastFullADShown = showTime;
+    }
+    
+    // MARK: ReviewManagerDelegate
+    func reviewGetLastShowTime() -> Date {
+        return DADefaults.LastShareShown;
+    }
+    
+    func reviewUpdate(showTime: Date) {
+        DADefaults.LastShareShown = showTime;
+    }
 }
 

@@ -1,0 +1,97 @@
+//
+//  ReviewManager.swift
+//  wherewego
+//
+//  Created by 영준 이 on 2017. 5. 29..
+//  Copyright © 2017년 leesam. All rights reserved.
+//
+
+import UIKit
+import GoogleMobileAds
+
+protocol ReviewManagerDelegate : NSObjectProtocol{
+    func reviewGetLastShowTime() -> Date;
+    func reviewUpdate(showTime : Date);
+}
+
+class ReviewManager : NSObject{
+    var window : UIWindow;
+    var interval : TimeInterval = 60.0 * 60.0 * 3.0;
+    var canShowFirstTime = true;
+    var delegate : ReviewManagerDelegate?;
+    
+    init(_ window : UIWindow, interval : TimeInterval = 60.0 * 60.0 * 3.0) {
+        self.window = window;
+        self.interval = interval;
+        
+        super.init();
+        //self.reset();
+    }
+    
+    func reset(){
+        //RSDefaults.LastFullADShown = Date();
+        self.delegate?.reviewUpdate(showTime: Date());
+    }
+    
+    var canShow : Bool{
+        get{
+            var value = true;
+            let now = Date();
+            
+            guard self.delegate != nil else {
+                return value;
+            }
+            
+            let lastShowTime = self.delegate!.reviewGetLastShowTime();
+            let time_1970 = Date.init(timeIntervalSince1970: 0);
+            
+            //(!self.canShowFirstTime &&
+            guard self.canShowFirstTime || lastShowTime > time_1970 else{
+                if lastShowTime <= time_1970{
+                    self.delegate?.reviewUpdate(showTime: now);
+                }
+                value = false;
+                return value;
+            }
+            
+            let spent = now.timeIntervalSince(lastShowTime);
+            value = spent > self.interval;
+            print("time spent \(spent) since \(lastShowTime). now[\(now)]");
+            
+            return value;
+        }
+    }
+    func show(){
+        guard self.canShow else {
+            return;
+        }
+        
+        var name : String = UIApplication.shared.displayName ?? "";
+        var acts = [UIAlertAction(title: String(format: "'%@' 평가".localized(), name), style: .default) { (act) in
+            
+            UIApplication.shared.openReview();
+            },
+                    UIAlertAction(title: String(format: "'%@' 추천".localized(), name), style: .default) { (act) in
+                        self.window.rootViewController?.share(["\(UIApplication.shared.urlForItunes.absoluteString)"]);
+            },
+                    UIAlertAction(title: "취소".localized(), style: .cancel, handler: { (act) in
+                        //do not gain today
+                        self.delegate?.reviewUpdate(showTime: Date().addingTimeInterval(60 * 60 * 24));
+                    })]
+        self.window.rootViewController?.showAlert(title: "앱 평가 및 추천".localized(), msg: String(format: "'%@'를 평가하거나 친구들에게 추천해보세요.".localized(), name), actions: acts, style: .alert);
+        self.delegate?.reviewUpdate(showTime: Date());
+    }
+    
+    private func _show(){
+        guard self.window.rootViewController != nil else{
+            return;
+        }
+        
+        guard self.canShow else {
+            return;
+        }
+        
+        self.delegate?.reviewUpdate(showTime: Date());
+    }
+}
+

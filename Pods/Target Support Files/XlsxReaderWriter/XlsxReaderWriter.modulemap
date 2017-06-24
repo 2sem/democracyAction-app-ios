@@ -1,0 +1,6 @@
+framework module XlsxReaderWriter {
+  umbrella header "XlsxReaderWriter-umbrella.h"
+
+  export *
+  module * { export * }
+}

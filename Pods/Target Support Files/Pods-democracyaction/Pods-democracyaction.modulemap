@@ -1,0 +1,6 @@
+framework module Pods_democracyaction {
+  umbrella header "Pods-democracyaction-umbrella.h"
+
+  export *
+  module * { export * }
+}

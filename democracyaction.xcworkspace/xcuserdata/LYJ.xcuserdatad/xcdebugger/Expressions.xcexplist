@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "DAInfoTableViewController.sectionIndexTitles(for : UITableView) -&gt; [String]?:DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "group.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewCell.info.didset:DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "msgMenuItems[0].fabButton">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewCell.awakeFromNib() -&gt; ():DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nameLabel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewCell.onCall(UIButton) -&gt; ():DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.msgMenu.fabMenuItems">
+            </PersistentString>
+            <PersistentString
+               value = "self.msgMenu.fabMenuItems[0].fabButton.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.numberOfSections(in : UITableView) -&gt; Int:DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "filteredGroups">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewManager.show() -&gt; ():ReviewManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.window.rootViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GADInterstialManager._show() -&gt; ():GADInterstialManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIApplication.shared.windows.first?.rootViewController.classForCoder">
+            </PersistentString>
+            <PersistentString
+               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
+            </PersistentString>
+            <PersistentString
+               value = "UIApplication.shared.keyWindow?.rootViewController?.presentedViewController">
+            </PersistentString>
+            <PersistentString
+               value = "UIApplication.shared.keyWindow?.rootViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewCell.updateInfo() -&gt; ():DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.msgMenu?.fabButton">
+            </PersistentString>
+            <PersistentString
+               value = "self.msgButton">
+            </PersistentString>
+            <PersistentString
+               value = "self.msgMenu">
+            </PersistentString>
+            <PersistentString
+               value = "self.msgMenu != nil">
+            </PersistentString>
+            <PersistentString
+               value = "self.info.sms">
+            </PersistentString>
+            <PersistentString
+               value = "self.msgMenu.fabMenuItems">
+            </PersistentString>
+            <PersistentString
+               value = "self.buttonsStack.subviews.contains(self.msgMenu)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.tableView(UITableView, sectionForSectionIndexTitle : String, at : Int) -&gt; Int:DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Character.koreanChoSeongs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.updateNextButton() -&gt; ():DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.filteredGroupsBySpell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.filteredGroupsBySpell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FABMenu.hitTestItems(CGPoint, with : UIEvent?) -&gt; UIView?:FABMenu+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.fabMenuItems">
+            </PersistentString>
+            <PersistentString
+               value = "item.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UIApplication.openFacebook(String) -&gt; ():UIApplication+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot;\(facebookUrl)&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewCell.fabMenuWillOpen(fabMenu : FABMenu) -&gt; ():DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fabMenu.fabMenuItems">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.viewDidLoad() -&gt; ():DAInfoTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DAExcelPersonInfo._parseNumber(String, title : String) -&gt; [DAPhoneInfo]:DAExcelPersonInfo.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.onGoEndRow(Any) -&gt; ():DAInfoTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.(filterByName(String) -&gt; ()).(closure #1):DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "person.name">
+            </PersistentString>
+            <PersistentString
+               value = "person.name == keyword">
+            </PersistentString>
+            <PersistentString
+               value = "person.name.getKoreanChoSeongs()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAExcelController.loadGroups([DAExcelPersonInfo]?) -&gt; [DAExcelGroupInfo]:DAExcelController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell?.stringValue()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
