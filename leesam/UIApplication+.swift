@@ -28,6 +28,23 @@ extension UIApplication{
         }
     }
     
+    var version : String{
+        get{
+            var value = Bundle.main.localizedInfoDictionary?["CFBundleShortVersionString"] as? String;
+            /*if value == nil{
+                value = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String;
+            }*/
+            
+            return value ?? "";
+        }
+    }
+    
+    var isIPhone : Bool{
+        get{
+            return UIDevice().userInterfaceIdiom == .phone;
+        }
+    }
+    
     var urlForItunes : URL{
         get{
             return URL(string :"https://itunes.apple.com/kr/app/sendadv/id\(self.appId)?l=ko&mt=8")!;

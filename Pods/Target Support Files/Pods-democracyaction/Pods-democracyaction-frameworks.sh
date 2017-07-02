@@ -95,6 +95,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SSZipArchive/SSZipArchive.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwipeCellKit/SwipeCellKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XMLDictionary/XMLDictionary.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XlsxReaderWriter/XlsxReaderWriter.framework"
 fi
@@ -105,6 +106,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SSZipArchive/SSZipArchive.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwipeCellKit/SwipeCellKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XMLDictionary/XMLDictionary.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XlsxReaderWriter/XlsxReaderWriter.framework"
 fi

@@ -20,6 +20,9 @@ class DATheme{
     static let twitterButtonBackgroundColor = "#00aced".toUIColor()!;
     static let youtubeButtonTintColor = "#bb0000".toUIColor()!;
     static let youtubeButtonBackgroundColor = "#cfd8dc".toUIColor()!;
+    static let searchButtonTintColor = "#eceff1".toUIColor()!;
+    static let searchButtonBackgroundColor = "#607d8b".toUIColor()!;
+    
     static let fabMenuTintColor = UIColor.white;
     static let fabMenuBackgroundColor = "#566e7a".toUIColor()!;
 }

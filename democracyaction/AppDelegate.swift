@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
         self.fullAd?.delegate = self;
         self.fullAd?.canShowFirstTime = false;
         self.fullAd?.show();
+        
         return true
     }
 

@@ -9,28 +9,32 @@
 import Foundation
 import CoreData
 
-class SAModelController : NSObject{
+class DAModelController : NSObject{
     struct EntityNames{
         static let DAGroupInfo = "DAGroupInfo";
         static let DAPersonInfo = "DAPersonInfo";
         static let DAPhoneInfo = "DAPhoneInfo";
-        static let DASNSInfo = "DAPhoneInfo";
-        static let DAWebInfo = "DAPhoneInfo";
+        static let DAMessageToolInfo = "DAMessageToolInfo";
+        static let DAWebInfo = "DAWebInfo";
+        
+        static let DAFavoriteInfo = "DAFavoriteInfo";
     }
-    static let FileName = "sendadv";
+    
+    static let ModelName = "DAModel";
+    static let FileName = "democracyaction";
     
     internal static let dispatchGroupForInit = DispatchGroup();
-    //    var SingletonQ = DispatchQueue(label: "RSModelController.Default");
-    private static var _instance = SAModelController();
-    static var Default : SAModelController{
+    //    var SingletonQ = DispatchQueue(label: "DAModelController.Default");
+    private static var _instance = DAModelController();
+    static var Default : DAModelController{
         get{
             var timeout = DispatchTime.now() + DispatchTimeInterval.seconds(3);
-            print("enter \(self) instance - \(self) - \(Thread.current)");
+            //print("enter \(self) instance - \(self) - \(Thread.current)");
             var value = _instance;
             //            value.waitInit();
-            print("wait \(self) instance - \(self) - \(Thread.current)");
+            //print("wait \(self) instance - \(self) - \(Thread.current)");
             self.dispatchGroupForInit.wait();
-            print("exit \(self) instance - \(self) - \(Thread.current)");
+            //print("exit \(self) instance - \(self) - \(Thread.current)");
             
             return value;
         }
@@ -39,11 +43,11 @@ class SAModelController : NSObject{
     var context : NSManagedObjectContext;
     internal override init(){
         //lock on
-        //        objc_sync_enter(RSModelController.self)
-        //        print("begin init RSModelController - \(RSModelController.self) - \(Thread.current)");
+        //        objc_sync_enter(DAModelController.self)
+        //        print("begin init DAModelController - \(DAModelController.self) - \(Thread.current)");
         //get path for model file
-        //xcdatamodel => momd??
-        guard let model_path = Bundle.main.url(forResource: SAModelController.FileName, withExtension: "momd") else{
+        //load model scheme - xcdatamodel => momd??
+        guard let model_path = Bundle.main.url(forResource: DAModelController.ModelName, withExtension: "momd") else{
             fatalError("Can not find Model File from Bundle");
         }
         
@@ -60,18 +64,17 @@ class SAModelController : NSObject{
         //set store controller??
         self.context.persistentStoreCoordinator = psc;
         //lazy load??
-        //        var queue = DispatchQueue(label: "RSModelController.init", qos: .background, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil);
-        DispatchQueue.global(qos: .background).async(group: SAModelController.dispatchGroupForInit) {
-            print("begin init RSModelController");
+        //        var queue = DispatchQueue(label: "DAModelController.init", qos: .background, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil);
+        DispatchQueue.global(qos: .background).async(group: DAModelController.dispatchGroupForInit) {
+            print("begin init DAModelController");
             //        DispatchQueue.main.async{
-            let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask);
             
             //get path for app's url
-            var docUrl = urls.last;
+            var storeUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last?.appendingPathComponent(DAModelController.FileName).appendingPathExtension("sqlite");
             //create path for data file
-            docUrl?.appendPathComponent(SAModelController.FileName);
-            docUrl?.appendPathExtension("sqlite");
-            let storeUrl = docUrl;
+            //let storeUrl = Bundle.main.url(forResource: DAModelController.FileName, withExtension: "sqlite");
+            //let storeUrl = docUrl;
+            
             do {
                 //set store type?
                 try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]);

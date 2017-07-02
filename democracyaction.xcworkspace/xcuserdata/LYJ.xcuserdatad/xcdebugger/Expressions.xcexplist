@@ -27,6 +27,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DAExcelController.needToUpdate.getter:DAExcelController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DADefaults.DataVersion">
+            </PersistentString>
+            <PersistentString
+               value = "self.version">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAInfoTableViewCell.onCall(UIButton) -&gt; ():DAInfoTableViewCell.swift">
          <PersistentStrings>
             <PersistentString
@@ -34,14 +45,6 @@
             </PersistentString>
             <PersistentString
                value = "self.msgMenu.fabMenuItems[0].fabButton.image">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.numberOfSections(in : UITableView) -&gt; Int:DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "filteredGroups">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -54,19 +57,51 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GADInterstialManager._show() -&gt; ():GADInterstialManager.swift">
+         contextName = "DAInfoTableViewController.numberOfSections(in : UITableView) -&gt; Int:DAInfoTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "UIApplication.shared.windows.first?.rootViewController.classForCoder">
+               value = "filteredGroups">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAPersonInfo.syncMessageTools(DAExcelPersonInfo) -&gt; ():DAPersonInfo+DAExcelPersonInfo.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "person.facebook">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
+               value = "person.twitter">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController?.presentedViewController">
+               value = "person.kakao">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.tableView(UITableView, sectionForSectionIndexTitle : String, at : Int) -&gt; Int:DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Character.koreanChoSeongs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewCell.swipeActions.getter:DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "action.backgroundColor?.stringValue()">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController">
+               value = "self.overflowedMenus">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewController.updateNextButton() -&gt; ():DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.filteredGroupsBySpell">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -97,26 +132,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DAInfoTableViewController.tableView(UITableView, sectionForSectionIndexTitle : String, at : Int) -&gt; Int:DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Character.koreanChoSeongs">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.updateNextButton() -&gt; ():DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.filteredGroupsBySpell">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "DAInfoTableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:DAInfoTableViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.filteredGroupsBySpell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GADInterstialManager._show() -&gt; ():GADInterstialManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIApplication.shared.windows.first?.rootViewController.classForCoder">
+            </PersistentString>
+            <PersistentString
+               value = "UIApplication.shared.keyWindow?.rootViewController">
+            </PersistentString>
+            <PersistentString
+               value = "UIApplication.shared.keyWindow?.rootViewController?.presentedViewController">
+            </PersistentString>
+            <PersistentString
+               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -156,10 +192,53 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DAPersonInfo.(findMessageTool(String) -&gt; DAMessageToolInfo?).(closure #1):DAPersonInfo+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tool.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewCell.contactPicker(CNContactPickerViewController, didSelect : CNContact) -&gt; ():DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIApplication.shared.keyWindow?.rootViewController?.classForCoder">
+            </PersistentString>
+            <PersistentString
+               value = "self.window?.rootViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAInfoTableViewController.viewDidLoad() -&gt; ():DAInfoTableViewController.swift">
       </ContextState>
       <ContextState
          contextName = "DAExcelPersonInfo._parseNumber(String, title : String) -&gt; [DAPhoneInfo]:DAExcelPersonInfo.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DAExcelController.version.getter:DAExcelController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell?.stringValue()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAModelController.sync(DAExcelController) -&gt; ():DAModelController+DAExcelGroupInfo.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "modelPerson.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAPersonInfo.findMessageTool(String) -&gt; DAMessageToolInfo?:DAPersonInfo+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.messages?.allObjects as? [DAMessageToolInfo] ?? []">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "DAInfoTableViewController.onGoEndRow(Any) -&gt; ():DAInfoTableViewController.swift">
@@ -179,10 +258,48 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DAFavoriteTableViewController.viewDidAppear(Bool) -&gt; ():DAFavoriteTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.favorites">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAPersonInfo.personName.setter:DAPersonInfo+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.nameFirstCharacters">
+            </PersistentString>
+            <PersistentString
+               value = "self.nameFirstCharacter">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Character.getKoreanParts() -&gt; String?:Character+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "uIndex % UInt32(Character.koreanJungSeongs.count * Character.koreanJongSeongs.count)">
+            </PersistentString>
+            <PersistentString
+               value = "Character.koreanJongSeongs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAExcelController.loadGroups([DAExcelPersonInfo]?) -&gt; [DAExcelGroupInfo]:DAExcelController.swift">
          <PersistentStrings>
             <PersistentString
                value = "cell?.stringValue()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "specialized DAInfoTableViewCell.(onRegister() -&gt; ()).(closure #2):DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(self.info.personPhones.allObjects as? [DAPhoneInfo] ?? [])[0].name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

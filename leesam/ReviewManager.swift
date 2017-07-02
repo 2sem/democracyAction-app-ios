@@ -19,12 +19,14 @@ class ReviewManager : NSObject{
     var interval : TimeInterval = 60.0 * 60.0 * 3.0;
     var canShowFirstTime = true;
     var delegate : ReviewManagerDelegate?;
+    private(set) static var Default : ReviewManager?;
     
     init(_ window : UIWindow, interval : TimeInterval = 60.0 * 60.0 * 3.0) {
         self.window = window;
         self.interval = interval;
         
         super.init();
+        ReviewManager.Default = self;
         //self.reset();
     }
     
@@ -61,8 +63,17 @@ class ReviewManager : NSObject{
             return value;
         }
     }
-    func show(){
-        guard self.canShow else {
+    
+    func show(_ force : Bool = false){
+        guard self.canShow || force else {
+            return;
+        }
+    
+        self._show();
+    }
+    
+    internal func _show(){
+        guard self.window.rootViewController != nil else{
             return;
         }
         
@@ -79,18 +90,6 @@ class ReviewManager : NSObject{
                         self.delegate?.reviewUpdate(showTime: Date().addingTimeInterval(60 * 60 * 24));
                     })]
         self.window.rootViewController?.showAlert(title: "앱 평가 및 추천".localized(), msg: String(format: "'%@'를 평가하거나 친구들에게 추천해보세요.".localized(), name), actions: acts, style: .alert);
-        self.delegate?.reviewUpdate(showTime: Date());
-    }
-    
-    private func _show(){
-        guard self.window.rootViewController != nil else{
-            return;
-        }
-        
-        guard self.canShow else {
-            return;
-        }
-        
         self.delegate?.reviewUpdate(showTime: Date());
     }
 }

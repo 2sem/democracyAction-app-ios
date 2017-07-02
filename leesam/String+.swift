@@ -133,6 +133,33 @@ extension String {
         return value;
     }
     
+    func getKoreanParts(_ double2One : Bool = true) -> String?{
+        var value : String = "";
+        
+        guard self.containsKorean() else {
+            return value;
+        }
+        
+        var noKorean = true;
+        var lastCho = "";
+        for (i, char) in self.characters.enumerated(){
+            var kor = char.getKoreanParts();
+            
+            //print("get parts \(char) => \(kor)");
+            
+            value += kor ?? "";
+        }
+        
+        //어 : C5B4 = ㅇ(U+3147) + ㅓ(U+3153)
+        //hangul jungseong - begin - ㅏ(U+314F) 1161
+        //가(U+AC00) = ㄱ(U+3131, U+1100, U+11A8)
+        //각(U+AC01) =
+        //아(U+C544) = ㅇ(U+3147) + ㅏ(U+314F, U+1161)
+        //NSLog("###### \(value) ######");
+        return value;
+    }
+
+    
     var length : Int{
         get{
             return self.characters.count;
@@ -151,7 +178,7 @@ extension String {
         
         for char in lower.characters {
             let range = hexStrings.range(of: String(char));
-            print("find \(char) in \(hexStrings) => \(range)");
+            //print("find \(char) in \(hexStrings) => \(range)");
             
             if range == nil || range?.isEmpty == true{
                 value = false;

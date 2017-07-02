@@ -14,25 +14,26 @@
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="3aL-q5-82h" kind="relationship" relationship="viewControllers" id="K4e-rf-nvC"/>
+                        <segue destination="zPF-LM-iHW" kind="relationship" relationship="viewControllers" id="bcK-ZP-jsW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Item-->
+        <!--국회의원-->
         <scene sceneID="ak6-R5-X4o">
             <objects>
                 <navigationController id="3aL-q5-82h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="XHJ-8U-64V"/>
+                    <tabBarItem key="tabBarItem" title="국회의원" image="icon_people_off" selectedImage="icon_people_on" id="XHJ-8U-64V"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="waD-S6-tGr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,25 +53,25 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="950" y="0.0"/>
+            <point key="canvasLocation" x="953" y="-258"/>
         </scene>
         <!--Item-->
         <scene sceneID="two-YW-2Uh">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="awv-Zw-aQz" customClass="DAInfoTableViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="awv-Zw-aQz" customClass="DAInfoTableViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="CoF-Jx-qFr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="bEA-Vv-AMT" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEA-Vv-AMT" id="wjU-fc-Eov">
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEA-Vv-AMT" id="wjU-fc-Eov">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCK-0U-137">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCK-0U-137">
                                             <rect key="frame" x="16" y="0.0" width="100" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="fUC-f4-3b1"/>
@@ -80,8 +81,8 @@
                                             <color key="textColor" red="0.21568627450980393" green="0.27843137254901962" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어디 어디 갑" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-Tw-LCn">
-                                            <rect key="frame" x="40" y="34" width="82.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-Tw-LCn">
+                                            <rect key="frame" x="40" y="34" width="283" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="vrA-k7-BQa"/>
                                             </constraints>
@@ -133,11 +134,6 @@
                                         <constraint firstItem="GCK-0U-137" firstAttribute="leading" secondItem="wjU-fc-Eov" secondAttribute="leading" constant="16" id="lUd-Wc-wy3"/>
                                         <constraint firstItem="GCK-0U-137" firstAttribute="top" secondItem="wjU-fc-Eov" secondAttribute="top" id="mCI-V6-CZw"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="aXz-2r-XUn"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -156,13 +152,20 @@
                     <tabBarItem key="tabBarItem" title="Item" id="v5o-kH-h8i"/>
                     <navigationItem key="navigationItem" id="PNx-Ds-65R">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="GeV-x9-IaQ">
+                            <color key="tintColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onShare:" destination="awv-Zw-aQz" id="RMO-d4-UgG"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="5oJ-Kh-yg4">
-                            <rect key="frame" x="55" y="7" width="262" height="30"/>
+                            <rect key="frame" x="56" y="7" width="261" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <segments>
                                 <segment title="이름별"/>
                                 <segment title="정당별"/>
+                                <segment title="지역별"/>
                             </segments>
                             <color key="tintColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -192,11 +195,147 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="1902" y="-259"/>
+        </scene>
+        <!--즐겨찾기-->
+        <scene sceneID="ebW-iv-c5u">
+            <objects>
+                <tableViewController id="KAs-QS-ow8" customClass="DAFavoriteTableViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="MiM-jM-B3i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="HdK-xU-vxd" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdK-xU-vxd" id="v27-iR-R4w">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYq-NL-ekM">
+                                            <rect key="frame" x="16" y="0.0" width="100" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="asl-Dl-wmP"/>
+                                                <constraint firstAttribute="height" constant="35" id="dv9-gr-nyB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어디 어디 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ctA-6W-kA7">
+                                            <rect key="frame" x="40" y="34" width="283" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="crB-dX-9Fo"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xl3-zs-mK2">
+                                            <rect key="frame" x="323" y="6" width="44" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftr-Oj-bIp" customClass="FABButton" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="WtP-gT-fmN"/>
+                                                        <constraint firstAttribute="height" constant="44" id="jEL-0T-lGF"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onCall:" destination="HdK-xU-vxd" eventType="touchUpInside" id="zpu-hU-OIE"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="132" id="VdG-4i-WsO"/>
+                                                <constraint firstAttribute="height" constant="44" id="dvM-OK-DPu"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="VdG-4i-WsO"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Xl3-zs-mK2" firstAttribute="trailing" secondItem="v27-iR-R4w" secondAttribute="trailingMargin" id="2aF-zL-FNS"/>
+                                        <constraint firstItem="SYq-NL-ekM" firstAttribute="leading" secondItem="v27-iR-R4w" secondAttribute="leading" constant="16" id="2no-DG-ihw"/>
+                                        <constraint firstItem="SYq-NL-ekM" firstAttribute="top" secondItem="v27-iR-R4w" secondAttribute="top" id="8sX-kY-SNc"/>
+                                        <constraint firstItem="ctA-6W-kA7" firstAttribute="leading" secondItem="SYq-NL-ekM" secondAttribute="leading" constant="24" id="Dgo-Rl-08r"/>
+                                        <constraint firstAttribute="bottom" secondItem="ctA-6W-kA7" secondAttribute="bottom" constant="0.5" id="M9I-67-49G"/>
+                                        <constraint firstItem="Xl3-zs-mK2" firstAttribute="centerY" secondItem="v27-iR-R4w" secondAttribute="centerY" id="m4n-p5-qVI"/>
+                                        <constraint firstItem="ctA-6W-kA7" firstAttribute="trailing" secondItem="Xl3-zs-mK2" secondAttribute="leading" id="oc0-c5-v1w"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="areaLabel" destination="ctA-6W-kA7" id="WTk-hr-jUY"/>
+                                    <outlet property="buttonsStack" destination="Xl3-zs-mK2" id="xII-r7-By9"/>
+                                    <outlet property="callButton" destination="Ftr-Oj-bIp" id="tpI-U9-oIs"/>
+                                    <outlet property="nameLabel" destination="SYq-NL-ekM" id="wIe-mf-XK5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KAs-QS-ow8" id="qXh-2p-mwG"/>
+                            <outlet property="delegate" destination="KAs-QS-ow8" id="Q8G-e0-fod"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="즐겨찾기" id="gBi-WK-sDS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Xmu-f8-6Ic">
+                            <color key="tintColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onShare:" destination="KAs-QS-ow8" id="k96-uP-Rej"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="icon_asc.png" id="98p-FI-6k2">
+                            <color key="tintColor" red="0.14901960780000001" green="0.1960784314" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onSort:" destination="KAs-QS-ow8" id="445-s8-8vJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8p-Fh-vxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902" y="439"/>
+        </scene>
+        <!--즐겨찾기-->
+        <scene sceneID="7WA-cI-3JJ">
+            <objects>
+                <navigationController id="zPF-LM-iHW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="icon_favor_off" selectedImage="icon_favor_on" id="yte-vL-6Qx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jZO-EY-GL4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KAs-QS-ow8" kind="relationship" relationship="rootViewController" id="99s-wL-E1n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2JP-oL-09j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="439"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon_asc.png" width="25" height="25"/>
         <image name="icon_call" width="25" height="25"/>
+        <image name="icon_favor_off" width="37" height="37"/>
+        <image name="icon_favor_on" width="37" height="37"/>
+        <image name="icon_people_off" width="37" height="37"/>
+        <image name="icon_people_on" width="37" height="37"/>
     </resources>
 </document>

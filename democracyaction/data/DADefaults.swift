@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DADefaults{
     static var Defaults : UserDefaults{
@@ -20,6 +21,7 @@ class DADefaults{
         static let LastShareShown = "LastShareShown";
         
         static let LastNotice = "LastNotice";
+        static let DataVersion = "DataVersion";
     }
     
     static var LastFullADShown : Date{
@@ -52,6 +54,17 @@ class DADefaults{
         
         set(value){
             Defaults.set(value.timeIntervalSince1970, forKey: Keys.LastNotice);
+        }
+    }
+    
+    static var DataVersion : String{
+        get{
+            //UIApplication.shared.version
+            return Defaults.string(forKey: Keys.DataVersion) ?? "0.0";
+        }
+        
+        set(value){
+            Defaults.set(value, forKey: Keys.DataVersion);
         }
     }
 }

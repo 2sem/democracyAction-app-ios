@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwipeCellKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>XMLDictionary.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,7 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>245964CAA13793C85E15218A0666F49D</key>
+		<key>1B2DF251C07216439118C24FD5E70774</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>467BDE6768EA2EC18B859B0E010E0267</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4AC29278785790668548A4382038F906</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>746C013AFEF3C24DE30E1A3BECF65D59</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>87DE035CC1B7F6BF1F20F349F02185D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8D511562A8961C5B7A5DD87BAE2374F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A51DE5650E9894337226C8F51811F802</key>
+		<key>A022F5E6DE0A62219687FD2A3832A35D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -133,16 +153,6 @@
 			<true/>
 		</dict>
 		<key>C7A939060109305910E0967FCD5612FC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD76680B2930A4030BD7FCD2CE88A0B0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EFC33B29D98CD05EF9B313A36417AC84</key>
 		<dict>
 			<key>primary</key>
 			<true/>

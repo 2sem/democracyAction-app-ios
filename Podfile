@@ -10,6 +10,8 @@ target 'democracyaction' do
   pod 'DownPicker'
   pod 'Google-Mobile-Ads-SDK'
   pod 'Firebase/Core'
+  pod 'SwipeCellKit'
+  pod 'KakaoOpenSDK'
 
   # Pods for democracyaction
 

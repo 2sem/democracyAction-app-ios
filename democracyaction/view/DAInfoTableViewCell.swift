@@ -8,10 +8,12 @@
 
 import UIKit
 import Material
+import SwipeCellKit
+import ContactsUI
 
-class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
+class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDelegate {
 
-    var info : DAExcelPersonInfo!{
+    var info : DAPersonInfo!{
         didSet{
             self.updateInfo();
         }
@@ -72,19 +74,65 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
         case web
         case blog
         case youtube
+        case search
     }
     
     var preparedMenuItems : [menuType : FABMenuItem] = [:];
+    
+    var overflowedMenus : [FABMenuItem] = [];
+    /*var needToShowMenuActions : Bool{
+        get{
+            var value = false;
+            
+            guard self.msgMenu != nil || self.searchMenu != nil else{
+                return value;
+            }
+            
+            guard self.msgMenu?.isOpened ?? false || self.searchMenu?.isOpened ?? false else{
+                return value;
+            }
+            
+            if self.msgMenu != nil{
+                var fabButton : FABButton! = self.msgMenu.fabMenuItems.first?.fabButton;
+                
+
+            }else if self.searchMenu != nil{
+                
+            }
+            
+            return true;
+        }
+    }*/
+    var swipeActions : [SwipeAction]{
+        var values = [SwipeAction]();
+        
+        for menu in self.overflowedMenus{
+            var action = SwipeAction(style: .default, title: nil, handler: { (act, indexPath) in
+                //UIApplication.shared.sendAction(menu.fabButton.action, to: <#T##Any?#>, from: <#T##Any?#>, for: <#T##UIEvent?#>)
+                //UIApplication.shared.sendEvent(UIControlEvents.touchUpInside);
+                menu.fabButton.sendActions(for: .touchUpInside);
+            })
+            action.backgroundColor = menu.fabButton.backgroundColor;
+            action.textColor = menu.fabButton.tintColor;
+            action.image = menu.fabButton.image;
+            
+            values.append(action);
+        }
+        
+        return values;
+    };
+    
     func updateInfo(){
         self.nameLabel.text = self.info.name;
-        self.areaLabel.text = !self.info.area.isEmpty ? self.info.area : self.info.title;
+        self.areaLabel.text = !self.info.personArea.isEmpty ? self.info.personArea : self.info.personName;
         var msgMenuItems : [FABMenuItem] = [];
         
-        if !self.info.email.isEmpty {
+        if !self.info.personEmail.isEmpty {
             var menuItem : FABMenuItem! = self.preparedMenuItems[menuType.email];
             if menuItem == nil{
                 menuItem = FABMenuItem();
                 //menuItem.title = "email";
+                menuItem.titleLabel.isHidden = true;
                 menuItem.fabButton.image = UIImage(named: "icon_email.png")?.withRenderingMode(.alwaysTemplate);
                 menuItem.fabButton.tintColor = .white;
                 menuItem.fabButton.pulseColor = .white;
@@ -95,11 +143,12 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
             msgMenuItems.append(menuItem);
         }
         
-        if !self.info.sms.isEmpty {
+        if self.info.personSms?.number != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.sms];
             if menuItem == nil{
                 menuItem = FABMenuItem();
                 //menuItem.title = "sms";
+                menuItem.hideTitleLabel();
                 menuItem.fabButton.image = UIImage(named: "icon_sms.png")?.withRenderingMode(.alwaysTemplate);
                 menuItem.fabButton.tintColor = .white;
                 menuItem.fabButton.pulseColor = .white;
@@ -110,12 +159,12 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
             msgMenuItems.append(menuItem);
         }
         
-        if !self.info.twitter.isEmpty {
+        if self.info.personTwitter?.account != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.twitter];
             if menuItem == nil{
                 menuItem = FABMenuItem();
                 //menuItem.title = "twitter";
-                
+                menuItem.hideTitleLabel();
                 menuItem.fabButton.image = UIImage(named: "icon_twitter.png")?.withRenderingMode(.alwaysTemplate);
                 menuItem.fabButton.tintColor = DATheme.twitterButtonTintColor;
                 menuItem.fabButton.pulseColor = DATheme.twitterButtonTintColor;
@@ -126,12 +175,12 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
             msgMenuItems.append(menuItem);
         }
         
-        if !self.info.facebook.isEmpty {
+        if self.info.personFacebook?.account != nil {
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.facebook];
             if menuItem == nil{
                 menuItem = FABMenuItem();
                 //menuItem.title = "facebook";
-                
+                menuItem.hideTitleLabel();
                 menuItem.fabButton.image = UIImage(named: "icon_facebook.png")?.withRenderingMode(.alwaysTemplate);
                 menuItem.fabButton.tintColor = DATheme.facebookButtonTintColor;
                 menuItem.fabButton.pulseColor = DATheme.facebookButtonTintColor;
@@ -206,12 +255,12 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
                 
         var searchMenuItems : [FABMenuItem] = [];
         
-        if !self.info.web.isEmpty {
+        if self.info.personHomepage?.url != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.web];
             if menuItem == nil{
                 menuItem = FABMenuItem();
                 //menuItem.title = "web";
-                
+                menuItem.hideTitleLabel();
                 menuItem.fabButton.image = UIImage(named: "icon_homepage.png")?.withRenderingMode(.alwaysTemplate);
                 menuItem.fabButton.tintColor = .white;
                 menuItem.fabButton.pulseColor = .white;
@@ -222,12 +271,12 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
             searchMenuItems.append(menuItem);
         }
         
-        if !self.info.blog.isEmpty {
+        if self.info.personBlog?.url != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.blog];
             if menuItem == nil{
                 menuItem = FABMenuItem();
                 //menuItem.title = "blog";
-                
+                menuItem.hideTitleLabel();
                 menuItem.fabButton.image = UIImage(named: "icon_blog.png")?.withRenderingMode(.alwaysTemplate);
                 menuItem.fabButton.tintColor = .white;
                 menuItem.fabButton.pulseColor = .white;
@@ -239,18 +288,34 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
             searchMenuItems.append(menuItem);
         }
         
-        if !self.info.youtube.isEmpty {
+        if self.info.personYoutube?.url != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.youtube];
             if menuItem == nil{
                 menuItem = FABMenuItem();
                 //menuItem.title = "youTube";
-                
+                menuItem.hideTitleLabel();
                 menuItem.fabButton.image = UIImage(named: "icon_youtube.png")?.withRenderingMode(.alwaysTemplate);
                 menuItem.fabButton.tintColor = DATheme.youtubeButtonTintColor;
                 menuItem.fabButton.pulseColor = DATheme.youtubeButtonTintColor;
                 menuItem.fabButton.backgroundColor = DATheme.youtubeButtonBackgroundColor;
                 menuItem.fabButton.addTarget(self, action: #selector(self.onYoutube(_:)), for: .touchUpInside);
                 preparedMenuItems[menuType.youtube] = menuItem;
+            }
+            searchMenuItems.append(menuItem);
+        }
+        
+        if true{
+            var menuItem : FABMenuItem! = preparedMenuItems[menuType.search];
+            if menuItem == nil{
+                menuItem = FABMenuItem();
+                //menuItem.title = "search";
+                menuItem.hideTitleLabel();
+                menuItem.fabButton.image = UIImage(named: "icon_search.png")?.withRenderingMode(.alwaysTemplate);
+                menuItem.fabButton.tintColor = DATheme.searchButtonTintColor;
+                menuItem.fabButton.pulseColor = DATheme.searchButtonTintColor;
+                menuItem.fabButton.backgroundColor = DATheme.searchButtonBackgroundColor;
+                menuItem.fabButton.addTarget(self, action: #selector(self.onSearch(_:)), for: .touchUpInside);
+                preparedMenuItems[menuType.search] = menuItem;
             }
             searchMenuItems.append(menuItem);
         }
@@ -296,7 +361,7 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
             self.searchMenu = nil;
             if searchMenuItems.count == 1{
                 self.searchButton = searchMenuItems[0].fabButton.clone();
-                self.buttonsStack.insertArrangedSubview(self.searchButton, at: 2)
+                self.buttonsStack.insertArrangedSubview(self.searchButton, at: self.buttonsStack.arrangedSubviews.count);
                 self.searchButton.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
                 self.searchButton.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
             }
@@ -307,7 +372,7 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
             self.searchMenu.fabButton?.backgroundColor = DATheme.fabMenuBackgroundColor;
             self.searchMenu.fabButton?.pulseColor = .white;
 
-            self.buttonsStack.insertArrangedSubview(self.searchMenu, at: 2)
+            self.buttonsStack.insertArrangedSubview(self.searchMenu, at: self.buttonsStack.arrangedSubviews.count);
             //self.addSubview(self.msgMenu);
             self.searchMenu.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
             self.searchMenu.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
@@ -340,67 +405,167 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
         print("call \(self.info.phones)");
         self.closeMenus();
         
-        if self.info.phones.count == 1{
-            UIApplication.shared.openTel(self.info.phones.first?.number ?? "");
-        }else{
-            var actions : [UIAlertAction] = [];
-            for phone in self.info.phones{
-                actions.append(UIAlertAction(title: phone.title, style: .default, handler: { (act) in
-                    UIApplication.shared.openTel(phone.number);
-                }));
-            }
-            actions.append(UIAlertAction(title: "취소", style: .cancel, handler: { (act) in
-                
+        var phones = (self.info.phones?.allObjects as? [DAPhoneInfo] ?? []);
+        /*.filter { (phone) -> Bool in
+            return phone.sms;
+        }*/
+        
+        var actions : [UIAlertAction] = [];
+        for phone in phones{
+            actions.append(UIAlertAction(title: phone.name, style: .default, handler: { (act) in
+                UIApplication.shared.openTel(phone.number ?? "");
             }));
-            
-            UIApplication.shared.keyWindow?.rootViewController?.showAlert(title: "통화할 연락처를 선택하세요", msg: "", actions: actions, style: .alert);
         }
+        
+        if let mobile = phones.first(where: { (phone) -> Bool in
+            return phone.sms;
+        }){
+            //edit new mobile
+            actions.append(UIAlertAction(title: "휴대폰 번호 수정", style: .default, handler: { (act) in
+                self.onEditMobile(phone: mobile);
+            }));
+        }else{
+            //register mobile
+            actions.append(UIAlertAction(title: "휴대폰 번호 등록", style: .default, handler: { (act) in
+                self.onRegisterMobile();
+            }));
+        }
+        
+        actions.append(UIAlertAction(title: "취소", style: .cancel, handler: { (act) in
+            
+        }));
+        
+        UIApplication.shared.keyWindow?.rootViewController?.showAlert(title: "\(self.info.job ?? "") \(self.info.name ?? "")에게 전화", msg: "통화할 연락처를 선택하세요", actions: actions, style: .alert);
+    }
+    
+    func onLoadPhoneFromContact(){
+        let picker = CNContactPickerViewController();
+        //picker.displayedPropertyKeys = [CNContactGivenNameKey, CNContactNameSuffixKey, CNContactNicknameKey, CNContactImageDataKey, CNContactOrganizationNameKey, CNContactDepartmentNameKey, CNContactJobTitleKey, CNContactEmailAddressesKey, CNContactPhoneNumbersKey, CNContactNoteKey];
+        picker.displayedPropertyKeys = [CNContactPhoneNumbersKey];
+        picker.delegate = self;
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(picker, animated: true, completion: nil);
+    }
+    
+    func onEditMobile(phone : DAPhoneInfo){
+        var alert = UIAlertController(title: "휴대폰 번호 수정", message: nil, preferredStyle: .alert);
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "휴대폰 번호";
+            textField.keyboardType = .phonePad;
+            textField.text = phone.number;
+        }
+        alert.addAction(UIAlertAction(title: "수정", style: .default, handler: { (act) in
+            var textField : UITextField! = alert.textFields?.first;
+            //self.info.createPhone(name: "휴대폰", number: textField.text ?? "", canSendSMS: true);
+            guard !(textField.text ?? "").isEmpty else{
+                return;
+            }
+            phone.number = textField.text;
+            DAModelController.Default.saveChanges();
+            //DAModelController.Default.refresh(person: self.info);
+            
+            self.updateInfo();
+        }));
+        alert.addAction(UIAlertAction(title: "연락처에서 가져오기", style: .default, handler: { (act) in
+            self.onLoadPhoneFromContact();
+        }));
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { (act) in
+            
+        }));
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil);
+    }
+    
+    func onRegisterMobile(){
+        var alert = UIAlertController(title: "휴대폰 번호 등록", message: nil, preferredStyle: .alert);
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "휴대폰 번호";
+            textField.keyboardType = .phonePad;
+        }
+        alert.addAction(UIAlertAction(title: "등록", style: .default, handler: { (act) in
+            var textField : UITextField! = alert.textFields?.first;
+            guard !(textField.text ?? "").isEmpty else{
+                return;
+            }
+            
+            self.info.createPhone(name: "휴대폰", number: textField.text ?? "", canSendSMS: true);
+            DAModelController.Default.saveChanges();
+            DAModelController.Default.refresh(person: self.info);
+            
+            self.updateInfo();
+        }));
+        alert.addAction(UIAlertAction(title: "연락처에서 가져오기", style: .default, handler: { (act) in
+            self.onLoadPhoneFromContact();
+        }));
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { (act) in
+            
+        }));
+            
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil);
     }
     
     func onSms(_ button : UIButton){
-        print("send sms \(self.info.sms)");
+        print("send sms \(self.info.personSms?.number)");
         self.closeMenus();
-        UIApplication.shared.openSms(self.info.sms);
+        UIApplication.shared.openSms(self.info.personSms?.number ?? "");
     }
     
     func onEmail(_ button : UIButton){
-        print("send email \(self.info.email)");
+        print("send email \(self.info.personEmail)");
         self.closeMenus();
-        UIApplication.shared.openEmail(self.info.email);
+        UIApplication.shared.openEmail(self.info.personEmail);
     }
     
     func onTwitter(_ button : UIButton){
-        print("send twitter \(self.info.twitter)");
+        print("send twitter \(self.info.personTwitter?.account)");
         self.closeMenus();
-        UIApplication.shared.openTwitter(self.info.twitter);
+        UIApplication.shared.openTwitter(self.info.personTwitter?.account ?? "");
     }
 
     func onFacebook(_ button : UIButton){
-        print("send facebook \(self.info.facebook)");
+        print("send facebook \(self.info.personFacebook?.account)");
         self.closeMenus();
-        UIApplication.shared.openFacebook(self.info.facebook);
+        UIApplication.shared.openFacebook(self.info.personFacebook?.account ?? "");
     }
     
     func onKakao(_ button : UIButton){
-        print("send kakao \(self.info.kakao)");
+        print("send kakao \(self.info.personKakao?.account)");
         self.closeMenus();
     }
     
     func onYoutube(_ button : UIButton){
-        print("go youtube \(self.info.youtube)");
+        print("go youtube \(self.info.personYoutube?.url)");
         self.closeMenus();
-        UIApplication.shared.openWeb(self.info.youtube);
+        UIApplication.shared.openWeb(self.info.personYoutube?.url ?? "");
     }
     
     func onWeb(_ button : UIButton){
-        print("go web \(self.info.web)");
-        UIApplication.shared.openWeb(self.info.web);
+        print("go web \(self.info.personHomepage?.url)");
+        UIApplication.shared.openWeb(self.info.personHomepage?.url ?? "");
         self.closeMenus();
     }
     
     func onBlog(_ button : UIButton){
-        print("go blog \(self.info.blog)");
-        UIApplication.shared.openWeb(self.info.blog);
+        print("go blog \(self.info.personBlog?.url)");
+        UIApplication.shared.openWeb(self.info.personBlog?.url ?? "");
+        self.closeMenus();
+    }
+    
+    func onSearch(_ button : UIButton){
+        print("go search \(self.info.personBlog?.url)");
+        //UIApplication.shared.openWeb(self.info.personBlog?.url ?? "");
+        var keyword = "\(self.info.job ?? "") \(self.info.name ?? "")";
+        var viewController = UIApplication.shared.keyWindow?.rootViewController;
+        UIApplication.shared.keyWindow?.rootViewController?.showAlert(title: "\(keyword) 검색", msg: "검색할 포털사이트를 선택하세요", actions: [UIAlertAction(title: "다음에서 검색", style: .default, handler: { (act) in
+            viewController?.searchByDaum(keyword);
+        }), UIAlertAction(title: "구글에서 검색", style: .default, handler: { (act) in
+            viewController?.searchByGoogle(keyword);
+        }), UIAlertAction(title: "네이버에서 검색", style: .default, handler: { (act) in
+            viewController?.searchByNaver(keyword);
+        }), UIAlertAction(title: "취소", style: .default, handler: nil)], style: .alert);
+        
         self.closeMenus();
     }
     
@@ -414,8 +579,78 @@ class DAInfoTableViewCell: UITableViewCell, FABMenuDelegate {
         }
     }
     
+    func fabMenuDidOpen(fabMenu: FABMenu) {
+        var lastfabButton : FABButton! = fabMenu.fabMenuItems.last?.fabButton;
+        var left = lastfabButton.convert(lastfabButton.frame.origin, to: self);
+        guard left.x < 0 else{
+            self.overflowedMenus = [];
+            return;
+        }
+        
+        for menu in fabMenu.fabMenuItems{
+            var fabButton : FABButton! = menu.fabButton;
+            var left = fabButton.convert(fabButton.frame.origin, to: self);
+            if left.x < 0 {
+                self.overflowedMenus.append(menu);
+            }
+        }
+    
+        self.showSwipe(orientation: .left, animated: true, completion: nil);
+    }
+    
     func fabMenuWillClose(fabMenu: FABMenu) {
         fabMenu.fabButton?.animate(Motion.rotation(angle: 0));
+    }
+    
+    //MARK: CNContactPickerDelegate
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
+        print("contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty)");
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        print("contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact)");
+        var phones = (self.info.phones?.allObjects as? [DAPhoneInfo] ?? []);
+        var actions : [UIAlertAction] = [];
+        if let mobile = phones.first(where: { (phone) -> Bool in
+            return phone.sms;
+        }){
+            for phone in contact.phoneNumbers{
+                actions.append(UIAlertAction(title: phone.value.stringValue, style: .default, handler: { (act) in
+                    mobile.number = phone.value.stringValue;
+                    DAModelController.Default.saveChanges();
+                    self.updateInfo();
+                }));
+            }
+        }else{
+            for phone in contact.phoneNumbers{
+                actions.append(UIAlertAction(title: phone.value.stringValue, style: .default, handler: { (act) in
+                    self.info.createPhone(name: "휴대폰", number: phone.value.stringValue, canSendSMS: true);
+                    DAModelController.Default.saveChanges();
+                    self.updateInfo();
+                }));
+            }
+        }
+        
+        /*if actions.count == 1{
+            var phone = contact.phoneNumbers.first;
+            if let mobile = phones.first(where: { (phone) -> Bool in
+                return phone.sms;
+            }){
+                mobile.number = phone?.value.stringValue;
+            }else{
+                self.info.createPhone(name: "휴대폰", number: phone?.value.stringValue ?? "", canSendSMS: true);
+            }
+            DAModelController.Default.saveChanges();
+        }*/
+        
+        guard !actions.isEmpty else{
+            return;
+        }
+        actions.append(UIAlertAction(title: "취소", style: .cancel, handler: nil));
+        
+        DispatchQueue.main.async {
+            UIApplication.shared.keyWindow?.rootViewController?.showAlert(title: "휴대폰 번호 선택", msg: "", actions: actions, style: .alert);
+        }
     }
 }
 

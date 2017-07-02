@@ -12,6 +12,12 @@ import XlsxReaderWriter
 
 class DAExcelController : NSObject{
     var document : BRAOfficeDocumentPackage?;
+    var infoSheet : BRAWorksheet?{
+        get{
+            return self.document?.workbook.worksheetNamed("info");
+        }
+    }
+    
     var congessSheet : BRAWorksheet?{
         get{
             return self.document?.workbook.worksheetNamed("congressman");
@@ -21,6 +27,20 @@ class DAExcelController : NSObject{
     var groupSheet : BRAWorksheet?{
         get{
             return self.document?.workbook.worksheetNamed("groups");
+        }
+    }
+    
+    var version : String{
+        get{
+            var cell = self.infoSheet?.cell(forCellReference: "C2");
+
+            return cell?.stringValue() ?? "";
+        }
+    }
+    
+    var needToUpdate : Bool{
+        get{
+            return DADefaults.DataVersion < self.version;
         }
     }
     
@@ -107,8 +127,8 @@ class DAExcelController : NSObject{
     
     static let congressStartRow = 3;
     
-    func loadCongress(_ person : DAExcelPersonInfo){
-        var i = person.id - 1 + DAExcelController.congressStartRow;
+    func loadCongress(_ person : DAExcelPersonInfo, row : Int? = nil){
+        var i = row ?? (person.id - 1 + DAExcelController.congressStartRow);
         
         guard !person.isLoaded else{
             return;
@@ -118,17 +138,17 @@ class DAExcelController : NSObject{
         var mobile = self.congessSheet?.cell(forCellReference: "G\(i)")?.stringValue() ?? "";
         var office_asm = self.congessSheet?.cell(forCellReference: "H\(i)")?.stringValue() ?? "";
         var office_area = self.congessSheet?.cell(forCellReference: "I\(i)")?.stringValue() ?? "";
-        var sms = self.congessSheet?.cell(forCellReference: "J\(i)")?.stringValue() ?? "";
-        var email = self.congessSheet?.cell(forCellReference: "K\(i)")?.stringValue() ?? "";
-        var twitter = self.congessSheet?.cell(forCellReference: "L\(i)")?.stringValue() ?? "";
-        var facebook = self.congessSheet?.cell(forCellReference: "M\(i)")?.stringValue() ?? "";
-        var kakao = self.congessSheet?.cell(forCellReference: "N\(i)")?.stringValue() ?? "";
-        var instagram = self.congessSheet?.cell(forCellReference: "O\(i)")?.stringValue() ?? "";
-        var youtube = self.congessSheet?.cell(forCellReference: "P\(i)")?.stringValue() ?? "";
-        var web = self.congessSheet?.cell(forCellReference: "Q\(i)")?.stringValue() ?? "";
-        var blog = self.congessSheet?.cell(forCellReference: "R\(i)")?.stringValue() ?? "";
-        var cafe = self.congessSheet?.cell(forCellReference: "S\(i)")?.stringValue() ?? "";
-        var cyworld = self.congessSheet?.cell(forCellReference: "T\(i)")?.stringValue() ?? "";
+        //var sms = self.congessSheet?.cell(forCellReference: "J\(i)")?.stringValue() ?? "";
+        var email = self.congessSheet?.cell(forCellReference: "J\(i)")?.stringValue() ?? "";
+        var twitter = self.congessSheet?.cell(forCellReference: "K\(i)")?.stringValue() ?? "";
+        var facebook = self.congessSheet?.cell(forCellReference: "L\(i)")?.stringValue() ?? "";
+        var kakao = self.congessSheet?.cell(forCellReference: "M\(i)")?.stringValue() ?? "";
+        var instagram = self.congessSheet?.cell(forCellReference: "N\(i)")?.stringValue() ?? "";
+        var youtube = self.congessSheet?.cell(forCellReference: "O\(i)")?.stringValue() ?? "";
+        var web = self.congessSheet?.cell(forCellReference: "P\(i)")?.stringValue() ?? "";
+        var blog = self.congessSheet?.cell(forCellReference: "Q\(i)")?.stringValue() ?? "";
+        var cafe = self.congessSheet?.cell(forCellReference: "R\(i)")?.stringValue() ?? "";
+        var cyworld = self.congessSheet?.cell(forCellReference: "S\(i)")?.stringValue() ?? "";
         
         person.area = field;
         person.mobile = mobile;
@@ -136,7 +156,7 @@ class DAExcelController : NSObject{
         person.office_area = office_area;
         person.parseNumbers();
 
-        person.sms = sms;
+        //person.sms = sms;
         person.email = email;
         person.twitter = twitter;
         person.facebook = facebook;
@@ -185,6 +205,9 @@ class DAExcelController : NSObject{
             person.name = name;
             person.title = title;
             person.groupId = Int(groupId) ?? 0;
+            
+            self.loadCongress(person, row : i);
+            
             group?.persons.append(person);
             
             values.append(person);

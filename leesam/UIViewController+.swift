@@ -300,6 +300,13 @@ extension UIViewController {
         
     }
     
+    func searchByNaver(_ keyword : String){
+        var urlComponents = URLComponents(string: "http://search.naver.com/search.naver");
+        urlComponents?.queryItems = [URLQueryItem(name: "query", value: keyword)];
+        UIApplication.shared.open(urlComponents!.url!, options: [:], completionHandler: nil);
+        
+    }
+    
     var isInKorean : Bool{
         get{
             return Locale.current.identifier.hasPrefix("ko");

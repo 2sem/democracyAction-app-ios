@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DAPhoneInfo : NSObject {
+class DAExcelPhoneInfo : NSObject {
     var title = "";
     var number = "";
     
