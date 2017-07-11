@@ -47,16 +47,21 @@ extension DAPersonInfo{
         }
     }
     
-    var personPhones : NSMutableSet{
+    /*var personPhones : NSMutableSet{
         get{
             //return self.persons as? Set<DAPersonInfo>;
             return self.mutableSetValue(forKey: "phones");
+        }
+    }*/
+    var personPhones : [DAPhoneInfo]{
+        get{
+            return self.mutableSetValue(forKey: "phones").allObjects as? [DAPhoneInfo] ?? [];
         }
     }
     
     var personSms : DAPhoneInfo?{
         get{
-            return (self.personPhones.allObjects as? [DAPhoneInfo])?.first(where: { (phone) -> Bool in
+            return self.personPhones.first(where: { (phone) -> Bool in
                 return phone.sms;
             })
         }

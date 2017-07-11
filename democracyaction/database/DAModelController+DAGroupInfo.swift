@@ -24,6 +24,9 @@ extension DAModelController{
         do{
             values = try self.context.fetch(requester) as! [DAGroupInfo];
             print("fetch groups with predicate[\(predicate)] count[\(values.count)]");
+            /*values.forEach({ (group) in
+                print("group name[\(group.name)] num[\(group.no)]");
+            })*/
             completion?(values, nil);
         } catch let error{
             fatalError("Can not load groups from DB");
@@ -38,7 +41,13 @@ extension DAModelController{
     }
     
     func findGroup(_ no : Int16) -> DAGroupInfo?{
-        var predicate = NSPredicate(format: "no == \(no)");
+        //var predicate = NSPredicate(format: "no == %i",  no);
+        //var predicate = NSPredicate(format: "no == %@",  "\(no)");
+        //var predicate = NSPredicate(format: "no == %@",  no.description);
+        //var predicate = NSPredicate(format: "\(DAModelController.EntityNames.DAGroupInfo).no == \(no)");
+        //var predicate = NSPredicate(format: "%K == \(no)",  "no");
+        var predicate = NSPredicate(format: "#no == \(no)");
+        //var predicate = NSPredicate(format: "name == %@",  "자유한국당");
         return self.loadGroups(predicate: predicate, sortWays: nil).first;
     }
     
@@ -185,10 +194,10 @@ extension DAModelController{
         });
     }
     
-    func createGroup(no: Int16, name : String, detail: String = "") -> DAGroupInfo{
+    func createGroup(num: Int16, name : String, detail: String = "") -> DAGroupInfo{
         let group = NSEntityDescription.insertNewObject(forEntityName: EntityNames.DAGroupInfo, into: self.context) as! DAGroupInfo;
         
-        group.no = no;
+        group.no = num;
         group.name = name;
         group.detail = detail;
         

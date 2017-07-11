@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D54BC78C97999657FBAB677 /* Pods_democracyactionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC3D84832FC4ED0DBB0C7B /* Pods_democracyactionTests.framework */; };
 		2C0106B21F091F460046B9A6 /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C0106B11F091F460046B9A6 /* icon_share.png */; };
+		2C01130F1F0F91960082B322 /* UIApplication+KakaoLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */; };
 		2C0455461EFE8BE5003E94ED /* DAModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0455451EFE8BE5003E94ED /* DAModelController.swift */; };
 		2C0455491EFE8C51003E94ED /* DAModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C0455471EFE8C51003E94ED /* DAModel.xcdatamodeld */; };
 		2C04B6ED1EF146C20084A82F /* icon_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C04B6EC1EF146C10084A82F /* icon_call.png */; };
@@ -36,6 +37,8 @@
 		2C08221B1EF510F700F042F5 /* icon_email.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C08221A1EF510F700F042F5 /* icon_email.png */; };
 		2C09B90A1F03635000BCBFC7 /* DAModelController+DAFavoriteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C09B9091F03635000BCBFC7 /* DAModelController+DAFavoriteInfo.swift */; };
 		2C09B90C1F03778400BCBFC7 /* DAFavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C09B90B1F03778400BCBFC7 /* DAFavoriteTableViewController.swift */; };
+		2C0B70CA1F0E7DBC00D9D1C0 /* DABannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B70C91F0E7DBC00D9D1C0 /* DABannerTableViewCell.swift */; };
+		2C0B70CC1F0E7FA400D9D1C0 /* GADBannerView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B70CB1F0E7FA400D9D1C0 /* GADBannerView+.swift */; };
 		2C10CBBD1EF66607002A07C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */; };
 		2C10CBC01EF668F0002A07C5 /* GADInterstialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */; };
 		2C10CBC11EF668F0002A07C5 /* GADInterstitial+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */; };
@@ -50,6 +53,10 @@
 		2C14CC021EE9640C003BB329 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC011EE9640C003BB329 /* MainViewController.swift */; };
 		2C14CC041EE9645B003BB329 /* DAInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC031EE9645B003BB329 /* DAInfoTableViewController.swift */; };
 		2C14CC0D1EE98AA9003BB329 /* DAInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC0C1EE98AA9003BB329 /* DAInfoTableViewCell.swift */; };
+		2C1BF8151F0F77BD006AB30B /* icon_share_x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C1BF8141F0F77BD006AB30B /* icon_share_x25.png */; };
+		2C1CE1111F10968900967B5D /* DANoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CE1101F10968900967B5D /* DANoticeViewController.swift */; };
+		2C1CE1131F10B22B00967B5D /* direct_democracy.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CE1121F10B21400967B5D /* direct_democracy.xlsx */; };
+		2C1EC3591F0BB23F00CA5DD6 /* DAPersonInfo+KLKTalkLinkCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EC3581F0BB23F00CA5DD6 /* DAPersonInfo+KLKTalkLinkCenter.swift */; };
 		2C20A7881EF427D700E14173 /* DATheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20A7871EF427D700E14173 /* DATheme.swift */; };
 		2C65D4171EFEA5AB00EBB5AA /* DAExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4131EFEA5AB00EBB5AA /* DAExcelController.swift */; };
 		2C65D4181EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4141EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift */; };
@@ -65,7 +72,6 @@
 		2C6D79DE1F01280A00237028 /* DAWebInfo+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79DD1F01280A00237028 /* DAWebInfo+.swift */; };
 		2C6D79E01F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */; };
 		2C6D79E51F013D9500237028 /* DAPersonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79E41F013D9500237028 /* DAPersonGroup.swift */; };
-		2CEEFBD91F061366004551A5 /* direct_democracy.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 2CEEFBD81F06130E004551A5 /* direct_democracy.xlsx */; };
 		2CF39A341F0549FB00933B3A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF39A331F0549FB00933B3A /* UIView+.swift */; };
 		2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF495081EF6B09A00FDC401 /* Icons8.png */; };
 		2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */; };
@@ -95,6 +101,7 @@
 		176988D46AFB6DC434D33CFC /* Pods-democracyactionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionUITests/Pods-democracyactionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		27DC20E2AA1C1101A8C7B390 /* Pods-democracyactionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionUITests/Pods-democracyactionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C0106B11F091F460046B9A6 /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_share.png; sourceTree = "<group>"; };
+		2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+KakaoLink.swift"; sourceTree = "<group>"; };
 		2C0455451EFE8BE5003E94ED /* DAModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAModelController.swift; sourceTree = "<group>"; };
 		2C0455481EFE8C51003E94ED /* DAModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DAModel.xcdatamodel; sourceTree = "<group>"; };
 		2C04B6EC1EF146C10084A82F /* icon_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_call.png; sourceTree = "<group>"; };
@@ -122,6 +129,8 @@
 		2C08221A1EF510F700F042F5 /* icon_email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_email.png; sourceTree = "<group>"; };
 		2C09B9091F03635000BCBFC7 /* DAModelController+DAFavoriteInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAModelController+DAFavoriteInfo.swift"; sourceTree = "<group>"; };
 		2C09B90B1F03778400BCBFC7 /* DAFavoriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAFavoriteTableViewController.swift; sourceTree = "<group>"; };
+		2C0B70C91F0E7DBC00D9D1C0 /* DABannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DABannerTableViewCell.swift; sourceTree = "<group>"; };
+		2C0B70CB1F0E7FA400D9D1C0 /* GADBannerView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GADBannerView+.swift"; sourceTree = "<group>"; };
 		2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADInterstialManager.swift; sourceTree = "<group>"; };
 		2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GADInterstitial+.swift"; sourceTree = "<group>"; };
@@ -142,6 +151,10 @@
 		2C14CC011EE9640C003BB329 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C14CC031EE9645B003BB329 /* DAInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAInfoTableViewController.swift; sourceTree = "<group>"; };
 		2C14CC0C1EE98AA9003BB329 /* DAInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAInfoTableViewCell.swift; sourceTree = "<group>"; };
+		2C1BF8141F0F77BD006AB30B /* icon_share_x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_share_x25.png; sourceTree = "<group>"; };
+		2C1CE1101F10968900967B5D /* DANoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANoticeViewController.swift; sourceTree = "<group>"; };
+		2C1CE1121F10B21400967B5D /* direct_democracy.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = direct_democracy.xlsx; sourceTree = "<group>"; };
+		2C1EC3581F0BB23F00CA5DD6 /* DAPersonInfo+KLKTalkLinkCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAPersonInfo+KLKTalkLinkCenter.swift"; sourceTree = "<group>"; };
 		2C20A7871EF427D700E14173 /* DATheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATheme.swift; sourceTree = "<group>"; };
 		2C65D4131EFEA5AB00EBB5AA /* DAExcelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelController.swift; sourceTree = "<group>"; };
 		2C65D4141EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelGroupInfo.swift; sourceTree = "<group>"; };
@@ -158,7 +171,6 @@
 		2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAPersonInfo+DAExcelPersonInfo.swift"; sourceTree = "<group>"; };
 		2C6D79E41F013D9500237028 /* DAPersonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAPersonGroup.swift; sourceTree = "<group>"; };
 		2C6D79E61F013F1600237028 /* DAExcelInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelInfoTableViewCell.swift; sourceTree = "<group>"; };
-		2CEEFBD81F06130E004551A5 /* direct_democracy.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = direct_democracy.xlsx; sourceTree = "<group>"; };
 		2CF39A331F0549FB00933B3A /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2CF495081EF6B09A00FDC401 /* Icons8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icons8.png; sourceTree = "<group>"; };
 		2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Y2K.PNG; sourceTree = "<group>"; };
@@ -226,6 +238,7 @@
 				2C6D79DB1F0119E600237028 /* DAMessageToolInfo+.swift */,
 				2C6D79DD1F01280A00237028 /* DAWebInfo+.swift */,
 				2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */,
+				2C1EC3581F0BB23F00CA5DD6 /* DAPersonInfo+KLKTalkLinkCenter.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -252,6 +265,7 @@
 				2C05841E1EFA927D00D45AC8 /* icon_up.png */,
 				2C0584201EFA92A100D45AC8 /* icon_down.png */,
 				2C0106B11F091F460046B9A6 /* icon_share.png */,
+				2C1BF8141F0F77BD006AB30B /* icon_share_x25.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -269,6 +283,8 @@
 				2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */,
 				2C10CBC21EF66901002A07C5 /* ReviewManager.swift */,
 				2CF39A331F0549FB00933B3A /* UIView+.swift */,
+				2C0B70CB1F0E7FA400D9D1C0 /* GADBannerView+.swift */,
+				2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */,
 			);
 			path = leesam;
 			sourceTree = "<group>";
@@ -312,7 +328,7 @@
 				2C14CBDA1EE9552B003BB329 /* Info.plist */,
 				2C14CC011EE9640C003BB329 /* MainViewController.swift */,
 				2C20A7871EF427D700E14173 /* DATheme.swift */,
-				2CEEFBD81F06130E004551A5 /* direct_democracy.xlsx */,
+				2C1CE1121F10B21400967B5D /* direct_democracy.xlsx */,
 				2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */,
 			);
 			path = democracyaction;
@@ -350,6 +366,8 @@
 				2C14CC0C1EE98AA9003BB329 /* DAInfoTableViewCell.swift */,
 				2C6D79E61F013F1600237028 /* DAExcelInfoTableViewCell.swift */,
 				2C09B90B1F03778400BCBFC7 /* DAFavoriteTableViewController.swift */,
+				2C0B70C91F0E7DBC00D9D1C0 /* DABannerTableViewCell.swift */,
+				2C1CE1101F10968900967B5D /* DANoticeViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -519,6 +537,7 @@
 				2C14CBD91EE9552B003BB329 /* LaunchScreen.storyboard in Resources */,
 				2C04B6F71EF151840084A82F /* icon_youtube.png in Resources */,
 				2C04B7011EF154A90084A82F /* icon_sms.png in Resources */,
+				2C1BF8151F0F77BD006AB30B /* icon_share_x25.png in Resources */,
 				2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */,
 				2C14CBD61EE9552B003BB329 /* Assets.xcassets in Resources */,
 				2C0584211EFA92A100D45AC8 /* icon_down.png in Resources */,
@@ -532,7 +551,6 @@
 				2C04B6ED1EF146C20084A82F /* icon_call.png in Resources */,
 				2C04B6F51EF151580084A82F /* icon_instagram.png in Resources */,
 				2C10CBBD1EF66607002A07C5 /* GoogleService-Info.plist in Resources */,
-				2CEEFBD91F061366004551A5 /* direct_democracy.xlsx in Resources */,
 				2C0106B21F091F460046B9A6 /* icon_share.png in Resources */,
 				2C05841D1EFA74A100D45AC8 /* icon_desc.png in Resources */,
 				2C04B7031EF155CA0084A82F /* icon_facebook.png in Resources */,
@@ -540,6 +558,7 @@
 				2C0822191EF50F5900F042F5 /* icon_web.png in Resources */,
 				2C08221B1EF510F700F042F5 /* icon_email.png in Resources */,
 				2C04B6EF1EF150710084A82F /* icon_msg.png in Resources */,
+				2C1CE1131F10B22B00967B5D /* direct_democracy.xlsx in Resources */,
 				2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,13 +723,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C06DE421EF283EF00EF40CC /* Character+.swift in Sources */,
+				2C0B70CC1F0E7FA400D9D1C0 /* GADBannerView+.swift in Sources */,
 				2C06DE401EF24A8B00EF40CC /* FABMenu+.swift in Sources */,
 				2C06DE4A1EF2A07A00EF40CC /* UIApplication+.swift in Sources */,
 				2C0455491EFE8C51003E94ED /* DAModel.xcdatamodeld in Sources */,
 				2C14CC021EE9640C003BB329 /* MainViewController.swift in Sources */,
 				2C0455461EFE8BE5003E94ED /* DAModelController.swift in Sources */,
 				2C10CBC11EF668F0002A07C5 /* GADInterstitial+.swift in Sources */,
+				2C01130F1F0F91960082B322 /* UIApplication+KakaoLink.swift in Sources */,
 				2C14CC0D1EE98AA9003BB329 /* DAInfoTableViewCell.swift in Sources */,
+				2C0B70CA1F0E7DBC00D9D1C0 /* DABannerTableViewCell.swift in Sources */,
 				2C65D4181EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift in Sources */,
 				2C65D4171EFEA5AB00EBB5AA /* DAExcelController.swift in Sources */,
 				2C65D4191EFEA5AB00EBB5AA /* DAExcelPersonInfo.swift in Sources */,
@@ -726,10 +748,12 @@
 				2C06DE481EF2A06700EF40CC /* UIViewController+.swift in Sources */,
 				2C10CBC01EF668F0002A07C5 /* GADInterstialManager.swift in Sources */,
 				2C65D4201EFEB54500EBB5AA /* DAModelController+DAGroupInfo.swift in Sources */,
+				2C1CE1111F10968900967B5D /* DANoticeViewController.swift in Sources */,
 				2C14CBCD1EE9552A003BB329 /* AppDelegate.swift in Sources */,
 				2C09B90A1F03635000BCBFC7 /* DAModelController+DAFavoriteInfo.swift in Sources */,
 				2C6D79E51F013D9500237028 /* DAPersonGroup.swift in Sources */,
 				2CF39A341F0549FB00933B3A /* UIView+.swift in Sources */,
+				2C1EC3591F0BB23F00CA5DD6 /* DAPersonInfo+KLKTalkLinkCenter.swift in Sources */,
 				2C6D79E01F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift in Sources */,
 				2C06DE441EF2840200EF40CC /* String+.swift in Sources */,
 				2C6D79D41F00DDF000237028 /* DAModelController+DAPersonInfo.swift in Sources */,

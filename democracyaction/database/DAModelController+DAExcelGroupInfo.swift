@@ -14,30 +14,57 @@ extension DAModelController{
         print("[start] sync excel to database");
         var excelGroups = DAExcelController.Default.groups.values;
         for excelGroup in excelGroups{
-            //load from database
+            //load groups from database
+            //check if the group is already exist in database
             var modelGroup : DAGroupInfo! = DAModelController.Default.findGroup(Int16(excelGroup.id));
             if modelGroup == nil{
-                modelGroup = DAModelController.Default.createGroup(no: Int16(excelGroup.id), name: excelGroup.title, detail: excelGroup.detail);
+                //create new group
+                modelGroup = DAModelController.Default.createGroup(num: Int16(excelGroup.id), name: excelGroup.title, detail: excelGroup.detail);
             }else{
+                //update new group
                 modelGroup.name = excelGroup.title;
                 modelGroup.detail = excelGroup.detail;
             }
             
+            //load person's for the groups
             for excelPerson in excelGroup.persons{
-                //load from database
-                var modelPerson : DAPersonInfo! = DAModelController.Default.findPerson(no: Int16(excelPerson.id), groupNo: Int16(excelGroup.id));
-                if modelPerson == nil{
-                    modelPerson = DAModelController.Default.createPerson(no: Int16(excelGroup.id), name: excelPerson.name ?? "", area: excelPerson.area ?? "");
-                    
-                    modelGroup.addToPersons(modelPerson)
-                    modelPerson.group = modelGroup;
-                }else{
-                    modelPerson.personName = excelPerson.name;
-                    modelPerson.personArea = excelPerson.area;
+                //check if the group is already exist in database
+                var modelPerson : DAPersonInfo! = DAModelController.Default.findPerson(Int16(excelPerson.id));
+                
+                if modelPerson == nil || modelPerson.name != excelPerson.name{
+                    modelPerson = DAModelController.Default.findPerson(name: excelPerson.name, area: excelPerson.area, groupNo: Int16(excelGroup.id));
                 }
                 
+                if modelPerson == nil{
+                    //create new person
+                    modelPerson = DAModelController.Default.createPerson(no: Int16(excelPerson.id), name: excelPerson.name ?? "", area: excelPerson.area ?? "");
+                    
+                    modelGroup.addToPersons(modelPerson);
+                    modelPerson.group = modelGroup;
+                }else{
+                    //update person
+                    modelPerson.personName = excelPerson.name;
+                    modelPerson.personArea = excelPerson.area;
+                    
+                    if modelPerson.group?.no != Int16(excelGroup.id){
+                        //move to new group
+                        modelPerson.group?.removeFromPersons(modelPerson);
+                        modelGroup.addToPersons(modelPerson);
+                        modelPerson.group = modelGroup;
+                    }
+                    
+                    //fix excel person, bug caused by the typing mistake
+                    if modelPerson.no != Int16(excelPerson.id){
+                        modelPerson.no = Int16(excelPerson.id);
+                    }
+                }
+                
+                //sync other datas
                 modelPerson.job  = excelPerson.title;
                 modelPerson.email = excelPerson.email;
+                if excelPerson.assembly > "0"{
+                    modelPerson.assembly = Int32(excelPerson.assembly ?? "0", radix: 10)!;
+                }
                 
                 modelPerson.syncPhones(excelPerson);
                 modelPerson.syncMessageTools(excelPerson)

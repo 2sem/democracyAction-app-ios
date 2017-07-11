@@ -12,6 +12,13 @@ import GoogleMobileAds
 protocol GADInterstialManagerDelegate : NSObjectProtocol{
     func GADInterstialGetLastShowTime() -> Date;
     func GADInterstialUpdate(showTime : Date);
+    func GADInterstialWillLoad();
+}
+
+extension GADInterstialManagerDelegate{
+    func GADInterstialWillLoad(){
+        
+    }
 }
 
 class GADInterstialManager : NSObject, GADInterstitialDelegate{
@@ -21,6 +28,13 @@ class GADInterstialManager : NSObject, GADInterstitialDelegate{
     var canShowFirstTime = true;
     var delegate : GADInterstialManagerDelegate?;
     
+    fileprivate static var _shared : GADInterstialManager?;
+    static var shared : GADInterstialManager?{
+        get{
+            return _shared;
+        }
+    }
+    
     init(_ window : UIWindow, unitId : String, interval : TimeInterval = 60.0 * 60.0 * 3.0) {
         self.window = window;
         self.unitId = unitId;
@@ -28,6 +42,9 @@ class GADInterstialManager : NSObject, GADInterstitialDelegate{
         
         super.init();
         //self.reset();
+        if GADInterstialManager._shared == nil{
+            GADInterstialManager._shared = self;
+        }
     }
     
     func reset(){
@@ -66,6 +83,7 @@ class GADInterstialManager : NSObject, GADInterstitialDelegate{
     }
     func show(){
         guard self.canShow else {
+            self.window.rootViewController?.showAlert(title: "알림", msg: "1시간에 한번만 후원하실 수 있습니다 ^^;", actions: [UIAlertAction(title: "확인", style: .default, handler: nil)], style: .alert);
             return;
         }
         
@@ -79,12 +97,16 @@ class GADInterstialManager : NSObject, GADInterstitialDelegate{
         self.fullAd = GADInterstitial(adUnitID: self.unitId);
         self.fullAd?.delegate = self;
         let req = GADRequest();
+        #if DEBUG
+            req.testDevices = ["5fb1f297b8eafe217348a756bdb2de56"];
+        #endif
         /*if let alert = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController as? UIAlertController{
             alert.dismiss(animated: false, completion: nil);
          }
         }*/
         
         self.fullAd?.load(req);
+        self.delegate?.GADInterstialWillLoad();
     }
     
     private func _show(){

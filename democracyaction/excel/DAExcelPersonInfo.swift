@@ -10,6 +10,27 @@ import Foundation
 
 class DAExcelPersonInfo : NSObject{
     internal var isLoaded = false;
+    class FieldNames{
+        static let no = "no";
+        static let name = "name";
+        static let title = "title";
+        static let group = "group";
+        static let field = "field";
+        static let mobile = "mobile";
+        static let office_asm = "office_asm";
+        static let office_area = "office_area";
+        static let email = "email";
+        static let twitter = "twitter";
+        static let facebook = "facebook";
+        static let kakao = "kakao";
+        static let instagram = "instagram";
+        static let youtube = "youtube";
+        static let web = "web";
+        static let blog = "blog";
+        static let cafe = "cafe";
+        static let cyworld = "cyworld";
+        static let assembly = "assembly";
+    }
     
     var id : Int = 0;
     var name = "";
@@ -30,7 +51,8 @@ class DAExcelPersonInfo : NSObject{
     var blog = "";
     var cafe = "";
     var cyworld = "";
-    
+    var assembly = "";
+
     var phones : [DAExcelPhoneInfo] = [];
     private func _parseNumber(_ value : String, title : String) -> [DAExcelPhoneInfo]{
         var values : [DAExcelPhoneInfo] = []
@@ -61,7 +83,7 @@ class DAExcelPersonInfo : NSObject{
         
         //remove number if only one item
         if values.count == 1{
-            values[0].title = title;
+            values[0].name = title;
         }
         
         return values;
@@ -77,7 +99,7 @@ class DAExcelPersonInfo : NSObject{
     override var description: String{
         var value = "id[\(self.id)] name[\(self.name)] title[\(self.title)] group[\(self.groupId)] field[\(self.area)] office_asm[\(self.office_asm)] office_field[\(self.office_area)]email[\(self.email)] twitter[\(self.twitter)] facebook[\(self.facebook)] kakao[\(self.kakao)] instagram[\(self.instagram)] youtube[\(self.youtube)] web[\(self.web)] blog[\(self.blog)] cafe[\(self.cafe)] cyworld[\(cyworld)]";
         for phone in phones{
-            value.append(" \(phone.title)[\(phone.number)]");
+            value.append(" \(phone.name)[\(phone.number)]");
         }
         
         return value;

@@ -405,7 +405,9 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         print("call \(self.info.phones)");
         self.closeMenus();
         
-        var phones = (self.info.phones?.allObjects as? [DAPhoneInfo] ?? []);
+        var phones = self.info.personPhones.sorted(by: { (left, right) -> Bool in
+            return left.name! < right.name!;
+        });
         /*.filter { (phone) -> Bool in
             return phone.sms;
         }*/

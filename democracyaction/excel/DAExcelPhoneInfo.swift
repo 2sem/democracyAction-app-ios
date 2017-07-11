@@ -9,13 +9,13 @@
 import Foundation
 
 class DAExcelPhoneInfo : NSObject {
-    var title = "";
+    var name = "";
     var number = "";
     
     init(title : String, number : String) {
         super.init();
         
-        self.title = title;
+        self.name = title;
         self.number = number;
     }
 }

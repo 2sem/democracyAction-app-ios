@@ -11,6 +11,14 @@ import SwipeCellKit
 
 class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate {
     static let CellID = "DAInfoTableViewCell";
+    static let adCellID = "DABannerTableViewCell";
+
+    fileprivate static var _shared : DAFavoriteTableViewController?;
+    static var shared : DAFavoriteTableViewController?{
+        get{
+            return _shared;
+        }
+    }
     
     var modelController : DAModelController{
         return DAModelController.Default;
@@ -27,12 +35,22 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     var isAscending = true;
     
     var favorites : [DAFavoriteInfo] = [];
-    
+    var needAds = true{
+        didSet{
+            if self.isViewLoaded && !self.isMovingToParentViewController && self.navigationController?.topViewController === self{
+                self.refresh();
+            }
+        }
+    }
+
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if DAFavoriteTableViewController._shared == nil{
+            DAFavoriteTableViewController._shared = self;
+        }
         //developer mode - upgrade database
         //load groups & persons from excel
         
@@ -61,6 +79,8 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         //self.searchBar.showsSearchResultsButton = true;
         //self.searchBar.showsScopeBar = true;
         self.searchBar.sizeToFit();
+        
+        self.needAds = DAInfoTableViewController.shared?.needAds ?? true;
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,7 +99,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     
     
     @IBAction func onShare(_ sender: UIBarButtonItem) {
-        ReviewManager.Default?.show(true);
+        ReviewManager.shared?.show(true);
     }
     
     @IBAction func onSort(_ button: UIBarButtonItem) {
@@ -110,6 +130,14 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         var cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell;
         
         guard orientation == .right else{
+            var shareAction = SwipeAction.init(style: .default, title: nil) { (act, indexPath) in
+                var cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
+                //http://www.assembly.go.kr/photo/9770941.jpg
+                cell.info?.shareByKakao();
+            }
+            shareAction.image = UIImage(named: "icon_share.png");
+            shareAction.backgroundColor = UIColor.yellow;
+            values.append(shareAction);
             values.append(contentsOf: cell.swipeActions);
             return values;
         }
@@ -173,17 +201,26 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
          break;
          }*/
         
-        return value;
+        return value + (self.needAds ? 1 : 0);
         //return self.excelController.persons.count;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellID, for: indexPath) as? DAInfoTableViewCell;
+        var cell : UITableViewCell?;
+        var infoCell : DAInfoTableViewCell?;
         
-        var person : DAPersonInfo? = self.favorites[indexPath.row].person;
         
-        cell?.info = person;
-        cell?.delegate = self;
+        if self.needAds && indexPath.row == self.tableView.numberOfRows(inSection: indexPath.section) - 1{
+            cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.adCellID, for: indexPath) as? DABannerTableViewCell;
+        }else{
+            infoCell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellID, for: indexPath) as? DAInfoTableViewCell;
+            
+            var person : DAPersonInfo? = self.favorites[indexPath.row].person;
+            
+            infoCell?.info = person;
+            infoCell?.delegate = self;
+            cell = infoCell;
+        }
         
         return cell!;
     }

@@ -9,6 +9,12 @@
 import UIKit
 
 extension String {
+    var any : Bool{
+        get{
+            return !self.isEmpty;
+        }
+    }
+    
     func localized(_ defaultText : String? = nil, locale: Locale? = Locale.current) -> String{
         var value = self;
         var bundlePath : String? = nil;
@@ -265,6 +271,7 @@ extension String {
     func toDate(_ format : String = "yyyy-MM-dd'T'HH:mm:ssZZZZ") -> Date?{
         let formatter = DateFormatter();
         formatter.dateFormat = format;
+        formatter.timeZone = TimeZone(identifier: "Asia/Seoul");
         
         return formatter.date(from: self);
     }

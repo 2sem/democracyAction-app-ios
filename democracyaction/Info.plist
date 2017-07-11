@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.3</string>
+	<string>1.0.4</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -33,30 +33,29 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakao</string>
-				<string>17b433ae9a9c34394a229a2b1bb94a58</string>
+				<string>kakao17b433ae9a9c34394a229a2b1bb94a58</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>9</string>
 	<key>FacebookAppID</key>
 	<string>301484613596142</string>
 	<key>FacebookDisplayName</key>
 	<string>문자행동</string>
 	<key>GoogleADUnitID</key>
 	<dict>
-		<key>BottomBanner</key>
-		<string>ca-app-pub-9684378399371172/7215773643</string>
 		<key>FullAd</key>
 		<string>ca-app-pub-9684378399371172/1169240044</string>
+		<key>TableBanner</key>
+		<string>ca-app-pub-9684378399371172/7215773643</string>
 	</dict>
 	<key>KAKAO_APP_KEY</key>
 	<string>17b433ae9a9c34394a229a2b1bb94a58</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaotalk-5.9.7</string>
-		<string>kakao, 17b433ae9a9c34394a229a2b1bb94a58</string>
+		<string>kakao17b433ae9a9c34394a229a2b1bb94a58</string>
 		<string>kakaolink</string>
 		<string>fb</string>
 		<string>fbapi</string>

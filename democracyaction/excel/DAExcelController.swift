@@ -38,6 +38,29 @@ class DAExcelController : NSObject{
         }
     }
     
+    var notice : String{
+        get{
+            var cell = self.infoSheet?.cell(forCellReference: "C3");
+            
+            return cell?.stringValue() ?? "";
+        }
+    }
+    
+    var noticeDate : Date{
+        get{
+            var cell = self.infoSheet?.cell(forCellReference: "C4");
+            return (cell?.stringValue() ?? "").toDate("MM/dd/yy")!;
+        }
+    }
+    
+    var patch : String{
+        get{
+            var cell = self.infoSheet?.cell(forCellReference: "C5");
+            
+            return cell?.stringValue() ?? "";
+        }
+    }
+    
     var needToUpdate : Bool{
         get{
             return DADefaults.DataVersion < self.version;
@@ -64,12 +87,38 @@ class DAExcelController : NSObject{
             return;
         }
         
+        self.loadPersonFields();
         self.loadGroups();
         /*var groups = self.loadGroups();
         for group in groups{
             self.groups[group.id] = group;
         }*/
         self.persons = self.loadCongresses(Array(self.groups.values));
+    }
+    
+    static let headerCellLine = 2;
+    static let beginCellColumn = "B";
+    
+    static let beginCell = Character("A");
+    private(set) var headerCells : [String : String] = [:];
+    
+    func loadPersonFields(){
+        var line = DAExcelController.headerCellLine;
+        var i = 0;
+        
+        var ch = Character(DAExcelController.beginCellColumn);
+        //.unicodeScalars.first!.value;
+        
+        while(true){
+            i += 1;
+            ch = DAExcelController.beginCell.increase(UInt32(i));
+            var cell = self.congessSheet?.cell(forCellReference: "\(ch)\(line)");
+            guard !(cell?.stringValue() ?? "").isEmpty else{
+                break;
+            }
+            
+            self.headerCells[cell?.stringValue() ?? ""] = "\(ch)";
+        }
     }
     
     func loadGroups(_ persons : [DAExcelPersonInfo]? = nil) -> [DAExcelGroupInfo]{
@@ -127,6 +176,13 @@ class DAExcelController : NSObject{
     
     static let congressStartRow = 3;
     
+    func getCongressCell(column : String?, line : Int) -> BRACell?{
+        guard self.headerCells[column ?? ""] != nil else{
+            return nil;
+        }
+        
+        return self.congessSheet?.cell(forCellReference: "\(self.headerCells[column ?? ""] ?? "")\(line)");
+    }
     func loadCongress(_ person : DAExcelPersonInfo, row : Int? = nil){
         var i = row ?? (person.id - 1 + DAExcelController.congressStartRow);
         
@@ -134,21 +190,21 @@ class DAExcelController : NSObject{
             return;
         }
         
-        var field = self.congessSheet?.cell(forCellReference: "F\(i)")?.stringValue() ?? "";
-        var mobile = self.congessSheet?.cell(forCellReference: "G\(i)")?.stringValue() ?? "";
-        var office_asm = self.congessSheet?.cell(forCellReference: "H\(i)")?.stringValue() ?? "";
-        var office_area = self.congessSheet?.cell(forCellReference: "I\(i)")?.stringValue() ?? "";
-        //var sms = self.congessSheet?.cell(forCellReference: "J\(i)")?.stringValue() ?? "";
-        var email = self.congessSheet?.cell(forCellReference: "J\(i)")?.stringValue() ?? "";
-        var twitter = self.congessSheet?.cell(forCellReference: "K\(i)")?.stringValue() ?? "";
-        var facebook = self.congessSheet?.cell(forCellReference: "L\(i)")?.stringValue() ?? "";
-        var kakao = self.congessSheet?.cell(forCellReference: "M\(i)")?.stringValue() ?? "";
-        var instagram = self.congessSheet?.cell(forCellReference: "N\(i)")?.stringValue() ?? "";
-        var youtube = self.congessSheet?.cell(forCellReference: "O\(i)")?.stringValue() ?? "";
-        var web = self.congessSheet?.cell(forCellReference: "P\(i)")?.stringValue() ?? "";
-        var blog = self.congessSheet?.cell(forCellReference: "Q\(i)")?.stringValue() ?? "";
-        var cafe = self.congessSheet?.cell(forCellReference: "R\(i)")?.stringValue() ?? "";
-        var cyworld = self.congessSheet?.cell(forCellReference: "S\(i)")?.stringValue() ?? "";
+        var field = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.field, line: i)?.stringValue() ?? "";
+        var mobile = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.mobile, line: i)?.stringValue() ?? "";
+        var office_asm = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.office_asm, line: i)?.stringValue() ?? "";
+        var office_area = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.office_area, line: i)?.stringValue() ?? "";
+        var email = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.email, line: i)?.stringValue() ?? "";
+        var twitter = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.twitter, line: i)?.stringValue() ?? "";
+        var facebook = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.facebook, line: i)?.stringValue() ?? "";
+        var kakao = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.kakao, line: i)?.stringValue() ?? "";
+        var instagram = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.instagram, line: i)?.stringValue() ?? "";
+        var youtube = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.youtube, line: i)?.stringValue() ?? "";
+        var web = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.web, line: i)?.stringValue() ?? "";
+        var blog = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.blog, line: i)?.stringValue() ?? "";
+        var cafe = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.cafe, line: i)?.stringValue() ?? "";
+        var cyworld = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.cyworld, line: i)?.stringValue() ?? "";
+        var assembly = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.assembly, line: i)?.value ?? "";
         
         person.area = field;
         person.mobile = mobile;
@@ -167,6 +223,7 @@ class DAExcelController : NSObject{
         person.blog = blog;
         person.cafe = cafe;
         person.cyworld = cyworld;
+        person.assembly = assembly;
         
         person.isLoaded = true;
     }
@@ -176,10 +233,10 @@ class DAExcelController : NSObject{
         var i = DAExcelController.congressStartRow;
         
         while(true){
-            var no = self.congessSheet?.cell(forCellReference: "B\(i)")?.stringValue() ?? "";
-            var name = self.congessSheet?.cell(forCellReference: "C\(i)")?.stringValue() ?? "";
-            var title = self.congessSheet?.cell(forCellReference: "D\(i)")?.stringValue() ?? "";
-            var groupId = self.congessSheet?.cell(forCellReference: "E\(i)")?.stringValue() ?? "";
+            var no = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.no, line: i)?.stringValue() ?? "";
+            var name = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.name, line: i)?.stringValue() ?? "";
+            var title = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.title, line: i)?.stringValue() ?? "";
+            var groupId = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.group, line:i)?.stringValue() ?? "";
             
             guard !no.isEmpty else{
                 break;

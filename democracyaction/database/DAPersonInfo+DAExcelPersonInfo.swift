@@ -11,13 +11,30 @@ import Foundation
 extension DAPersonInfo{
     func syncPhones(_ person : DAExcelPersonInfo){
         //remove all office phones of the person from database
-        self.removeFromPhones(self.phones!)
-        self.phones = [];
+        //self.removeFromPhones(<#T##value: DAPhoneInfo##DAPhoneInfo#>)
+        var phoneSet = NSSet(array: self.personPhones.filter({ (phone) -> Bool in
+            return !phone.sms;
+        }));
+        self.removeFromPhones(phoneSet);
+        for phone in phoneSet{
+            DAModelController.Default.removePhone(phone as! DAPhoneInfo);
+        }
+        /*self.phones = NSSet(array: self.personPhones.filter({ (phone) -> Bool in
+            return phone.sms;
+        }));*/
         for excelPhone in person.phones{
-            var phone = self.createPhone(name: excelPhone.title, number: excelPhone.number, canSendSMS: false);
-            if phone.name == "휴대폰"{
-                phone.sms = true;
+            if excelPhone.name == "휴대폰"{
+                if let mobile = self.personPhones.filter({ (phone) -> Bool in
+                    return !phone.sms;
+                }).first, mobile.number?.isEmpty == true {
+                    mobile.sms = true;
+                }else{
+                    self.createPhone(name: excelPhone.name, number: excelPhone.number, canSendSMS: true);
+                }
+                continue;
             }
+            
+            var phone = self.createPhone(name: excelPhone.name, number: excelPhone.number, canSendSMS: false);
         }
         
         //add sms number into database
@@ -27,13 +44,16 @@ extension DAPersonInfo{
     }
     
     func syncMessageTool(_ person : DAExcelPersonInfo, name : String, value : String){
+        //find by tool name
         var tool = self.findMessageTool(name);
         if tool == nil && !value.isEmpty{
+            //create new tool
             self.createMessageTool(name: name, account: value);
         }
         else if tool != nil && value.isEmpty{
             self.removeFromMessages(tool!);
         }else{
+            //update account
             tool?.account = value;
         }
     }
@@ -53,6 +73,7 @@ extension DAPersonInfo{
     }
     
     func syncWebUrl(_ person : DAExcelPersonInfo, name : String, value : String){
+        //find by url name
         var webUrl = self.findWebUrl(name);
         if webUrl == nil && !value.isEmpty{
             self.createWeb(name: name, url: value);

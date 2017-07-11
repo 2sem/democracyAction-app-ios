@@ -173,6 +173,11 @@ extension Character {
         return value;
     }
     
+    func increase(_ num : UInt32) -> Character{
+        var chrValue = UInt32(String(self).unicodeScalars.first!.value + num);
+        return Character.init(UnicodeScalar(chrValue)!);
+    }
+    
     var scalars : String.UnicodeScalarView {
         get{
             var scalarString = String(self);

@@ -31,9 +31,9 @@ extension UIApplication{
     var version : String{
         get{
             var value = Bundle.main.localizedInfoDictionary?["CFBundleShortVersionString"] as? String;
-            /*if value == nil{
+            if value == nil{
                 value = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String;
-            }*/
+            }
             
             return value ?? "";
         }
@@ -47,7 +47,7 @@ extension UIApplication{
     
     var urlForItunes : URL{
         get{
-            return URL(string :"https://itunes.apple.com/kr/app/sendadv/id\(self.appId)?l=ko&mt=8")!;
+            return URL(string :"https://itunes.apple.com/kr/app/democracyaction/id\(self.appId)?l=ko&mt=8")!;
         }
     }
     

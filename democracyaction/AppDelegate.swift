@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        DAInfoTableViewController.startingQuery = launchOptions?[UIApplicationLaunchOptionsKey.url] as? URL;
+        /*launchOptions?.forEach({ (key, value) in
+            //print("launch option key[\(key)] value[\(value)]\n");
+            DAInfoTableViewController.startingSearchName += "launch option key[\(key)] value[\(value)]\n";
+        })*/
+        
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9684378399371172~5739040449");
         FirebaseApp.configure()
         
@@ -26,14 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
         self.reviewManager?.delegate = self;
         //self.reviewManager?.show();
         
-        self.fullAd = GADInterstialManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "FullAd") ?? "", interval: 60.0 * 60 * 3);
+        self.fullAd = GADInterstialManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "FullAd") ?? "", interval: 60.0); //60.0 * 60 * 3
         self.fullAd?.delegate = self;
         self.fullAd?.canShowFirstTime = false;
-        self.fullAd?.show();
+        //self.fullAd?.show();
         
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -44,10 +50,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
+     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        guard url.scheme == "kakao17b433ae9a9c34394a229a2b1bb94a58" else {
+            return false;
+        }
+        
+        DAInfoTableViewController.startingQuery = url;
+        return true;
+    }
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        //DAInfoTableViewController.startingQuery = launchOptions?[UIApplicationLaunchOptionsKey.url] as? URL;
+        guard self.reviewManager?.canShow ?? false else{
+            return;
+        }
         self.reviewManager?.show();
-        self.fullAd?.show();
+        //self.fullAd?.show();
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -61,10 +80,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
     // MARK: GADInterstialManagerDelegate
     func GADInterstialGetLastShowTime() -> Date {
         return DADefaults.LastFullADShown;
+        //Calendar.current.component(<#T##component: Calendar.Component##Calendar.Component#>, from: <#T##Date#>)
     }
     
     func GADInterstialUpdate(showTime: Date) {
         DADefaults.LastFullADShown = showTime;
+    }
+    
+    func GADInterstialWillLoad() {
+        DAInfoTableViewController.shared?.needAds = false;
+        DAFavoriteTableViewController.shared?.needAds = false;
     }
     
     // MARK: ReviewManagerDelegate

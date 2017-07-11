@@ -18,6 +18,7 @@
         <attribute name="areaCharacters" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="areaFirstCharacter" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="areaFirstCharacters" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="assembly" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="job" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
@@ -43,7 +44,7 @@
         <element name="DAFavoriteInfo" positionX="-36" positionY="108" width="128" height="60"/>
         <element name="DAGroupInfo" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="DAMessageToolInfo" positionX="-18" positionY="63" width="128" height="75"/>
-        <element name="DAPersonInfo" positionX="-54" positionY="-9" width="128" height="270"/>
+        <element name="DAPersonInfo" positionX="-54" positionY="-9" width="128" height="285"/>
         <element name="DAPhoneInfo" positionX="-36" positionY="45" width="128" height="90"/>
         <element name="DAWebInfo" positionX="0" positionY="72" width="128" height="75"/>
     </elements>

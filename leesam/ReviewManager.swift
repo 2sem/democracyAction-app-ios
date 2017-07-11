@@ -19,14 +19,22 @@ class ReviewManager : NSObject{
     var interval : TimeInterval = 60.0 * 60.0 * 3.0;
     var canShowFirstTime = true;
     var delegate : ReviewManagerDelegate?;
-    private(set) static var Default : ReviewManager?;
+    
+    fileprivate static var _shared : ReviewManager?;
+    static var shared : ReviewManager?{
+        get{
+            return _shared;
+        }
+    }
     
     init(_ window : UIWindow, interval : TimeInterval = 60.0 * 60.0 * 3.0) {
         self.window = window;
         self.interval = interval;
         
         super.init();
-        ReviewManager.Default = self;
+        if ReviewManager._shared == nil{
+            ReviewManager._shared = self;
+        }
         //self.reset();
     }
     
@@ -80,15 +88,18 @@ class ReviewManager : NSObject{
         var name : String = UIApplication.shared.displayName ?? "";
         var acts = [UIAlertAction(title: String(format: "'%@' 평가".localized(), name), style: .default) { (act) in
             
-            UIApplication.shared.openReview();
-            },
-                    UIAlertAction(title: String(format: "'%@' 추천".localized(), name), style: .default) { (act) in
-                        self.window.rootViewController?.share(["\(UIApplication.shared.urlForItunes.absoluteString)"]);
-            },
-                    UIAlertAction(title: "취소".localized(), style: .cancel, handler: { (act) in
-                        //do not gain today
-                        self.delegate?.reviewUpdate(showTime: Date().addingTimeInterval(60 * 60 * 24));
-                    })]
+                UIApplication.shared.openReview();
+            }, UIAlertAction(title: String(format: "'%@' 추천".localized(), name), style: .default) { (act) in
+                        //self.window.rootViewController?.share(["\(UIApplication.shared.urlForItunes.absoluteString)"]);
+                UIApplication.shared.shareByKakao();
+            },UIAlertAction(title: "후원하기(광고보기)".localized(), style: .default, handler: { (act) in
+                //do not gain today
+                GADInterstialManager.shared?.show();
+            }),
+            UIAlertAction(title: "취소".localized(), style: .cancel, handler: { (act) in
+                //do not gain today
+                self.delegate?.reviewUpdate(showTime: Date().addingTimeInterval(60 * 60 * 24));
+        })]
         self.window.rootViewController?.showAlert(title: "앱 평가 및 추천".localized(), msg: String(format: "'%@'를 평가하거나 친구들에게 추천해보세요.".localized(), name), actions: acts, style: .alert);
         self.delegate?.reviewUpdate(showTime: Date());
     }
