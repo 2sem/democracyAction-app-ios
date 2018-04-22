@@ -10,6 +10,9 @@ import UIKit
 import Material
 import SwipeCellKit
 import ContactsUI
+//import JSQWebViewController
+import ProgressWebViewController
+import LSExtensions
 
 class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDelegate {
 
@@ -19,15 +22,19 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         }
     };
     
+    @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var areaLabel: UILabel!
     @IBOutlet weak var callButton: FABButton!
+    
     //@IBOutlet weak
     var msgMenu: FABMenu!
     var msgButton : FABButton!;
     //@IBOutlet weak
     var searchMenu: FABMenu!
     var searchButton : FABButton!;
+    
+    var sponseButton : FABButton!;
     @IBOutlet weak var buttonsStack: UIStackView!
     
     override func awakeFromNib() {
@@ -45,13 +52,11 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         
-        
         guard self.msgMenu?.fabMenuItems.count ?? 0 > 1 || self.searchMenu?.fabMenuItems.count ?? 0 > 1 else{
             return super.hitTest(point, with: event);
         }
         
         var value : UIView?;
-        var targetPoint = point;
         
         if self.msgMenu != nil && self.msgMenu.fabMenuItems.count > 1 && self.msgMenu.isOpened{
             value = self.msgMenu.hitTestItems(self.convert(point, to: self.msgMenu), with: event);
@@ -107,7 +112,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         var values = [SwipeAction]();
         
         for menu in self.overflowedMenus{
-            var action = SwipeAction(style: .default, title: nil, handler: { (act, indexPath) in
+            let action = SwipeAction(style: .default, title: nil, handler: { (act, indexPath) in
                 //UIApplication.shared.sendAction(menu.fabButton.action, to: <#T##Any?#>, from: <#T##Any?#>, for: <#T##UIEvent?#>)
                 //UIApplication.shared.sendEvent(UIControlEvents.touchUpInside);
                 menu.fabButton.sendActions(for: .touchUpInside);
@@ -125,6 +130,18 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     func updateInfo(){
         self.nameLabel.text = self.info.name;
         self.areaLabel.text = !self.info.personArea.isEmpty ? self.info.personArea : self.info.personName;
+        do{
+            //var imageUrl = URL.init(string: "http://www.assembly.go.kr/photo/\(self.info.assembly).jpg")!;
+            //var imageUrl = Bundle.main.url(forResource: "photo_\(self.info.assembly)", withExtension: "jpg")!;
+            let imageUrl = Bundle.main.url(forResource: "photo_\(self.info.assembly)", withExtension: "jpg", subdirectory: "photos");
+            //var imageUrl = FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).last!.appendingPathComponent(DAModelController.FileName).appendingPathExtension("sqlite");
+            print("load photo url[\(imageUrl?.description ?? "")]");
+            if imageUrl != nil{
+                self.photoView.image = try UIImage(data: Data.init(contentsOf: imageUrl!));
+            }
+        }catch let error{
+            print("loading photo has been failed. error[\(error)]");
+        }
         var msgMenuItems : [FABMenuItem] = [];
         
         if !self.info.personEmail.isEmpty {
@@ -248,7 +265,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             self.msgMenu.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
             self.msgMenu.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
             self.msgMenu.prepare();
-            self.msgMenu.interimSpace.add(-6);
+            self.msgMenu.interimSpace = self.msgMenu.interimSpace - 6;
 
             //self.msgMenu.closeWithAnimation();
         }
@@ -338,7 +355,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         
         if searchMenuItems.count > 1{
             searchMenuItems.insert(self.callButton.cloneAsMenu(), at: 0);
-            var msgMenu : FABMenuItem! = self.msgMenu?.fabButton != nil
+            let msgMenu : FABMenuItem! = self.msgMenu?.fabButton != nil
                 ? self.msgMenu.fabButton?.cloneAsMenu() : self.msgButton?.cloneAsMenu();
             if msgMenu != nil{
                 searchMenuItems.insert(msgMenu, at: 0);
@@ -377,9 +394,36 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             self.searchMenu.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
             self.searchMenu.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
             self.searchMenu.prepare();
-            self.searchMenu.interimSpace.add(-6);
+            self.searchMenu.interimSpace = self.searchMenu.interimSpace - 6;
             
             //self.searchMenu.closeWithAnimation();
+        }
+        
+        if self.sponseButton != nil{
+            self.buttonsStack.removeArrangedSubview(self.sponseButton);
+            self.sponseButton.removeFromSuperview();
+            self.sponseButton = nil;
+        }
+        
+        if self.sponseButton == nil && self.info.sponsor > 0{
+            self.sponseButton = FABButton();
+            self.sponseButton.image = UIImage(named: "icon_money.png")?.withRenderingMode(.alwaysTemplate);
+            self.sponseButton.frame.size = self.callButton.frame.size;
+            
+            self.buttonsStack.insertArrangedSubview(self.sponseButton, at: self.buttonsStack.arrangedSubviews.count);
+            
+            self.sponseButton.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
+            self.sponseButton.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
+            
+            self.sponseButton?.tintColor = DATheme.sponseButtonTintColor;
+            self.sponseButton?.backgroundColor = DATheme.sponseButtonBackgroundColor;
+            self.sponseButton?.pulseColor = DATheme.sponseButtonTintColor;
+            
+            self.sponseButton.addTarget(self, action: #selector(self.onPaySponsor(_:)), for: .touchUpInside);
+            
+        }else if self.info.sponsor == 0 && self.sponseButton != nil{
+            self.buttonsStack.removeArrangedSubview(self.sponseButton);
+            self.sponseButton.removeFromSuperview();
         }
         
         //self.layoutSubviews();
@@ -395,17 +439,25 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         }
     }
     
-    func onOpenMsgMenu(_ button : UIButton){
-        print("open msg menu \(self.info.phones)");
+    func openWeb(_ url : URL){
+        //var webView = WebViewController(url: url);
+        let webView = ProgressWebViewController(nibName: nil, bundle: Bundle.main);
+        webView.url = url;
+        webView.hidesBottomBarWhenPushed = true;
+        self.viewController?.navigationController?.pushViewController(webView, animated: true);
+    }
+    
+    @IBAction func onOpenMsgMenu(_ button : UIButton){
+        print("open msg menu phones[\(self.info.phones.debugDescription)]");
         self.msgMenu.open();
         self.searchMenu.close();
     }
     
     @IBAction func onCall(_ button : UIButton){
-        print("call \(self.info.phones)");
+        print("call \(self.info.phones.debugDescription)");
         self.closeMenus();
         
-        var phones = self.info.personPhones.sorted(by: { (left, right) -> Bool in
+        let phones = self.info.personPhones.sorted(by: { (left, right) -> Bool in
             return left.name! < right.name!;
         });
         /*.filter { (phone) -> Bool in
@@ -440,7 +492,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         UIApplication.shared.keyWindow?.rootViewController?.showAlert(title: "\(self.info.job ?? "") \(self.info.name ?? "")에게 전화", msg: "통화할 연락처를 선택하세요", actions: actions, style: .alert);
     }
     
-    func onLoadPhoneFromContact(){
+    @IBAction func onLoadPhoneFromContact(){
         let picker = CNContactPickerViewController();
         //picker.displayedPropertyKeys = [CNContactGivenNameKey, CNContactNameSuffixKey, CNContactNicknameKey, CNContactImageDataKey, CNContactOrganizationNameKey, CNContactDepartmentNameKey, CNContactJobTitleKey, CNContactEmailAddressesKey, CNContactPhoneNumbersKey, CNContactNoteKey];
         picker.displayedPropertyKeys = [CNContactPhoneNumbersKey];
@@ -449,8 +501,8 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         UIApplication.shared.keyWindow?.rootViewController?.present(picker, animated: true, completion: nil);
     }
     
-    func onEditMobile(phone : DAPhoneInfo){
-        var alert = UIAlertController(title: "휴대폰 번호 수정", message: nil, preferredStyle: .alert);
+    @IBAction func onEditMobile(phone : DAPhoneInfo){
+        let alert = UIAlertController(title: "휴대폰 번호 수정", message: nil, preferredStyle: .alert);
         
         alert.addTextField { (textField) in
             textField.placeholder = "휴대폰 번호";
@@ -458,7 +510,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             textField.text = phone.number;
         }
         alert.addAction(UIAlertAction(title: "수정", style: .default, handler: { (act) in
-            var textField : UITextField! = alert.textFields?.first;
+            let textField : UITextField! = alert.textFields?.first;
             //self.info.createPhone(name: "휴대폰", number: textField.text ?? "", canSendSMS: true);
             guard !(textField.text ?? "").isEmpty else{
                 return;
@@ -479,15 +531,15 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil);
     }
     
-    func onRegisterMobile(){
-        var alert = UIAlertController(title: "휴대폰 번호 등록", message: nil, preferredStyle: .alert);
+    @IBAction func onRegisterMobile(){
+        let alert = UIAlertController(title: "휴대폰 번호 등록", message: nil, preferredStyle: .alert);
         
         alert.addTextField { (textField) in
             textField.placeholder = "휴대폰 번호";
             textField.keyboardType = .phonePad;
         }
         alert.addAction(UIAlertAction(title: "등록", style: .default, handler: { (act) in
-            var textField : UITextField! = alert.textFields?.first;
+            let textField : UITextField! = alert.textFields?.first;
             guard !(textField.text ?? "").isEmpty else{
                 return;
             }
@@ -508,72 +560,94 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil);
     }
     
-    func onSms(_ button : UIButton){
-        print("send sms \(self.info.personSms?.number)");
+    @IBAction func onSms(_ button : UIButton){
+        print("send sms \(self.info.personSms?.number ?? "")");
         self.closeMenus();
         UIApplication.shared.openSms(self.info.personSms?.number ?? "");
     }
     
-    func onEmail(_ button : UIButton){
+    @IBAction func onEmail(_ button : UIButton){
         print("send email \(self.info.personEmail)");
         self.closeMenus();
         UIApplication.shared.openEmail(self.info.personEmail);
     }
     
-    func onTwitter(_ button : UIButton){
-        print("send twitter \(self.info.personTwitter?.account)");
+    @IBAction func onTwitter(_ button : UIButton){
+        print("send twitter \(self.info.personTwitter?.account ?? "")");
         self.closeMenus();
-        UIApplication.shared.openTwitter(self.info.personTwitter?.account ?? "");
+        UIApplication.shared.openTwitter(self.info.personTwitter?.account ?? "", webOpen: { (url) in
+            self.openWeb(url);
+        });
     }
 
-    func onFacebook(_ button : UIButton){
-        print("send facebook \(self.info.personFacebook?.account)");
+    @IBAction func onFacebook(_ button : UIButton){
+        print("send facebook \(self.info.personFacebook?.account ?? "")");
         self.closeMenus();
-        UIApplication.shared.openFacebook(self.info.personFacebook?.account ?? "");
+        UIApplication.shared.openFacebook(self.info.personFacebook?.account ?? "", webOpen: { (url) in
+            self.openWeb(url);
+        });
     }
     
-    func onKakao(_ button : UIButton){
-        print("send kakao \(self.info.personKakao?.account)");
-        self.closeMenus();
-    }
-    
-    func onYoutube(_ button : UIButton){
-        print("go youtube \(self.info.personYoutube?.url)");
-        self.closeMenus();
-        UIApplication.shared.openWeb(self.info.personYoutube?.url ?? "");
-    }
-    
-    func onWeb(_ button : UIButton){
-        print("go web \(self.info.personHomepage?.url)");
-        UIApplication.shared.openWeb(self.info.personHomepage?.url ?? "");
+    @IBAction func onKakao(_ button : UIButton){
+        print("send kakao \(self.info.personKakao?.account ?? "")");
         self.closeMenus();
     }
     
-    func onBlog(_ button : UIButton){
-        print("go blog \(self.info.personBlog?.url)");
-        UIApplication.shared.openWeb(self.info.personBlog?.url ?? "");
+    @IBAction func onYoutube(_ button : UIButton){
+        print("go youtube \(self.info.personYoutube?.url ?? "")");
+        self.closeMenus();
+        self.openWeb(URL(string: self.info.personYoutube?.url ?? "")!);
+        //UIApplication.shared.openWeb(self.info.personYoutube?.url ?? "");
+    }
+    
+    @IBAction func onWeb(_ button : UIButton){
+        print("go web \(self.info.personHomepage?.url ?? "")");
+        //UIApplication.shared.openWeb(self.info.personHomepage?.url ?? "");
+        self.openWeb(URL(string: self.info.personHomepage?.url ?? "")!);
         self.closeMenus();
     }
     
-    func onSearch(_ button : UIButton){
-        print("go search \(self.info.personBlog?.url)");
+    @IBAction func onBlog(_ button : UIButton){
+        print("go blog \(self.info.personBlog?.url ?? "")");
         //UIApplication.shared.openWeb(self.info.personBlog?.url ?? "");
-        var keyword = "\(self.info.job ?? "") \(self.info.name ?? "")";
-        var viewController = UIApplication.shared.keyWindow?.rootViewController;
+        self.openWeb(URL(string: self.info.personBlog?.url ?? "")!);
+        self.closeMenus();
+    }
+    
+    @IBAction func onSearch(_ button : UIButton){
+        print("go search \(self.info.personBlog?.url ?? "")");
+        //UIApplication.shared.openWeb(self.info.personBlog?.url ?? "");
+        let keyword = "\(self.info.job ?? "") \(self.info.name ?? "")";
+        //let viewController = UIApplication.shared.keyWindow?.rootViewController;
         UIApplication.shared.keyWindow?.rootViewController?.showAlert(title: "\(keyword) 검색", msg: "검색할 포털사이트를 선택하세요", actions: [UIAlertAction(title: "다음에서 검색", style: .default, handler: { (act) in
-            viewController?.searchByDaum(keyword);
+            UIApplication.shared.searchByDaum(keyword, webOpen: { (url) in
+                self.openWeb(url);
+            });
         }), UIAlertAction(title: "구글에서 검색", style: .default, handler: { (act) in
-            viewController?.searchByGoogle(keyword);
+            UIApplication.shared.searchByGoogle(keyword, webOpen: { (url) in
+                self.openWeb(url);
+            });
         }), UIAlertAction(title: "네이버에서 검색", style: .default, handler: { (act) in
-            viewController?.searchByNaver(keyword);
+            UIApplication.shared.searchByNaver(keyword, webOpen: { (url) in
+                self.openWeb(url);
+            });
         }), UIAlertAction(title: "취소", style: .default, handler: nil)], style: .alert);
         
         self.closeMenus();
     }
     
+    @IBAction func onPaySponsor(_ button : UIButton){
+        print("go sponsor \(self.info.personHomepage?.url ?? "")");
+        //UIApplication.shared.openWeb(self.info.personHomepage?.url ?? "");
+        let req = DASponsorPayRequest(party: Int(self.info.group?.sponsor ?? 0), person: Int(self.info.sponsor), source: DASponsor.Sources.leesam).urlRequest;
+        //self.openWeb(URL(string: self.info.personHomepage?.url ?? "")!);
+        self.openWeb(req.url!);
+        self.closeMenus();
+    }
+    
     // MARK: FABMenuDelegate
     func fabMenuWillOpen(fabMenu: FABMenu) {
-        fabMenu.fabButton?.animate(Motion.rotation(angle: -45));
+        fabMenu.fabButton?.animate(.rotate(-45));
         if self.msgMenu == fabMenu{
             self.searchMenu?.closeWithAnimation();
         }else{
@@ -582,16 +656,16 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     }
     
     func fabMenuDidOpen(fabMenu: FABMenu) {
-        var lastfabButton : FABButton! = fabMenu.fabMenuItems.last?.fabButton;
-        var left = lastfabButton.convert(lastfabButton.frame.origin, to: self);
+        let lastfabButton : FABButton! = fabMenu.fabMenuItems.last?.fabButton;
+        let left = lastfabButton.convert(lastfabButton.frame.origin, to: self);
         guard left.x < 0 else{
             self.overflowedMenus = [];
             return;
         }
         
         for menu in fabMenu.fabMenuItems{
-            var fabButton : FABButton! = menu.fabButton;
-            var left = fabButton.convert(fabButton.frame.origin, to: self);
+            let fabButton : FABButton! = menu.fabButton;
+            let left = fabButton.convert(fabButton.frame.origin, to: self);
             if left.x < 0 {
                 self.overflowedMenus.append(menu);
             }
@@ -601,7 +675,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     }
     
     func fabMenuWillClose(fabMenu: FABMenu) {
-        fabMenu.fabButton?.animate(Motion.rotation(angle: 0));
+        fabMenu.fabButton?.animate(.rotate(0));
     }
     
     //MARK: CNContactPickerDelegate
@@ -611,7 +685,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         print("contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact)");
-        var phones = (self.info.phones?.allObjects as? [DAPhoneInfo] ?? []);
+        let phones = (self.info.phones?.allObjects as? [DAPhoneInfo] ?? []);
         var actions : [UIAlertAction] = [];
         if let mobile = phones.first(where: { (phone) -> Bool in
             return phone.sms;
@@ -659,6 +733,6 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
 extension FABMenu{
     func closeWithAnimation(){
         self.close();
-        self.fabButton?.animate(Motion.rotation(angle: 0));
+        self.fabButton?.animate(.rotate(0));
     }
 }

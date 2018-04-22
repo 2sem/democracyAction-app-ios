@@ -1,79 +1,132 @@
 PODS:
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
+  - Bolts/Tasks (1.9.0)
+  - CryptoSwift (0.9.0)
   - DownPicker (0.1.34)
-  - FBSDKCoreKit (4.24.0):
+  - FBSDKCoreKit (4.32.0):
     - Bolts (~> 1.7)
-  - Firebase/Core (4.0.3):
-    - FirebaseAnalytics (= 4.0.2)
-    - FirebaseCore (= 4.0.3)
-  - FirebaseAnalytics (4.0.2):
+  - Firebase/Core (4.13.0):
+    - FirebaseAnalytics (= 4.2.0)
+    - FirebaseCore (= 4.0.20)
+  - FirebaseAnalytics (4.2.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (4.0.3):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (2.0.0):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.20):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
-  - Google-Mobile-Ads-SDK (7.21.0)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - KakaoOpenSDK (1.4.1):
-    - KakaoOpenSDK/KakaoCommon (= 1.4.1)
-    - KakaoOpenSDK/KakaoLink (= 1.4.1)
-    - KakaoOpenSDK/KakaoNavi (= 1.4.1)
-    - KakaoOpenSDK/KakaoOpenSDK (= 1.4.1)
-    - KakaoOpenSDK/KakaoS2 (= 1.4.1)
-  - KakaoOpenSDK/KakaoCommon (1.4.1)
-  - KakaoOpenSDK/KakaoLink (1.4.1):
+  - Google-Mobile-Ads-SDK (7.30.0)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - KakaoOpenSDK (1.7.0):
+    - KakaoOpenSDK/KakaoCommon (= 1.7.0)
+    - KakaoOpenSDK/KakaoLink (= 1.7.0)
+    - KakaoOpenSDK/KakaoMessageTemplate (= 1.7.0)
+    - KakaoOpenSDK/KakaoNavi (= 1.7.0)
+    - KakaoOpenSDK/KakaoOpenSDK (= 1.7.0)
+    - KakaoOpenSDK/KakaoS2 (= 1.7.0)
+  - KakaoOpenSDK/KakaoCommon (1.7.0)
+  - KakaoOpenSDK/KakaoLink (1.7.0):
     - KakaoOpenSDK/KakaoCommon
-  - KakaoOpenSDK/KakaoNavi (1.4.1):
+  - KakaoOpenSDK/KakaoMessageTemplate (1.7.0)
+  - KakaoOpenSDK/KakaoNavi (1.7.0):
     - KakaoOpenSDK/KakaoCommon
-  - KakaoOpenSDK/KakaoOpenSDK (1.4.1)
-  - KakaoOpenSDK/KakaoS2 (1.4.1):
+  - KakaoOpenSDK/KakaoOpenSDK (1.7.0)
+  - KakaoOpenSDK/KakaoS2 (1.7.0):
     - KakaoOpenSDK/KakaoCommon
-  - Material (2.6.3):
-    - Material/Core (= 2.6.3)
-  - Material/Core (2.6.3)
+  - LSExtensions (0.0.3)
+  - Material (2.14.0):
+    - Material/Core (= 2.14.0)
+  - Material/Core (2.14.0):
+    - Motion (~> 1.3.0)
+  - MBProgressHUD (1.1.0)
+  - Motion (1.3.5):
+    - Motion/Core (= 1.3.5)
+  - Motion/Core (1.3.5)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - ProgressWebViewController (1.6.1)
   - SSZipArchive (0.4.0)
-  - SwipeCellKit (1.9.0)
+  - SwipeCellKit (2.2.0)
   - XlsxReaderWriter (1.0.11):
     - SSZipArchive (~> 0.4)
     - XMLDictionary (~> 1.4)
   - XMLDictionary (1.4.1)
 
 DEPENDENCIES:
+  - CryptoSwift
   - DownPicker
   - FBSDKCoreKit
   - Firebase/Core
   - Google-Mobile-Ads-SDK
   - KakaoOpenSDK
+  - LSExtensions (from `~/Projects/leesam/pods/LSExtensions/src/LSExtensions`)
   - Material
+  - MBProgressHUD
+  - ProgressWebViewController
   - SwipeCellKit
   - XlsxReaderWriter
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Bolts
+    - CryptoSwift
+    - DownPicker
+    - FBSDKCoreKit
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - Google-Mobile-Ads-SDK
+    - GoogleToolboxForMac
+    - KakaoOpenSDK
+    - Material
+    - MBProgressHUD
+    - Motion
+    - nanopb
+    - ProgressWebViewController
+    - SSZipArchive
+    - SwipeCellKit
+    - XlsxReaderWriter
+    - XMLDictionary
+
+EXTERNAL SOURCES:
+  LSExtensions:
+    :path: "~/Projects/leesam/pods/LSExtensions/src/LSExtensions"
+
 SPEC CHECKSUMS:
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
-  FBSDKCoreKit: f8c9eb0dd34a9cd277c7b60da4b32226d142502d
-  Firebase: 9e33fdfbca37cab635c693883caa90a4475b842b
-  FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
-  FirebaseCore: c709067051de07bdaffdc4e735cd7299a23c463a
-  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
-  Google-Mobile-Ads-SDK: 4a6f1b43c8cc0e1e95a3b59d9f52a01671c6f9f3
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  KakaoOpenSDK: c8470c02c7e66cc3b30713d2b686eba70330d20f
-  Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
+  FBSDKCoreKit: 55d7f2ac45d9c4b9b6119f4e43900fe84b9b7b1b
+  Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
+  FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
+  FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
+  FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
+  Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  KakaoOpenSDK: 82e9c4d57c7d273360e4b49c2d8a0d8626216143
+  LSExtensions: a99876e8b5831f02ddf916d3782228cd3c5717a3
+  Material: c5bea030f57d4b903c5284200bb612d571c9ec03
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  Motion: 9f74d115d7f72bb5380a8e3cde2f8a1fc898ac36
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ProgressWebViewController: b43f1bfd69951e07ff690eabc0fdc10abe2a8e06
   SSZipArchive: d3d66fc0e3fb6ac0f723d95481aae71aae916cc3
-  SwipeCellKit: 893661973276ae3512a84ac0a47055923b10731e
+  SwipeCellKit: 8ae09401e1137566b187980d824310129233c959
   XlsxReaderWriter: 7e4c5c9fb7c4e78e4edc89fa11f50c086540277c
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: c561f0267360209fdff10950a41f5a6657eaa23f
+PODFILE CHECKSUM: 97d279177c4259a044acce6924f5376c343c2e23
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

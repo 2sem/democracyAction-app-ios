@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import LSExtensions
 
 extension DAModelController{
     func loadGroups(predicate : NSPredicate? = nil, sortWays: [NSSortDescriptor]? = [], completion: (([DAGroupInfo], NSError?) -> Void)? = nil) -> [DAGroupInfo]{
@@ -23,12 +24,12 @@ extension DAModelController{
         
         do{
             values = try self.context.fetch(requester) as! [DAGroupInfo];
-            print("fetch groups with predicate[\(predicate)] count[\(values.count)]");
+            print("fetch groups with predicate[\(predicate?.description ?? "")] count[\(values.count)]");
             /*values.forEach({ (group) in
                 print("group name[\(group.name)] num[\(group.no)]");
             })*/
             completion?(values, nil);
-        } catch let error{
+        } catch{
             fatalError("Can not load groups from DB");
         }
         
@@ -36,7 +37,7 @@ extension DAModelController{
     }
     
     func isExistGroup(_ name : String) -> Bool{
-        var predicate = NSPredicate(format: "name == \"\(name)\"");
+        let predicate = NSPredicate(format: "name == \"\(name)\"");
         return !self.loadGroups(predicate: predicate, sortWays: nil).isEmpty;
     }
     
@@ -46,7 +47,7 @@ extension DAModelController{
         //var predicate = NSPredicate(format: "no == %@",  no.description);
         //var predicate = NSPredicate(format: "\(DAModelController.EntityNames.DAGroupInfo).no == \(no)");
         //var predicate = NSPredicate(format: "%K == \(no)",  "no");
-        var predicate = NSPredicate(format: "#no == \(no)");
+        let predicate = NSPredicate(format: "#no == \(no)");
         //var predicate = NSPredicate(format: "name == %@",  "자유한국당");
         return self.loadGroups(predicate: predicate, sortWays: nil).first;
     }
@@ -59,11 +60,11 @@ extension DAModelController{
             return nil;
         }
         
-        var nameCho = name.getKoreanChoSeongs() ?? "";
-        var nameKors = (name.getKoreanParts() ?? "").trim();
+        let nameCho = name.getKoreanChoSeongs() ?? "";
+        let nameKors = (name.getKoreanParts() ?? "").trim();
         
-        var areaCho = area.getKoreanChoSeongs() ?? "";
-        var areaKors = (area.getKoreanParts() ?? "").trim();
+        let areaCho = area.getKoreanChoSeongs() ?? "";
+        let areaKors = (area.getKoreanParts() ?? "").trim();
 
         //var predicateWithName = predicate_name_first;
         
@@ -93,7 +94,7 @@ extension DAModelController{
         var values : [DAPersonGroup] = [];
         var i = 0;
         
-        var predicate_name_area : NSPredicate! = self.createPredicateWithNameArea(name, area: area);
+        let predicate_name_area : NSPredicate! = self.createPredicateWithNameArea(name, area: area);
         
         for spell in Character.koreanSingleChoSeongs.sorted(by: { (left, right) -> Bool in
             return isAscending ? left < right : left > right;
@@ -106,15 +107,15 @@ extension DAModelController{
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, predicate_name_area]);
             }
             
-            var persons = self.loadPersons(predicate: predicate, sortWays: [NSSortDescriptor.init(key: "name", ascending: isAscending)], completion: nil);
+            let persons = self.loadPersons(predicate: predicate, sortWays: [NSSortDescriptor.init(key: "name", ascending: isAscending)], completion: nil);
             
             guard !persons.isEmpty else{
                 continue;
             }
             
-            var group = DAPersonGroup();
+            let group = DAPersonGroup();
             group.id = i;
-            group.title = spell;
+            group.name = spell;
             group.persons = persons;
             values.append(group);
             i += 1;
@@ -131,7 +132,7 @@ extension DAModelController{
         var values : [DAPersonGroup] = [];
         var i = 0;
         
-        var predicate_name_area : NSPredicate! = self.createPredicateWithNameArea(name, area: area);
+        let predicate_name_area : NSPredicate! = self.createPredicateWithNameArea(name, area: area);
         
         for area in areas{
             //var choseongGroup = person.name.getKoreanChoSeongs(false)?.characters.first?.description ?? "";
@@ -142,15 +143,15 @@ extension DAModelController{
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, predicate_name_area]);
             }
             
-            var persons = self.loadPersons(predicate: predicate, sortWays: [NSSortDescriptor.init(key: "name", ascending: true)], completion: nil);
+            let persons = self.loadPersons(predicate: predicate, sortWays: [NSSortDescriptor.init(key: "name", ascending: true)], completion: nil);
             
             guard !persons.isEmpty else{
                 continue;
             }
             
-            var group = DAPersonGroup();
+            let group = DAPersonGroup();
             group.id = i;
-            group.title = area;
+            group.name = area;
             group.persons = persons;
             values.append(group);
             i += 1;
@@ -161,7 +162,7 @@ extension DAModelController{
         }
         
         values.sort { (left, right) -> Bool in
-            return isAscending ? left.title < right.title : left.title > right.title;
+            return isAscending ? left.name < right.name : left.name > right.name;
         }
         
         return values;
@@ -170,18 +171,23 @@ extension DAModelController{
     func loadGroups(_ isAscending : Bool = true, name : String = "", area : String = "") -> [DAPersonGroup]{
         var values : [Int : DAPersonGroup] = [:];
         
-        var predicate_name_area : NSPredicate! = self.createPredicateWithNameArea(name, area: area);
+        let predicate_name_area : NSPredicate! = self.createPredicateWithNameArea(name, area: area);
         
-        var persons = self.loadPersons(predicate: predicate_name_area, sortWays: [NSSortDescriptor.init(key: "name", ascending: isAscending)], completion: nil);
+        let persons = self.loadPersons(predicate: predicate_name_area, sortWays: [NSSortDescriptor.init(key: "name", ascending: isAscending)], completion: nil);
         
         for person in persons{
             var group = values[Int(person.group?.no ?? 0)]; // person.group?.no ??
             if group == nil{
                 group = DAPersonGroup();
                 group?.id = Int(person.group?.no ?? 0);
-                group?.title = person.group?.name ?? "";
+                group?.name = person.group?.name ?? "";
                 group?.detail = person.group?.detail ?? "";
+                group?.sponsor = Int(person.group?.sponsor ?? 0);
                 values[Int(person.group?.no ?? 0)] = group;
+                
+                group?.phones = person.group?.groupPhones ?? [];
+                group?.messages = person.group?.groupMessages ?? [];
+                //group?.groupInfo = person.group;
             }
             
             group?.persons.append(person);
@@ -201,6 +207,8 @@ extension DAModelController{
         group.name = name;
         group.detail = detail;
         
+        print("create new group. no[\(num)] name[\(name)]");
+        
         return group;
     }
     
@@ -210,5 +218,5 @@ extension DAModelController{
     
     func refresh(group: DAGroupInfo){
         self.context.refresh(group, mergeChanges: false);
-    }
+    }    
 }

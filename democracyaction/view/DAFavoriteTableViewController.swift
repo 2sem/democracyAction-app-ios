@@ -64,7 +64,11 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         self.searchController.searchResultsUpdater = self;
         self.searchBar.delegate = self;
         self.definesPresentationContext = true;
-        self.tableView.tableHeaderView = self.searchController.searchBar;
+        if #available(iOS 11.0, *){
+            self.navigationItem.searchController = self.searchController;
+        }else{
+            self.tableView.tableHeaderView = self.searchController.searchBar;
+        }
         self.searchBar.placeholder = "검색할 이름이나 지역구 입력";
         self.searchBar.returnKeyType = .done;
         //self.searchBar.tintColor = Color.yellow;
@@ -85,6 +89,20 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     
     override func viewDidAppear(_ animated: Bool) {
         self.favorites = self.modelController.loadFavoritesByName(self.isAscending);
+        self.favorites.forEach { (fav) in
+            guard fav.person == nil else{
+                return
+            }
+            
+            let index : Int! = self.favorites.index(of: fav);
+            guard index != nil else{
+                return;
+            }
+            
+            self.modelController.removeFavorite(fav);
+            self.favorites.remove(at: index);
+        }
+        self.modelController.saveChanges();
         self.refresh();
     }
     
@@ -127,11 +145,11 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
         var values : [SwipeAction] = [];
-        var cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell;
+        let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell;
         
         guard orientation == .right else{
-            var shareAction = SwipeAction.init(style: .default, title: nil) { (act, indexPath) in
-                var cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
+            let shareAction = SwipeAction.init(style: .default, title: nil) { (act, indexPath) in
+                let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
                 //http://www.assembly.go.kr/photo/9770941.jpg
                 cell.info?.shareByKakao();
             }
@@ -144,11 +162,11 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         
         let delImage = UIImage(named: "icon_del")?.withRenderingMode(.alwaysTemplate);
         
-        var delAction = SwipeAction.init(style: .destructive, title: nil) { (act, indexPath) in
-            var cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
+        let delAction = SwipeAction.init(style: .destructive, title: nil) { (act, indexPath) in
+            //let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
             
             self.tableView.beginUpdates()
-            var favor = self.favorites[indexPath.row];
+            let favor = self.favorites[indexPath.row];
             //if let favor = self.modelController.findFavorite(cell.info!){
                 self.modelController.removeFavorite(favor);
                 self.favorites.remove(at: indexPath.row);
@@ -181,13 +199,13 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        var value = 1;
+        let value = 1;
         
         return value;
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var value = self.favorites.count;
+        let value = self.favorites.count;
         // #warning Incomplete implementation, return the number of rows
         /*switch self.groupingType{
          case .byName:
@@ -201,7 +219,8 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
          break;
          }*/
         
-        return value + (self.needAds ? 1 : 0);
+        return value;
+        // + (self.needAds ? 1 : 0);
         //return self.excelController.persons.count;
     }
     
@@ -210,17 +229,17 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         var infoCell : DAInfoTableViewCell?;
         
         
-        if self.needAds && indexPath.row == self.tableView.numberOfRows(inSection: indexPath.section) - 1{
-            cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.adCellID, for: indexPath) as? DABannerTableViewCell;
-        }else{
-            infoCell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellID, for: indexPath) as? DAInfoTableViewCell;
+        /*if self.needAds && indexPath.row == self.tableView.numberOfRows(inSection: indexPath.section) - 1{
+            cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.BannerCell, for: indexPath) as? DABannerTableViewCell;
+        }else{*/
+            infoCell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.InfoCell, for: indexPath) as? DAInfoTableViewCell;
             
-            var person : DAPersonInfo? = self.favorites[indexPath.row].person;
+            let person : DAPersonInfo? = self.favorites[indexPath.row].person;
             
             infoCell?.info = person;
             infoCell?.delegate = self;
             cell = infoCell;
-        }
+        //}
         
         return cell!;
     }

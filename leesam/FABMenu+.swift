@@ -20,7 +20,7 @@ extension FABMenu{
         
         var i = 0;
         for item in self.fabMenuItems{
-            var targetPoint = self.convert(point, to: item.fabButton);
+            let targetPoint = self.convert(point, to: item.fabButton);
             //var targetPoint = item.fabButton.convert(point, to: self);
             value = item.fabButton.hitTest(targetPoint, with: event);
             #if DEBUG

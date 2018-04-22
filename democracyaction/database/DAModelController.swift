@@ -17,6 +17,10 @@ class DAModelController : NSObject{
         static let DAMessageToolInfo = "DAMessageToolInfo";
         static let DAWebInfo = "DAWebInfo";
         
+        static let DAEventGroupInfo = "DAEventGroupInfo";
+        static let DAEventInfo = "DAEventInfo";
+        static let DAEventPersonInfo = "DAEventPersonInfo";
+        
         static let DAFavoriteInfo = "DAFavoriteInfo";
     }
     
@@ -28,9 +32,9 @@ class DAModelController : NSObject{
     private static var _instance = DAModelController();
     static var Default : DAModelController{
         get{
-            var timeout = DispatchTime.now() + DispatchTimeInterval.seconds(3);
+            //var timeout = DispatchTime.now() + DispatchTimeInterval.seconds(3);
             //print("enter \(self) instance - \(self) - \(Thread.current)");
-            var value = _instance;
+            let value = _instance;
             //            value.waitInit();
             //print("wait \(self) instance - \(self) - \(Thread.current)");
             self.dispatchGroupForInit.wait();
@@ -70,7 +74,7 @@ class DAModelController : NSObject{
             //        DispatchQueue.main.async{
             
             //get path for app's url
-            var storeUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last?.appendingPathComponent(DAModelController.FileName).appendingPathExtension("sqlite");
+            let storeUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last?.appendingPathComponent(DAModelController.FileName).appendingPathExtension("sqlite");
             //create path for data file
             //let storeUrl = Bundle.main.url(forResource: DAModelController.FileName, withExtension: "sqlite");
             //let storeUrl = docUrl;
@@ -111,6 +115,7 @@ class DAModelController : NSObject{
     func saveChanges(){
         do{
             try self.context.save();
+            print("save data model");
         } catch {
             fatalError("Save failed Error(\(error))");
         }
@@ -128,12 +133,12 @@ class DAModelController : NSObject{
     }
     
     func endTransaction(){
-        print("end transaction. name[\(self.context.undoManager?.undoActionName)] context[\(self.context)]");
+        print("end transaction. name[\(self.context.undoManager?.undoActionName ?? "")] context[\(self.context.description)]");
         self.context.undoManager?.endUndoGrouping();
     }
     
     func undo(){
-        print("undo. name[\(self.context.undoManager?.undoActionName)] context[\(self.context)]");
+        print("undo. name[\(self.context.undoManager?.undoActionName ?? "")] context[\(self.context.description)]");
         self.context.undoManager?.undo();
     }
     

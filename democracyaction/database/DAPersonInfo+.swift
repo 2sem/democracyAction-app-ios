@@ -17,7 +17,7 @@ extension DAPersonInfo{
         
         set(value){
             self.nameFirstCharacters = value.getKoreanChoSeongs() ?? "";
-            self.nameFirstCharacter = self.nameFirstCharacters?.characters.first?.description;
+            self.nameFirstCharacter = self.nameFirstCharacters?.first?.description;
             self.nameCharacters = value.getKoreanParts();
             
             self.name = value;
@@ -31,7 +31,7 @@ extension DAPersonInfo{
         
         set(value){
             self.areaFirstCharacters = value.getKoreanChoSeongs() ?? "";
-            self.areaFirstCharacter = self.areaFirstCharacters?.characters.first?.description;
+            self.areaFirstCharacter = self.areaFirstCharacters?.first?.description;
             self.areaCharacters = value.getKoreanParts();
             self.area = value;
         }
@@ -135,6 +135,7 @@ extension DAPersonInfo{
         }
     }
     
+    @discardableResult
     func createPhone(name : String, number: String = "", canSendSMS sms: Bool = false) -> DAPhoneInfo{
         let phone = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAPhoneInfo, into: DAModelController.Default.context) as! DAPhoneInfo;
         
@@ -148,6 +149,7 @@ extension DAPersonInfo{
         return phone;
     }
     
+    @discardableResult
     func createMessageTool(name : String, account: String = "") -> DAMessageToolInfo{
         let tool = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAMessageToolInfo, into: DAModelController.Default.context) as! DAMessageToolInfo;
         
@@ -160,6 +162,7 @@ extension DAPersonInfo{
         return tool;
     }
     
+    @discardableResult
     func createWeb(name : String, url: String = "") -> DAWebInfo{
         let web = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAWebInfo, into: DAModelController.Default.context) as! DAWebInfo;
         

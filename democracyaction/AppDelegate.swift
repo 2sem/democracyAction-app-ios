@@ -9,12 +9,14 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDelegate, ReviewManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDelegate, ReviewManagerDelegate, GADRewardManagerDelegate {
 
     var window: UIWindow?
     var fullAd : GADInterstialManager?;
+    var rewardAd : GADRewardManager?;
     var reviewManager : ReviewManager?;
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -32,10 +34,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
         self.reviewManager?.delegate = self;
         //self.reviewManager?.show();
         
+        self.rewardAd = GADRewardManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 6); //
+        self.rewardAd?.delegate = self;
         self.fullAd = GADInterstialManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "FullAd") ?? "", interval: 60.0); //60.0 * 60 * 3
         self.fullAd?.delegate = self;
         self.fullAd?.canShowFirstTime = false;
-        //self.fullAd?.show();
+        
+        if self.rewardAd?.canShow ?? false{
+            self.fullAd?.show(true);
+        }
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (result, error) in
+            guard result else{
+                return;
+            }
+            
+            DispatchQueue.main.syncOrNot {
+                application.registerForRemoteNotifications();
+            }
+        }
         
         return true
     }
@@ -50,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         guard url.scheme == "kakao17b433ae9a9c34394a229a2b1bb94a58" else {
             return false;
         }
@@ -77,6 +94,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let device = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
+        print("APNs device[\(device)]");
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("APNs registration failed: \(error)");
+    }
+    
     // MARK: GADInterstialManagerDelegate
     func GADInterstialGetLastShowTime() -> Date {
         return DADefaults.LastFullADShown;
@@ -99,6 +125,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
     
     func reviewUpdate(showTime: Date) {
         DADefaults.LastShareShown = showTime;
+    }
+    
+    // MARK: GADRewardManagerDelegate
+    func GADRewardGetLastShowTime() -> Date {
+        return DADefaults.LastRewardShown;
+    }
+    
+    func GADRewardUserCompleted() {
+        DADefaults.LastRewardShown = Date();
+    }
+    
+    func GADRewardUpdate(showTime: Date) {
+        
     }
 }
 

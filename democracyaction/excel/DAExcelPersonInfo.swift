@@ -30,6 +30,7 @@ class DAExcelPersonInfo : NSObject{
         static let cafe = "cafe";
         static let cyworld = "cyworld";
         static let assembly = "assembly";
+        static let sponsor = "sponsor";
     }
     
     var id : Int = 0;
@@ -52,6 +53,7 @@ class DAExcelPersonInfo : NSObject{
     var cafe = "";
     var cyworld = "";
     var assembly = "";
+    var sponsor = 0;
 
     var phones : [DAExcelPhoneInfo] = [];
     private func _parseNumber(_ value : String, title : String) -> [DAExcelPhoneInfo]{
@@ -62,18 +64,18 @@ class DAExcelPersonInfo : NSObject{
             return values;
         }
         
-        var commaNums = value.components(separatedBy: ",");
+        let commaNums = value.components(separatedBy: ",");
         for commaNum in commaNums{
             var seqNums = commaNum.components(separatedBy: "~");
             if seqNums.count == 1{
                 i += 1;
                 values.append(DAExcelPhoneInfo(title: "\(title)\(i)", number: seqNums[0]));
             }else{
-                var firstNum = seqNums[0];
-                var startNum = Int("\(firstNum.characters.last!)")!;
-                var endNum = Int(seqNums[1])!;
+                let firstNum = seqNums[0];
+                let startNum = Int("\(firstNum.last!)")!;
+                let endNum = Int(seqNums[1])!;
                 
-                var leftNum = seqNums[0].substring(to: firstNum.index(before: firstNum.endIndex));
+                let leftNum = String(seqNums[0][...firstNum.index(before: firstNum.endIndex)]);
                 for n in startNum...endNum{
                     i += 1;
                     values.append(DAExcelPhoneInfo(title: "\(title)\(i)", number: "\(leftNum)\(n)"));

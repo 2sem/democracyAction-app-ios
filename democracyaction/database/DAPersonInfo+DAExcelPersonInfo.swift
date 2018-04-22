@@ -12,7 +12,7 @@ extension DAPersonInfo{
     func syncPhones(_ person : DAExcelPersonInfo){
         //remove all office phones of the person from database
         //self.removeFromPhones(<#T##value: DAPhoneInfo##DAPhoneInfo#>)
-        var phoneSet = NSSet(array: self.personPhones.filter({ (phone) -> Bool in
+        let phoneSet = NSSet(array: self.personPhones.filter({ (phone) -> Bool in
             return !phone.sms;
         }));
         self.removeFromPhones(phoneSet);
@@ -34,7 +34,7 @@ extension DAPersonInfo{
                 continue;
             }
             
-            var phone = self.createPhone(name: excelPhone.name, number: excelPhone.number, canSendSMS: false);
+            self.createPhone(name: excelPhone.name, number: excelPhone.number, canSendSMS: false);
         }
         
         //add sms number into database
@@ -45,7 +45,7 @@ extension DAPersonInfo{
     
     func syncMessageTool(_ person : DAExcelPersonInfo, name : String, value : String){
         //find by tool name
-        var tool = self.findMessageTool(name);
+        let tool = self.findMessageTool(name);
         if tool == nil && !value.isEmpty{
             //create new tool
             self.createMessageTool(name: name, account: value);
@@ -74,7 +74,7 @@ extension DAPersonInfo{
     
     func syncWebUrl(_ person : DAExcelPersonInfo, name : String, value : String){
         //find by url name
-        var webUrl = self.findWebUrl(name);
+        let webUrl = self.findWebUrl(name);
         if webUrl == nil && !value.isEmpty{
             self.createWeb(name: name, url: value);
         }

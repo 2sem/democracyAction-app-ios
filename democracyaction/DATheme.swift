@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import LSExtensions
 
 class DATheme{
     static let fabButtonTintColor = UIColor.white;
@@ -22,6 +23,8 @@ class DATheme{
     static let youtubeButtonBackgroundColor = "#cfd8dc".toUIColor()!;
     static let searchButtonTintColor = "#eceff1".toUIColor()!;
     static let searchButtonBackgroundColor = "#607d8b".toUIColor()!;
+    static let sponseButtonTintColor = "#e3f2fd".toUIColor()!;
+    static let sponseButtonBackgroundColor = "#42a5f5".toUIColor()!;
     
     static let fabMenuTintColor = UIColor.white;
     static let fabMenuBackgroundColor = "#566e7a".toUIColor()!;

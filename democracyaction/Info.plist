@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.4</string>
+	<string>1.1.7</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -38,7 +38,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>9</string>
+	<string>32</string>
 	<key>FacebookAppID</key>
 	<string>301484613596142</string>
 	<key>FacebookDisplayName</key>
@@ -47,9 +47,13 @@
 	<dict>
 		<key>FullAd</key>
 		<string>ca-app-pub-9684378399371172/1169240044</string>
+		<key>RewardAd</key>
+		<string>ca-app-pub-9684378399371172/1228145090</string>
 		<key>TableBanner</key>
 		<string>ca-app-pub-9684378399371172/7215773643</string>
 	</dict>
+	<key>Itunes App Id</key>
+	<string>1243863489</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>17b433ae9a9c34394a229a2b1bb94a58</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -64,6 +68,11 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

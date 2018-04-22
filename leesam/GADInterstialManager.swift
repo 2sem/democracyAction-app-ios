@@ -81,15 +81,24 @@ class GADInterstialManager : NSObject, GADInterstitialDelegate{
             return value;
         }
     }
-    func show(){
-        guard self.canShow else {
-            self.window.rootViewController?.showAlert(title: "알림", msg: "1시간에 한번만 후원하실 수 있습니다 ^^;", actions: [UIAlertAction(title: "확인", style: .default, handler: nil)], style: .alert);
+    
+    func show(_ force : Bool = false){
+        guard self.canShow || force else {
+            //self.window.rootViewController?.showAlert(title: "알림", msg: "1시간에 한번만 후원하실 수 있습니다 ^^;", actions: [UIAlertAction(title: "확인", style: .default, handler: nil)], style: .alert);
             return;
         }
         
+        self._show();
+    }
+    
+    func _show(){
+        /*guard self.canShow else {
+         return;
+         }*/
+        
         guard self.fullAd?.hasBeenUsed ?? true else{
             print("full ad is not yet used - self.fullAd?.hasBeenUsed");
-            self._show();
+            self.__show();
             return;
         }
         
@@ -101,26 +110,26 @@ class GADInterstialManager : NSObject, GADInterstitialDelegate{
             req.testDevices = ["5fb1f297b8eafe217348a756bdb2de56"];
         #endif
         /*if let alert = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController as? UIAlertController{
-            alert.dismiss(animated: false, completion: nil);
+         alert.dismiss(animated: false, completion: nil);
          }
-        }*/
+         }*/
         
         self.fullAd?.load(req);
         self.delegate?.GADInterstialWillLoad();
     }
     
-    private func _show(){
+    private func __show(){
         guard self.window.rootViewController != nil else{
             return;
         }
         
-        guard self.canShow else {
-            return;
-        }
+        /*guard self.canShow else {
+         return;
+         }*/
         
         //ignore if alert is being presented
         /*if let alert = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController as? UIAlertController{
-            alert.dismiss(animated: false, completion: nil);
+         alert.dismiss(animated: false, completion: nil);
         }*/
         
         guard !(UIApplication.shared.keyWindow?.rootViewController?.presentedViewController is UIAlertController) else{
@@ -129,7 +138,7 @@ class GADInterstialManager : NSObject, GADInterstitialDelegate{
             return;
         }
         
-        print("present full ad view[\(self.window.rootViewController)]");
+        print("present full ad view[\(self.window.rootViewController.debugDescription)]");
         self.fullAd?.present(fromRootViewController: self.window.rootViewController!);
         self.delegate?.GADInterstialUpdate(showTime: Date());
         //RSDefaults.LastFullADShown = Date();
@@ -144,4 +153,11 @@ class GADInterstialManager : NSObject, GADInterstitialDelegate{
     func interstitialWillPresentScreen(_ ad: GADInterstitial) {
         self.fullAd = nil;
     }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        /*self.window.rootViewController?.showAlert(title: "후원해주셔서 감사합니다.", msg: "불편하신 사항은 리뷰에 남겨주시면 반영하겠습니다.", actions: [UIAlertAction.init(title: "확인", style: .default, handler: nil), UIAlertAction.init(title: "평가하기", style: .default, handler: { (act) in
+            UIApplication.shared.openReview();
+        })], style: .alert);*/
+    }
+
 }

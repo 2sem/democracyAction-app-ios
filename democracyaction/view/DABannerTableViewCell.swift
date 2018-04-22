@@ -12,6 +12,9 @@ import GoogleMobileAds
 class DABannerTableViewCell: UITableViewCell, GADBannerViewDelegate {
 
     
+    @IBOutlet weak var titleView: UILabel!
+    @IBOutlet weak var detailView: UILabel!
+    
     @IBOutlet weak var bannerView: GADBannerView!
     
     override func awakeFromNib() {
@@ -19,7 +22,7 @@ class DABannerTableViewCell: UITableViewCell, GADBannerViewDelegate {
         // Initialization code
         self.bannerView.loadUnitId("TableBanner");
         self.bannerView.rootViewController = UIApplication.shared.keyWindow?.rootViewController;
-        var req = GADRequest();
+        let req = GADRequest();
         #if DEBUG
             //req.testDevices = ["5fb1f297b8eafe217348a756bdb2de56"];
         #endif
@@ -51,11 +54,15 @@ class DABannerTableViewCell: UITableViewCell, GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         //self.showBanner(visible: true);
         self.bannerView.isHidden = false;
+        self.titleView.isHidden = !self.bannerView.isHidden;
+        self.detailView.isHidden = !self.bannerView.isHidden;
     }
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         print("banner error -  \(error)");
         self.bannerView.isHidden = true;
+        self.titleView.isHidden = !self.bannerView.isHidden;
+        self.detailView.isHidden = !self.bannerView.isHidden;
         //self.showBanner(visible: false);
     }
 

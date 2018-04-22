@@ -25,8 +25,7 @@ extension GADBannerView {
             return;
         }
         
-        var unit = unitList?[name];
-        guard unit != nil else{
+        guard let unit = unitList?[name] else{
             print("Add unit \(name) into GoogleADUnitID");
             return;
         }

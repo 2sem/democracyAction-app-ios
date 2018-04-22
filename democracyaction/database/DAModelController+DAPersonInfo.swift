@@ -23,12 +23,12 @@ extension DAModelController{
         
         do{
             values = try self.context.fetch(requester) as! [DAPersonInfo];
-            print("fetch persons with predicate[\(predicate)] count[\(values.count)]");
+            print("fetch persons with predicate[\(predicate.debugDescription)] count[\(values.count)]");
             /*values.forEach({ (person) in
                 print("person no[\(person.no)] name[\(person.name)]");
             })*/
             completion?(values, nil);
-        } catch let error{
+        } catch{
             fatalError("Can not load persons from DB");
         }
         
@@ -36,12 +36,12 @@ extension DAModelController{
     }
     
     func isExistPerson(_ name : String) -> Bool{
-        var predicate = NSPredicate(format: "name == \"\(name)\"");
+        let predicate = NSPredicate(format: "name == \"\(name)\"");
         return !self.loadGroups(predicate: predicate, sortWays: nil).isEmpty;
     }
     
     func findPerson(_ no : Int16) -> DAPersonInfo?{
-        var predicate = NSPredicate(format: "#no == \(no)");
+        let predicate = NSPredicate(format: "#no == \(no)");
         return self.loadPersons(predicate: predicate, sortWays: nil).first;
     }
     
@@ -60,13 +60,13 @@ extension DAModelController{
         if groupNo > 0{
             predicates.append(NSPredicate(format: "group.#no == \(groupNo)"));
         }
-        var predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates);
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates);
         
         return self.loadPersons(predicate: predicate, sortWays: nil).first;
     }
     
     func findPerson(no : Int16, groupNo : Int16) -> DAPersonInfo?{
-        var predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [NSPredicate(format: "#no == \(no)"), NSPredicate(format: "group.#no == \(groupNo)")]);
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [NSPredicate(format: "#no == \(no)"), NSPredicate(format: "group.#no == \(groupNo)")]);
         
         return self.loadPersons(predicate: predicate, sortWays: nil).first;
     }
@@ -76,7 +76,6 @@ extension DAModelController{
         
         person.no = no;
         person.personName = name;
-        
         person.personArea = area;
         
         return person;

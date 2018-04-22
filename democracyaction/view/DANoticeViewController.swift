@@ -17,7 +17,7 @@ class DANoticeViewController: UIViewController {
         super.viewDidLoad()
 
         self.textView.text = self.text;
-        // Do any additional setup after loading the view.
+        self.textView.contentOffset = CGPoint(x: self.textView.contentInset.left, y: self.textView.contentInset.top);        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

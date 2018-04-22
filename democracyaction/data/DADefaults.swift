@@ -19,14 +19,16 @@ class DADefaults{
     class Keys{
         static let LastFullADShown = "LastFullADShown";
         static let LastShareShown = "LastShareShown";
+        static let LastRewardShown = "LastRewardShown";
         
         static let LastNotice = "LastNotice";
-        static let DataVersion = "DataVersion";
+        static let DataVersion = "DataVersion"
+        static let DataDownloaded = "DataDownloaded";
     }
     
     static var LastFullADShown : Date{
         get{
-            var seconds = Defaults.double(forKey: Keys.LastFullADShown);
+            let seconds = Defaults.double(forKey: Keys.LastFullADShown);
             return Date.init(timeIntervalSince1970: seconds);
         }
         
@@ -37,7 +39,7 @@ class DADefaults{
     
     static var LastShareShown : Date{
         get{
-            var seconds = Defaults.double(forKey: Keys.LastShareShown);
+            let seconds = Defaults.double(forKey: Keys.LastShareShown);
             return Date.init(timeIntervalSince1970: seconds);
         }
         
@@ -46,9 +48,20 @@ class DADefaults{
         }
     }
     
+    static var LastRewardShown : Date{
+        get{
+            let seconds = Defaults.double(forKey: Keys.LastRewardShown);
+            return Date.init(timeIntervalSince1970: seconds);
+        }
+        
+        set(value){
+            Defaults.set(value.timeIntervalSince1970, forKey: Keys.LastRewardShown);
+        }
+    }
+    
     static var LastNotice : Date{
         get{
-            var seconds = Defaults.double(forKey: Keys.LastNotice);
+            let seconds = Defaults.double(forKey: Keys.LastNotice);
             return Date.init(timeIntervalSince1970: seconds);
         }
         
@@ -60,11 +73,22 @@ class DADefaults{
     static var DataVersion : String{
         get{
             //UIApplication.shared.version
-            return Defaults.string(forKey: Keys.DataVersion) ?? "0.0";
+            return Defaults.string(forKey: Keys.DataVersion) ?? "";
         }
         
         set(value){
             Defaults.set(value, forKey: Keys.DataVersion);
+        }
+    }
+    
+    static var DataDownloaded : Bool{
+        get{
+            //UIApplication.shared.version
+            return Defaults.bool(forKey: Keys.DataDownloaded);
+        }
+        
+        set(value){
+            Defaults.set(value, forKey: Keys.DataDownloaded);
         }
     }
 }

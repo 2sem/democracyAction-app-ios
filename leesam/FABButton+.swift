@@ -10,15 +10,16 @@ import Foundation
 import Material
 
 extension FABButton{
+    @discardableResult
     func clone(_ target : FABButton? = nil) -> FABButton{
-        var value = target == nil ? FABButton() : target;
+        let value = target == nil ? FABButton() : target;
         value?.image = self.image?.withRenderingMode(.alwaysTemplate);
         value?.backgroundColor = self.backgroundColor;
         value?.tintColor = self.tintColor;
         value?.pulseColor = self.pulseColor;
-        for performTarget in self.allTargets ?? []{
+        for performTarget in self.allTargets{
             //print("clone button - target[\(performTarget)]");
-            var actions = self.actions(forTarget: performTarget, forControlEvent: .touchUpInside);
+            let actions = self.actions(forTarget: performTarget, forControlEvent: .touchUpInside);
             for action in actions ?? []{
                 value?.addTarget(performTarget, action: Selector(action), for: .touchUpInside);
                 //print("clone button action[\(action)] target[\(performTarget)]");
@@ -29,7 +30,7 @@ extension FABButton{
     }
     
     func cloneAsMenu() -> FABMenuItem{
-        var value = FABMenuItem();
+        let value = FABMenuItem();
         self.clone(value.fabButton);
         
         return value;

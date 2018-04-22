@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4AC29278785790668548A4382038F906"
+               BlueprintIdentifier = "32A3DACC9F7E6BF925131F33A0B5269B"
                BuildableName = "Pods_democracyactionTests.framework"
                BlueprintName = "Pods-democracyactionTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4AC29278785790668548A4382038F906"
+            BlueprintIdentifier = "32A3DACC9F7E6BF925131F33A0B5269B"
             BuildableName = "Pods_democracyactionTests.framework"
             BlueprintName = "Pods-democracyactionTests"
             ReferencedContainer = "container:Pods.xcodeproj">

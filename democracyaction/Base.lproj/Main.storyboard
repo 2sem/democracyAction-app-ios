@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +23,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="3aL-q5-82h" kind="relationship" relationship="viewControllers" id="K4e-rf-nvC"/>
+                        <segue destination="3oh-Wx-YcD" kind="relationship" relationship="viewControllers" id="e7H-j2-bi1"/>
+                        <segue destination="dXk-2n-Stw" kind="relationship" relationship="viewControllers" id="SmH-Wz-tYC"/>
                         <segue destination="zPF-LM-iHW" kind="relationship" relationship="viewControllers" id="bcK-ZP-jsW"/>
                     </connections>
                 </tabBarController>
@@ -35,7 +38,7 @@
                 <navigationController id="3aL-q5-82h" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="국회의원" image="icon_people_off" selectedImage="icon_people_on" id="XHJ-8U-64V"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="waD-S6-tGr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -64,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="bEA-Vv-AMT" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell_NoImage" id="bEA-Vv-AMT" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEA-Vv-AMT" id="wjU-fc-Eov">
@@ -82,7 +85,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-Tw-LCn">
-                                            <rect key="frame" x="40" y="34" width="283" height="21"/>
+                                            <rect key="frame" x="40" y="34" width="275" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="vrA-k7-BQa"/>
                                             </constraints>
@@ -91,7 +94,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pDw-Ra-0pX">
-                                            <rect key="frame" x="323" y="6" width="44" height="44"/>
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugp-Ot-XnB" customClass="FABButton" customModule="Material">
                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -143,8 +146,98 @@
                                     <outlet property="nameLabel" destination="GCK-0U-137" id="QaN-cN-Gff"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DABannerTableViewCell" id="bki-sq-RGn" customClass="DABannerTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="KxQ-EE-QWE" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="84" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KxQ-EE-QWE" id="o5f-ok-N9Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_9770933" translatesAutoresizingMaskIntoConstraints="NO" id="3FI-Ps-urJ">
+                                            <rect key="frame" x="16" y="0.0" width="41.5" height="55.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="3FI-Ps-urJ" secondAttribute="height" multiplier="156:209" id="6Ur-2Y-2z3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFu-Xv-Y8L">
+                                            <rect key="frame" x="65.5" y="0.0" width="100" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="65t-fr-H2n"/>
+                                                <constraint firstAttribute="width" constant="100" id="OUy-Df-9nS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-CL-6if">
+                                            <rect key="frame" x="89.5" y="34" width="225.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="J1q-7S-tFq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SQf-fJ-TDR">
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNt-hT-HCW" customClass="FABButton" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="bjM-4D-KOE"/>
+                                                        <constraint firstAttribute="width" constant="44" id="rkz-zJ-F60"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onCall:" destination="KxQ-EE-QWE" eventType="touchUpInside" id="Ovk-2I-AFG"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="132" id="Ljk-jN-hCM"/>
+                                                <constraint firstAttribute="height" constant="44" id="a4O-Io-NJH"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Ljk-jN-hCM"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="F5Y-CL-6if" firstAttribute="trailing" secondItem="SQf-fJ-TDR" secondAttribute="leading" id="5jn-2w-ojx"/>
+                                        <constraint firstItem="3FI-Ps-urJ" firstAttribute="bottom" secondItem="o5f-ok-N9Z" secondAttribute="bottom" id="8Oq-u7-can"/>
+                                        <constraint firstItem="F5Y-CL-6if" firstAttribute="bottom" secondItem="o5f-ok-N9Z" secondAttribute="bottom" constant="-0.5" id="ELs-0I-PLc"/>
+                                        <constraint firstItem="3FI-Ps-urJ" firstAttribute="top" secondItem="o5f-ok-N9Z" secondAttribute="top" id="IsY-K1-oNP"/>
+                                        <constraint firstItem="3FI-Ps-urJ" firstAttribute="leading" secondItem="o5f-ok-N9Z" secondAttribute="leading" constant="16" id="KOU-gl-k6d"/>
+                                        <constraint firstItem="TFu-Xv-Y8L" firstAttribute="top" secondItem="o5f-ok-N9Z" secondAttribute="top" id="Od3-6p-url"/>
+                                        <constraint firstItem="F5Y-CL-6if" firstAttribute="leading" secondItem="TFu-Xv-Y8L" secondAttribute="leading" constant="24" id="Rte-HM-QRb"/>
+                                        <constraint firstItem="SQf-fJ-TDR" firstAttribute="centerY" secondItem="o5f-ok-N9Z" secondAttribute="centerY" id="e99-Ne-IbB"/>
+                                        <constraint firstItem="SQf-fJ-TDR" firstAttribute="trailing" secondItem="o5f-ok-N9Z" secondAttribute="trailingMargin" id="oVn-9J-qX0"/>
+                                        <constraint firstItem="TFu-Xv-Y8L" firstAttribute="leading" secondItem="3FI-Ps-urJ" secondAttribute="trailing" constant="8" id="rFc-Kc-scx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="areaLabel" destination="F5Y-CL-6if" id="ozX-eV-agX"/>
+                                    <outlet property="buttonsStack" destination="SQf-fJ-TDR" id="TUC-oh-IvM"/>
+                                    <outlet property="callButton" destination="HNt-hT-HCW" id="SYd-UI-wJN"/>
+                                    <outlet property="nameLabel" destination="TFu-Xv-Y8L" id="Y3L-Nq-QU4"/>
+                                    <outlet property="photoView" destination="3FI-Ps-urJ" id="F2T-rF-nv1"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DABannerTableViewCell" id="bki-sq-RGn" customClass="DABannerTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="140" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bki-sq-RGn" id="Ast-0g-UkN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
@@ -161,7 +254,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 손안의 민주주의" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="q7P-Yq-4pX">
-                                            <rect key="frame" x="48" y="35" width="126.5" height="21"/>
+                                            <rect key="frame" x="56" y="35" width="126.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="irZ-bM-1H6"/>
                                             </constraints>
@@ -170,7 +263,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwU-2T-6im" customClass="FABButton" customModule="Material">
-                                            <rect key="frame" x="323" y="6" width="44" height="44"/>
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="rlM-oz-e0a"/>
                                                 <constraint firstAttribute="width" constant="44" id="tft-2S-kcr"/>
@@ -211,6 +304,92 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="bannerView" destination="hE3-xb-5Km" id="YxF-h7-yLV"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAGroupTableViewCell" id="o1W-QH-9dx" customClass="DAGroupTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="196" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1W-QH-9dx" id="Y5j-GT-Qpj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bec-zG-tGV">
+                                            <rect key="frame" x="16" y="10.5" width="150" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="IEE-St-SEN"/>
+                                                <constraint firstAttribute="width" constant="150" id="iKV-QH-MEg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-mq-VXg">
+                                            <rect key="frame" x="40" y="34" width="275" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="TNq-IE-zW3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="81M-EM-Pa3">
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-2L-2Iy" customClass="FABButton" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="1vg-gd-u4Q"/>
+                                                        <constraint firstAttribute="width" constant="44" id="UIG-bc-Ltp"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onCall:" destination="o1W-QH-9dx" eventType="touchUpInside" id="igY-HD-TZi"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="132" id="dDm-X7-ued"/>
+                                                <constraint firstAttribute="height" constant="44" id="oMs-UD-bO6"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="dDm-X7-ued"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.56470588235294117" green="0.64313725490196072" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="f5m-mq-VXg" firstAttribute="trailing" secondItem="81M-EM-Pa3" secondAttribute="leading" id="Vrr-R3-Eq7"/>
+                                        <constraint firstItem="f5m-mq-VXg" firstAttribute="bottom" secondItem="Y5j-GT-Qpj" secondAttribute="bottom" constant="-0.5" id="YZp-Ei-gbO"/>
+                                        <constraint firstItem="81M-EM-Pa3" firstAttribute="centerY" secondItem="Y5j-GT-Qpj" secondAttribute="centerY" id="Zxn-eK-ayd"/>
+                                        <constraint firstItem="f5m-mq-VXg" firstAttribute="leading" secondItem="bec-zG-tGV" secondAttribute="leading" constant="24" id="aMM-eG-Yfg"/>
+                                        <constraint firstItem="81M-EM-Pa3" firstAttribute="trailing" secondItem="Y5j-GT-Qpj" secondAttribute="trailingMargin" id="aTx-pf-FDn"/>
+                                        <constraint firstItem="bec-zG-tGV" firstAttribute="top" secondItem="Y5j-GT-Qpj" secondAttribute="top" id="d8U-h4-ACz"/>
+                                        <constraint firstItem="bec-zG-tGV" firstAttribute="leading" secondItem="Y5j-GT-Qpj" secondAttribute="leading" constant="16" id="oiC-Eo-Qb2"/>
+                                        <constraint firstItem="bec-zG-tGV" firstAttribute="centerY" secondItem="Y5j-GT-Qpj" secondAttribute="centerY" id="pSX-BO-cV8"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="d8U-h4-ACz"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.56470588235294117" green="0.64313725490196072" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="areaLabel" destination="f5m-mq-VXg" id="WEP-BS-NZD"/>
+                                    <outlet property="buttonsStack" destination="81M-EM-Pa3" id="wbf-Kx-kSD"/>
+                                    <outlet property="callButton" destination="ruu-2L-2Iy" id="eYn-IE-Fwm"/>
+                                    <outlet property="nameLabel" destination="bec-zG-tGV" id="SGh-bf-M1U"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -286,14 +465,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="공지사항" id="zH7-AI-7vJ">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="g0B-4a-hp5">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tFw-H1-hgE">
-                                                <rect key="frame" x="16" y="0.0" width="44" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="logo"/>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="닫기" id="Cj0-oc-z1X">
+                                        <barButtonItem key="rightBarButtonItem" title="닫기" width="44" id="Cj0-oc-z1X">
                                             <color key="tintColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="onDone:" destination="brc-aj-Db3" id="gKi-AH-YVj"/>
@@ -333,96 +505,34 @@
             </objects>
             <point key="canvasLocation" x="2845.5999999999999" y="-255.02248875562222"/>
         </scene>
+        <!--정치후원-->
+        <scene sceneID="To6-g2-13J">
+            <objects>
+                <navigationController id="dXk-2n-Stw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="정치후원" image="icon_donate_off" selectedImage="icon_donate_on" id="MNg-Gl-3zs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4ee-nW-XVb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZKl-iV-Bp2" kind="relationship" relationship="rootViewController" id="gSU-68-CnU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i0F-MK-xlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2" y="2048"/>
+        </scene>
         <!--즐겨찾기-->
         <scene sceneID="ebW-iv-c5u">
             <objects>
                 <tableViewController id="KAs-QS-ow8" customClass="DAFavoriteTableViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="MiM-jM-B3i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="HdK-xU-vxd" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdK-xU-vxd" id="v27-iR-R4w">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYq-NL-ekM">
-                                            <rect key="frame" x="16" y="0.0" width="100" height="35"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="asl-Dl-wmP"/>
-                                                <constraint firstAttribute="height" constant="35" id="dv9-gr-nyB"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어디 어디 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ctA-6W-kA7">
-                                            <rect key="frame" x="40" y="34" width="283" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="crB-dX-9Fo"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xl3-zs-mK2">
-                                            <rect key="frame" x="323" y="6" width="44" height="44"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftr-Oj-bIp" customClass="FABButton" customModule="Material">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="WtP-gT-fmN"/>
-                                                        <constraint firstAttribute="height" constant="44" id="jEL-0T-lGF"/>
-                                                    </constraints>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="onCall:" destination="HdK-xU-vxd" eventType="touchUpInside" id="zpu-hU-OIE"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="132" id="VdG-4i-WsO"/>
-                                                <constraint firstAttribute="height" constant="44" id="dvM-OK-DPu"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="VdG-4i-WsO"/>
-                                                </mask>
-                                            </variation>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Xl3-zs-mK2" firstAttribute="trailing" secondItem="v27-iR-R4w" secondAttribute="trailingMargin" id="2aF-zL-FNS"/>
-                                        <constraint firstItem="SYq-NL-ekM" firstAttribute="leading" secondItem="v27-iR-R4w" secondAttribute="leading" constant="16" id="2no-DG-ihw"/>
-                                        <constraint firstItem="SYq-NL-ekM" firstAttribute="top" secondItem="v27-iR-R4w" secondAttribute="top" id="8sX-kY-SNc"/>
-                                        <constraint firstItem="ctA-6W-kA7" firstAttribute="leading" secondItem="SYq-NL-ekM" secondAttribute="leading" constant="24" id="Dgo-Rl-08r"/>
-                                        <constraint firstAttribute="bottom" secondItem="ctA-6W-kA7" secondAttribute="bottom" constant="0.5" id="M9I-67-49G"/>
-                                        <constraint firstItem="Xl3-zs-mK2" firstAttribute="centerY" secondItem="v27-iR-R4w" secondAttribute="centerY" id="m4n-p5-qVI"/>
-                                        <constraint firstItem="ctA-6W-kA7" firstAttribute="trailing" secondItem="Xl3-zs-mK2" secondAttribute="leading" id="oc0-c5-v1w"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="areaLabel" destination="ctA-6W-kA7" id="WTk-hr-jUY"/>
-                                    <outlet property="buttonsStack" destination="Xl3-zs-mK2" id="xII-r7-By9"/>
-                                    <outlet property="callButton" destination="Ftr-Oj-bIp" id="tpI-U9-oIs"/>
-                                    <outlet property="nameLabel" destination="SYq-NL-ekM" id="wIe-mf-XK5"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DABannerTableViewCell" id="oyJ-Jb-rqY" customClass="DABannerTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oyJ-Jb-rqY" id="pvu-jJ-SIU">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
@@ -439,7 +549,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 손안의 민주주의" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gJ0-Zc-ujX">
-                                            <rect key="frame" x="48" y="35" width="126.5" height="21"/>
+                                            <rect key="frame" x="56" y="35" width="126.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="dYs-kw-ZSp"/>
                                             </constraints>
@@ -448,7 +558,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNR-xN-Y7P" customClass="FABButton" customModule="Material">
-                                            <rect key="frame" x="323" y="6" width="44" height="44"/>
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="J0Y-oa-SNE"/>
                                                 <constraint firstAttribute="height" constant="44" id="c2O-9I-PCf"/>
@@ -491,6 +601,175 @@
                                     <outlet property="bannerView" destination="N6z-FJ-kD4" id="Wje-Ka-JGL"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="0xg-gh-LUB" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="84" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0xg-gh-LUB" id="la1-5e-XCJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_9770933" translatesAutoresizingMaskIntoConstraints="NO" id="m44-wM-fvU">
+                                            <rect key="frame" x="16" y="0.0" width="41.5" height="55.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="m44-wM-fvU" secondAttribute="height" multiplier="156:209" id="soL-EP-g3Z"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sd-vU-K5z">
+                                            <rect key="frame" x="65.5" y="0.0" width="100" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="6gP-TE-Lvj"/>
+                                                <constraint firstAttribute="height" constant="35" id="kb8-YZ-YiR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bgl-yG-iKo">
+                                            <rect key="frame" x="89.5" y="34" width="225.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="MLX-Mn-Jrf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Ix-Mq-uRN">
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qO-Ez-CLO" customClass="FABButton" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="Dda-pB-m45"/>
+                                                        <constraint firstAttribute="width" constant="44" id="pPe-Fq-KyA"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onCall:" destination="0xg-gh-LUB" eventType="touchUpInside" id="eqS-LJ-YDf"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="5ki-r6-PMQ"/>
+                                                <constraint firstAttribute="width" constant="132" id="dfX-xf-IWz"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="dfX-xf-IWz"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="m44-wM-fvU" firstAttribute="leading" secondItem="la1-5e-XCJ" secondAttribute="leading" constant="16" id="0fP-Na-IRq"/>
+                                        <constraint firstItem="Bgl-yG-iKo" firstAttribute="bottom" secondItem="la1-5e-XCJ" secondAttribute="bottom" constant="-0.5" id="0zb-Sn-KnZ"/>
+                                        <constraint firstItem="2Sd-vU-K5z" firstAttribute="top" secondItem="la1-5e-XCJ" secondAttribute="top" id="5dF-hy-UCy"/>
+                                        <constraint firstItem="Bgl-yG-iKo" firstAttribute="trailing" secondItem="3Ix-Mq-uRN" secondAttribute="leading" id="5ki-H8-X7W"/>
+                                        <constraint firstItem="3Ix-Mq-uRN" firstAttribute="trailing" secondItem="la1-5e-XCJ" secondAttribute="trailingMargin" id="BpY-zo-oxv"/>
+                                        <constraint firstItem="m44-wM-fvU" firstAttribute="bottom" secondItem="la1-5e-XCJ" secondAttribute="bottom" id="Fj8-lE-ZdO"/>
+                                        <constraint firstItem="2Sd-vU-K5z" firstAttribute="leading" secondItem="m44-wM-fvU" secondAttribute="trailing" constant="8" id="VFH-cy-CYl"/>
+                                        <constraint firstItem="m44-wM-fvU" firstAttribute="top" secondItem="la1-5e-XCJ" secondAttribute="top" id="bwv-uL-JaP"/>
+                                        <constraint firstItem="Bgl-yG-iKo" firstAttribute="leading" secondItem="2Sd-vU-K5z" secondAttribute="leading" constant="24" id="qd4-gY-zL1"/>
+                                        <constraint firstItem="3Ix-Mq-uRN" firstAttribute="centerY" secondItem="la1-5e-XCJ" secondAttribute="centerY" id="t2V-V4-xNS"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="areaLabel" destination="Bgl-yG-iKo" id="YtY-a1-ADj"/>
+                                    <outlet property="buttonsStack" destination="3Ix-Mq-uRN" id="qmQ-dl-whw"/>
+                                    <outlet property="callButton" destination="1qO-Ez-CLO" id="4Y4-UN-6sn"/>
+                                    <outlet property="nameLabel" destination="2Sd-vU-K5z" id="P7f-hG-sLC"/>
+                                    <outlet property="photoView" destination="m44-wM-fvU" id="1Za-lh-irk"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell_NoImage" id="mWO-HH-Vtl" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="140" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mWO-HH-Vtl" id="E3b-Aw-Dix">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8U-r1-QCD">
+                                            <rect key="frame" x="16" y="0.0" width="100" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="USY-Lm-tDS"/>
+                                                <constraint firstAttribute="width" constant="100" id="ggd-4p-2nY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YNN-uK-U0j">
+                                            <rect key="frame" x="40" y="34" width="275" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="AbA-bu-Xj4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2SJ-0s-1A3">
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqw-dS-hW2" customClass="FABButton" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="Jb1-Jd-sML"/>
+                                                        <constraint firstAttribute="width" constant="44" id="uG7-go-XxN"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onCall:" destination="mWO-HH-Vtl" eventType="touchUpInside" id="dtf-rf-57G"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="DEA-qm-ZZl"/>
+                                                <constraint firstAttribute="width" constant="132" id="wYo-z6-jgI"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="wYo-z6-jgI"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YNN-uK-U0j" firstAttribute="trailing" secondItem="2SJ-0s-1A3" secondAttribute="leading" id="3Ml-tr-R1d"/>
+                                        <constraint firstItem="YNN-uK-U0j" firstAttribute="leading" secondItem="G8U-r1-QCD" secondAttribute="leading" constant="24" id="4is-aE-rfV"/>
+                                        <constraint firstItem="G8U-r1-QCD" firstAttribute="leading" secondItem="E3b-Aw-Dix" secondAttribute="leading" constant="16" id="C3I-CD-GcA"/>
+                                        <constraint firstItem="2SJ-0s-1A3" firstAttribute="trailing" secondItem="E3b-Aw-Dix" secondAttribute="trailingMargin" id="Qpg-YQ-5zr"/>
+                                        <constraint firstItem="2SJ-0s-1A3" firstAttribute="centerY" secondItem="E3b-Aw-Dix" secondAttribute="centerY" id="gwi-mr-Vsz"/>
+                                        <constraint firstItem="YNN-uK-U0j" firstAttribute="bottom" secondItem="E3b-Aw-Dix" secondAttribute="bottom" constant="-0.5" id="irC-ot-V3y"/>
+                                        <constraint firstItem="G8U-r1-QCD" firstAttribute="top" secondItem="E3b-Aw-Dix" secondAttribute="top" id="m8C-EP-H7V"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="areaLabel" destination="YNN-uK-U0j" id="hc5-LW-fP4"/>
+                                    <outlet property="buttonsStack" destination="2SJ-0s-1A3" id="w4p-7E-yBA"/>
+                                    <outlet property="callButton" destination="fqw-dS-hW2" id="mkA-Yh-IEV"/>
+                                    <outlet property="nameLabel" destination="G8U-r1-QCD" id="ekb-DG-t8o"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="KAs-QS-ow8" id="qXh-2p-mwG"/>
@@ -516,7 +795,32 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8p-Fh-vxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="439"/>
+            <point key="canvasLocation" x="1902" y="1206"/>
+        </scene>
+        <!--정치 후원하기-->
+        <scene sceneID="7gA-z7-kdT">
+            <objects>
+                <viewController id="ZKl-iV-Bp2" customClass="DASponsorViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n9s-hc-hr7"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZ3-t7-FHq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yJD-8J-8F7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="정치 후원하기" id="2RT-hj-GHN">
+                        <barButtonItem key="rightBarButtonItem" image="icon_money_stat.png" id="aM7-sA-UPz">
+                            <connections>
+                                <action selector="onStat:" destination="ZKl-iV-Bp2" id="5xT-6n-UTx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1k-LN-ZMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902" y="2048"/>
         </scene>
         <!--즐겨찾기-->
         <scene sceneID="7WA-cI-3JJ">
@@ -524,7 +828,7 @@
                 <navigationController id="zPF-LM-iHW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="즐겨찾기" image="icon_favor_off" selectedImage="icon_favor_on" id="yte-vL-6Qx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jZO-EY-GL4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -533,17 +837,432 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JP-oL-09j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="439"/>
+            <point key="canvasLocation" x="-1" y="1206"/>
+        </scene>
+        <!--이슈-->
+        <scene sceneID="KgJ-Cd-Ipa">
+            <objects>
+                <navigationController id="3oh-Wx-YcD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="이슈" image="icon_tree_off" selectedImage="icon_tree_on" id="ToX-rc-Sfv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NhJ-FM-iAs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WMC-pP-VSV" kind="relationship" relationship="rootViewController" id="Y0o-fs-kZy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S4G-A4-hgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="472"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="GJU-lO-2To">
+            <objects>
+                <tableViewController id="WMC-pP-VSV" customClass="DAEventTableViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="VzL-Uh-Abj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DABannerTableViewCell" id="Gzq-Iz-VB9" customClass="DABannerTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gzq-Iz-VB9" id="ccr-oa-CRN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="문자행동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcy-Fs-wCr">
+                                            <rect key="frame" x="24" y="0.0" width="100" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="1yx-gO-2xc"/>
+                                                <constraint firstAttribute="width" constant="100" id="Ouy-NA-NUk"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 손안의 민주주의" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-Jg-2Ui">
+                                            <rect key="frame" x="56" y="35" width="126.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="HSV-NF-TU0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mj3-YV-6uf" customClass="FABButton" customModule="Material">
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="6Or-2D-xoq"/>
+                                                <constraint firstAttribute="width" constant="44" id="TSS-jr-4Ib"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                    <color key="value" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_share_x25.png"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                    <color key="value" red="0.92549019610000005" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onShare:" destination="Gzq-Iz-VB9" eventType="touchUpInside" id="SUH-ua-ul8"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiR-33-WJi" customClass="GADBannerView">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hcy-Fs-wCr" firstAttribute="leading" secondItem="ccr-oa-CRN" secondAttribute="leadingMargin" constant="16" id="Ccl-cH-4Fp"/>
+                                        <constraint firstItem="wiR-33-WJi" firstAttribute="leading" secondItem="ccr-oa-CRN" secondAttribute="leading" id="MuD-kz-QV0"/>
+                                        <constraint firstItem="wiR-33-WJi" firstAttribute="top" secondItem="ccr-oa-CRN" secondAttribute="top" id="Qfj-fg-Bsf"/>
+                                        <constraint firstItem="ugd-Jg-2Ui" firstAttribute="bottom" secondItem="wiR-33-WJi" secondAttribute="bottom" constant="-0.5" id="YRN-tx-6Ps"/>
+                                        <constraint firstItem="hcy-Fs-wCr" firstAttribute="top" secondItem="ccr-oa-CRN" secondAttribute="topMargin" id="dmT-e4-pg2"/>
+                                        <constraint firstAttribute="trailing" secondItem="wiR-33-WJi" secondAttribute="trailing" id="g30-pj-4YL"/>
+                                        <constraint firstItem="Mj3-YV-6uf" firstAttribute="trailing" secondItem="ccr-oa-CRN" secondAttribute="trailingMargin" id="hSS-vf-QaI"/>
+                                        <constraint firstItem="ugd-Jg-2Ui" firstAttribute="leading" secondItem="hcy-Fs-wCr" secondAttribute="leading" constant="24" id="kAT-6K-5vK"/>
+                                        <constraint firstAttribute="bottom" secondItem="wiR-33-WJi" secondAttribute="bottom" id="wl2-z1-kgE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Mj3-YV-6uf" firstAttribute="centerY" secondItem="Gzq-Iz-VB9" secondAttribute="centerY" id="6jD-jt-ujF"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="bannerView" destination="wiR-33-WJi" id="6aG-As-vqw"/>
+                                    <outlet property="detailView" destination="ugd-Jg-2Ui" id="yfG-NH-F5l"/>
+                                    <outlet property="titleView" destination="hcy-Fs-wCr" id="j8f-ip-YyX"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAGroupTableViewCell" id="9Xc-TH-hBP" customClass="DAGroupTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="84" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Xc-TH-hBP" id="eX2-Pr-xFD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-NS-lfa">
+                                            <rect key="frame" x="16" y="10.5" width="299" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="QWd-Z0-R2u"/>
+                                                <constraint firstAttribute="width" constant="150" id="t91-4h-8jf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="t91-4h-8jf"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sJc-FS-4MQ">
+                                            <rect key="frame" x="40" y="34" width="275" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="G4G-EK-g0n"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AQb-rh-DoX">
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTh-fx-uxH" customClass="FABButton" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="JnM-4i-SpW"/>
+                                                        <constraint firstAttribute="height" constant="44" id="nSu-CV-e0Y"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onCall:" destination="9Xc-TH-hBP" eventType="touchUpInside" id="dmp-Eo-5iY"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="132" id="E7Z-s8-g7S"/>
+                                                <constraint firstAttribute="height" constant="44" id="jK6-yn-VeM"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="E7Z-s8-g7S"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.56470588239999997" green="0.64313725489999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="T5d-NS-lfa" firstAttribute="centerY" secondItem="eX2-Pr-xFD" secondAttribute="centerY" id="1gb-1B-lkg"/>
+                                        <constraint firstItem="T5d-NS-lfa" firstAttribute="leading" secondItem="eX2-Pr-xFD" secondAttribute="leading" constant="16" id="TfK-Oi-2p7"/>
+                                        <constraint firstItem="T5d-NS-lfa" firstAttribute="top" secondItem="eX2-Pr-xFD" secondAttribute="top" id="TkG-Vu-d4u"/>
+                                        <constraint firstItem="sJc-FS-4MQ" firstAttribute="trailing" secondItem="AQb-rh-DoX" secondAttribute="leading" id="Vi4-bR-yWu"/>
+                                        <constraint firstItem="sJc-FS-4MQ" firstAttribute="bottom" secondItem="eX2-Pr-xFD" secondAttribute="bottom" constant="-0.5" id="cou-N8-qG4"/>
+                                        <constraint firstItem="sJc-FS-4MQ" firstAttribute="leading" secondItem="T5d-NS-lfa" secondAttribute="leading" constant="24" id="cyR-Yx-ixf"/>
+                                        <constraint firstItem="T5d-NS-lfa" firstAttribute="trailing" secondItem="AQb-rh-DoX" secondAttribute="leading" id="ke3-8B-Gfk"/>
+                                        <constraint firstItem="AQb-rh-DoX" firstAttribute="trailing" secondItem="eX2-Pr-xFD" secondAttribute="trailingMargin" id="pWU-Zl-QqV"/>
+                                        <constraint firstItem="AQb-rh-DoX" firstAttribute="centerY" secondItem="eX2-Pr-xFD" secondAttribute="centerY" id="yKF-fr-9kx"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="TkG-Vu-d4u"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.64313725489999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="areaLabel" destination="sJc-FS-4MQ" id="dvh-uN-SCS"/>
+                                    <outlet property="buttonsStack" destination="AQb-rh-DoX" id="pkb-6D-E8x"/>
+                                    <outlet property="callButton" destination="MTh-fx-uxH" id="nls-eq-qq2"/>
+                                    <outlet property="nameLabel" destination="T5d-NS-lfa" id="Nsz-fw-cIk"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="Rv1-bW-6Nd" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="140" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rv1-bW-6Nd" id="7xj-31-LLw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_9770933" translatesAutoresizingMaskIntoConstraints="NO" id="XE7-XA-fXM">
+                                            <rect key="frame" x="16" y="0.0" width="41.5" height="55.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="XE7-XA-fXM" secondAttribute="height" multiplier="156:209" id="mkc-u2-j0a"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxD-ra-0He">
+                                            <rect key="frame" x="65.5" y="0.0" width="100" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="8UV-1H-6CA"/>
+                                                <constraint firstAttribute="width" constant="100" id="Qwk-tw-gDw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eYl-5m-jxp">
+                                            <rect key="frame" x="89.5" y="34" width="225.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ECQ-8a-odP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SxD-Um-z8Q">
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xio-CF-DM8" customClass="FABButton" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="7hT-My-Tdf"/>
+                                                        <constraint firstAttribute="height" constant="44" id="iTI-q2-3pZ"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onCall:" destination="Rv1-bW-6Nd" eventType="touchUpInside" id="SHp-MC-yh0"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="132" id="R0h-Zz-L09"/>
+                                                <constraint firstAttribute="height" constant="44" id="RD6-yh-oPA"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="R0h-Zz-L09"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="sxD-ra-0He" firstAttribute="top" secondItem="7xj-31-LLw" secondAttribute="top" id="1bo-hn-ASt"/>
+                                        <constraint firstItem="SxD-Um-z8Q" firstAttribute="centerY" secondItem="7xj-31-LLw" secondAttribute="centerY" id="22u-t6-r80"/>
+                                        <constraint firstItem="SxD-Um-z8Q" firstAttribute="trailing" secondItem="7xj-31-LLw" secondAttribute="trailingMargin" id="2El-mR-gZa"/>
+                                        <constraint firstItem="eYl-5m-jxp" firstAttribute="trailing" secondItem="SxD-Um-z8Q" secondAttribute="leading" id="3cg-6R-xLs"/>
+                                        <constraint firstItem="eYl-5m-jxp" firstAttribute="leading" secondItem="sxD-ra-0He" secondAttribute="leading" constant="24" id="6Pp-ja-DpD"/>
+                                        <constraint firstItem="XE7-XA-fXM" firstAttribute="leading" secondItem="7xj-31-LLw" secondAttribute="leading" constant="16" id="6oI-qz-5OS"/>
+                                        <constraint firstItem="XE7-XA-fXM" firstAttribute="top" secondItem="7xj-31-LLw" secondAttribute="top" id="H8d-5Y-PcO"/>
+                                        <constraint firstItem="XE7-XA-fXM" firstAttribute="bottom" secondItem="7xj-31-LLw" secondAttribute="bottom" id="NG1-tQ-6S7"/>
+                                        <constraint firstItem="sxD-ra-0He" firstAttribute="leading" secondItem="XE7-XA-fXM" secondAttribute="trailing" constant="8" id="WGH-8l-wck"/>
+                                        <constraint firstItem="eYl-5m-jxp" firstAttribute="bottom" secondItem="7xj-31-LLw" secondAttribute="bottom" constant="-0.5" id="e3Q-T7-3Ef"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="areaLabel" destination="eYl-5m-jxp" id="DdG-Km-XzN"/>
+                                    <outlet property="buttonsStack" destination="SxD-Um-z8Q" id="xxX-lu-8Mn"/>
+                                    <outlet property="callButton" destination="xio-CF-DM8" id="mJQ-K5-OGm"/>
+                                    <outlet property="nameLabel" destination="sxD-ra-0He" id="4sY-3g-Uga"/>
+                                    <outlet property="photoView" destination="XE7-XA-fXM" id="hwW-kK-9dd"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell_NoImage" id="Ond-i9-XrB" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="196" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ond-i9-XrB" id="nEK-Ma-eiW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50y-bw-TO2">
+                                            <rect key="frame" x="16" y="0.0" width="100" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="ILM-LV-Qmb"/>
+                                                <constraint firstAttribute="height" constant="35" id="IhQ-wU-9Kj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ztv-qr-X0a">
+                                            <rect key="frame" x="40" y="34" width="275" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="OuE-ll-olV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UAL-MP-O22">
+                                            <rect key="frame" x="315" y="6" width="44" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV3-Kq-87B" customClass="FABButton" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="lhQ-Yd-dXz"/>
+                                                        <constraint firstAttribute="width" constant="44" id="qXX-Ll-3vP"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" red="0.83137254900000002" green="0.88235294119999996" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onCall:" destination="Ond-i9-XrB" eventType="touchUpInside" id="EeM-n0-ysP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="132" id="URR-xP-Jyy"/>
+                                                <constraint firstAttribute="height" constant="44" id="wtb-Kh-qqH"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="URR-xP-Jyy"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ztv-qr-X0a" firstAttribute="trailing" secondItem="UAL-MP-O22" secondAttribute="leading" id="4fR-uU-HKS"/>
+                                        <constraint firstItem="ztv-qr-X0a" firstAttribute="leading" secondItem="50y-bw-TO2" secondAttribute="leading" constant="24" id="OBo-kc-oKq"/>
+                                        <constraint firstItem="UAL-MP-O22" firstAttribute="centerY" secondItem="nEK-Ma-eiW" secondAttribute="centerY" id="gP8-Ti-okP"/>
+                                        <constraint firstItem="ztv-qr-X0a" firstAttribute="bottom" secondItem="nEK-Ma-eiW" secondAttribute="bottom" constant="-0.5" id="pcs-dZ-q56"/>
+                                        <constraint firstItem="50y-bw-TO2" firstAttribute="top" secondItem="nEK-Ma-eiW" secondAttribute="top" id="tB7-gs-T7K"/>
+                                        <constraint firstItem="UAL-MP-O22" firstAttribute="trailing" secondItem="nEK-Ma-eiW" secondAttribute="trailingMargin" id="tcl-u4-UOc"/>
+                                        <constraint firstItem="50y-bw-TO2" firstAttribute="leading" secondItem="nEK-Ma-eiW" secondAttribute="leading" constant="16" id="tem-43-UvK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="areaLabel" destination="ztv-qr-X0a" id="zsW-2j-f5X"/>
+                                    <outlet property="buttonsStack" destination="UAL-MP-O22" id="2cK-jS-TYJ"/>
+                                    <outlet property="callButton" destination="BV3-Kq-87B" id="CQk-cU-isc"/>
+                                    <outlet property="nameLabel" destination="50y-bw-TO2" id="FNS-d3-qg5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WMC-pP-VSV" id="2G5-Xe-yDu"/>
+                            <outlet property="delegate" destination="WMC-pP-VSV" id="fVb-HG-BdP"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="aXh-LH-c5Q"/>
+                    <navigationItem key="navigationItem" id="qsO-yW-tbt">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="iol-Z9-eKJ">
+                            <color key="tintColor" red="0.14901960780000001" green="0.1960784314" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onShare:" destination="WMC-pP-VSV" id="99B-hB-vMB"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B7Q-Nd-hL5">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="이벤트">
+                                <color key="titleColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onGroup:" destination="WMC-pP-VSV" eventType="touchUpInside" id="WYM-Mk-M2e"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" image="icon_asc.png" id="LO4-rA-dqa">
+                            <color key="tintColor" red="0.14901960780000001" green="0.1960784314" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onSort:" destination="WMC-pP-VSV" id="SZh-qD-D4Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="groupButton" destination="B7Q-Nd-hL5" id="o8I-Sy-dgS"/>
+                        <outlet property="searchDisplayController" destination="8iI-WQ-MzH" id="x3U-1a-hk1"/>
+                        <outlet property="sortButton" destination="LO4-rA-dqa" id="3Gh-5z-TKS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2QF-VO-zMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="5Fb-i3-wa1">
+                    <connections>
+                        <outlet property="delegate" destination="WMC-pP-VSV" id="SU3-nZ-ec0"/>
+                        <outlet property="searchContentsController" destination="WMC-pP-VSV" id="lk9-Fl-Eyp"/>
+                        <outlet property="searchResultsDataSource" destination="WMC-pP-VSV" id="pCo-Rd-94p"/>
+                        <outlet property="searchResultsDelegate" destination="WMC-pP-VSV" id="WU5-hS-MQz"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1902" y="472"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon_asc.png" width="25" height="25"/>
         <image name="icon_call" width="25" height="25"/>
+        <image name="icon_donate_off" width="37" height="37"/>
+        <image name="icon_donate_on" width="37" height="37"/>
         <image name="icon_favor_off" width="37" height="37"/>
         <image name="icon_favor_on" width="37" height="37"/>
+        <image name="icon_money_stat.png" width="25" height="25"/>
         <image name="icon_people_off" width="37" height="37"/>
         <image name="icon_people_on" width="37" height="37"/>
         <image name="icon_share_x25.png" width="25" height="25"/>
-        <image name="logo" width="512" height="512"/>
+        <image name="icon_tree_off" width="37" height="37"/>
+        <image name="icon_tree_on" width="37" height="37"/>
+        <image name="photo_9770933" width="156" height="209"/>
     </resources>
 </document>
