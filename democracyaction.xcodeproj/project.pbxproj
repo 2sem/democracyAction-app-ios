@@ -99,7 +99,6 @@
 		2CF194C91F6F8F5F0013CDD9 /* GADRewardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */; };
 		2CF194CB1F6F92660013CDD9 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF194CA1F6F92660013CDD9 /* ReviewManager.swift */; };
 		2CF2937A1F4D99E8009D4B0F /* LSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF293791F4D99E8009D4B0F /* LSWebViewController.swift */; };
-		2CF39A341F0549FB00933B3A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF39A331F0549FB00933B3A /* UIView+.swift */; };
 		2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF495081EF6B09A00FDC401 /* Icons8.png */; };
 		2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */; };
 		2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950C1EF6B4DA00FDC401 /* logo.png */; };
@@ -226,7 +225,6 @@
 		2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADRewardManager.swift; sourceTree = "<group>"; };
 		2CF194CA1F6F92660013CDD9 /* ReviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
 		2CF293791F4D99E8009D4B0F /* LSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSWebViewController.swift; sourceTree = "<group>"; };
-		2CF39A331F0549FB00933B3A /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2CF495081EF6B09A00FDC401 /* Icons8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icons8.png; sourceTree = "<group>"; };
 		2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Y2K.PNG; sourceTree = "<group>"; };
 		2CF4950C1EF6B4DA00FDC401 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -350,7 +348,6 @@
 				2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */,
 				2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */,
 				2CF194CA1F6F92660013CDD9 /* ReviewManager.swift */,
-				2CF39A331F0549FB00933B3A /* UIView+.swift */,
 				2C0B70CB1F0E7FA400D9D1C0 /* GADBannerView+.swift */,
 				2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */,
 				2C145BE71F20D98A00E29D1A /* LSScrollButton.swift */,
@@ -841,7 +838,6 @@
 				2C14CBCD1EE9552A003BB329 /* AppDelegate.swift in Sources */,
 				2C09B90A1F03635000BCBFC7 /* DAModelController+DAFavoriteInfo.swift in Sources */,
 				2C6D79E51F013D9500237028 /* DAPersonGroup.swift in Sources */,
-				2CF39A341F0549FB00933B3A /* UIView+.swift in Sources */,
 				2C1EC3591F0BB23F00CA5DD6 /* DAPersonInfo+KLKTalkLinkCenter.swift in Sources */,
 				2C6D79E01F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift in Sources */,
 				2C145BEA1F20ECA400E29D1A /* DAModelController+DAEventInfo.swift in Sources */,

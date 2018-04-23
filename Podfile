@@ -41,10 +41,12 @@ target 'democracyaction' do
         XlsxReaderWriter = installer.pods_project.targets.find{ |t| t.name == "XlsxReaderWriter" }
         #puts "capture #{XlsxReaderWriter}";
         #find target name of "XMLDictionary" from targets in Pods
-        XMLDictionary = installer.pods_project.targets.find{ |t| t.name == "XMLDictionary" }
+        XMLDictionary = installer.pods_project.targets
+            .find{ |t| t.name == "XMLDictionary" }
         #puts "capture #{XMLDictionary}";
         #find file reference for "XMLDictionary.h" of a Project "XMLDictionary"
-        XMLDictionaryHeader = XMLDictionary.headers_build_phase.files.find{ |b| b.file_ref.name == "XMLDictionary.h" }.file_ref
+        XMLDictionaryHeader = XMLDictionary.headers_build_phase.files
+            .find{ |b| b.file_ref.name == "XMLDictionary.h" }.file_ref
         
         #add reference for "XMLDictionary.h" into project "XlsxReaderWriter"
         XMLDictionaryHeaderBuild = XlsxReaderWriter.headers_build_phase.add_file_reference(XMLDictionaryHeader, avoid_duplicates = true);
