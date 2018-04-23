@@ -1,4 +1,6 @@
 *.xlsx
+democracyaction/300korea.plist
+democracyaction/300koreatest.plist
 # Created by https://www.gitignore.io/api/xcode,swift,cocoapods
 
 ### CocoaPods ###

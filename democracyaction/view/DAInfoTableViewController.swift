@@ -12,6 +12,7 @@ import DownPicker
 import SwipeCellKit
 import KakaoLink
 import MBProgressHUD
+import LSExtensions
 
 class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate, DAGroupTableViewCellDelegate {
     class CellIDs{
@@ -36,7 +37,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     var searchController : UISearchController!;
-    //var searchContainer : UISearchContainerViewController!;
     var searchBar : UISearchBar{
         get{
             return self.searchController.searchBar;
@@ -46,19 +46,19 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     // = URL(string: "kakaolink://test?name=손혜원&area=호호".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")
     static var startingQuery : URL?{
         didSet{
-            let tabs = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController;
-            guard tabs != nil else{
+            guard let tabs = UIApplication.shared.keyWindow?
+                .rootViewController as? UITabBarController else{
                 return;
             }
             
-            if let nav = tabs?.selectedViewController as? UINavigationController{
+            if let nav = tabs.selectedViewController as? UINavigationController{
                 if let infoTable = nav.viewControllers.first as? DAInfoTableViewController{
                     if infoTable.isViewLoaded{
+                        //query by kakao link
                         infoTable.searchByLaunchQuery();
                     }
-                    //infoTable.presentingViewController
-                }else if (tabs?.viewControllers?.count ?? 0) > 0{
-                    tabs?.selectedIndex = 0;
+                }else if (tabs.viewControllers?.count ?? 0) > 0{
+                    tabs.selectedIndex = 0;
                 }
             }
         }
@@ -70,7 +70,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         case byArea = 2
     }
     
-    //var groupingType = GroupingType.byName;
     var groupingType : GroupingType{
         get{
             return GroupingType(rawValue: self.groupingSegment.selectedSegmentIndex)!;
@@ -90,17 +89,10 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }
     }
     
-    //var firstWords = Character.koreanChoSeongs;
-    //var groupsBySpell : [DAExcelGroupInfo] = [];
-    //var groupsBySpell : [DAPersonGroup] = [];
     var groups : [DAPersonGroup] = [];
     var groupExpanding : [Int:Bool] = [:];
     
     var areas = ["서울", "경남", "경북", "제주", "비례대표",  "충남", "충북", "대구", "강원", "광주", "대전", "경기", "부산", "전북", "인천" , "전남", "세종", "울산"];
-    //var filteredGroupsBySpell : [DAExcelGroupInfo] = [];
-    //var groupingPicker : UIDownPicker!;
-    //var filteredGroups : [DAExcelGroupInfo] = [];
-    //var filteredGroups : [DAPersonGroupInfo] = [];
     var isAscending = true;
     var cellPreparingQueue = OperationQueue();
     
@@ -148,70 +140,36 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         if DAInfoTableViewController._shared == nil{
             DAInfoTableViewController._shared = self;
         }
-        //DownPicker
-        /*
-         UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneClicked:)];
-         
-         UIBarButtonItem* cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelClicked:)];
-         */
         
-        /*self.groupingPicker = UIDownPicker(data: groupingTypes);
-        self.groupingPicker.downPicker.setToolbarDoneButtonText("완료");
-        self.groupingPicker.downPicker.setToolbarCancelButtonText("취소");
-        self.groupingPicker.downPicker.selectedIndex = self.groupingType.rawValue;
-        self.groupingButton.setTitle(self.groupingPicker.text, for: .normal);
-        self.groupingPicker.downPicker.addTarget(self, action: #selector(onGroupingSelected(_:)), for: .valueChanged);
-        self.view.addSubview(self.groupingPicker);*/
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        //developer mode - upgrade database
-        //load groups & persons from excel
-        /*if DADefaults.DataVersion.isEmpty{
-            //&& DAExcelController.shared.needToUpdate{
-            //sync groups and persons to database
-            DAModelController.Default.sync(DAExcelController.shared);
-            self.groups = self.modelController.loadGroupsBySpell(self.isAscending);
-            self.showNotice();
-        }else{*/
-            //var hub = MBProgressHUD.showAdded(to: self.view, animated: true);
-            //hub.mode = .indeterminate;
-            //hub.dimBackground = true;
-            //hub.label.text = "데이터 업데이트 중";
-            var hub : MBProgressHUD?;
-            DAUpdateManger.shared.update(progress: { (state, error) in
-                DispatchQueue.main.syncOrNot{
-                    if hub == nil{
-                        hub = MBProgressHUD.showAdded(to: self.view, animated: true);
-                        hub?.mode = .indeterminate;
-                        //hub?.dimBackground = true;
-                    }
-                    hub?.label.text = state.rawValue;
-                    self.blockInterface(block: true);
+        var hub : MBProgressHUD?;
+        DAUpdateManger.shared.update(progress: { (state, error) in
+            DispatchQueue.main.syncInMain{
+                if hub == nil{
+                    hub = MBProgressHUD.showAdded(to: self.view, animated: true);
+                    hub?.mode = .indeterminate;
+                    //hub?.dimBackground = true;
                 }
-            }, completion: { (result) in
-                //end update
-                guard result else{
-                    DispatchQueue.main.async{
-                        MBProgressHUD.hide(for: self.view, animated: true);
-                        self.searchBar(self.searchBar, textDidChange: self.searchBar.text ?? "");
-                        self.blockInterface(block: false);
-                    }
-                    return;
-                }
-                
+                hub?.label.text = state.rawValue;
+                self.blockInterface(block: true);
+            }
+        }, completion: { (result) in
+            //end update
+            guard result else{
                 DispatchQueue.main.async{
                     MBProgressHUD.hide(for: self.view, animated: true);
                     self.searchBar(self.searchBar, textDidChange: self.searchBar.text ?? "");
                     self.blockInterface(block: false);
-                    self.showNotice();
                 }
-            })
-        //}
+                return;
+            }
+            
+            DispatchQueue.main.async{
+                MBProgressHUD.hide(for: self.view, animated: true);
+                self.searchBar(self.searchBar, textDidChange: self.searchBar.text ?? "");
+                self.blockInterface(block: false);
+                self.showNotice();
+            }
+        })
         
         //convert to database
         //self.groupsBySpell = DAExcelController.Default.groupsBySpell();
@@ -266,11 +224,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         self.endButton.heightAnchor.constraint(equalToConstant: 44).isActive = true;
         self.endButton.frame.size = CGSize(width: 44, height: 44);
         self.endButton.frame.origin.x = 16;
-        //self.endButton.frame.origin.x = self.view.frame.maxX - self.endButton.frame.width - 16;
-        //self.endButton.frame.origin.y = self.view.frame.maxY - self.endButton.frame.width - 8;
-        //self.endButton.trailingAnchor.constraint(equalTo: self.tableView.trailingAnchor, constant: -16).isActive = true;
         self.endButton.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor, constant: 16).isActive = true;
-        //self.endButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16).isActive = true;
         self.endButton.layer.cornerRadius = 5.0;
         self.endButton.addTarget(self, action: #selector(self.onGoEndRow(_:)), for: .touchUpInside);
         self.layoutEndButton(self.endButton);
@@ -284,53 +238,12 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         self.nextButton.heightAnchor.constraint(equalToConstant: 44).isActive = true;
         self.nextButton.frame.size = CGSize(width: 44, height: 44);
         self.nextButton.frame.origin.x = 16 + 44 + 8;
-        //self.endButton.frame.origin.x = self.view.frame.maxX - self.endButton.frame.width - 16;
-        //self.endButton.frame.origin.y = self.view.frame.maxY - self.endButton.frame.width - 8;
-        //self.endButton.trailingAnchor.constraint(equalTo: self.tableView.trailingAnchor, constant: -16).isActive = true;
         self.nextButton.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor, constant: 16 + 44 + 8).isActive = true;
-        //self.endButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16).isActive = true;
         self.nextButton.layer.cornerRadius = 5.0;
         self.nextButton.addTarget(self, action: #selector(self.onGoNextSection(_:)), for: .touchUpInside);
         self.layoutEndButton(self.nextButton);
         
         self.needAds = GADInterstialManager.shared?.canShow ?? true;
-
-        /*var congresses = DAExcelController.Default.loadCongresses();
-        for congress in congresses{
-            print("congress \(congress)");
-        }*/
-        
-        //Notice
-        //if DADefaults.LastNotice < "2017-06-18".toDate("yyyy-MM-dd")!{
-        
-        //download from google
-        /*var googleQuery = GTLRDriveQuery_FilesExport.queryForMedia(withFileId: "0B05rDBrnJN-ua2ZNM1NLb0stRDQ", mimeType: "text/plain");
-        var googleService = GTLRDriveService();
-        googleService.executeQuery(googleQuery) { (ticket, data, error) in
-            guard error == nil else{
-                print("google drive error[\(error)]");
-                return;
-            }
-            
-            print("download google file. data[\(data)]");
-        }*/
-        
-        /*var googleQuery = GTLRDriveQuery_FilesGet.queryForMedia(withFileId: "0B05rDBrnJN-ua2ZNM1NLb0stRDQ");
-            //.query(withFileId: "0B05rDBrnJN-ua2ZNM1NLb0stRDQ");
-        var googleService = GTLRDriveService();
-        
-        let googleRequest = googleService.request(for: googleQuery);
-        var googleFetcher = googleService.fetcherService.fetcher(with: googleRequest as URLRequest);
-        googleFetcher.beginFetch { (data, error) in
-            guard error == nil else{
-                print("google drive error[\(error)]");
-                return;
-            }
-            
-            print("download google file. data[\(data?.count)]");
-        }*/
-        //var googleRequest = googleService.;
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -352,8 +265,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             //noticeView.modalPresentationStyle = .formSheet;
             noticeView.text = self.excelController.notice + "\n\n[\(self.excelController.version) 패치 내용]\n" + self.excelController.patch;
             self.present(noticeView, animated: true, completion: nil);
-            //noticeView.popOver(inView: self, viewToShow: self.view, rectToShow: self.view.frame, permittedArrowDirections: .any, animated: true);
-            //self.showAlert(title: "공지", msg: self.excelController.notice, actions: [UIAlertAction(title: "확인", style: .default, handler: nil)], style: .alert)
             
             DADefaults.LastNotice = Date();
             //\n\n'\(UIApplication.shared.displayName ?? "")'은 특정정당을 위해 개발한 어플이 아닙니다.
@@ -381,14 +292,9 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         var queryName = urlComponents?.queryItems?.first(where: { (query) -> Bool in
             return query.name == "name";
         })
-        /*var queryArea = urlComponents?.queryItems?.first(where: { (query) -> Bool in
-            return query.name == "area";
-        })*/
         var queryMobile = urlComponents?.queryItems?.first(where: { (query) -> Bool in
             return query.name == "mobile";
         })
-        /*self.showAlert(title: "공지", msg: "\(queryName) \(queryArea)", actions: [UIAlertAction(title: "확인", style: .default, handler: nil)], style: .alert);
-         DAInfoTableViewController.startingQuery = nil;*/
         
         guard force || queryMobile == nil else{
             guard let info = self.modelController.findPerson(Int16(queryId?.value ?? "0") ?? 0) else{
@@ -425,7 +331,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         
         self.searchBar.text = queryName?.value;
         self.groupingSegment.selectedSegmentIndex = GroupingType.byGroup.rawValue;
-        //self.groupingType = .byGroup;
+        
         self.searchBar(self.searchBar, textDidChange: queryName?.value?.trim() ?? "");
         self.searchBar.becomeFirstResponder();
         
@@ -476,12 +382,12 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         switch self.groupingType{
         case .byName:
             self.nextButton.setTitle(self.groups[nextSection].name, for: .normal);
-            //self.nextButton.widthAnchor.constraint(equalToConstant: 44 * 2).isActive = true;
+            
             self.nextButton.frame.size.width = 44 + 8;
             break;
         case .byGroup, .byArea:
             self.nextButton.sizeToFit();
-            //self.nextButton.widthAnchor.constraint(equalToConstant:  + 8).isActive = true;
+    
             self.nextButton.frame.size.width += 8;
             self.nextButton.frame.size.height = 44;
             self.nextButton.frame.origin.x = 16;
@@ -493,7 +399,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     @IBAction func onGoBeginRow(_ button: UIButton) {
-        //self._onSendMessage(allowAll: false);
         let section = 0;
         guard self.tableView.numberOfSections > 0 else{
             return;
@@ -512,11 +417,9 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         let section = self.tableView(self.tableView, sectionForSectionIndexTitle: button.title(for: .normal) ?? "", at: 0);
         let indexPath = IndexPath(row: 0, section: section);
         self.tableView.scrollToRow(at: indexPath, at: .top, animated: false);
-        //self.updateNextButton();
     }
     
     @IBAction func onGoEndRow(_ button: UIButton) {
-        //self._onSendMessage(allowAll: false);
         let section = self.tableView.numberOfSections - 1;
         guard section >= 0 else{
             return;
@@ -532,11 +435,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     func layoutBeginButton(_ button : UIButton){
-        //button.frame.origin.x = self.view.bounds.maxX - button.bounds.width - 16;
-        //button.frame.origin.x = 16;
-        //self.view.bounds.maxY -
-        
-        //[GroupingType]([.byGroup, .byArea]).contains(groupingType)
         var heightMultiply : CGFloat = 0.0;
         switch self.groupingType{
         case .byName:
@@ -554,8 +452,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     func layoutEndButton(_ button : UIButton){
-        //button.frame.origin.x = self.view.bounds.maxX - button.bounds.width - 16;
-        //button.frame.origin.x = 16;
         button.frame.origin.y = self.view.bounds.maxY - button.bounds.height * 1.2;
     }
     
@@ -576,13 +472,9 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         self.layoutBeginButton(self.beginButton);
         self.layoutEndButton(self.endButton);
         self.layoutEndButton(self.nextButton);
-        //self.tableView.flashScrollIndicators();
         
         self.isScrollingToUp = self.tableView.contentOffset.y < self.beforeContentOffset;
         self.beforeContentOffset = self.tableView.contentOffset.y;
-        
-        //self.endButton.isHidden = true;
-        //print("scroll content offset[\(scrollView.contentOffset)] size[\(scrollView.contentSize)] height[\(scrollView.height)] tableOffset[\(self.tableView.contentOffset)]");
 
         self.updateMoveButtons(scrollView);
     }
@@ -611,11 +503,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
                 break;
             case .byGroup:
                 self.filterByGroup(self.searchBar.text ?? "");
-                /*self.sortPersonsByName(groups: self.filteredGroups, needToOrderGroups: true);
-                self.filteredGroups.sort(by: { (left, right) -> Bool in
-                    //return (self.isAscending && left.persons.count < right.persons.count) || (!self.isAscending && left.persons.count > right.persons.count);
-                    return left.persons.count > right.persons.count;
-                })*/
                 break;
             case .byArea:
                 self.filterByArea(self.searchBar.text ?? "");
@@ -626,14 +513,11 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
 
     @IBAction func onGroupingChanged(_ segment: UISegmentedControl) {
-        //self.groupingType = GroupingType(rawValue: segment.selectedSegmentIndex)!;
         switch self.groupingType{
             case .byName:
-                //self.tableView.style = UITableViewStyle.plain;
                 self.filterByName(self.searchBar.text ?? "")
                 break;
             case .byGroup:
-                //self.tableView.style = UITableViewStyle.grouped;
                 self.filterByGroup(self.searchBar.text ?? "");
                 break;
             case .byArea:
@@ -660,8 +544,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }
         
         self.groups = self.modelController.loadGroupsBySpell(self.isAscending, name: name, area: area);
-        
-        //self.filteredGroupsBySpell = self.sortPersonsByName(groups: self.filteredGroupsBySpell, needToOrderGroups: true);
     }
     
     func filterByGroup(_ keyword : String){
@@ -680,30 +562,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }
 
         self.groups = self.modelController.loadGroups(self.isAscending, name: name, area: area);
-        //var keywordChoSeongs = keyword.getKoreanChoSeongs(true);
-        
-        /*self.filteredGroups = DAExcelController.Default.groups.map({ (group) -> DAExcelGroupInfo in
-            var newGroup = DAExcelGroupInfo();
-            newGroup.id = group.value.id;
-            newGroup.title = group.value.title;
-            
-            newGroup.persons = group.value.persons.filter({ (person) -> Bool in
-                return keyword.isEmpty || person.name.hasPrefix(keyword) || person.name.getKoreanChoSeongs()?.hasPrefix(keyword) ?? false;
-            });
-            
-            return newGroup;
-        }).filter({ (group) -> Bool in
-            return !group.persons.isEmpty;
-        }).sorted(by: { (left, right) -> Bool in
-            //return (!self.isAscending && left.persons.count < right.persons.count) || (self.isAscending && left.persons.count > right.persons.count);
-            return left.persons.count > right.persons.count;
-        });
-        
-        /*self.filteredGroups = DAExcelController.Default.groups.values.sorted(by: { (left, right) -> Bool in
-            return left.id < right.id;
-        });*/
-        
-        self.sortPersonsByName(groups: self.filteredGroups, needToOrderGroups: false);*/
     }
     
     func filterByArea(_ keyword : String){
@@ -732,18 +590,8 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     func onGroupingSelected(_ picker: DownPicker){
-//        guard self.groupingType != nil else{
-//            self.typeButton.setTitle(picker.text, for: .normal);
-//            self.typeButton.setImage(nil, for: .normal);
-//            self.refreshInfos();
-//            return;
-//        }
-        
         print("selected \(picker)");
-        //self.typeButton.setImage(self.currentType?.image, for: .normal);
-        //self.groupingType = GroupingType(rawValue: picker.selectedIndex)!;
         self.groupingButton.setTitle(self.groupingTypes[self.groupingType.rawValue], for: .normal);
-        //self.refreshInfos();
     }
 
     @IBAction func onGrouping(_ sender: UIButton) {
@@ -782,7 +630,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }else{
             favAction.image = favOffImage;
         }
-        //favAction.backgroundColor = Color.blue;
         let shareAction = SwipeAction.init(style: .default, title: nil) { (act, indexPath) in
             let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
             //http://www.assembly.go.kr/photo/9770941.jpg
@@ -811,15 +658,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         let value = self.groups.count;
-        // #warning Incomplete implementation, return the number of sections
-        /*switch self.groupingType{
-            case .byName:
-                value = filteredGroupsBySpell.count;
-                break;
-            case .byGroup:
-                value = filteredGroups.count
-                break;
-        }*/
         
         return value;
     }
@@ -829,13 +667,8 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         // #warning Incomplete implementation, return the number of rows
         switch self.groupingType{
         case .byName:
-            //var key = self.groupsBySpell.keys.sorted()[section];
-            //var group = self.filteredGroupsBySpell[section]
-            //value = group.persons.count;
             break;
         case .byGroup:
-            //var group = self.filteredGroups[section];
-            //value = self.filteredGroups[section].persons.count;
             if !(self.groupExpanding[self.groups[section].id] ?? true){
                 value = 0;
             }
@@ -845,29 +678,11 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }
         
         return value;
-        //self.allHasLessRows &&
-        //return value + (self.needAds && (self.tableView.numberOfSections == 1 || value >= self.minimumRowsForAds || (self.tableView.numberOfSections - 1 == section)) ? 1 : 0);
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : UITableViewCell?;
         var infoCell : DAInfoTableViewCell?;
-        
-        /*switch self.groupingType{
-        case .byName:
-            var group = self.groups[indexPath.section]
-            person = group.persons[indexPath.row];
-            break;
-        case .byGroup:
-            var group = self.filteredGroups[indexPath.section];
-            person = group.persons[indexPath.row];
-            break;
-        }*/
-        //var person = self.excelController.persons[indexPath.row];
-        
-        /*if person != nil{
-            DAExcelController.Default.loadCongress(person!);
-        }*/
         
         //has only one section or this is large section or this is last section
         //and this is last row
@@ -878,11 +693,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }else{*/
             infoCell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.InfoCell, for: indexPath) as? DAInfoTableViewCell;
             cell = infoCell;
-            self.cellPreparingQueue.addOperation {
-                /*guard (self.tableView.indexPathsForVisibleRows ?? []).contains(indexPath) else{
-                    return;
-                }*/
-                
+            self.cellPreparingQueue.addOperation{
                 var person : DAPersonInfo?;
                 let group = self.groups[indexPath.section];
                 person = group.persons[indexPath.row];
@@ -897,9 +708,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             }
         //}
         
-        
-        // Configure the cell...
-
         return cell!;
     }
     
@@ -911,7 +719,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             values = self.groups.map({ (group) -> String in
                 return group.name;
             });
-            //tableView.scrollIndicatorInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16);
             break;
         case .byGroup:
             self.automaticallyAdjustsScrollViewInsets = true;
@@ -929,19 +736,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             return group.name == title;
         }) ?? 0;
         
-        /*switch self.groupingType{
-        case .byName:
-            value = self.filteredGroupsBySpell.index(where: { (group) -> Bool in
-                return group.title == title;
-            }) ?? 0;
-            break;
-        case .byGroup:
-            value = self.filteredGroups.index(where: { (group) -> Bool in
-                return group.title == title;
-            }) ?? 0;
-            break;
-        }*/
-        
         return value;
     }
     
@@ -950,18 +744,11 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         
         switch self.groupingType{
         case .byName:
-            //value = Character.koreanChoSeongs.index(of: title) ?? 0;
             break;
         case .byGroup:
             break;
         case .byArea:
             value = self.groups[section].name;
-            //            for (i, group) in self.filteredGroups.enumerated(){
-            //                if title == group.title{
-            //                    value = i;
-            //                    break;
-            //                }
-            //            }
             break;
         }
         
@@ -973,21 +760,11 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         
         switch self.groupingType{
         case .byName:
-            //value = Character.koreanChoSeongs.index(of: title) ?? 0;
             break;
         case .byGroup:
             cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.GroupCell) as? DAGroupTableViewCell;
-            /*if cell?.group === self.groups[section]{
-                cell = nil;
-            }*/
             cell?.group = self.groups[section];
             cell?.delegate = self;
-            //            for (i, group) in self.filteredGroups.enumerated(){
-            //                if title == group.title{
-            //                    value = i;
-            //                    break;
-            //                }
-            //            }
             break;
         case .byArea:
             break;

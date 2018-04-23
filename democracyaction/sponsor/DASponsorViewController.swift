@@ -24,25 +24,18 @@ class DASponsorViewController: ProgressWebViewController {
         self.toolbarItemTypes = [.back, .forward, .flexibleSpace, .reload];
         super.viewDidLoad();
         // Do any additional setup after loading the view.
-        //self.url = DASponsor.Urls.historyUrl;
-        //self.load(DASponsor.Urls.historyUrl);
         self.load(DASponsor.Urls.advUrl);
         self.websiteTitleInNavigationBar = false;
-        //self.navigationController?.isNavigationBarHidden = false;
-        //self.toolbarController?.toolbar.isHidden = true;
-        //self.updateBarButtonItems()
     }
-    
-    /*override func updateBarButtonItems() {
-        super.updateBarButtonItems();
-        self.navigationItem.rightBarButtonItems = self.originalRightButtons;
-    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     Open Stat Page of the Sponsing
+    */
     @IBAction func onStat(_ button: UIBarButtonItem) {
         let view = ProgressWebViewController.init(nibName: nil, bundle: Bundle.main);
         view.url = DASponsor.Urls.statUrl;

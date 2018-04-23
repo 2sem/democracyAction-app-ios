@@ -10,6 +10,7 @@ import UIKit
 import GoogleMobileAds
 import Firebase
 import UserNotifications
+import LSExtensions
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDelegate, ReviewManagerDelegate, GADRewardManagerDelegate {
@@ -49,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
                 return;
             }
             
-            DispatchQueue.main.syncOrNot {
+            DispatchQueue.main.syncInMain {
                 application.registerForRemoteNotifications();
             }
         }
@@ -95,8 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let device = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
-        print("APNs device[\(device)]");
+        //let device = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
+        print("APNs device[\(deviceToken.hexString)]");
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

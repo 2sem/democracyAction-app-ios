@@ -11,19 +11,47 @@ import UIKit
 
 class DAUpdateManger{
     static let shared = DAUpdateManger();
-    //live
-    private let infoFileID = "0B05rDBrnJN-ua2ZNM1NLb0stRDQ";
-    private let dataFileID = "0B05rDBrnJN-uTHpmcFBUNlliYXM";
-    private let verFileID = "1kOGTyfYoaQ2UsV0N4yK8MSX1Rb1E9JSl";
-    //test
-    //private let infoFileID = "0B05rDBrnJN-uc01nNldFQ0ZkR0E";
-    //https://drive.google.com/open?id=0B05rDBrnJN-uc01nNldFQ0ZkR0E
-    //private let dataFileID = "0B05rDBrnJN-uaG9zSVZyVlNGNTA";
-    //https://drive.google.com/open?id=0B05rDBrnJN-uaG9zSVZyVlNGNTA
-    //private let verFileID = "0B05rDBrnJN-uMTJ5VVJ4U2g5WEk";
-    //https://drive.google.com/open?id=0B05rDBrnJN-uMTJ5VVJ4U2g5WEk
     
     //private var dataUrl : URL?;
+    let plistName = "300korea"; //"300koreatest";//
+    var plist : [String : String]{
+        guard let plist = Bundle.main.path(forResource: self.plistName, ofType: "plist") else{
+            preconditionFailure("Please create plist file named of \(plistName). file[\(self.plistName).plist]");
+        }
+        
+        guard let dict = NSDictionary.init(contentsOfFile: plist) as? [String : String] else{
+            preconditionFailure("Please \(self.plistName).plist is not Property List.");
+        }
+        
+        return dict;
+    }
+    
+    private var infoFileID : String{
+        let pname = "Info File ID";
+        guard let value = self.plist[pname] else{
+            preconditionFailure("Please add \(pname) into \(self.plistName).plist.");
+        }
+        
+        return value;
+    }
+    
+    private var dataFileID : String{
+        let pname = "Data File ID";
+        guard let value = self.plist[pname] else{
+            preconditionFailure("Please add \(pname) into \(self.plistName).plist.");
+        }
+        
+        return value;
+    }
+    
+    private var verFileID : String{
+        let pname = "Version File ID";
+        guard let value = self.plist[pname] else{
+            preconditionFailure("Please add \(pname) into \(self.plistName).plist.");
+        }
+        
+        return value;
+    }
     
     enum UpdateState : String{
         case checkingVer = "앱 버전 확인 중";
@@ -44,7 +72,7 @@ class DAUpdateManger{
         updateProgress(.checkingVer, nil);
         self.verFileID.downloadSharedGoogle(destinationUrl: nil) { (verData, verError) in
             guard verError == nil else{
-                print("minimum version file download has been failed. error[\(verError.debugDescription)]");
+                print("downloading minimum version file has been failed. error[\(verError.debugDescription)]");
                 if DADefaults.DataVersion.isEmpty{
                     updateProgress(.updatingData, nil);
                     DispatchQueue.main.sync {
@@ -60,7 +88,6 @@ class DAUpdateManger{
             }
             
             let newVersion = String.init(data: verData!, encoding: String.Encoding.utf8) ?? "";
-            //|| DAExcelController.shared.version > DADefaults.DataVersion
             guard UIApplication.shared.version >= newVersion
                 else{
                     //already last update
@@ -74,15 +101,13 @@ class DAUpdateManger{
                     }), UIAlertAction(title: "업데이트 안함", style: .cancel, handler: { (act) in
                         self.updateData(progress: progress, completion: completion);
                     })], style: .alert);
-                    //print("data is already up to date. version[\(newVersion)]");
-                    //updateProgress(.upToDate, verError);
-                    //completion(false);
                     return;
             }
             
             self.updateData(progress: progress, completion: completion);
         }
     }
+    
     func updateData(progress : ((UpdateState, Error?) -> Void)?, completion: @escaping (Bool) -> Void){
         let updateProgress = {(state: UpdateState, error: Error?) -> Void in
             self.state = state;
