@@ -184,7 +184,7 @@
                value = "self.msgMenu?.fabButton">
             </PersistentString>
             <PersistentString
-               value = "self.msgButton">
+               value = "self.msgMenu.fabMenuItems">
             </PersistentString>
             <PersistentString
                value = "self.msgMenu">
@@ -193,13 +193,13 @@
                value = "self.msgMenu != nil">
             </PersistentString>
             <PersistentString
-               value = "self.info.sms">
-            </PersistentString>
-            <PersistentString
-               value = "self.msgMenu.fabMenuItems">
-            </PersistentString>
-            <PersistentString
                value = "self.buttonsStack.subviews.contains(self.msgMenu)">
+            </PersistentString>
+            <PersistentString
+               value = "self.msgButton">
+            </PersistentString>
+            <PersistentString
+               value = "self.info.sms">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -270,10 +270,10 @@
                value = "person.facebook">
             </PersistentString>
             <PersistentString
-               value = "person.twitter">
+               value = "person.kakao">
             </PersistentString>
             <PersistentString
-               value = "person.kakao">
+               value = "person.twitter">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -282,6 +282,12 @@
          <PersistentStrings>
             <PersistentString
                value = "cell?.stringValue()">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;\(cell?.stringValue() ?? &quot;&quot;)&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;1.1.6.1&quot;  &gt; &quot;1.1.7&quot;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -368,6 +374,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DAFavoriteTableViewController.controller(_:didChange:at:for:newIndexPath:):DAFavoriteTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "newIndexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAInfoTableViewCell.swipeActions.getter:DAInfoTableViewCell.swift">
          <PersistentStrings>
             <PersistentString
@@ -440,6 +457,28 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #2 in DAUpdateManger.updateData(progress:completion:):DAUpdateManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot;\(newVersion)&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;1.1.6.1&quot; &gt; &quot;1.1.7&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "DAExcelController.shared.version">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAFavoriteTableViewController.tableView(_:cellForRowAt:):DAFavoriteTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "favor.person.no">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAPersonInfo.(shareByKakao() -&gt; ()).(closure #1).(closure #1).(closure #1):DAPersonInfo+KLKTalkLinkCenter.swift">
          <PersistentStrings>
             <PersistentString
@@ -484,13 +523,29 @@
          contextName = "closure #1 in DAModelController.loadEvents(_:isAscending:name:area:):DAModelController+DAEventInfo.swift">
          <PersistentStrings>
             <PersistentString
-               value = "right.name">
-            </PersistentString>
-            <PersistentString
                value = "left.no">
             </PersistentString>
             <PersistentString
+               value = "right.name">
+            </PersistentString>
+            <PersistentString
                value = "left.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in closure #2 in DAUpdateManger.updateData(progress:completion:):DAUpdateManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot;\(DAExcelController.shared.version) &gt; \(newVersion)&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "specialized closure #2 in DAUpdateManger.update(progress:completion:):DAUpdateManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIApplication.shared.windows.first?.rootViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -502,14 +557,6 @@
             </PersistentString>
             <PersistentString
                value = "self.nameFirstCharacter">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "specialized closure #2 in DAUpdateManger.update(progress:completion:):DAUpdateManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIApplication.shared.windows.first?.rootViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

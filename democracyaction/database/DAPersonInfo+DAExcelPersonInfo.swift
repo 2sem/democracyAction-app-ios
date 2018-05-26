@@ -17,7 +17,7 @@ extension DAPersonInfo{
         }));
         self.removeFromPhones(phoneSet);
         for phone in phoneSet{
-            DAModelController.Default.removePhone(phone as! DAPhoneInfo);
+            DAModelController.shared.removePhone(phone as! DAPhoneInfo);
         }
         /*self.phones = NSSet(array: self.personPhones.filter({ (phone) -> Bool in
             return phone.sms;

@@ -31,7 +31,7 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     }
     
     var modelController : DAModelController{
-        return DAModelController.Default;
+        return DAModelController.shared;
     }
     
     var searchController : UISearchController!;
@@ -96,6 +96,9 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     
     override func viewWillAppear(_ animated: Bool) {
         self.searchByLaunchQuery();
+        if #available(iOS 11.0, *) {
+            self.navigationItem.hidesSearchBarWhenScrolling = false;
+        }
     }
     
     override func viewDidLoad() {
@@ -142,6 +145,16 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
         self.searchBar.sizeToFit();
         
         self.needAds = GADInterstialManager.shared?.canShow ?? true;
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if #available(iOS 11.0, *) {
+            self.navigationItem.hidesSearchBarWhenScrolling = true;
+        } else {
+            // Fallback on earlier versions
+            self.tableView.setContentOffset(CGPoint.zero, animated: true);
+        };
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -349,8 +362,8 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
             }
             
             self.modelController.saveChanges();
-            cell.hideSwipe(animated: true);
         }
+        favAction.hidesWhenSelected = true;
         
         let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell;
         if self.modelController.findFavorite(cell.info!) != nil{

@@ -58,7 +58,6 @@
 		2C14CBD61EE9552B003BB329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C14CBD51EE9552B003BB329 /* Assets.xcassets */; };
 		2C14CBD91EE9552B003BB329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C14CBD71EE9552B003BB329 /* LaunchScreen.storyboard */; };
 		2C14CBE41EE9552B003BB329 /* democracyactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CBE31EE9552B003BB329 /* democracyactionTests.swift */; };
-		2C14CBEF1EE9552B003BB329 /* democracyactionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CBEE1EE9552B003BB329 /* democracyactionUITests.swift */; };
 		2C14CC021EE9640C003BB329 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC011EE9640C003BB329 /* MainViewController.swift */; };
 		2C14CC041EE9645B003BB329 /* DAInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC031EE9645B003BB329 /* DAInfoTableViewController.swift */; };
 		2C14CC0D1EE98AA9003BB329 /* DAInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14CC0C1EE98AA9003BB329 /* DAInfoTableViewCell.swift */; };
@@ -66,6 +65,7 @@
 		2C153FBE1F2075EA00E61F7E /* DAExcelController+DAExcelEventGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C153FBD1F2075EA00E61F7E /* DAExcelController+DAExcelEventGroupInfo.swift */; };
 		2C153FC01F207A1700E61F7E /* DAExcelController+DAExcelPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C153FBF1F207A1700E61F7E /* DAExcelController+DAExcelPersonInfo.swift */; };
 		2C153FC21F207AE500E61F7E /* DAExcelController+DAExcelEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C153FC11F207AE500E61F7E /* DAExcelController+DAExcelEventInfo.swift */; };
+		2C188CB720B8145400D1A310 /* DAFavorFatchedResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C188CB620B8145400D1A310 /* DAFavorFatchedResultController.swift */; };
 		2C19858F1F9DC83A001D3B9B /* icon_money_stat.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C19858E1F9DB917001D3B9B /* icon_money_stat.png */; };
 		2C1985901F9DC843001D3B9B /* icon_money_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C19858D1F9DB71C001D3B9B /* icon_money_history.png */; };
 		2C1985921F9DDA7A001D3B9B /* DASponsorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1985911F9DDA7A001D3B9B /* DASponsorViewController.swift */; };
@@ -76,6 +76,7 @@
 		2C20A7881EF427D700E14173 /* DATheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20A7871EF427D700E14173 /* DATheme.swift */; };
 		2C24A3801F99B5FF002BCDD5 /* DASponsorPayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C24A37F1F99B5FF002BCDD5 /* DASponsorPayRequest.swift */; };
 		2C24A3821F99B75D002BCDD5 /* DASponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C24A3811F99B75D002BCDD5 /* DASponsor.swift */; };
+		2C44686720B7C3C900978A40 /* democracyactionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44686620B7C3C900978A40 /* democracyactionUITests.swift */; };
 		2C65D4171EFEA5AB00EBB5AA /* DAExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4131EFEA5AB00EBB5AA /* DAExcelController.swift */; };
 		2C65D4181EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4141EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift */; };
 		2C65D4191EFEA5AB00EBB5AA /* DAExcelPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4151EFEA5AB00EBB5AA /* DAExcelPersonInfo.swift */; };
@@ -100,7 +101,6 @@
 		2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */; };
 		2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950C1EF6B4DA00FDC401 /* logo.png */; };
 		B6E3862D3C3CDD7B717F4F84 /* Pods_democracyaction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F0BFD2CFDF8D262583B398 /* Pods_democracyaction.framework */; };
-		C20B97D59A61DA535B64A89D /* Pods_democracyactionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88969698CAC0E95C763C67B /* Pods_democracyactionUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +111,7 @@
 			remoteGlobalIDString = 2C14CBC81EE9552A003BB329;
 			remoteInfo = democracyaction;
 		};
-		2C14CBEB1EE9552B003BB329 /* PBXContainerItemProxy */ = {
+		2C44686920B7C3C900978A40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C14CBC11EE9552A003BB329 /* Project object */;
 			proxyType = 1;
@@ -178,9 +178,6 @@
 		2C14CBDF1EE9552B003BB329 /* democracyactionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = democracyactionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C14CBE31EE9552B003BB329 /* democracyactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = democracyactionTests.swift; sourceTree = "<group>"; };
 		2C14CBE51EE9552B003BB329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C14CBEA1EE9552B003BB329 /* democracyactionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = democracyactionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C14CBEE1EE9552B003BB329 /* democracyactionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = democracyactionUITests.swift; sourceTree = "<group>"; };
-		2C14CBF01EE9552B003BB329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C14CC011EE9640C003BB329 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C14CC031EE9645B003BB329 /* DAInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAInfoTableViewController.swift; sourceTree = "<group>"; };
 		2C14CC0C1EE98AA9003BB329 /* DAInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -188,6 +185,7 @@
 		2C153FBD1F2075EA00E61F7E /* DAExcelController+DAExcelEventGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAExcelController+DAExcelEventGroupInfo.swift"; sourceTree = "<group>"; };
 		2C153FBF1F207A1700E61F7E /* DAExcelController+DAExcelPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAExcelController+DAExcelPersonInfo.swift"; sourceTree = "<group>"; };
 		2C153FC11F207AE500E61F7E /* DAExcelController+DAExcelEventInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAExcelController+DAExcelEventInfo.swift"; sourceTree = "<group>"; };
+		2C188CB620B8145400D1A310 /* DAFavorFatchedResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAFavorFatchedResultController.swift; sourceTree = "<group>"; };
 		2C19858D1F9DB71C001D3B9B /* icon_money_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_money_history.png; sourceTree = "<group>"; };
 		2C19858E1F9DB917001D3B9B /* icon_money_stat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_money_stat.png; sourceTree = "<group>"; };
 		2C1985911F9DDA7A001D3B9B /* DASponsorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASponsorViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +197,9 @@
 		2C24A37D1F99B3FA002BCDD5 /* icon_money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_money.png; sourceTree = "<group>"; };
 		2C24A37F1F99B5FF002BCDD5 /* DASponsorPayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASponsorPayRequest.swift; sourceTree = "<group>"; };
 		2C24A3811F99B75D002BCDD5 /* DASponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASponsor.swift; sourceTree = "<group>"; };
+		2C44686420B7C3C900978A40 /* democracyactionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = democracyactionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C44686620B7C3C900978A40 /* democracyactionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = democracyactionUITests.swift; sourceTree = "<group>"; };
+		2C44686820B7C3C900978A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C65D4131EFEA5AB00EBB5AA /* DAExcelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelController.swift; sourceTree = "<group>"; };
 		2C65D4141EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelGroupInfo.swift; sourceTree = "<group>"; };
 		2C65D4151EFEA5AB00EBB5AA /* DAExcelPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelPersonInfo.swift; sourceTree = "<group>"; };
@@ -249,11 +250,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C14CBE71EE9552B003BB329 /* Frameworks */ = {
+		2C44686120B7C3C900978A40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C20B97D59A61DA535B64A89D /* Pods_democracyactionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +280,7 @@
 		2C0455441EFE88C5003E94ED /* database */ = {
 			isa = PBXGroup;
 			children = (
+				2C188CB620B8145400D1A310 /* DAFavorFatchedResultController.swift */,
 				2C0455451EFE8BE5003E94ED /* DAModelController.swift */,
 				2C0455471EFE8C51003E94ED /* DAModel.xcdatamodeld */,
 				2C65D41F1EFEB54500EBB5AA /* DAModelController+DAGroupInfo.swift */,
@@ -357,7 +358,7 @@
 				2C04B7061EF16E480084A82F /* leesam */,
 				2C14CBCB1EE9552A003BB329 /* democracyaction */,
 				2C14CBE21EE9552B003BB329 /* democracyactionTests */,
-				2C14CBED1EE9552B003BB329 /* democracyactionUITests */,
+				2C44686520B7C3C900978A40 /* democracyactionUITests */,
 				2C14CBCA1EE9552A003BB329 /* Products */,
 				F26F3167D6D1C41C7BB48327 /* Pods */,
 				E90BEA404F7C011F48F4355F /* Frameworks */,
@@ -369,7 +370,7 @@
 			children = (
 				2C14CBC91EE9552A003BB329 /* democracyaction.app */,
 				2C14CBDF1EE9552B003BB329 /* democracyactionTests.xctest */,
-				2C14CBEA1EE9552B003BB329 /* democracyactionUITests.xctest */,
+				2C44686420B7C3C900978A40 /* democracyactionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -411,15 +412,6 @@
 			path = democracyactionTests;
 			sourceTree = "<group>";
 		};
-		2C14CBED1EE9552B003BB329 /* democracyactionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2C14CBEE1EE9552B003BB329 /* democracyactionUITests.swift */,
-				2C14CBF01EE9552B003BB329 /* Info.plist */,
-			);
-			path = democracyactionUITests;
-			sourceTree = "<group>";
-		};
 		2C14CC001EE96330003BB329 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +444,15 @@
 				2C1985911F9DDA7A001D3B9B /* DASponsorViewController.swift */,
 			);
 			path = sponsor;
+			sourceTree = "<group>";
+		};
+		2C44686520B7C3C900978A40 /* democracyactionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2C44686620B7C3C900978A40 /* democracyactionUITests.swift */,
+				2C44686820B7C3C900978A40 /* Info.plist */,
+			);
+			path = democracyactionUITests;
 			sourceTree = "<group>";
 		};
 		2CB61E5D1F29E93900CB8880 /* google */ = {
@@ -544,23 +545,22 @@
 			productReference = 2C14CBDF1EE9552B003BB329 /* democracyactionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2C14CBE91EE9552B003BB329 /* democracyactionUITests */ = {
+		2C44686320B7C3C900978A40 /* democracyactionUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C14CBF91EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyactionUITests" */;
+			buildConfigurationList = 2C44686B20B7C3C900978A40 /* Build configuration list for PBXNativeTarget "democracyactionUITests" */;
 			buildPhases = (
-				21CD7B131A381FC2422104BD /* [CP] Check Pods Manifest.lock */,
-				2C14CBE61EE9552B003BB329 /* Sources */,
-				2C14CBE71EE9552B003BB329 /* Frameworks */,
-				2C14CBE81EE9552B003BB329 /* Resources */,
+				2C44686020B7C3C900978A40 /* Sources */,
+				2C44686120B7C3C900978A40 /* Frameworks */,
+				2C44686220B7C3C900978A40 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2C14CBEC1EE9552B003BB329 /* PBXTargetDependency */,
+				2C44686A20B7C3C900978A40 /* PBXTargetDependency */,
 			);
 			name = democracyactionUITests;
 			productName = democracyactionUITests;
-			productReference = 2C14CBEA1EE9552B003BB329 /* democracyactionUITests.xctest */;
+			productReference = 2C44686420B7C3C900978A40 /* democracyactionUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -569,7 +569,7 @@
 		2C14CBC11EE9552A003BB329 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = leesam;
 				TargetAttributes = {
@@ -591,10 +591,9 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2C14CBC81EE9552A003BB329;
 					};
-					2C14CBE91EE9552B003BB329 = {
-						CreatedOnToolsVersion = 8.3.2;
+					2C44686320B7C3C900978A40 = {
+						CreatedOnToolsVersion = 9.3.1;
 						DevelopmentTeam = M29A6H95KD;
-						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2C14CBC81EE9552A003BB329;
 					};
@@ -615,7 +614,7 @@
 			targets = (
 				2C14CBC81EE9552A003BB329 /* democracyaction */,
 				2C14CBDE1EE9552B003BB329 /* democracyactionTests */,
-				2C14CBE91EE9552B003BB329 /* democracyactionUITests */,
+				2C44686320B7C3C900978A40 /* democracyactionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -669,7 +668,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C14CBE81EE9552B003BB329 /* Resources */ = {
+		2C44686220B7C3C900978A40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -679,24 +678,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21CD7B131A381FC2422104BD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-democracyactionUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5F8DB126D76822535F8C7AE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -814,6 +795,7 @@
 				2C04B7081EF16E870084A82F /* FABButton+.swift in Sources */,
 				2C6D79D61F00E60B00237028 /* DAModelController+DAExcelController.swift in Sources */,
 				2C65D41A1EFEA5AB00EBB5AA /* DAExcelPhoneInfo.swift in Sources */,
+				2C188CB720B8145400D1A310 /* DAFavorFatchedResultController.swift in Sources */,
 				2CB61E621F29F31000CB8880 /* DAUpdateManager.swift in Sources */,
 				2C14CC041EE9645B003BB329 /* DAInfoTableViewController.swift in Sources */,
 				2C145BE41F20C46F00E29D1A /* DAEventTableViewController.swift in Sources */,
@@ -852,11 +834,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C14CBE61EE9552B003BB329 /* Sources */ = {
+		2C44686020B7C3C900978A40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C14CBEF1EE9552B003BB329 /* democracyactionUITests.swift in Sources */,
+				2C44686720B7C3C900978A40 /* democracyactionUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,10 +850,10 @@
 			target = 2C14CBC81EE9552A003BB329 /* democracyaction */;
 			targetProxy = 2C14CBE01EE9552B003BB329 /* PBXContainerItemProxy */;
 		};
-		2C14CBEC1EE9552B003BB329 /* PBXTargetDependency */ = {
+		2C44686A20B7C3C900978A40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2C14CBC81EE9552A003BB329 /* democracyaction */;
-			targetProxy = 2C14CBEB1EE9552B003BB329 /* PBXContainerItemProxy */;
+			targetProxy = 2C44686920B7C3C900978A40 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1080,34 +1062,44 @@
 			};
 			name = Release;
 		};
-		2C14CBFA1EE9552B003BB329 /* Debug */ = {
+		2C44686C20B7C3C900978A40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 176988D46AFB6DC434D33CFC /* Pods-democracyactionUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29A6H95KD;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = democracyactionUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyactionUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyactionUITests.democracyactionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = democracyaction;
 			};
 			name = Debug;
 		};
-		2C14CBFB1EE9552B003BB329 /* Release */ = {
+		2C44686D20B7C3C900978A40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27DC20E2AA1C1101A8C7B390 /* Pods-democracyactionUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29A6H95KD;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = democracyactionUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyactionUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyactionUITests.democracyactionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = democracyaction;
 			};
 			name = Release;
@@ -1142,11 +1134,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C14CBF91EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyactionUITests" */ = {
+		2C44686B20B7C3C900978A40 /* Build configuration list for PBXNativeTarget "democracyactionUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2C14CBFA1EE9552B003BB329 /* Debug */,
-				2C14CBFB1EE9552B003BB329 /* Release */,
+				2C44686C20B7C3C900978A40 /* Debug */,
+				2C44686D20B7C3C900978A40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

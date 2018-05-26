@@ -137,7 +137,7 @@ extension DAPersonInfo{
     
     @discardableResult
     func createPhone(name : String, number: String = "", canSendSMS sms: Bool = false) -> DAPhoneInfo{
-        let phone = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAPhoneInfo, into: DAModelController.Default.context) as! DAPhoneInfo;
+        let phone = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAPhoneInfo, into: DAModelController.shared.context) as! DAPhoneInfo;
         
         phone.name = name;
         phone.number = number
@@ -151,7 +151,7 @@ extension DAPersonInfo{
     
     @discardableResult
     func createMessageTool(name : String, account: String = "") -> DAMessageToolInfo{
-        let tool = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAMessageToolInfo, into: DAModelController.Default.context) as! DAMessageToolInfo;
+        let tool = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAMessageToolInfo, into: DAModelController.shared.context) as! DAMessageToolInfo;
         
         tool.name = name;
         tool.account = account;
@@ -164,7 +164,7 @@ extension DAPersonInfo{
     
     @discardableResult
     func createWeb(name : String, url: String = "") -> DAWebInfo{
-        let web = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAWebInfo, into: DAModelController.Default.context) as! DAWebInfo;
+        let web = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAWebInfo, into: DAModelController.shared.context) as! DAWebInfo;
         
         web.name = name;
         web.url = url;

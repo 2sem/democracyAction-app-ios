@@ -36,35 +36,47 @@ extension DAModelController{
                 }
                 
                 guard !filter else{
-                    personGroup.persons.append(member.person!);
+                    if let person = member.person{
+                        personGroup.persons.append(person);
+                    }
                     continue;
                 }
                 
-                if name == nameCho{
-                    filter = member.person!.nameFirstCharacters!.contains(nameCho);
+                guard let person = member.person,
+                    let nameFirstCharacters = person.nameFirstCharacters,
+                    let nameCharacters = person.nameCharacters,
+                    let areaFirstCharacters = person.areaFirstCharacters,
+                    let areaCharacters = person.areaFirstCharacters else{
+                        continue;
+                }
+                
+                if name == nameCho, let person = member.person{
+                    filter = nameFirstCharacters.contains(nameCho);
                 }else if !name.isEmpty{
                     filter = name.contains(nameCho);
-                    if !filter && !nameKors.isEmpty{
-                        filter = member.person!.nameCharacters!.contains(nameKors);
+                    if !filter && !nameKors.isEmpty, let person = member.person{
+                        filter = nameCharacters.contains(nameKors);
                     }
                 }
                 
                 guard !filter else{
-                    personGroup.persons.append(member.person!);
+                    if let person = member.person{
+                        personGroup.persons.append(person);
+                    }
                     continue;
                 }
                 
                 if area == areaCho{
-                    filter = member.person!.areaFirstCharacters!.contains(areaCho);
+                    filter = areaFirstCharacters.contains(areaCho);
                 }else if !name.isEmpty{
                     filter = area.contains(areaCho);
                     if !filter && !areaKors.isEmpty{
-                        filter = member.person!.areaCharacters!.contains(areaKors);
+                        filter = areaCharacters.contains(areaKors);
                     }
                 }
                 
                 if filter{
-                    personGroup.persons.append(member.person!);
+                    personGroup.persons.append(person);
                 }
                 //print("load person. spell[\(spell)] count[\(group.persons.count)]");
             }
@@ -76,8 +88,12 @@ extension DAModelController{
             print("filter event members. event[\(personGroup.name)] total[\(event.eventMembers.count)] filtered[\(personGroup.persons.count)]");
             
             personGroup.persons = personGroup.persons.sorted(by: { (left, right) -> Bool in
-                return (isAscending && left.name!.compare(right.name!) == .orderedAscending)
-                    || (!isAscending && left.name!.compare(right.name!) == .orderedDescending);
+                guard let leftName = left.name, let rightName = right.name else{
+                    return true;
+                }
+                
+                return (isAscending && leftName.compare(rightName) == .orderedAscending)
+                    || (!isAscending && leftName.compare(rightName) == .orderedDescending);
             });
             values[personGroup.id] = personGroup;
         }

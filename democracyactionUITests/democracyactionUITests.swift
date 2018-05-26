@@ -2,8 +2,8 @@
 //  democracyactionUITests.swift
 //  democracyactionUITests
 //
-//  Created by 영준 이 on 2017. 6. 8..
-//  Copyright © 2017년 leesam. All rights reserved.
+//  Created by 영준 이 on 2018. 5. 25..
+//  Copyright © 2018년 leesam. All rights reserved.
 //
 
 import XCTest
@@ -33,4 +33,23 @@ class democracyactionUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func testSwipeFavorToggle(){
+        let app = XCUIApplication();
+        let tablesQuery = app.tables;
+        let cells = app.tables.cells;
+        let predicate = NSPredicate.init(format: "count > 0");
+        var expectation = self.expectation(for: predicate, evaluatedWith: cells, handler: nil);
+        self.wait(for: [expectation], timeout: 30);
+        
+        for cell in tablesQuery.cells.allElementsBoundByIndex{
+            cell.tap();
+            if cell.buttons["icon favor on"].exists{
+                let onButton = cell.buttons["icon favor on"];
+                onButton.tap();
+            }else if cell.buttons["icon favor off"].exists{
+                let offButton = cell.buttons["icon favor off"];
+                offButton.tap();
+            }
+        }
+    }
 }

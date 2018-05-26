@@ -28,9 +28,9 @@ class DAModelController : NSObject{
     static let FileName = "democracyaction";
     
     internal static let dispatchGroupForInit = DispatchGroup();
-    //    var SingletonQ = DispatchQueue(label: "DAModelController.Default");
+    //    var SingletonQ = DispatchQueue(label: "DAModelController.shared");
     private static var _instance = DAModelController();
-    static var Default : DAModelController{
+    static var shared : DAModelController{
         get{
             //var timeout = DispatchTime.now() + DispatchTimeInterval.seconds(3);
             //print("enter \(self) instance - \(self) - \(Thread.current)");

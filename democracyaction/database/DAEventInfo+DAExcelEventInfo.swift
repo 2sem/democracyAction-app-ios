@@ -11,7 +11,7 @@ import CoreData
 
 extension DAEventInfo{
     func syncMembers(_ excelEvent : DAExcelEventInfo){
-        let excelPersons = DAModelController.Default.loadPersons(predicate: NSPredicate.init(format: "#no IN %@", excelEvent.persons), sortWays: nil, completion: nil);
+        let excelPersons = DAModelController.shared.loadPersons(predicate: NSPredicate.init(format: "#no IN %@", excelEvent.persons), sortWays: nil, completion: nil);
         
         let modelMembers = self.eventMembers.map { (member) -> DAPersonInfo in
             return member.person!;
@@ -37,7 +37,7 @@ extension DAEventInfo{
         
         for member in removedMembers{
             self.removeFromMembers(member);
-            DAModelController.Default.removeEventPerson(member);
+            DAModelController.shared.removeEventPerson(member);
         }
         
         print("sync event members. event[\(excelEvent.title)] newMembers[\(newPersons.count)] removedMembers[\(removedMembers.count)] member[\(self.eventMembers.count)]");
@@ -45,7 +45,7 @@ extension DAEventInfo{
     
     @discardableResult
     func createWeb(name : String, url: String = "") -> DAWebInfo{
-        let web = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAWebInfo, into: DAModelController.Default.context) as! DAWebInfo;
+        let web = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAWebInfo, into: DAModelController.shared.context) as! DAWebInfo;
         
         web.name = name;
         web.url = url;

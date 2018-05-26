@@ -55,7 +55,7 @@ extension DAEventInfo{
     }
     
     func createEventPerson(_ person: DAPersonInfo) -> DAEventPersonInfo{
-        let eventPerson = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAEventPersonInfo, into: DAModelController.Default.context) as! DAEventPersonInfo;
+        let eventPerson = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAEventPersonInfo, into: DAModelController.shared.context) as! DAEventPersonInfo;
         
         eventPerson.person = person;
         

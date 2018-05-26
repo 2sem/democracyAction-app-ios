@@ -516,8 +516,8 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
                 return;
             }
             phone.number = textField.text;
-            DAModelController.Default.saveChanges();
-            //DAModelController.Default.refresh(person: self.info);
+            DAModelController.shared.saveChanges();
+            //DAModelController.shared.refresh(person: self.info);
             
             self.updateInfo();
         }));
@@ -545,8 +545,8 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             }
             
             self.info.createPhone(name: "휴대폰", number: textField.text ?? "", canSendSMS: true);
-            DAModelController.Default.saveChanges();
-            DAModelController.Default.refresh(person: self.info);
+            DAModelController.shared.saveChanges();
+            DAModelController.shared.refresh(person: self.info);
             
             self.updateInfo();
         }));
@@ -693,7 +693,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             for phone in contact.phoneNumbers{
                 actions.append(UIAlertAction(title: phone.value.stringValue, style: .default, handler: { (act) in
                     mobile.number = phone.value.stringValue;
-                    DAModelController.Default.saveChanges();
+                    DAModelController.shared.saveChanges();
                     self.updateInfo();
                 }));
             }
@@ -701,7 +701,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             for phone in contact.phoneNumbers{
                 actions.append(UIAlertAction(title: phone.value.stringValue, style: .default, handler: { (act) in
                     self.info.createPhone(name: "휴대폰", number: phone.value.stringValue, canSendSMS: true);
-                    DAModelController.Default.saveChanges();
+                    DAModelController.shared.saveChanges();
                     self.updateInfo();
                 }));
             }
@@ -716,7 +716,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             }else{
                 self.info.createPhone(name: "휴대폰", number: phone?.value.stringValue ?? "", canSendSMS: true);
             }
-            DAModelController.Default.saveChanges();
+            DAModelController.shared.saveChanges();
         }*/
         
         guard !actions.isEmpty else{

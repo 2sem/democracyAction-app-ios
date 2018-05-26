@@ -76,7 +76,7 @@ class DAUpdateManger{
                 if DADefaults.DataVersion.isEmpty{
                     updateProgress(.updatingData, nil);
                     DispatchQueue.main.sync {
-                        DAModelController.Default.sync(DAExcelController.shared);
+                        DAModelController.shared.sync(DAExcelController.shared);
                     }
                     updateProgress(.completed, nil);
                     completion(true);
@@ -122,7 +122,7 @@ class DAUpdateManger{
                 if DADefaults.DataVersion.isEmpty{
                     updateProgress(.updatingData, nil);
                     DispatchQueue.main.sync {
-                        DAModelController.Default.sync(DAExcelController.shared);
+                        DAModelController.shared.sync(DAExcelController.shared);
                     }
                     updateProgress(.completed, nil);
                     completion(true);
@@ -149,7 +149,7 @@ class DAUpdateManger{
                 || (!DADefaults.DataVersion.isEmpty && DADefaults.DataVersion < DAExcelController.shared.version){
                 updateProgress(.updatingData, nil);
                 DispatchQueue.main.sync {
-                    DAModelController.Default.sync(DAExcelController.shared);
+                    DAModelController.shared.sync(DAExcelController.shared);
                 }
                 updateProgress(.completed, nil);
                 completion(true);
@@ -169,7 +169,7 @@ class DAUpdateManger{
                     DAExcelController.shared = excelController
                     updateProgress(.updatingData, nil);
                     DispatchQueue.main.sync {
-                        DAModelController.Default.sync(excelController);
+                        DAModelController.shared.sync(excelController);
                     }
                     updateProgress(.completed, nil);
                     completion(true);

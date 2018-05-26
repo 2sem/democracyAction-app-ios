@@ -482,8 +482,8 @@ class DAGroupTableViewCell: UITableViewCell, FABMenuDelegate {
                 return;
             }
             phone.number = textField.text;
-            DAModelController.Default.saveChanges();
-            //DAModelController.Default.refresh(group: self.info);
+            DAModelController.shared.saveChanges();
+            //DAModelController.shared.refresh(group: self.info);
             
             self.updateInfo();
         }));

@@ -8,8 +8,9 @@
 
 import UIKit
 import SwipeCellKit
+import CoreData
 
-class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate {
+class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate, NSFetchedResultsControllerDelegate {
     static let CellID = "DAInfoTableViewCell";
     static let adCellID = "DABannerTableViewCell";
 
@@ -20,9 +21,10 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         }
     }
     
-    var modelController : DAModelController{
-        return DAModelController.Default;
-    }
+    lazy var favorController : DAFavorFatchedResultController = {
+        return DAFavorFatchedResultController(managedObjectContext: DAModelController.shared.context, delegate: self);
+    }()
+    lazy var modelController = DAModelController.shared;
     
     var searchController : UISearchController!;
     //var searchContainer : UISearchContainerViewController!;
@@ -34,7 +36,6 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     
     var isAscending = true;
     
-    var favorites : [DAFavoriteInfo] = [];
     var needAds = true{
         didSet{
             if self.isViewLoaded && !self.isMovingToParentViewController && self.navigationController?.topViewController === self{
@@ -44,6 +45,12 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     }
 
     @IBOutlet weak var sortButton: UIBarButtonItem!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if #available(iOS 11.0, *) {
+            self.navigationItem.hidesSearchBarWhenScrolling = false;
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,13 +90,19 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         //self.searchBar.showsSearchResultsButton = true;
         //self.searchBar.showsScopeBar = true;
         self.searchBar.sizeToFit();
+        self.searchBar(self.searchBar, textDidChange: "");
         
         self.needAds = DAInfoTableViewController.shared?.needAds ?? true;
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.favorites = self.modelController.loadFavoritesByName(self.isAscending);
-        self.favorites.forEach { (fav) in
+        if #available(iOS 11.0, *) {
+            self.navigationItem.hidesSearchBarWhenScrolling = true;
+        } else {
+            // Fallback on earlier versions
+            self.tableView.setContentOffset(CGPoint.zero, animated: true);
+        };
+        /*self.favorites.forEach { (fav) in
             guard fav.person == nil else{
                 return
             }
@@ -103,7 +116,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
             self.favorites.remove(at: index);
         }
         self.modelController.saveChanges();
-        self.refresh();
+        self.refresh();*/
     }
     
     func refresh(_ needToScrollTop : Bool = false){
@@ -136,7 +149,8 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     
     
     func filterByName(_ keyword : String){
-        self.favorites = self.modelController.loadFavoritesByName(self.isAscending, name: keyword, area: keyword);
+        //self.favorites = self.favorController.loadFavorites(self.isAscending, ByName: keyword, ByArea: keyword);
+        self.favorController.query(self.isAscending, ByName: keyword, ByArea: keyword);
         
         //self.filteredGroupsBySpell = self.sortPersonsByName(groups: self.filteredGroupsBySpell, needToOrderGroups: true);
     }
@@ -166,14 +180,11 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
             //let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
             
             self.tableView.beginUpdates()
-            let favor = self.favorites[indexPath.row];
-            //if let favor = self.modelController.findFavorite(cell.info!){
+            if let favor = self.favorController.fetch(indexPath: indexPath){
                 self.modelController.removeFavorite(favor);
-                self.favorites.remove(at: indexPath.row);
-                //act.image = favOffImage;
-            //}
+                self.modelController.saveChanges();
+            }
             
-            self.modelController.saveChanges();
             //self.tableView.deleteRows(at: [indexPath], with: .automatic);
             act.fulfill(with: .delete);
             self.tableView.endUpdates()
@@ -205,7 +216,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let value = self.favorites.count;
+        let value = self.favorController.count(section: 0);
         // #warning Incomplete implementation, return the number of rows
         /*switch self.groupingType{
          case .byName:
@@ -228,18 +239,15 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         var cell : UITableViewCell?;
         var infoCell : DAInfoTableViewCell?;
         
+        infoCell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.InfoCell, for: indexPath) as? DAInfoTableViewCell;
         
-        /*if self.needAds && indexPath.row == self.tableView.numberOfRows(inSection: indexPath.section) - 1{
-            cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.BannerCell, for: indexPath) as? DABannerTableViewCell;
-        }else{*/
-            infoCell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.InfoCell, for: indexPath) as? DAInfoTableViewCell;
-            
-            let person : DAPersonInfo? = self.favorites[indexPath.row].person;
-            
-            infoCell?.info = person;
-            infoCell?.delegate = self;
-            cell = infoCell;
-        //}
+        if let favor = self.favorController.fetch(indexPath: indexPath) {
+            if let person = favor.person, person.name?.any ?? false{
+                infoCell?.info = person;
+            }
+        }
+        infoCell?.delegate = self;
+        cell = infoCell;
         
         return cell!;
     }
@@ -303,6 +311,25 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     // MARK: UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
         
+    }
+    
+    // MARK: NSFetchedResultsControllerDelegate
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type{
+            case .insert:
+                if let newIndexPath = newIndexPath{
+                    self.tableView.insertRows(at: [newIndexPath], with: .fade);
+                }
+                break;
+            case .delete:
+                if let indexPath = indexPath{
+                    self.tableView.deleteRows(at: [indexPath], with: .fade);
+                }
+                break;
+            default:
+                break;
+        }
     }
     
     /*

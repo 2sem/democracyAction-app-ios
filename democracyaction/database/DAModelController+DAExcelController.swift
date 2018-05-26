@@ -17,27 +17,27 @@ extension DAModelController{
         
         self.removeMissimgPersons(excel);
         self.syncGroups(excel);
-        //DAModelController.Default.saveChanges();
+        //shared();
 
         self.syncEvents(excel);
         
-        DAModelController.Default.saveChanges();
+        DAModelController.shared.saveChanges();
         DADefaults.DataVersion = excel.version;
         print("[end] sync excel to database");
     }
     
     func removeMissimgPersons(_ excel : DAExcelController){
         print("[start] sync excel persons to database");
-        let excelPersons = excel.persons;
-        var modelPersons =  self.loadPersons();
+        let excelPersons = excel.persons; //load from excel
+        var modelPersons =  self.loadPersons(); //load from database
         for excelPerson in excelPersons{
-            let modelPerson = self.findPerson(Int16(excelPerson.id));
-            
-            guard modelPerson != nil else{
+            //find person by excel id
+            guard let modelPerson = self.findPerson(Int16(excelPerson.id)) else{
                 continue;
             }
             
-            if let index = modelPersons.index(of: modelPerson!){
+            //find 
+            if let index = modelPersons.index(of: modelPerson){
                 modelPersons.remove(at: index);
             }
         }
@@ -57,10 +57,10 @@ extension DAModelController{
         for excelGroup in excelGroups{
             //load groups from database
             //check if the group is already exist in database
-            var modelGroup : DAGroupInfo! = DAModelController.Default.findGroup(Int16(excelGroup.id));
+            var modelGroup : DAGroupInfo! = DAModelController.shared.findGroup(Int16(excelGroup.id));
             if modelGroup == nil{
                 //create new group
-                modelGroup = DAModelController.Default.createGroup(num: Int16(excelGroup.id), name: excelGroup.title, detail: excelGroup.detail);
+                modelGroup = DAModelController.shared.createGroup(num: Int16(excelGroup.id), name: excelGroup.title, detail: excelGroup.detail);
             }else{
                 //update new group
                 modelGroup.name = excelGroup.title;
@@ -76,15 +76,15 @@ extension DAModelController{
             //load person's for the groups
             for excelPerson in excelGroup.persons{
                 //check if the group is already exist in database
-                var modelPerson : DAPersonInfo! = DAModelController.Default.findPerson(Int16(excelPerson.id));
+                var modelPerson : DAPersonInfo! = DAModelController.shared.findPerson(Int16(excelPerson.id));
                 
                 if modelPerson == nil || modelPerson.name != excelPerson.name{
-                    modelPerson = DAModelController.Default.findPerson(name: excelPerson.name, area: excelPerson.area, groupNo: Int16(excelGroup.id));
+                    modelPerson = DAModelController.shared.findPerson(name: excelPerson.name, area: excelPerson.area, groupNo: Int16(excelGroup.id));
                 }
                 
                 if modelPerson == nil{
                     //create new person
-                    modelPerson = DAModelController.Default.createPerson(no: Int16(excelPerson.id), name: excelPerson.name, area: excelPerson.area);
+                    modelPerson = DAModelController.shared.createPerson(no: Int16(excelPerson.id), name: excelPerson.name, area: excelPerson.area);
                     
                     modelGroup.addToPersons(modelPerson);
                     modelPerson.group = modelGroup;
@@ -130,10 +130,10 @@ extension DAModelController{
         for excelGroup in excelGroups{
             //load groups from database
             //check if the group is already exist in database
-            var modelGroup : DAEventGroupInfo! = DAModelController.Default.findEventGroup(Int16(excelGroup.no));
+            var modelGroup : DAEventGroupInfo! = DAModelController.shared.findEventGroup(Int16(excelGroup.no));
             if modelGroup == nil{
                 //create new group
-                modelGroup = DAModelController.Default.createEventGroup(no: Int16(excelGroup.no), name: excelGroup.name, detail: excelGroup.detail);
+                modelGroup = DAModelController.shared.createEventGroup(no: Int16(excelGroup.no), name: excelGroup.name, detail: excelGroup.detail);
             }else{
                 //update new group
                 modelGroup.name = excelGroup.name;
@@ -157,7 +157,7 @@ extension DAModelController{
                 }
                 
                 modelEvent.syncMembers(excelEvent);
-                //DAModelController.Default.saveChanges();
+                //DAModelController.shared.saveChanges();
                 modelEvent.syncWebUrls(excelEvent);
             }
         }

@@ -35,14 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
         self.reviewManager?.delegate = self;
         //self.reviewManager?.show();
         
-        self.rewardAd = GADRewardManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 6); //
+        self.rewardAd = GADRewardManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 12); //
         self.rewardAd?.delegate = self;
-        self.fullAd = GADInterstialManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "FullAd") ?? "", interval: 60.0); //60.0 * 60 * 3
+        self.fullAd = GADInterstialManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "FullAd") ?? "", interval: 60.0 * 60 * 3); //60.0 * 60 * 3
         self.fullAd?.delegate = self;
         self.fullAd?.canShowFirstTime = false;
         
         if self.rewardAd?.canShow ?? false{
-            self.fullAd?.show(true);
+            //self.fullAd?.show();
         }
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (result, error) in

@@ -27,7 +27,7 @@ extension DAEventGroupInfo{
     }
     
     func createEvent(no: Int32, name : String, detail: String = "") -> DAEventInfo{
-        let event = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAEventInfo, into: DAModelController.Default.context) as! DAEventInfo;
+        let event = NSEntityDescription.insertNewObject(forEntityName: DAModelController.EntityNames.DAEventInfo, into: DAModelController.shared.context) as! DAEventInfo;
         
         event.no = no;
         event.name = name;

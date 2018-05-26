@@ -35,54 +35,6 @@ extension DAModelController{
         return values;
     }
     
-    func createPredicateWithNameAreaForFavorites(_ name : String, area: String  = "") -> NSPredicate?{
-        var values : [NSPredicate] = [];
-        
-        guard !name.isEmpty || !area.isEmpty else{
-            return nil;
-        }
-        
-        let nameCho = name.getKoreanChoSeongs() ?? "";
-        let nameKors = (name.getKoreanParts() ?? "").trim();
-        
-        let areaCho = area.getKoreanChoSeongs() ?? "";
-        let areaKors = (area.getKoreanParts() ?? "").trim();
-        
-        //var predicateWithName = predicate_name_first;
-        
-        //if !value.isEmpty{
-        if name == nameCho{
-            values.append(NSPredicate(format: "ANY %@ IN person.nameFirstCharacters", nameCho));
-        }else if !name.isEmpty{
-            values.append(NSPredicate(format: "ANY %@ IN person.name", name));
-            if !nameKors.isEmpty{
-                values.append(NSPredicate(format: "ANY %@ IN person.nameCharacters", nameKors))
-            }
-        }
-        
-        if area == areaCho{
-            values.append(NSPredicate(format: "ANY %@ IN person.areaFirstCharacters", areaCho));
-        }else if !area.isEmpty{
-            values.append(NSPredicate(format: "ANY %@ IN person.area", area));
-            if !areaKors.isEmpty{
-                values.append(NSPredicate(format: "ANY %@ IN person.areaCharacters", areaKors));
-            }
-        }
-        
-        return NSCompoundPredicate(orPredicateWithSubpredicates: values);
-    }
-    
-    func loadFavoritesByName(_ isAscending : Bool = true, name : String = "", area : String = "") -> [DAFavoriteInfo]{
-        //var values : [DAFavoriteInfo] = [];
-        //let i = 0;
-        
-        let predicate_name_area : NSPredicate! = self.createPredicateWithNameAreaForFavorites(name, area: area);
-        
-        let favorites = self.loadFavorites(predicate: predicate_name_area, sortWays: [NSSortDescriptor.init(key: "person.name", ascending: isAscending)], completion: nil);
-    
-        return favorites;
-    }
-    
     func isExistFavorite(_ person : DAPersonInfo) -> Bool{
         let predicate = NSPredicate(format: "person == %@", person.objectID);
         return !self.loadFavorites(predicate: predicate, sortWays: nil, onlyOne: true).isEmpty;

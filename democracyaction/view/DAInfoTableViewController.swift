@@ -33,7 +33,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     var modelController : DAModelController{
-        return DAModelController.Default;
+        return DAModelController.shared;
     }
     
     var searchController : UISearchController!;
@@ -133,6 +133,9 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     override func viewWillAppear(_ animated: Bool) {
         self.searchByLaunchQuery();
+        if #available(iOS 11.0, *) {
+            self.navigationItem.hidesSearchBarWhenScrolling = false;
+        }
     }
     
     override func viewDidLoad() {
@@ -159,6 +162,8 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
                     MBProgressHUD.hide(for: self.view, animated: true);
                     self.searchBar(self.searchBar, textDidChange: self.searchBar.text ?? "");
                     self.blockInterface(block: false);
+                    self.refresh();
+                    GADInterstialManager.shared?.show();
                 }
                 return;
             }
@@ -168,6 +173,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
                 self.searchBar(self.searchBar, textDidChange: self.searchBar.text ?? "");
                 self.blockInterface(block: false);
                 self.showNotice();
+                //GADInterstialManager.shared?.show();
             }
         })
         
@@ -244,6 +250,15 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         self.layoutEndButton(self.nextButton);
         
         self.needAds = GADInterstialManager.shared?.canShow ?? true;
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if #available(iOS 11.0, *) {
+            self.navigationItem.hidesSearchBarWhenScrolling = true;
+        } else {
+            // Fallback on earlier versions
+            self.tableView.setContentOffset(CGPoint.zero, animated: true);
+        };
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -598,6 +613,9 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         //self.groupingPicker.becomeFirstResponder();
     }
     
+    let favOnImage = UIImage(named: "icon_favor_on")?.withRenderingMode(.alwaysTemplate);
+    let favOffImage = UIImage(named: "icon_favor_off")?.withRenderingMode(.alwaysTemplate);
+    
     // MARK: SwipeTableViewCellDelegate
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .left else{
@@ -605,33 +623,38 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }
         var values : [SwipeAction] = [];
         
-        let favOnImage = UIImage(named: "icon_favor_on")?.withRenderingMode(.alwaysTemplate);
-        let favOffImage = UIImage(named: "icon_favor_off")?.withRenderingMode(.alwaysTemplate);
-        
         let favAction = SwipeAction.init(style: .default, title: nil) { (act, indexPath) in
-            let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
+            guard let cell = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell else{
+                return;
+            }
             
             if let favor = self.modelController.findFavorite(cell.info!){
                 self.modelController.removeFavorite(favor);
-                //act.image = favOffImage;
+                act.image = self.favOffImage;
             }
             else{
                 self.modelController.createFavorite(person: cell.info!);
-                //act.image = favOnImage;
+                act.image = self.favOnImage;
             }
          
             self.modelController.saveChanges();
-            cell.hideSwipe(animated: true);
+            //cell.hideSwipe(animated: true);
+        }
+        favAction.hidesWhenSelected = true;
+        
+        guard let cell = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell, let info = cell.info else{
+            return nil;
         }
         
-        let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell;
-        if self.modelController.findFavorite(cell.info!) != nil{
+        if self.modelController.findFavorite(info) != nil{
             favAction.image = favOnImage;
         }else{
             favAction.image = favOffImage;
         }
         let shareAction = SwipeAction.init(style: .default, title: nil) { (act, indexPath) in
-            let cell : DAInfoTableViewCell! = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell
+            guard let cell = self.tableView.cellForRow(at: indexPath) as? DAInfoTableViewCell else{
+                return;
+            }
             //http://www.assembly.go.kr/photo/9770941.jpg
             cell.info?.shareByKakao();
         }
