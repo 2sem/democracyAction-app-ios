@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
+import FirebaseMessaging
 import UserNotifications
 import LSExtensions
 
@@ -29,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
         })*/
         
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9684378399371172~5739040449");
+        Messaging.messaging().delegate = self;
         FirebaseApp.configure()
         
         self.reviewManager = ReviewManager(self.window!, interval: 60.0 * 60 * 24 * 3);
@@ -45,7 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
             //self.fullAd?.show();
         }
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (result, error) in
+        UNUserNotificationCenter.current().delegate = self;
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (result, error) in
             guard result else{
                 return;
             }
@@ -94,15 +97,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        //let device = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
-        print("APNs device[\(deviceToken.hexString)]");
-    }
-    
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("APNs registration failed: \(error)");
-    }
     
     // MARK: GADInterstialManagerDelegate
     func GADInterstialGetLastShowTime() -> Date {
@@ -139,6 +133,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
     
     func GADRewardUpdate(showTime: Date) {
         
+    }
+}
+
+extension AppDelegate : UNUserNotificationCenterDelegate{
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        //let device = deviceToken.reduce("", {$0 + String(format: "%02X", $1)});
+        print("APNs device[\(deviceToken.hexString)]");
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("APNs registration failed: \(error)");
+    }
+}
+
+extension AppDelegate : MessagingDelegate{
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("fcm device[\(fcmToken)]");
     }
 }
 

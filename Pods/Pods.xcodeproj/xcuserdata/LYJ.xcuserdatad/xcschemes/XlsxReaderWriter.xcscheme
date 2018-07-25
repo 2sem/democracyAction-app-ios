@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "438F337CD752FA186E979D61DF00CD2C"
+               BlueprintIdentifier = "6A6B968F33B37FE6B40BB8AE5891BF1E"
                BlueprintName = "XlsxReaderWriter"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "XlsxReaderWriter.framework">

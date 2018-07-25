@@ -96,6 +96,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false;
         if #available(iOS 11.0, *) {
             self.navigationItem.hidesSearchBarWhenScrolling = true;
         } else {

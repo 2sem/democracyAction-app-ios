@@ -51,7 +51,7 @@ class DASponsorPayRequest : NSObject{
         print("pay request plain params[\(params)]");
         var url : URL?;
         do{
-            let aes = try AES.init(key: self.secretKey.bytes, blockMode: .CBC(iv: [UInt8](repeating: 0x00, count: 16)), padding: .pkcs5);
+            let aes = try AES.init(key: self.secretKey.bytes, blockMode: CBC(iv: [UInt8](repeating: 0x00, count: 16)), padding: .pkcs5);
             let enc_bytes = try aes.encrypt(params.bytes);
             let enc_data = Data(bytes: enc_bytes);
             let enc_base64 = enc_data.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithLineFeed);

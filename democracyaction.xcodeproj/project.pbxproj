@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D54BC78C97999657FBAB677 /* Pods_democracyactionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC3D84832FC4ED0DBB0C7B /* Pods_democracyactionTests.framework */; };
+		22F2754135F556797927B3A2 /* Pods_democracyactionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88969698CAC0E95C763C67B /* Pods_democracyactionUITests.framework */; };
 		2C0106B21F091F460046B9A6 /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C0106B11F091F460046B9A6 /* icon_share.png */; };
 		2C01130F1F0F91960082B322 /* UIApplication+KakaoLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */; };
 		2C0455461EFE8BE5003E94ED /* DAModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0455451EFE8BE5003E94ED /* DAModelController.swift */; };
@@ -254,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F2754135F556797927B3A2 /* Pods_democracyactionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +551,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C44686B20B7C3C900978A40 /* Build configuration list for PBXNativeTarget "democracyactionUITests" */;
 			buildPhases = (
+				08D063CF9CB4168E52A1E740 /* [CP] Check Pods Manifest.lock */,
 				2C44686020B7C3C900978A40 /* Sources */,
 				2C44686120B7C3C900978A40 /* Frameworks */,
 				2C44686220B7C3C900978A40 /* Resources */,
@@ -678,6 +681,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		08D063CF9CB4168E52A1E740 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-democracyactionUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5F8DB126D76822535F8C7AE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -713,6 +734,7 @@
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressWebViewController/ProgressWebViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
@@ -731,6 +753,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressWebViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
@@ -1064,6 +1087,7 @@
 		};
 		2C44686C20B7C3C900978A40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 176988D46AFB6DC434D33CFC /* Pods-democracyactionUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1085,6 +1109,7 @@
 		};
 		2C44686D20B7C3C900978A40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27DC20E2AA1C1101A8C7B390 /* Pods-democracyactionUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
