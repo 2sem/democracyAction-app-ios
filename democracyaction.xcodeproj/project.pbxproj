@@ -45,8 +45,8 @@
 		2C10CBC51EF66ECB002A07C5 /* DADefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */; };
 		2C11CF85211F183800B5685C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C11CF84211F183700B5685C /* GoogleService-Info.plist */; };
 		2C11CF87211F200300B5685C /* DAAppVersionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11CF86211F200300B5685C /* DAAppVersionResponse.swift */; };
-		2C12AEA22120245B0074A914 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2C12AEA12120245A0074A914 /* .gitignore */; };
 		2C12AEA42120246C0074A914 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2C12AEA32120246C0074A914 /* Podfile */; };
+		2C12AEA6212027BC0074A914 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2C12AEA5212027BC0074A914 /* .gitignore */; };
 		2C12F5CE208D6E1500B6D2D9 /* 300korea.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */; };
 		2C12F5D0208D7F8600B6D2D9 /* 300koreatest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C12F5CF208D7F8600B6D2D9 /* 300koreatest.plist */; };
 		2C1321571F1F999500390C17 /* DAExcelEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1321561F1F999500390C17 /* DAExcelEventInfo.swift */; };
@@ -163,8 +163,8 @@
 		2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DADefaults.swift; sourceTree = "<group>"; };
 		2C11CF84211F183700B5685C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C11CF86211F200300B5685C /* DAAppVersionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAAppVersionResponse.swift; sourceTree = "<group>"; };
-		2C12AEA12120245A0074A914 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		2C12AEA32120246C0074A914 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		2C12AEA5212027BC0074A914 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = 300korea.plist; sourceTree = "<group>"; };
 		2C12F5CF208D7F8600B6D2D9 /* 300koreatest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 300koreatest.plist; sourceTree = "<group>"; };
 		2C1321561F1F999500390C17 /* DAExcelEventInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelEventInfo.swift; sourceTree = "<group>"; };
@@ -363,6 +363,7 @@
 		2C14CBC01EE9552A003BB329 = {
 			isa = PBXGroup;
 			children = (
+				2C12AEA5212027BC0074A914 /* .gitignore */,
 				2C12AEA32120246C0074A914 /* Podfile */,
 				2C04B7061EF16E480084A82F /* leesam */,
 				2C14CBCB1EE9552A003BB329 /* democracyaction */,
@@ -387,7 +388,6 @@
 		2C14CBCB1EE9552A003BB329 /* democracyaction */ = {
 			isa = PBXGroup;
 			children = (
-				2C12AEA12120245A0074A914 /* .gitignore */,
 				2CE12C221FD16BC1006A965A /* democracyaction.entitlements */,
 				2C24A37E1F99B43A002BCDD5 /* sponsor */,
 				2CB61E601F29F2B700CB8880 /* update */,
@@ -653,7 +653,7 @@
 				2C04B6FD1EF152520084A82F /* icon_cafe.png in Resources */,
 				2C14CBD41EE9552A003BB329 /* Main.storyboard in Resources */,
 				2C05841F1EFA927D00D45AC8 /* icon_up.png in Resources */,
-				2C12AEA22120245B0074A914 /* .gitignore in Resources */,
+				2C12AEA6212027BC0074A914 /* .gitignore in Resources */,
 				2C05841B1EFA747400D45AC8 /* icon_asc.png in Resources */,
 				2C04B6F31EF151280084A82F /* icon_twitter.png in Resources */,
 				2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */,
@@ -750,7 +750,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -770,7 +769,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
