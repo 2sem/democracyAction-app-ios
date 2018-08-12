@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C14CBE91EE9552B003BB329"
+               BlueprintIdentifier = "2C44686320B7C3C900978A40"
                BuildableName = "democracyactionUITests.xctest"
                BlueprintName = "democracyactionUITests"
                ReferencedContainer = "container:democracyaction.xcodeproj">

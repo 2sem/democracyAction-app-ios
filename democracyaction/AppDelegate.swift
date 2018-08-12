@@ -12,6 +12,7 @@ import Firebase
 import FirebaseMessaging
 import UserNotifications
 import LSExtensions
+import ProgressWebViewController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDelegate, ReviewManagerDelegate, GADRewardManagerDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
     var fullAd : GADInterstialManager?;
     var rewardAd : GADRewardManager?;
     var reviewManager : ReviewManager?;
+    static var firebase : Messaging!;
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -56,6 +58,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstialManagerDeleg
             DispatchQueue.main.syncInMain {
                 application.registerForRemoteNotifications();
             }
+        }
+        
+        if let push = launchOptions?[.remoteNotification] as? [String: AnyObject]{
+            let noti = push["aps"] as! [String: AnyObject];
+            let alert = noti["alert"] as! [String: AnyObject];
+            let title = alert["title"] as? String ?? "";
+            let body = alert["body"] as? String ?? "";
+            //Custom data can be receive from 'aps' not 'alert'
+            let category = push["category"] as? String ?? "";
+            //let item = push["item"] as? String ?? "";
+        
+            print("launching with push[\(push)]");
+            self.performPushCommand(title, body: body, category: category, info: push);
         }
         
         return true
@@ -145,11 +160,77 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("APNs registration failed: \(error)");
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        //update app
+        print("receive push notification in foreground. identifier[\(notification.request.identifier)] title[\(notification.request.content.title)] body[\(notification.request.content.body)]");
+        
+        //UNNotificationPresentationOptions
+        completionHandler([.alert, .sound]);
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("receive push. title[\(response.notification.request.content.title)] body[\(response.notification.request.content.body)] userInfo[\(response.notification.request.content.userInfo)]");
+        //let item = response.notification.request.content.userInfo["item"] as? String;
+        var title = response.notification.request.content.title;
+        var msg = response.notification.request.content.body;
+        let category = response.notification.request.content.userInfo["category"] as? String;
+        
+        self.performPushCommand(title, body: msg, category: category ?? "", info: response.notification.request.content.userInfo);
+        print("what the heck");
+        /*if let push = launchOptions?[.remoteNotification] as? [String: AnyObject]{
+         let noti = push["aps"] as! [String: AnyObject];
+         let alert = noti["alert"] as! [String: AnyObject];
+         RSSearchTableViewController.startingKeyword = alert["body"] as? String ?? "";
+         print("launching with push[\(push)]");
+         }*/
+        completionHandler();
+    }
 }
 
 extension AppDelegate : MessagingDelegate{
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("fcm device[\(fcmToken)]");
+        let topic = "notice";
+        //let topic = "congress_2_9770881_law";
+        type(of: self).firebase = messaging;
+        messaging.subscribe(toTopic: topic);
+        //messaging.unsubscribe(fromTopic: topic);
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        
+    }
+}
+
+extension AppDelegate{
+    func performPushCommand(_ title : String, body : String, category : String, info: [AnyHashable : Any]){
+        print("parse push command. category[\(category)] title[\(title)] body[\(body)] info[\(info)]");
+        
+        switch category{
+        case "congress/law":
+            guard let lawId = info["law"] as? String else{
+                return;
+            }
+            
+            guard let url = URL(string: "http://likms.assembly.go.kr/bill/billDetail.do?billId=\(lawId)") else{
+                return;
+            }
+            
+            if let mainView = MainViewController.shared{
+                let webView = ProgressWebViewController.init(nibName: nil, bundle: nil);
+                //http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_E1O8N0G7H2T7T1C4A0M1O0O8J7O3F8
+                webView.url = URL(string: "http://likms.assembly.go.kr/bill/billDetail.do?billId=\(lawId)");
+                webView.hidesBottomBarWhenPushed = true;
+                mainView.pushToCurrent(viewController: webView);
+            }else{
+                MainViewController.staringtUrl = url;
+            }
+            break;
+        default:
+            print("receive unkown command. category[\(category.debugDescription)]");
+            break;
+        }
     }
 }
 

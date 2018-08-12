@@ -113,6 +113,7 @@ extension DAModelController{
                 
                 if excelPerson.assembly > "0"{
                     modelPerson.assembly = Int32(excelPerson.assembly, radix: 10)!;
+                    modelPerson.assemblyNo = Int16(excelPerson.assemblyNo, radix: 10)!;
                 }
                 
                 modelPerson.syncPhones(excelPerson);

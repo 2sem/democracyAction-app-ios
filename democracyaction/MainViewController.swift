@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import ProgressWebViewController
+import Crashlytics
 
 class MainViewController: UITabBarController {
 
+    private(set) static var shared : MainViewController!;
+    static var staringtUrl : URL!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        type(of: self).shared = self;
+        if let url = type(of: self).staringtUrl{
+            var webView = ProgressWebViewController.init(nibName: nil, bundle: nil);
+            webView.url = url;
+            webView.hidesBottomBarWhenPushed = true;
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +32,20 @@ class MainViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        
+        //Crashlytics.sharedInstance().crash();
+    }
+    
+    func pushToCurrent(viewController : UIViewController, animated: Bool = true){
+        guard let nav = self.selectedViewController as? UINavigationController else{
+            return;
+        }
+        
+        nav.pushViewController(viewController, animated: animated);
+    }
+    
     /*
     // MARK: - Navigation
 

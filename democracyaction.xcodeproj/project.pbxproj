@@ -40,10 +40,13 @@
 		2C0BEF0F1F164AA40093FAEA /* DAGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BEF0E1F164AA40093FAEA /* DAGroupTableViewCell.swift */; };
 		2C0E24EA1F3BEB4D00D2EFFF /* DAModelController+DAEventPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E24E91F3BEB4D00D2EFFF /* DAModelController+DAEventPersonInfo.swift */; };
 		2C1094C41F4DA612004A9E1D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C1094C31F4DA612004A9E1D /* Settings.bundle */; };
-		2C10CBBD1EF66607002A07C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */; };
 		2C10CBC01EF668F0002A07C5 /* GADInterstialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */; };
 		2C10CBC11EF668F0002A07C5 /* GADInterstitial+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */; };
 		2C10CBC51EF66ECB002A07C5 /* DADefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */; };
+		2C11CF85211F183800B5685C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C11CF84211F183700B5685C /* GoogleService-Info.plist */; };
+		2C11CF87211F200300B5685C /* DAAppVersionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11CF86211F200300B5685C /* DAAppVersionResponse.swift */; };
+		2C12AEA22120245B0074A914 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2C12AEA12120245A0074A914 /* .gitignore */; };
+		2C12AEA42120246C0074A914 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2C12AEA32120246C0074A914 /* Podfile */; };
 		2C12F5CE208D6E1500B6D2D9 /* 300korea.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */; };
 		2C12F5D0208D7F8600B6D2D9 /* 300koreatest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C12F5CF208D7F8600B6D2D9 /* 300koreatest.plist */; };
 		2C1321571F1F999500390C17 /* DAExcelEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1321561F1F999500390C17 /* DAExcelEventInfo.swift */; };
@@ -155,10 +158,13 @@
 		2C0BEF0E1F164AA40093FAEA /* DAGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAGroupTableViewCell.swift; sourceTree = "<group>"; };
 		2C0E24E91F3BEB4D00D2EFFF /* DAModelController+DAEventPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAModelController+DAEventPersonInfo.swift"; sourceTree = "<group>"; };
 		2C1094C31F4DA612004A9E1D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADInterstialManager.swift; sourceTree = "<group>"; };
 		2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GADInterstitial+.swift"; sourceTree = "<group>"; };
 		2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DADefaults.swift; sourceTree = "<group>"; };
+		2C11CF84211F183700B5685C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C11CF86211F200300B5685C /* DAAppVersionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAAppVersionResponse.swift; sourceTree = "<group>"; };
+		2C12AEA12120245A0074A914 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		2C12AEA32120246C0074A914 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = 300korea.plist; sourceTree = "<group>"; };
 		2C12F5CF208D7F8600B6D2D9 /* 300koreatest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 300koreatest.plist; sourceTree = "<group>"; };
 		2C1321561F1F999500390C17 /* DAExcelEventInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelEventInfo.swift; sourceTree = "<group>"; };
@@ -357,6 +363,7 @@
 		2C14CBC01EE9552A003BB329 = {
 			isa = PBXGroup;
 			children = (
+				2C12AEA32120246C0074A914 /* Podfile */,
 				2C04B7061EF16E480084A82F /* leesam */,
 				2C14CBCB1EE9552A003BB329 /* democracyaction */,
 				2C14CBE21EE9552B003BB329 /* democracyactionTests */,
@@ -380,6 +387,7 @@
 		2C14CBCB1EE9552A003BB329 /* democracyaction */ = {
 			isa = PBXGroup;
 			children = (
+				2C12AEA12120245A0074A914 /* .gitignore */,
 				2CE12C221FD16BC1006A965A /* democracyaction.entitlements */,
 				2C24A37E1F99B43A002BCDD5 /* sponsor */,
 				2CB61E601F29F2B700CB8880 /* update */,
@@ -396,10 +404,10 @@
 				2C14CBDA1EE9552B003BB329 /* Info.plist */,
 				2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */,
 				2C12F5CF208D7F8600B6D2D9 /* 300koreatest.plist */,
+				2C11CF84211F183700B5685C /* GoogleService-Info.plist */,
 				2C14CC011EE9640C003BB329 /* MainViewController.swift */,
 				2C20A7871EF427D700E14173 /* DATheme.swift */,
 				2C1CE1121F10B21400967B5D /* direct_democracy.xlsx */,
-				2C10CBBC1EF66607002A07C5 /* GoogleService-Info.plist */,
 				2C1094C31F4DA612004A9E1D /* Settings.bundle */,
 			);
 			path = democracyaction;
@@ -469,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				2CB61E611F29F31000CB8880 /* DAUpdateManager.swift */,
+				2C11CF86211F200300B5685C /* DAAppVersionResponse.swift */,
 			);
 			path = update;
 			sourceTree = "<group>";
@@ -518,6 +527,7 @@
 				2C14CBC61EE9552A003BB329 /* Frameworks */,
 				2C14CBC71EE9552A003BB329 /* Resources */,
 				697F09C524EAD3017B2B2F0D /* [CP] Embed Pods Frameworks */,
+				2C11CF83211F154200B5685C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -633,6 +643,7 @@
 				2CCC44061FAF18C30025C614 /* photos in Resources */,
 				2C04B6F71EF151840084A82F /* icon_youtube.png in Resources */,
 				2C04B7011EF154A90084A82F /* icon_sms.png in Resources */,
+				2C12AEA42120246C0074A914 /* Podfile in Resources */,
 				2C1BF8151F0F77BD006AB30B /* icon_share_x25.png in Resources */,
 				2C12F5D0208D7F8600B6D2D9 /* 300koreatest.plist in Resources */,
 				2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */,
@@ -642,12 +653,12 @@
 				2C04B6FD1EF152520084A82F /* icon_cafe.png in Resources */,
 				2C14CBD41EE9552A003BB329 /* Main.storyboard in Resources */,
 				2C05841F1EFA927D00D45AC8 /* icon_up.png in Resources */,
+				2C12AEA22120245B0074A914 /* .gitignore in Resources */,
 				2C05841B1EFA747400D45AC8 /* icon_asc.png in Resources */,
 				2C04B6F31EF151280084A82F /* icon_twitter.png in Resources */,
 				2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */,
 				2C04B6ED1EF146C20084A82F /* icon_call.png in Resources */,
 				2C04B6F51EF151580084A82F /* icon_instagram.png in Resources */,
-				2C10CBBD1EF66607002A07C5 /* GoogleService-Info.plist in Resources */,
 				2C0106B21F091F460046B9A6 /* icon_share.png in Resources */,
 				2C05841D1EFA74A100D45AC8 /* icon_desc.png in Resources */,
 				2C1094C41F4DA612004A9E1D /* Settings.bundle in Resources */,
@@ -657,6 +668,7 @@
 				2C0822191EF50F5900F042F5 /* icon_web.png in Resources */,
 				2C08221B1EF510F700F042F5 /* icon_email.png in Resources */,
 				2C04B6EF1EF150710084A82F /* icon_msg.png in Resources */,
+				2C11CF85211F183800B5685C /* GoogleService-Info.plist in Resources */,
 				2C1CE1131F10B22B00967B5D /* direct_democracy.xlsx in Resources */,
 				2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */,
 				2C7D22E11F9A2D1D0098A5D0 /* icon_money.png in Resources */,
@@ -699,6 +711,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2C11CF83211F154200B5685C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}\"/Fabric/run";
+		};
 		5F8DB126D76822535F8C7AE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -724,11 +749,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/LSExtensions/LSExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
@@ -743,11 +769,12 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LSExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
@@ -846,6 +873,7 @@
 				2C6D79DE1F01280A00237028 /* DAWebInfo+.swift in Sources */,
 				2C65D41E1EFEB3EB00EBB5AA /* DAExcelController+DAExcelGroupInfo.swift in Sources */,
 				2C20A7881EF427D700E14173 /* DATheme.swift in Sources */,
+				2C11CF87211F200300B5685C /* DAAppVersionResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1047,7 @@
 				CODE_SIGN_ENTITLEMENTS = democracyaction/democracyaction.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				INFOPLIST_FILE = democracyaction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DAEventGroupInfo" representedClassName="DAEventGroupInfo" syncable="YES" codeGenerationType="class">
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -20,6 +20,7 @@
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DAPersonInfo" syncable="YES"/>
     </entity>
     <entity name="DAFavoriteInfo" representedClassName="DAFavoriteInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="isAlarmOn" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="person" maxCount="1" deletionRule="Nullify" destinationEntity="DAPersonInfo" inverseName="favorite" inverseEntity="DAPersonInfo" syncable="YES"/>
     </entity>
     <entity name="DAGroupInfo" representedClassName="DAGroupInfo" syncable="YES" codeGenerationType="class">
@@ -42,6 +43,7 @@
         <attribute name="areaFirstCharacter" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="areaFirstCharacters" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="assembly" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="assemblyNo" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="job" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -90,10 +92,10 @@
         <element name="DAEventGroupInfo" positionX="-36" positionY="117" width="128" height="105"/>
         <element name="DAEventInfo" positionX="-27" positionY="126" width="128" height="120"/>
         <element name="DAEventPersonInfo" positionX="-36" positionY="117" width="128" height="60"/>
-        <element name="DAFavoriteInfo" positionX="-36" positionY="108" width="128" height="60"/>
+        <element name="DAFavoriteInfo" positionX="-36" positionY="108" width="128" height="75"/>
         <element name="DAGroupInfo" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="DAMessageToolInfo" positionX="-18" positionY="63" width="128" height="75"/>
-        <element name="DAPersonInfo" positionX="-54" positionY="-9" width="128" height="315"/>
+        <element name="DAPersonInfo" positionX="-54" positionY="-9" width="128" height="330"/>
         <element name="DAPhoneInfo" positionX="-36" positionY="45" width="128" height="90"/>
         <element name="DAWebInfo" positionX="0" positionY="72" width="128" height="75"/>
     </elements>

@@ -30,6 +30,7 @@ class DAExcelPersonInfo : NSObject{
         static let cafe = "cafe";
         static let cyworld = "cyworld";
         static let assembly = "assembly";
+        static let assembly_no = "assembly_no";
         static let sponsor = "sponsor";
     }
     
@@ -53,6 +54,7 @@ class DAExcelPersonInfo : NSObject{
     var cafe = "";
     var cyworld = "";
     var assembly = "";
+    var assemblyNo = "";
     var sponsor = 0;
 
     var phones : [DAExcelPhoneInfo] = [];

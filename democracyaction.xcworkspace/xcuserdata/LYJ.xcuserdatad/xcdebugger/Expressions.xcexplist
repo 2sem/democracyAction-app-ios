@@ -170,10 +170,10 @@
                value = "newMembers.count">
             </PersistentString>
             <PersistentString
-               value = "excelEvent.persons.count">
+               value = "excelEvent.persons">
             </PersistentString>
             <PersistentString
-               value = "excelEvent.persons">
+               value = "excelEvent.persons.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -181,13 +181,13 @@
          contextName = "DAInfoTableViewCell.updateInfo() -&gt; ():DAInfoTableViewCell.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.msgMenu?.fabButton">
-            </PersistentString>
-            <PersistentString
                value = "self.msgMenu.fabMenuItems">
             </PersistentString>
             <PersistentString
                value = "self.msgMenu">
+            </PersistentString>
+            <PersistentString
+               value = "self.msgMenu?.fabButton">
             </PersistentString>
             <PersistentString
                value = "self.msgMenu != nil">
@@ -267,13 +267,13 @@
          contextName = "DAPersonInfo.syncMessageTools(DAExcelPersonInfo) -&gt; ():DAPersonInfo+DAExcelPersonInfo.swift">
          <PersistentStrings>
             <PersistentString
-               value = "person.facebook">
+               value = "person.twitter">
             </PersistentString>
             <PersistentString
                value = "person.kakao">
             </PersistentString>
             <PersistentString
-               value = "person.twitter">
+               value = "person.facebook">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -366,10 +366,10 @@
                value = "&quot;\(DAInfoTableViewController.startingQuery)&quot;">
             </PersistentString>
             <PersistentString
-               value = "&quot;\(queryId?.value)&quot;">
+               value = "Int16(queryId?.value ?? &quot;0&quot;)">
             </PersistentString>
             <PersistentString
-               value = "Int16(queryId?.value ?? &quot;0&quot;)">
+               value = "&quot;\(queryId?.value)&quot;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -381,6 +381,14 @@
             </PersistentString>
             <PersistentString
                value = "newIndexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.performPushCommand(_:body:category:info:):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MainViewController.shared">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -493,13 +501,13 @@
                value = "UIApplication.shared.windows.first?.rootViewController.classForCoder">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController">
+               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
             </PersistentString>
             <PersistentString
                value = "UIApplication.shared.keyWindow?.rootViewController?.presentedViewController">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
+               value = "UIApplication.shared.keyWindow?.rootViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -526,10 +534,10 @@
                value = "left.no">
             </PersistentString>
             <PersistentString
-               value = "right.name">
+               value = "left.name">
             </PersistentString>
             <PersistentString
-               value = "left.name">
+               value = "right.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

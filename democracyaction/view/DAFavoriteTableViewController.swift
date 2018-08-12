@@ -46,6 +46,8 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
 
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
+    var lastAlarmButton : UIButton?;
+    
     override func viewWillAppear(_ animated: Bool) {
         if #available(iOS 11.0, *) {
             self.navigationItem.hidesSearchBarWhenScrolling = false;
@@ -171,6 +173,50 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
             shareAction.image = UIImage(named: "icon_share.png");
             shareAction.backgroundColor = UIColor.yellow;
             values.append(shareAction);
+            
+            guard let favor = self.favorController.fetch(indexPath: indexPath) else{
+                values.append(contentsOf: cell.swipeActions);
+                return values;
+            }
+            
+            let alarmAction = SwipeAction.init(style: .default, title: nil){ [unowned self](act, indexPath) in
+                guard let favor = self.favorController.fetch(indexPath: indexPath), let person = favor.person else{
+                    return;
+                }
+                let topic = "congress_\(person.assemblyNo)_\(person.assembly)_law";
+                
+                if !favor.isAlarmOn{
+                    AppDelegate.firebase?.subscribe(toTopic: topic, completion: { (error) in
+                        guard error == nil else{
+                            return;
+                        }
+                        
+                        favor.isAlarmOn = !favor.isAlarmOn;
+                        self.modelController.saveChanges();
+                        let image = UIImage(named: "icon_notification_\(favor.isAlarmOn ? "on" : "off").png");
+                        self.lastAlarmButton?.setImage(image, for: .normal);
+                        print("subscribing has been turned on. topic[\(topic)]");
+                    })
+                }else{
+                    AppDelegate.firebase.unsubscribe(fromTopic: topic, completion: { (error) in
+                        guard error == nil else{
+                            return;
+                        }
+                        
+                        favor.isAlarmOn = !favor.isAlarmOn;
+                        self.modelController.saveChanges();
+                        let image = UIImage(named: "icon_notification_\(favor.isAlarmOn ? "on" : "off").png");
+                        self.lastAlarmButton?.setImage(image, for: .normal);
+                        print("subscribing has been turned off. topic[\(topic)]");
+                    })
+                }
+            }
+            alarmAction.textColor = UIColor.black;
+            alarmAction.image = UIImage(named: "icon_notification_\(favor.isAlarmOn ? "on" : "off").png");
+            alarmAction.backgroundColor = UIColor.green;
+            alarmAction.transitionDelegate = self;
+            alarmAction.hidesWhenSelected = true;
+            values.append(alarmAction);
             values.append(contentsOf: cell.swipeActions);
             return values;
         }
@@ -188,26 +234,25 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
             
             //self.tableView.deleteRows(at: [indexPath], with: .automatic);
             act.fulfill(with: .delete);
-            self.tableView.endUpdates()
+            self.tableView.endUpdates();
             //cell.hideSwipe(animated: true);
         }
         
         delAction.image = delImage;
         //favAction.backgroundColor = UIColor.red;
         //favAction.backgroundColor = Color.blue;
-        values.append(delAction);
         
         return [delAction];
     }
     
-    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+    /*func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
         var options = SwipeTableOptions();
         
         options.expansionStyle = .destructive;
         options.transitionStyle = .reveal;
         
         return options;
-    }
+    }*/
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -343,4 +388,10 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
      }
      */
     
+}
+
+extension DAFavoriteTableViewController : SwipeActionTransitioning{
+    func didTransition(with context: SwipeActionTransitioningContext) {
+        self.lastAlarmButton = context.button;
+    }
 }

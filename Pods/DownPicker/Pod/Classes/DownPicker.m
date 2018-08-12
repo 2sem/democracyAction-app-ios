@@ -163,14 +163,14 @@
                                    style:UIBarButtonItemStyleDone
                                    target:self
                                    action:@selector(doneClicked:)];
-//    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneClicked:)];
+    
     if (self.shouldDisplayCancelButton) {
         UIBarButtonItem* cancelButton = [[UIBarButtonItem alloc]
                                          initWithTitle:self->toolbarCancelButtonText
                                          style:UIBarButtonItemStylePlain
                                          target:self
                                          action:@selector(cancelClicked:)];
-//        UIBarButtonItem* cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelClicked:)];
+        
         [toolbar setItems:[NSArray arrayWithObjects:cancelButton, flexibleSpace, doneButton, nil]];
     } else {
         [toolbar setItems:[NSArray arrayWithObjects:flexibleSpace, doneButton, nil]];

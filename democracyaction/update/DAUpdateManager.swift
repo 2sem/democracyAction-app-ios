@@ -8,13 +8,14 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class DAUpdateManger{
     static let shared = DAUpdateManger();
     
     //private var dataUrl : URL?;
     let plistName = "300korea";//
-    var plist : [String : String]{
+    lazy var plist : [String : String] = {
         guard let plist = Bundle.main.path(forResource: self.plistName, ofType: "plist") else{
             preconditionFailure("Please create plist file named of \(plistName). file[\(self.plistName).plist]");
         }
@@ -24,19 +25,19 @@ class DAUpdateManger{
         }
         
         return dict;
-    }
+    }()
     
-    private var infoFileID : String{
-        let pname = "Info File ID";
+    private lazy var appServerUrl : URL = {
+        let pname = "Server URL";
         guard let value = self.plist[pname] else{
             preconditionFailure("Please add \(pname) into \(self.plistName).plist.");
         }
         
-        return value;
-    }
+        return URL(string: value)!;
+    }()
     
-    private var dataFileID : String{
-        let pname = "Data File ID";
+    /*private var infoFileID : String{
+        let pname = "Info File ID";
         guard let value = self.plist[pname] else{
             preconditionFailure("Please add \(pname) into \(self.plistName).plist.");
         }
@@ -46,6 +47,15 @@ class DAUpdateManger{
     
     private var verFileID : String{
         let pname = "Version File ID";
+        guard let value = self.plist[pname] else{
+            preconditionFailure("Please add \(pname) into \(self.plistName).plist.");
+        }
+        
+        return value;
+    }*/
+    
+    private var dataFileID : String{
+        let pname = "Data File ID";
         guard let value = self.plist[pname] else{
             preconditionFailure("Please add \(pname) into \(self.plistName).plist.");
         }
@@ -70,9 +80,9 @@ class DAUpdateManger{
             progress?(self.state, error);
         }
         updateProgress(.checkingVer, nil);
-        self.verFileID.downloadSharedGoogle(destinationUrl: nil) { (verData, verError) in
-            guard verError == nil else{
-                print("downloading minimum version file has been failed. error[\(verError.debugDescription)]");
+        Alamofire.request(self.appServerUrl.appendingPathComponent("versions")).responseJSON { (response) in
+            guard let data = response.data else{
+                print("getting versions has been failed. error[\(response.error.debugDescription)]");
                 if DADefaults.DataVersion.isEmpty{
                     updateProgress(.updatingData, nil);
                     DispatchQueue.main.sync {
@@ -81,30 +91,65 @@ class DAUpdateManger{
                     updateProgress(.completed, nil);
                     completion(true);
                 }else{
-                    progress?(self.state, verError);
+                    progress?(self.state, response.error);
                     completion(false);
                 }
                 return;
             }
             
-            let newVersion = String.init(data: verData!, encoding: String.Encoding.utf8) ?? "";
-            guard UIApplication.shared.version >= newVersion
-                else{
-                    //already last update
-                    UIApplication.shared.windows.first?.rootViewController?.showAlert(title: "앱 업데이트", msg: "신규 기능 사용을 위해 앱 업데이트가 필요합니다.", actions: [UIAlertAction(title: "업데이트", style: .default, handler: { (act) in
+            do{
+                let res = try JSONDecoder().decode(DAAppVersionResponse.self, from: data);
+                print("app server response - \(res)");
+                let newRequiredVersion = res.requiredVersion;
+                let newDataVersion = res.dataVersion;
+
+                guard UIApplication.shared.version >= newRequiredVersion
+                    else{
+                        //already last update
+                        UIApplication.shared.windows.first?.rootViewController?.showAlert(title: "앱 업데이트", msg: "신규 기능 사용을 위해 앱 업데이트가 필요합니다.", actions: [UIAlertAction(title: "업데이트", style: .default, handler: { (act) in
                             //self.updateData(progress: progress, completion: completion);
-                        UIApplication.shared.openReview();
+                            UIApplication.shared.openItunes();
+                            completion(false);
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                assert(false, "updating");
+                            })
+                        }), UIAlertAction(title: "업데이트 안함", style: .cancel, handler: { (act) in
+                            if DAExcelController.shared.version > newDataVersion{
+                                self.updateData(progress: progress, completion: completion);
+                            }else{
+                                updateProgress(.completed, nil);
+                                completion(true);
+                            }
+                        })], style: .alert);
+                        return;
+                }
+                
+                //"1.0.9";
+                guard DADefaults.DataVersion < newDataVersion
+                    || DAExcelController.shared.version > DADefaults.DataVersion else{
+                        //already last update
+                        print("data is already up to date. version[\(newDataVersion)]");
+                        updateProgress(.upToDate, nil);
                         completion(false);
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            assert(false, "updating");
-                        })
-                    }), UIAlertAction(title: "업데이트 안함", style: .cancel, handler: { (act) in
-                        self.updateData(progress: progress, completion: completion);
-                    })], style: .alert);
-                    return;
+                        return;
+                }
+                
+                //self.dataUrl = URL(string: NSTemporaryDirectory())?.appendingPathComponent("democracyaction").appendingPathExtension("xlsx");
+                if DAExcelController.shared.version > newDataVersion
+                    || (!DADefaults.DataVersion.isEmpty && DADefaults.DataVersion < DAExcelController.shared.version){
+                    updateProgress(.updatingData, nil);
+                    DispatchQueue.main.sync {
+                        DAModelController.shared.sync(DAExcelController.shared);
+                    }
+                    updateProgress(.completed, nil);
+                    completion(true);
+                }else{
+                    self.updateData(progress: progress, completion: completion);
+                }
+            }catch let error{
+                print("json parse error[\(error)]");
+                completion(false);
             }
-            
-            self.updateData(progress: progress, completion: completion);
         }
     }
     
@@ -113,68 +158,26 @@ class DAUpdateManger{
             self.state = state;
             progress?(self.state, error);
         }
-        updateProgress(.checkingInfo, nil);
-        self.infoFileID.downloadSharedGoogle(destinationUrl: nil) { (infoData, infoError) in
-            guard infoError == nil else{
+        updateProgress(.downloadingData, nil);
+        
+        self.dataFileID.downloadSharedGoogle(destinationUrl: DAExcelController.localUrl, completion: { (fileData, dataError) in
+            guard dataError == nil else{
                 //failed to download
-                print("downloading info file download has been failed");
-                
-                if DADefaults.DataVersion.isEmpty{
-                    updateProgress(.updatingData, nil);
-                    DispatchQueue.main.sync {
-                        DAModelController.shared.sync(DAExcelController.shared);
-                    }
-                    updateProgress(.completed, nil);
-                    completion(true);
-                }else{
-                    progress?(self.state, infoError);
-                    completion(false);
-                }
-                return;
-            }
-            
-            //"1.0.9";
-            let newVersion = String.init(data: infoData!, encoding: String.Encoding.utf8) ?? "";
-            guard DADefaults.DataVersion < newVersion
-                || DAExcelController.shared.version > DADefaults.DataVersion else{
-                //already last update
-                print("data is already up to date. version[\(newVersion)]");
-                updateProgress(.upToDate, infoError);
+                print("downloading data file download has been failed");
+                updateProgress(self.state, dataError);
                 completion(false);
                 return;
             }
             
-            //self.dataUrl = URL(string: NSTemporaryDirectory())?.appendingPathComponent("democracyaction").appendingPathExtension("xlsx");
-            if DAExcelController.shared.version > newVersion
-                || (!DADefaults.DataVersion.isEmpty && DADefaults.DataVersion < DAExcelController.shared.version){
-                updateProgress(.updatingData, nil);
-                DispatchQueue.main.sync {
-                    DAModelController.shared.sync(DAExcelController.shared);
-                }
-                updateProgress(.completed, nil);
-                completion(true);
-            }else{
-                updateProgress(.downloadingData, nil);
-                self.dataFileID.downloadSharedGoogle(destinationUrl: DAExcelController.localUrl, completion: { (fileData, dataError) in
-                    guard dataError == nil else{
-                        //failed to download
-                        print("downloading data file download has been failed");
-                        updateProgress(self.state, dataError);
-                        completion(false);
-                        return;
-                    }
-                    
-                    DADefaults.DataDownloaded = true;
-                    let excelController = DAExcelController(DAExcelController.localUrl!);
-                    DAExcelController.shared = excelController
-                    updateProgress(.updatingData, nil);
-                    DispatchQueue.main.sync {
-                        DAModelController.shared.sync(excelController);
-                    }
-                    updateProgress(.completed, nil);
-                    completion(true);
-                })
+            DADefaults.DataDownloaded = true;
+            let excelController = DAExcelController(DAExcelController.localUrl!);
+            DAExcelController.shared = excelController
+            updateProgress(.updatingData, nil);
+            DispatchQueue.main.sync {
+                DAModelController.shared.sync(excelController);
             }
-        }
+            updateProgress(.completed, nil);
+            completion(true);
+        });
     }
 }

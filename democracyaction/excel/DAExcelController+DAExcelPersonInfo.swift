@@ -49,6 +49,7 @@ extension DAExcelController{
         let cafe = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.cafe, line: i)?.stringValue() ?? "";
         let cyworld = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.cyworld, line: i)?.stringValue() ?? "";
         let assembly = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.assembly, line: i)?.value ?? "";
+        let assemblyNo = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.assembly_no, line: i)?.value ?? "";
         let sponsor = self.getCongressCell(column: DAExcelPersonInfo.FieldNames.sponsor, line: i)?.value ?? "";
         
         person.area = field;
@@ -69,6 +70,7 @@ extension DAExcelController{
         person.cafe = cafe;
         person.cyworld = cyworld;
         person.assembly = assembly;
+        person.assemblyNo = assemblyNo;
         person.sponsor = Int(sponsor) ?? 0;
         
         person.isLoaded = true;

@@ -12,6 +12,8 @@ target 'democracyaction' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'KakaoOpenSDK'
+  pod 'Fabric'
+  pod 'Crashlytics'
   
   pod 'Material'
   pod 'FBSDKCoreKit'
@@ -25,6 +27,7 @@ target 'democracyaction' do
   pod 'CryptoSwift'
   #pod 'GoogleAPIClientForREST/Drive', '~> 1.2.1'
   pod 'LSExtensions', :path => '~/Projects/leesam/pods/LSExtensions/src/LSExtensions'
+  pod 'Alamofire'
   #pod 'LSExtensions'
   
   # Pods for democracyaction

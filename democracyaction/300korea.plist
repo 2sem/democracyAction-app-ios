@@ -10,5 +10,7 @@
 	<string>1kOGTyfYoaQ2UsV0N4yK8MSX1Rb1E9JSl</string>
 	<key>SecretKey</key>
 	<string>Oq2iAFd6sUH0RUStB1g1LQ==</string>
+	<key>Server URL</key>
+	<string>https://democracy-action.firebaseapp.com</string>
 </dict>
 </plist>
