@@ -77,6 +77,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #1 in DAInfoTableViewController.viewDidLoad():DAInfoTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "state.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "hub?.label.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FABMenu.hitTestItems(CGPoint, with : UIEvent?) -&gt; UIView?:FABMenu+.swift">
          <PersistentStrings>
             <PersistentString
@@ -145,10 +156,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "static GADInterstialManager.shared.getter:GADInterstialManager.swift">
+         contextName = "closure #2 in DAUpdateManger.update(progress:completion:):DAUpdateManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "_shared">
+               value = "&quot;\(DAExcelController.shared.version)&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;\(newDataVersion)&quot;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -164,16 +178,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static GADInterstialManager.shared.getter:GADInterstialManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_shared">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAEventInfo.syncMembers(DAExcelEventInfo) -&gt; ():DAEventInfo+DAExcelEventInfo.swift">
          <PersistentStrings>
             <PersistentString
                value = "newMembers.count">
             </PersistentString>
             <PersistentString
-               value = "excelEvent.persons">
+               value = "excelEvent.persons.count">
             </PersistentString>
             <PersistentString
-               value = "excelEvent.persons.count">
+               value = "excelEvent.persons">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -184,10 +206,10 @@
                value = "self.msgMenu.fabMenuItems">
             </PersistentString>
             <PersistentString
-               value = "self.msgMenu">
+               value = "self.msgMenu?.fabButton">
             </PersistentString>
             <PersistentString
-               value = "self.msgMenu?.fabButton">
+               value = "self.msgMenu">
             </PersistentString>
             <PersistentString
                value = "self.msgMenu != nil">
@@ -267,13 +289,13 @@
          contextName = "DAPersonInfo.syncMessageTools(DAExcelPersonInfo) -&gt; ():DAPersonInfo+DAExcelPersonInfo.swift">
          <PersistentStrings>
             <PersistentString
-               value = "person.twitter">
+               value = "person.facebook">
             </PersistentString>
             <PersistentString
                value = "person.kakao">
             </PersistentString>
             <PersistentString
-               value = "person.facebook">
+               value = "person.twitter">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -366,10 +388,10 @@
                value = "&quot;\(DAInfoTableViewController.startingQuery)&quot;">
             </PersistentString>
             <PersistentString
-               value = "Int16(queryId?.value ?? &quot;0&quot;)">
+               value = "&quot;\(queryId?.value)&quot;">
             </PersistentString>
             <PersistentString
-               value = "&quot;\(queryId?.value)&quot;">
+               value = "Int16(queryId?.value ?? &quot;0&quot;)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -501,13 +523,13 @@
                value = "UIApplication.shared.windows.first?.rootViewController.classForCoder">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
+               value = "UIApplication.shared.keyWindow?.rootViewController">
             </PersistentString>
             <PersistentString
                value = "UIApplication.shared.keyWindow?.rootViewController?.presentedViewController">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController">
+               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -534,10 +556,10 @@
                value = "left.no">
             </PersistentString>
             <PersistentString
-               value = "left.name">
+               value = "right.name">
             </PersistentString>
             <PersistentString
-               value = "right.name">
+               value = "left.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -672,6 +694,14 @@
             </PersistentString>
             <PersistentString
                value = "self.isBeingPresented">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAModelController.syncGroups(_:):DAModelController+DAExcelController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "excelPerson.assemblyNo">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

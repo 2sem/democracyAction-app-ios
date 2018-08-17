@@ -409,10 +409,11 @@ class DAGroupTableViewCell: UITableViewCell, FABMenuDelegate {
     
     func openWeb(_ url : URL){
         //var webView = WebViewController(url: url);
-        let webView = ProgressWebViewController(nibName: nil, bundle: Bundle.main);
-        webView.url = url;
-        webView.hidesBottomBarWhenPushed = true;
-        self.viewController?.navigationController?.pushViewController(webView, animated: true);
+        //let webView = ProgressWebViewController(nibName: nil, bundle: Bundle.main);
+        //webView.url = url;
+        //webView.hidesBottomBarWhenPushed = true;
+        //self.viewController?.navigationController?.pushViewController(webView, animated: true);
+        UIApplication.shared.openURL(url);
     }
     
     @objc func onOpenMsgMenu(_ button : UIButton){

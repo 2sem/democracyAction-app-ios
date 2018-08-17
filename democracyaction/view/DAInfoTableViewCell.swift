@@ -441,10 +441,11 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     
     func openWeb(_ url : URL){
         //var webView = WebViewController(url: url);
-        let webView = ProgressWebViewController(nibName: nil, bundle: Bundle.main);
-        webView.url = url;
-        webView.hidesBottomBarWhenPushed = true;
-        self.viewController?.navigationController?.pushViewController(webView, animated: true);
+        //let webView = ProgressWebViewController(nibName: nil, bundle: Bundle.main);
+        //webView.url = url;
+        //webView.hidesBottomBarWhenPushed = true;
+        //self.viewController?.navigationController?.pushViewController(webView, animated: true);
+        UIApplication.shared.openURL(url);
     }
     
     @IBAction func onOpenMsgMenu(_ button : UIButton){

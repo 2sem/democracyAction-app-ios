@@ -24,7 +24,6 @@
                     <connections>
                         <segue destination="3aL-q5-82h" kind="relationship" relationship="viewControllers" id="K4e-rf-nvC"/>
                         <segue destination="3oh-Wx-YcD" kind="relationship" relationship="viewControllers" id="e7H-j2-bi1"/>
-                        <segue destination="dXk-2n-Stw" kind="relationship" relationship="viewControllers" id="SmH-Wz-tYC"/>
                         <segue destination="zPF-LM-iHW" kind="relationship" relationship="viewControllers" id="bcK-ZP-jsW"/>
                     </connections>
                 </tabBarController>
@@ -806,7 +805,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pZ3-t7-FHq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yJD-8J-8F7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
