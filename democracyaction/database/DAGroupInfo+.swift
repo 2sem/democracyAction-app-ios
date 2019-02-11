@@ -6,10 +6,17 @@
 //  Copyright © 2017년 leesam. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 extension DAGroupInfo{
+    static var defaultLogo : UIImage!{
+        return UIImage.init(named: "groups/group_0.png");
+    }
+    var logoUrl : URL!{
+        return Bundle.main.url(forResource: "group_\(self.no)", withExtension: "jpg", subdirectory: "groups") ?? Bundle.main.url(forResource: "group_\(self.no)", withExtension: "png", subdirectory: "groups");
+    }
+    
     var groupPersons : NSMutableSet{
         get{
             //return self.persons as? Set<DAPersonInfo>;

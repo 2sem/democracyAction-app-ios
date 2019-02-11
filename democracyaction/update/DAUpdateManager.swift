@@ -14,7 +14,7 @@ class DAUpdateManger{
     static let shared = DAUpdateManger();
     
     //private var dataUrl : URL?;
-    let plistName = "300korea";//
+    let plistName = "300korea";
     lazy var plist : [String : String] = {
         guard let plist = Bundle.main.path(forResource: self.plistName, ofType: "plist") else{
             preconditionFailure("Please create plist file named of \(plistName). file[\(self.plistName).plist]");

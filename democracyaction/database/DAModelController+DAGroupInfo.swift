@@ -102,6 +102,26 @@ extension DAModelController{
             //var choseongGroup = person.name.getKoreanChoSeongs(false)?.characters.first?.description ?? "";
             var predicate = NSPredicate(format: "nameFirstCharacter == %@", spell);
             
+            switch spell{
+                case "ㄱ":
+                    predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicate, NSPredicate(format: "nameFirstCharacter == %@", "ㄲ")]);
+                    break;
+                case "ㄷ":
+                    predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicate, NSPredicate(format: "nameFirstCharacter == %@", "ㄸ")]);
+                    break;
+                case "ㅂ":
+                    predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicate, NSPredicate(format: "nameFirstCharacter == %@", "ㅃ")]);
+                    break;
+                case "ㅅ":
+                    predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicate, NSPredicate(format: "nameFirstCharacter == %@", "ㅆ")]);
+                    break;
+                case "ㅈ":
+                    predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicate, NSPredicate(format: "nameFirstCharacter == %@", "ㅉ")]);
+                    break;
+                default:
+                    break;
+            }
+            
             //for spell group
             if predicate_name_area != nil{
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, predicate_name_area]);

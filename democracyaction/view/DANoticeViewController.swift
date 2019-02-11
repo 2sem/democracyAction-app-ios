@@ -10,9 +10,17 @@ import UIKit
 
 class DANoticeViewController: UIViewController {
 
+    static let storyboardName = "Main";
+    static let storyboardId = "DANoticeViewController";
+    
     var text : String?;
     
     @IBOutlet weak var textView: UITextView!
+    
+    static func instantiate() -> DANoticeViewController?{
+        return UIStoryboard.init(name: storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: storyboardId) as? DANoticeViewController;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -46,9 +46,9 @@ class DAFavorFatchedResultController : NSFetchedResultsController<DAFavoriteInfo
         return self.object(at: indexPath);
     }
     
-    func count(section : Int) -> Int{
+    /*func count(section : Int) -> Int{
         return self.sections?[section].numberOfObjects ?? 0;
-    }
+    }*/
     
     func createPredicateWithNameAreaForFavorites(_ name : String, area: String  = "") -> NSPredicate?{
         var values : [NSPredicate] = [];

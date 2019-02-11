@@ -29,6 +29,7 @@ target 'democracyaction' do
   pod 'LSExtensions', :path => '~/Projects/leesam/pods/LSExtensions/src/LSExtensions'
   pod 'Alamofire'
   #pod 'LSExtensions'
+  pod 'SDWebImage'
   
   # Pods for democracyaction
 

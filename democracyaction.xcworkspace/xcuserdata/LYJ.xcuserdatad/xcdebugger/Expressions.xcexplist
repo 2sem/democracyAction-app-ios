@@ -192,10 +192,10 @@
                value = "newMembers.count">
             </PersistentString>
             <PersistentString
-               value = "excelEvent.persons.count">
+               value = "excelEvent.persons">
             </PersistentString>
             <PersistentString
-               value = "excelEvent.persons">
+               value = "excelEvent.persons.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -206,10 +206,10 @@
                value = "self.msgMenu.fabMenuItems">
             </PersistentString>
             <PersistentString
-               value = "self.msgMenu?.fabButton">
+               value = "self.msgMenu">
             </PersistentString>
             <PersistentString
-               value = "self.msgMenu">
+               value = "self.msgMenu?.fabButton">
             </PersistentString>
             <PersistentString
                value = "self.msgMenu != nil">
@@ -289,13 +289,13 @@
          contextName = "DAPersonInfo.syncMessageTools(DAExcelPersonInfo) -&gt; ():DAPersonInfo+DAExcelPersonInfo.swift">
          <PersistentStrings>
             <PersistentString
-               value = "person.facebook">
+               value = "person.twitter">
             </PersistentString>
             <PersistentString
                value = "person.kakao">
             </PersistentString>
             <PersistentString
-               value = "person.twitter">
+               value = "person.facebook">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -388,10 +388,10 @@
                value = "&quot;\(DAInfoTableViewController.startingQuery)&quot;">
             </PersistentString>
             <PersistentString
-               value = "&quot;\(queryId?.value)&quot;">
+               value = "Int16(queryId?.value ?? &quot;0&quot;)">
             </PersistentString>
             <PersistentString
-               value = "Int16(queryId?.value ?? &quot;0&quot;)">
+               value = "&quot;\(queryId?.value)&quot;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -523,13 +523,13 @@
                value = "UIApplication.shared.windows.first?.rootViewController.classForCoder">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController">
+               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
             </PersistentString>
             <PersistentString
                value = "UIApplication.shared.keyWindow?.rootViewController?.presentedViewController">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
+               value = "UIApplication.shared.keyWindow?.rootViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -556,10 +556,10 @@
                value = "left.no">
             </PersistentString>
             <PersistentString
-               value = "right.name">
+               value = "left.name">
             </PersistentString>
             <PersistentString
-               value = "left.name">
+               value = "right.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -638,6 +638,14 @@
          contextName = "DAExcelPersonInfo._parseNumber(String, title : String) -&gt; [DAPhoneInfo]:DAExcelPersonInfo.swift">
       </ContextState>
       <ContextState
+         contextName = "DAExcelController.loadCongresses(_:):DAExcelController+DAExcelPersonInfo.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot; \(name)&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAInfoTableViewController.searchByLaunchQuery() -&gt; ():DAInfoTableViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -700,6 +708,9 @@
       <ContextState
          contextName = "DAModelController.syncGroups(_:):DAModelController+DAExcelController.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "&quot; \(excelPerson.name)&quot;">
+            </PersistentString>
             <PersistentString
                value = "excelPerson.assemblyNo">
             </PersistentString>

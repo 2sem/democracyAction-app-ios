@@ -13,6 +13,7 @@ import ContactsUI
 //import JSQWebViewController
 import ProgressWebViewController
 import LSExtensions
+import SDWebImage
 
 class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDelegate {
 
@@ -24,6 +25,8 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var groupLabel: UILabel!
+    @IBOutlet weak var groupImageView: UIImageView!
     @IBOutlet weak var areaLabel: UILabel!
     @IBOutlet weak var callButton: FABButton!
     
@@ -48,27 +51,6 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         if !selected{
             //self.msgMenu?.close();
         }
-    }
-    
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        
-        guard self.msgMenu?.fabMenuItems.count ?? 0 > 1 || self.searchMenu?.fabMenuItems.count ?? 0 > 1 else{
-            return super.hitTest(point, with: event);
-        }
-        
-        var value : UIView?;
-        
-        if self.msgMenu != nil && self.msgMenu.fabMenuItems.count > 1 && self.msgMenu.isOpened{
-            value = self.msgMenu.hitTestItems(self.convert(point, to: self.msgMenu), with: event);
-        }else if self.searchMenu != nil && self.searchMenu.fabMenuItems.count > 1 && self.searchMenu.isOpened{
-            value = self.searchMenu.hitTestItems(self.convert(point, to: self.searchMenu), with: event);
-        }
-        
-        if value == nil{
-            value = super.hitTest(point, with: event);
-        }
-        
-        return value;
     }
     
     enum menuType : Int{
@@ -128,23 +110,24 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     };
     
     func updateInfo(){
-        self.nameLabel.text = self.info.name;
-        self.areaLabel.text = !self.info.personArea.isEmpty ? self.info.personArea : self.info.personName;
-        do{
-            //var imageUrl = URL.init(string: "http://www.assembly.go.kr/photo/\(self.info.assembly).jpg")!;
-            //var imageUrl = Bundle.main.url(forResource: "photo_\(self.info.assembly)", withExtension: "jpg")!;
-            let imageUrl = Bundle.main.url(forResource: "photo_\(self.info.assembly)", withExtension: "jpg", subdirectory: "photos");
-            //var imageUrl = FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).last!.appendingPathComponent(DAModelController.FileName).appendingPathExtension("sqlite");
-            print("load photo url[\(imageUrl?.description ?? "")]");
-            if imageUrl != nil{
-                self.photoView.image = try UIImage(data: Data.init(contentsOf: imageUrl!));
-            }
-        }catch let error{
-            print("loading photo has been failed. error[\(error)]");
+        guard let info = self.info else{
+            return;
         }
+        
+        guard info === self.info else{
+            return;
+        }
+        
+        self.nameLabel.text = info.name;
+        self.groupLabel?.text = info.group?.name;
+        self.groupImageView?.sd_setImage(with: info.group?.logoUrl, placeholderImage: DAGroupInfo.defaultLogo, completed: nil);
+        
+        self.areaLabel.text = !info.personArea.isEmpty ? info.personArea : info.personName;
+        self.photoView.sd_setImage(with: Bundle.main.url(forResource: "photo_\(info.assembly)", withExtension: "jpg", subdirectory: "photos"), placeholderImage: nil, completed: nil);
+        
         var msgMenuItems : [FABMenuItem] = [];
         
-        if !self.info.personEmail.isEmpty {
+        if !info.personEmail.isEmpty {
             var menuItem : FABMenuItem! = self.preparedMenuItems[menuType.email];
             if menuItem == nil{
                 menuItem = FABMenuItem();
@@ -160,7 +143,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             msgMenuItems.append(menuItem);
         }
         
-        if self.info.personSms?.number != nil{
+        if info.personSms?.number != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.sms];
             if menuItem == nil{
                 menuItem = FABMenuItem();
@@ -176,7 +159,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             msgMenuItems.append(menuItem);
         }
         
-        if self.info.personTwitter?.account != nil{
+        if info.personTwitter?.account != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.twitter];
             if menuItem == nil{
                 menuItem = FABMenuItem();
@@ -192,7 +175,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             msgMenuItems.append(menuItem);
         }
         
-        if self.info.personFacebook?.account != nil {
+        if info.personFacebook?.account != nil {
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.facebook];
             if menuItem == nil{
                 menuItem = FABMenuItem();
@@ -217,7 +200,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         }else{
             //self.msgMenu = nil;
         }*/
-        
+        return;
         if self.msgMenu == nil{
             self.msgMenu = FABMenu();
             self.msgMenu.fabMenuDirection = .left;
@@ -272,7 +255,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
                 
         var searchMenuItems : [FABMenuItem] = [];
         
-        if self.info.personHomepage?.url != nil{
+        if info.personHomepage?.url != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.web];
             if menuItem == nil{
                 menuItem = FABMenuItem();
@@ -288,7 +271,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             searchMenuItems.append(menuItem);
         }
         
-        if self.info.personBlog?.url != nil{
+        if info.personBlog?.url != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.blog];
             if menuItem == nil{
                 menuItem = FABMenuItem();
@@ -305,7 +288,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             searchMenuItems.append(menuItem);
         }
         
-        if self.info.personYoutube?.url != nil{
+        if info.personYoutube?.url != nil{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.youtube];
             if menuItem == nil{
                 menuItem = FABMenuItem();
@@ -405,7 +388,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             self.sponseButton = nil;
         }
         
-        if self.sponseButton == nil && self.info.sponsor > 0{
+        if self.sponseButton == nil && info.sponsor > 0{
             self.sponseButton = FABButton();
             self.sponseButton.image = UIImage(named: "icon_money.png")?.withRenderingMode(.alwaysTemplate);
             self.sponseButton.frame.size = self.callButton.frame.size;
@@ -421,7 +404,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             
             self.sponseButton.addTarget(self, action: #selector(self.onPaySponsor(_:)), for: .touchUpInside);
             
-        }else if self.info.sponsor == 0 && self.sponseButton != nil{
+        }else if info.sponsor == 0 && self.sponseButton != nil{
             self.buttonsStack.removeArrangedSubview(self.sponseButton);
             self.sponseButton.removeFromSuperview();
         }
@@ -449,16 +432,24 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     }
     
     @IBAction func onOpenMsgMenu(_ button : UIButton){
-        print("open msg menu phones[\(self.info.phones.debugDescription)]");
+        guard let info = self.info else{
+            return;
+        }
+        
+        print("open msg menu phones[\(info.phones.debugDescription)]");
         self.msgMenu.open();
         self.searchMenu.close();
     }
     
     @IBAction func onCall(_ button : UIButton){
-        print("call \(self.info.phones.debugDescription)");
+        guard let info = self.info else{
+            return;
+        }
+        
+        print("call \(info.phones.debugDescription)");
         self.closeMenus();
         
-        let phones = self.info.personPhones.sorted(by: { (left, right) -> Bool in
+        let phones = info.personPhones.sorted(by: { (left, right) -> Bool in
             return left.name! < right.name!;
         });
         /*.filter { (phone) -> Bool in
@@ -490,7 +481,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
             
         }));
         
-        UIApplication.shared.keyWindow?.rootViewController?.showAlert(title: "\(self.info.job ?? "") \(self.info.name ?? "")에게 전화", msg: "통화할 연락처를 선택하세요", actions: actions, style: .alert);
+        UIApplication.shared.keyWindow?.rootViewController?.showAlert(title: "\(info.job ?? "") \(info.name ?? "")에게 전화", msg: "통화할 연락처를 선택하세요", actions: actions, style: .alert);
     }
     
     @IBAction func onLoadPhoneFromContact(){
@@ -512,13 +503,13 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         }
         alert.addAction(UIAlertAction(title: "수정", style: .default, handler: { (act) in
             let textField : UITextField! = alert.textFields?.first;
-            //self.info.createPhone(name: "휴대폰", number: textField.text ?? "", canSendSMS: true);
+            //info.createPhone(name: "휴대폰", number: textField.text ?? "", canSendSMS: true);
             guard !(textField.text ?? "").isEmpty else{
                 return;
             }
             phone.number = textField.text;
             DAModelController.shared.saveChanges();
-            //DAModelController.shared.refresh(person: self.info);
+            //DAModelController.shared.refresh(person: info);
             
             self.updateInfo();
         }));
@@ -533,6 +524,10 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     }
     
     @IBAction func onRegisterMobile(){
+        guard let info = self.info else{
+            return;
+        }
+        
         let alert = UIAlertController(title: "휴대폰 번호 등록", message: nil, preferredStyle: .alert);
         
         alert.addTextField { (textField) in
@@ -545,9 +540,9 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
                 return;
             }
             
-            self.info.createPhone(name: "휴대폰", number: textField.text ?? "", canSendSMS: true);
+            info.createPhone(name: "휴대폰", number: textField.text ?? "", canSendSMS: true);
             DAModelController.shared.saveChanges();
-            DAModelController.shared.refresh(person: self.info);
+            DAModelController.shared.refresh(person: info);
             
             self.updateInfo();
         }));
@@ -562,29 +557,45 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
     }
     
     @IBAction func onSms(_ button : UIButton){
-        print("send sms \(self.info.personSms?.number ?? "")");
+        guard let info = self.info else{
+            return;
+        }
+        
+        print("send sms \(info.personSms?.number ?? "")");
         self.closeMenus();
-        UIApplication.shared.openSms(self.info.personSms?.number ?? "");
+        UIApplication.shared.openSms(info.personSms?.number ?? "");
     }
     
     @IBAction func onEmail(_ button : UIButton){
-        print("send email \(self.info.personEmail)");
+        guard let info = self.info else{
+            return;
+        }
+        
+        print("send email \(info.personEmail)");
         self.closeMenus();
-        UIApplication.shared.openEmail(self.info.personEmail);
+        UIApplication.shared.openEmail(info.personEmail);
     }
     
     @IBAction func onTwitter(_ button : UIButton){
+        guard let info = self.info else{
+            return;
+        }
+        
         print("send twitter \(self.info.personTwitter?.account ?? "")");
         self.closeMenus();
-        UIApplication.shared.openTwitter(self.info.personTwitter?.account ?? "", webOpen: { (url) in
+        UIApplication.shared.openTwitter(info.personTwitter?.account ?? "", webOpen: { (url) in
             self.openWeb(url);
         });
     }
 
     @IBAction func onFacebook(_ button : UIButton){
-        print("send facebook \(self.info.personFacebook?.account ?? "")");
+        guard let info = self.info else{
+            return;
+        }
+        
+        print("send facebook \(info.personFacebook?.account ?? "")");
         self.closeMenus();
-        UIApplication.shared.openFacebook(self.info.personFacebook?.account ?? "", webOpen: { (url) in
+        UIApplication.shared.openFacebook(info.personFacebook?.account ?? "", webOpen: { (url) in
             self.openWeb(url);
         });
     }

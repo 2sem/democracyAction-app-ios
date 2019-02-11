@@ -92,7 +92,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     var groups : [DAPersonGroup] = [];
     var groupExpanding : [Int:Bool] = [:];
     
-    var areas = ["서울", "경남", "경북", "제주", "비례대표",  "충남", "충북", "대구", "강원", "광주", "대전", "경기", "부산", "전북", "인천" , "전남", "세종", "울산"];
+    var areas = ["서울", "경남", "경북", "제주", "비례대표",  "충남", "충북", "대전", "대구", "강원", "광주", "대전", "경기", "부산", "전북", "인천" , "전남", "세종", "울산", "강원"];
     var isAscending = true;
     var cellPreparingQueue = OperationQueue();
     
@@ -132,6 +132,9 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
     override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil);
+        
         self.searchByLaunchQuery();
         if #available(iOS 11.0, *) {
             self.navigationItem.hidesSearchBarWhenScrolling = false;
@@ -276,7 +279,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     func showNotice(){
         if DAInfoTableViewController.startingQuery == nil && DADefaults.LastNotice < self.excelController.noticeDate{
-            let noticeView : DANoticeViewController! = self.storyboard?.instantiateViewController(withIdentifier: "DANoticeViewController") as? DANoticeViewController;
+            let noticeView : DANoticeViewController! = DANoticeViewController.instantiate();
             //noticeView.modalPresentationStyle = .formSheet;
             noticeView.text = self.excelController.notice + "\n\n[\(self.excelController.version) 패치 내용]\n" + self.excelController.patch;
             self.present(noticeView, animated: true, completion: nil);
@@ -580,7 +583,22 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     func filterByArea(_ keyword : String){
-        self.groups = self.modelController.loadGroupsByArea(self.isAscending, areas: self.areas, name: keyword);
+        var name = keyword;
+        var area = keyword;
+        
+        switch self.searchingType{
+            case .byName:
+                area = "";
+                break;
+            case .byArea:
+                name = "";
+                break;
+            default:
+                break;
+        }
+        
+        
+        self.groups = self.modelController.loadGroupsByArea(self.isAscending, areas: self.areas, name: name, area: area);
     }
     
     func sortPersonsByName(groups : [DAExcelGroupInfo], needToOrderGroups : Bool) -> [DAExcelGroupInfo]{
@@ -847,6 +865,18 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         return true
     }
     */
+    
+    @objc func keyboardWillShow(notification: NSNotification){
+        let keyboardHeight = notification.keyboardFrame.height;
+        self.tableView.contentInset.bottom = keyboardHeight;
+        print("keyboard will show");
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification){
+        //self.updateBottomContraint(false, notification: notification);
+        self.tableView.contentInset.bottom = 0;
+        print("keyboard will hide");
+    }
 
     // MARK: UISearchBarDelegate
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
