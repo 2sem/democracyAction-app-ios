@@ -18,10 +18,6 @@ class DAPersonViewController: UIViewController {
     var info : DAPersonInfo!;
     var contactGroups : [DAContactGroup] = [];
     
-    @IBOutlet weak var contactButton: FABButton!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

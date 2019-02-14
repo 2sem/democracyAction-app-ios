@@ -492,40 +492,55 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="753-dX-TEs" customClass="FABButton">
-                                                            <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="753-dX-TEs" secondAttribute="height" multiplier="1:1" id="YM5-oZ-8nt"/>
-                                                            </constraints>
-                                                        </button>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-UM-rmz">
-                                                            <rect key="frame" x="51.5" y="0.0" width="291.5" height="43.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-UM-rmz">
+                                                            <rect key="frame" x="8" y="0.0" width="335" height="43.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQZ-d9-yGc">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="249.5" height="43.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQZ-d9-yGc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="48" height="43.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56P-nA-agF">
-                                                                    <rect key="frame" x="249.5" y="0.0" width="42" height="43.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56P-nA-agF">
+                                                                    <rect key="frame" x="56" y="0.0" width="39.5" height="43.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAE-A2-juw">
+                                                                    <rect key="frame" x="103.5" y="0.0" width="180" height="43.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="753-dX-TEs" customClass="FABButton">
+                                                                    <rect key="frame" x="291.5" y="0.0" width="43.5" height="43.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="753-dX-TEs" secondAttribute="height" multiplier="1:1" id="YM5-oZ-8nt"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_call"/>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="pulseColor">
+                                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                                            <color key="value" red="0.078431372550000003" green="0.70980392160000005" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="sQq-UM-rmz" secondAttribute="bottom" id="3Vh-u2-W7g"/>
-                                                        <constraint firstAttribute="bottom" secondItem="753-dX-TEs" secondAttribute="bottom" id="9es-oc-YUh"/>
-                                                        <constraint firstItem="sQq-UM-rmz" firstAttribute="leading" secondItem="753-dX-TEs" secondAttribute="trailing" constant="8" id="Dee-DG-hej"/>
-                                                        <constraint firstItem="753-dX-TEs" firstAttribute="top" secondItem="HgA-7J-DAg" secondAttribute="top" id="EIf-sJ-eNk"/>
                                                         <constraint firstItem="sQq-UM-rmz" firstAttribute="top" secondItem="HgA-7J-DAg" secondAttribute="top" id="GIN-KG-xjr"/>
+                                                        <constraint firstItem="sQq-UM-rmz" firstAttribute="leading" secondItem="HgA-7J-DAg" secondAttribute="leading" constant="8" id="ILc-po-xEO"/>
                                                         <constraint firstAttribute="trailing" secondItem="sQq-UM-rmz" secondAttribute="trailing" id="OEW-2C-0i0"/>
-                                                        <constraint firstItem="753-dX-TEs" firstAttribute="leading" secondItem="HgA-7J-DAg" secondAttribute="leading" id="XWT-My-OdP"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="contactButton" destination="753-dX-TEs" id="mJr-iy-asn"/>
+                                                    <outlet property="nameLabel" destination="IQZ-d9-yGc" id="NwR-zR-BdX"/>
+                                                    <outlet property="valueLabel" destination="56P-nA-agF" id="f2I-1b-ZHP"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -548,11 +563,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iqU-HT-rAl"/>
                     </view>
-                    <connections>
-                        <outlet property="contactButton" destination="753-dX-TEs" id="RoW-sd-UdJ"/>
-                        <outlet property="nameLabel" destination="IQZ-d9-yGc" id="vvb-8P-WcH"/>
-                        <outlet property="valueLabel" destination="56P-nA-agF" id="jec-Vs-cgm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHf-n7-w9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

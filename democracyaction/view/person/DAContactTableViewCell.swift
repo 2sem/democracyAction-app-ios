@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Material
 
 class DAContactTableViewCell: UITableViewCell {
 
     var info : DAContact!{
         self.updateInfo();
     }
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var contactButton: FABButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,45 +35,28 @@ class DAContactTableViewCell: UITableViewCell {
             return;
         }
         
-        self.nameLabel.text = info.name;
-        self.groupLabel?.text = info.group?.name;
-        self.groupImageView?.sd_setImage(with: info.group?.logoUrl, placeholderImage: DAGroupInfo.defaultLogo, completed: nil);
+        self.nameLabel?.text = info.name;
+        self.valueLabel?.text = info.value;
         
-        self.areaLabel.text = !info.personArea.isEmpty ? info.personArea : info.personName;
-        self.photoView.sd_setImage(with: Bundle.main.url(forResource: "photo_\(info.assembly)", withExtension: "jpg", subdirectory: "photos"), placeholderImage: nil, completed: nil);
-        
-        var msgMenuItems : [FABMenuItem] = [];
-        
-        if !info.personEmail.isEmpty {
-            var menuItem : FABMenuItem! = self.preparedMenuItems[menuType.email];
-            if menuItem == nil{
-                menuItem = FABMenuItem();
-                //menuItem.title = "email";
-                menuItem.titleLabel.isHidden = true;
-                menuItem.fabButton.image = UIImage(named: "icon_email.png")?.withRenderingMode(.alwaysTemplate);
-                menuItem.fabButton.tintColor = .white;
-                menuItem.fabButton.pulseColor = .white;
-                menuItem.fabButton.backgroundColor = DATheme.fabButtonBackgroundColor;
-                menuItem.fabButton.addTarget(self, action: #selector(self.onEmail(_:)), for: .touchUpInside);
-                self.preparedMenuItems[menuType.email] = menuItem;
-            }
-            msgMenuItems.append(menuItem);
-        }
-        
-        if info.personSms?.number != nil{
-            var menuItem : FABMenuItem! = preparedMenuItems[menuType.sms];
-            if menuItem == nil{
-                menuItem = FABMenuItem();
-                //menuItem.title = "sms";
-                menuItem.hideTitleLabel();
-                menuItem.fabButton.image = UIImage(named: "icon_sms.png")?.withRenderingMode(.alwaysTemplate);
-                menuItem.fabButton.tintColor = .white;
-                menuItem.fabButton.pulseColor = .white;
-                menuItem.fabButton.backgroundColor = DATheme.fabButtonBackgroundColor;
-                menuItem.fabButton.addTarget(self, action: #selector(self.onSms(_:)), for: .touchUpInside);
-                preparedMenuItems[menuType.sms] = menuItem;
-            }
-            msgMenuItems.append(menuItem);
+        switch info.contactType{
+        case .phone:
+            self.contactButton.image = #imageLiteral(resourceName: "icon_call");
+            self.contactButton.tintColor = .white;
+            self.contactButton.pulseColor = .white;
+            self.contactButton.backgroundColor = DATheme.fabButtonBackgroundColor;
+            break;
+        case .sms:
+            self.contactButton.image = UIImage(named: "icon_sms.png")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.tintColor = .white;
+            self.contactButton.pulseColor = .white;
+            self.contactButton.backgroundColor = DATheme.fabButtonBackgroundColor;
+            break;
+        case .email:
+            self.contactButton.image = UIImage(named: "icon_email");
+            self.contactButton.tintColor = .white;
+            self.contactButton.pulseColor = .white;
+            self.contactButton.backgroundColor = DATheme.fabButtonBackgroundColor;
+            break;
         }
         
         if info.personTwitter?.account != nil{
