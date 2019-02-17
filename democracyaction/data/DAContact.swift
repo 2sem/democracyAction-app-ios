@@ -20,6 +20,7 @@ class DAContact : NSObject{
         case web
         case blog
         case youtube
+        case cafe
         //case search
     }
     

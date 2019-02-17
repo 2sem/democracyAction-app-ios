@@ -23,6 +23,8 @@ class DATheme{
     static let youtubeButtonBackgroundColor = "#cfd8dc".toUIColor()!;
     static let searchButtonTintColor = "#eceff1".toUIColor()!;
     static let searchButtonBackgroundColor = "#607d8b".toUIColor()!;
+    static let webButtonTintColor = "#eceff1".toUIColor()!;
+    static let webButtonBackgroundColor = "#607d8b".toUIColor()!;
     static let sponseButtonTintColor = "#e3f2fd".toUIColor()!;
     static let sponseButtonBackgroundColor = "#42a5f5".toUIColor()!;
     

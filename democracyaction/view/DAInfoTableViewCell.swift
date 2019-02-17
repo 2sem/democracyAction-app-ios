@@ -123,7 +123,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         self.groupImageView?.sd_setImage(with: info.group?.logoUrl, placeholderImage: DAGroupInfo.defaultLogo, completed: nil);
         
         self.areaLabel.text = !info.personArea.isEmpty ? info.personArea : info.personName;
-        self.photoView.sd_setImage(with: Bundle.main.url(forResource: "photo_\(info.assembly)", withExtension: "jpg", subdirectory: "photos"), placeholderImage: nil, completed: nil);
+        self.photoView.sd_setImage(with: info.photo, placeholderImage: nil, completed: nil);
         
         var msgMenuItems : [FABMenuItem] = [];
         

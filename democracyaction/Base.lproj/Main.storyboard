@@ -37,6 +37,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="waD-S6-tGr">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <outlet property="searchDisplayController" destination="4ag-u3-eNI" id="ncQ-6P-pbU"/>

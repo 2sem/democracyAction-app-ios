@@ -6,10 +6,14 @@
 //  Copyright © 2017년 leesam. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 extension DAPersonInfo{
+    var photo : URL?{
+        return Bundle.main.url(forResource: "photo_\(self.assembly)", withExtension: "jpg", subdirectory: "photos");
+    }
+    
     var personName : String{
         get{
             return self.name ?? "";

@@ -940,14 +940,12 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         self.tableView.endUpdates();*/
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let personView = segue.destination as?DAPersonViewController, let cell = sender as? DAInfoTableViewCell{
+            personView.info = cell.info;
+        }
     }
-    */
-
 }

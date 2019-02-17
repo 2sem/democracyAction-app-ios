@@ -39,6 +39,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DAContactTableViewCell.updateInfo():DAContactTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIImage(named: &quot;icon_call&quot;)?.withRenderingMode(.alwaysTemplate)">
+            </PersistentString>
+            <PersistentString
+               value = "self.contactButton.image = UIImage(named: &quot;icon_call&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "self.contactButton">
+            </PersistentString>
+            <PersistentString
+               value = "UIImage(named: &quot;icon_call&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "&quot; \(info.name)&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAInfoTableViewController.onGoEndRow(Any) -&gt; ():DAInfoTableViewController.swift">
       </ContextState>
       <ContextState
@@ -48,6 +68,9 @@
                value = "msgMenuItems[0].fabButton">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAPersonViewController.tableView(_:cellForRowAt:):DAPersonViewController.swift">
       </ContextState>
       <ContextState
          contextName = "DAPersonInfo.findMessageTool(String) -&gt; DAMessageToolInfo?:DAPersonInfo+.swift">
@@ -289,10 +312,10 @@
          contextName = "DAPersonInfo.syncMessageTools(DAExcelPersonInfo) -&gt; ():DAPersonInfo+DAExcelPersonInfo.swift">
          <PersistentStrings>
             <PersistentString
-               value = "person.twitter">
+               value = "person.kakao">
             </PersistentString>
             <PersistentString
-               value = "person.kakao">
+               value = "person.twitter">
             </PersistentString>
             <PersistentString
                value = "person.facebook">

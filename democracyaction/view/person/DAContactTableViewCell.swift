@@ -8,11 +8,14 @@
 
 import UIKit
 import Material
+import ContactsUI
 
 class DAContactTableViewCell: UITableViewCell {
 
     var info : DAContact!{
-        self.updateInfo();
+        didSet{
+            self.updateInfo();
+        }
     }
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -40,13 +43,13 @@ class DAContactTableViewCell: UITableViewCell {
         
         switch info.contactType{
         case .phone:
-            self.contactButton.image = #imageLiteral(resourceName: "icon_call");
+            self.contactButton.image = UIImage(named: "icon_call")?.withRenderingMode(.alwaysTemplate);
             self.contactButton.tintColor = .white;
             self.contactButton.pulseColor = .white;
             self.contactButton.backgroundColor = DATheme.fabButtonBackgroundColor;
             break;
         case .sms:
-            self.contactButton.image = UIImage(named: "icon_sms.png")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.image = UIImage(named: "icon_sms")?.withRenderingMode(.alwaysTemplate);
             self.contactButton.tintColor = .white;
             self.contactButton.pulseColor = .white;
             self.contactButton.backgroundColor = DATheme.fabButtonBackgroundColor;
@@ -57,154 +60,47 @@ class DAContactTableViewCell: UITableViewCell {
             self.contactButton.pulseColor = .white;
             self.contactButton.backgroundColor = DATheme.fabButtonBackgroundColor;
             break;
+        case .twitter:
+            self.contactButton.image = UIImage(named: "icon_twitter")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.tintColor = DATheme.twitterButtonTintColor;
+            self.contactButton.pulseColor = DATheme.twitterButtonTintColor;
+            self.contactButton.backgroundColor = DATheme.twitterButtonBackgroundColor;
+            break;
+        case .facebook:
+            self.contactButton.image = UIImage(named: "icon_facebook")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.tintColor = DATheme.facebookButtonTintColor;
+            self.contactButton.pulseColor = DATheme.facebookButtonTintColor;
+            self.contactButton.backgroundColor = DATheme.facebookButtonBackgroundColor;
+            break;
+        case .web:
+            self.contactButton.image = UIImage(named: "icon_homepage")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.tintColor = DATheme.webButtonTintColor;
+            self.contactButton.pulseColor = DATheme.webButtonTintColor;
+            self.contactButton.backgroundColor = DATheme.fabButtonBackgroundColor;
+            break;
+        case .blog:
+            self.contactButton.image = UIImage(named: "icon_blog")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.tintColor = DATheme.webButtonTintColor;
+            self.contactButton.pulseColor = DATheme.webButtonTintColor;
+            self.contactButton.backgroundColor = DATheme.fabButtonBackgroundColor;
+            break;
+        case .youtube:
+            self.contactButton.image = UIImage(named: "icon_youtube")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.tintColor = DATheme.youtubeButtonTintColor;
+            self.contactButton.pulseColor = DATheme.youtubeButtonTintColor;
+            self.contactButton.backgroundColor = DATheme.youtubeButtonBackgroundColor;
+            break;
+        case .cafe:
+            self.contactButton.image = UIImage(named: "icon_cafe")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.tintColor = DATheme.webButtonTintColor;
+            self.contactButton.pulseColor = DATheme.webButtonTintColor;
+            self.contactButton.backgroundColor = DATheme.webButtonBackgroundColor;
+            break;
+        default:
+            break
         }
         
-        if info.personTwitter?.account != nil{
-            var menuItem : FABMenuItem! = preparedMenuItems[menuType.twitter];
-            if menuItem == nil{
-                menuItem = FABMenuItem();
-                //menuItem.title = "twitter";
-                menuItem.hideTitleLabel();
-                menuItem.fabButton.image = UIImage(named: "icon_twitter.png")?.withRenderingMode(.alwaysTemplate);
-                menuItem.fabButton.tintColor = DATheme.twitterButtonTintColor;
-                menuItem.fabButton.pulseColor = DATheme.twitterButtonTintColor;
-                menuItem.fabButton.backgroundColor = DATheme.twitterButtonBackgroundColor;
-                menuItem.fabButton.addTarget(self, action: #selector(self.onTwitter(_:)), for: .touchUpInside);
-                preparedMenuItems[menuType.twitter] = menuItem;
-            }
-            msgMenuItems.append(menuItem);
-        }
-        
-        if info.personFacebook?.account != nil {
-            var menuItem : FABMenuItem! = preparedMenuItems[menuType.facebook];
-            if menuItem == nil{
-                menuItem = FABMenuItem();
-                //menuItem.title = "facebook";
-                menuItem.hideTitleLabel();
-                menuItem.fabButton.image = UIImage(named: "icon_facebook.png")?.withRenderingMode(.alwaysTemplate);
-                menuItem.fabButton.tintColor = DATheme.facebookButtonTintColor;
-                menuItem.fabButton.pulseColor = DATheme.facebookButtonTintColor;
-                menuItem.fabButton.backgroundColor = DATheme.facebookButtonBackgroundColor;
-                menuItem.fabButton.addTarget(self, action: #selector(self.onFacebook(_:)), for: .touchUpInside);
-                preparedMenuItems[menuType.facebook] = menuItem;
-            }
-            msgMenuItems.append(menuItem);
-        }
-        
-        //self.msgMenu.open();
-        //print("check msgMenu. subViews[\(self.buttonsStack.subviews)]");
-        /*if self.msgMenu != nil && !self.buttonsStack.subviews.contains(self.msgMenu){
-         //self.buttonsStack.removeArrangedSubview(self.msgMenu);
-         //self.msgMenu.removeFromSuperview();
-         self.msgMenu = nil;
-         }else{
-         //self.msgMenu = nil;
-         }*/
-        return;
-        if self.msgMenu == nil{
-            self.msgMenu = FABMenu();
-            self.msgMenu.fabMenuDirection = .left;
-            self.msgMenu.fabMenuItemSize = self.callButton.frame.size;
-            
-            self.msgMenu.clipsToBounds = false;
-            self.msgMenu.delegate = self;
-        }
-        
-        if msgMenuItems.count > 1{
-            msgMenuItems.insert(self.callButton.cloneAsMenu(), at: 0);
-        }
-        
-        self.msgMenu.fabMenuItems = msgMenuItems;
-        
-        if self.msgButton != nil{
-            self.buttonsStack.removeArrangedSubview(self.msgButton);
-            self.msgButton.removeFromSuperview();
-            self.msgButton = nil;
-        }
-        
-        if msgMenuItems.count <= 1{
-            //self.msgMenu.removeConstraints(self.msgMenu.constraints);
-            self.msgMenu.fabButton = nil;
-            self.buttonsStack.removeArrangedSubview(self.msgMenu);
-            self.msgMenu.removeFromSuperview();
-            //self.msgMenu = nil;
-            //print("remove msg menu. cell[\(self)]");
-            if msgMenuItems.count == 1{
-                self.msgButton = msgMenuItems[0].fabButton.clone();
-                self.buttonsStack.insertArrangedSubview(self.msgButton, at: 1);
-                self.msgButton.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
-                self.msgButton.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
-            }
-        }else{
-            self.msgMenu.fabButton = FABButton();
-            self.msgMenu.fabButton?.image = UIImage(named: "icon_msg.png")?.withRenderingMode(.alwaysTemplate);
-            self.msgMenu.fabButton?.tintColor = .white;
-            self.msgMenu.fabButton?.backgroundColor = DATheme.fabMenuBackgroundColor;
-            self.msgMenu.fabButton?.pulseColor = .white;
-            
-            self.buttonsStack.insertArrangedSubview(self.msgMenu, at: 1);
-            //print("add msg menu. cell[\(self)]");
-            //self.addSubview(self.msgMenu);
-            self.msgMenu.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
-            self.msgMenu.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
-            self.msgMenu.prepare();
-            self.msgMenu.interimSpace = self.msgMenu.interimSpace - 6;
-            
-            //self.msgMenu.closeWithAnimation();
-        }
-        
-        var searchMenuItems : [FABMenuItem] = [];
-        
-        if info.personHomepage?.url != nil{
-            var menuItem : FABMenuItem! = preparedMenuItems[menuType.web];
-            if menuItem == nil{
-                menuItem = FABMenuItem();
-                //menuItem.title = "web";
-                menuItem.hideTitleLabel();
-                menuItem.fabButton.image = UIImage(named: "icon_homepage.png")?.withRenderingMode(.alwaysTemplate);
-                menuItem.fabButton.tintColor = .white;
-                menuItem.fabButton.pulseColor = .white;
-                menuItem.fabButton.backgroundColor = DATheme.fabButtonBackgroundColor;
-                menuItem.fabButton.addTarget(self, action: #selector(self.onWeb(_:)), for: .touchUpInside);
-                preparedMenuItems[menuType.web] = menuItem;
-            }
-            searchMenuItems.append(menuItem);
-        }
-        
-        if info.personBlog?.url != nil{
-            var menuItem : FABMenuItem! = preparedMenuItems[menuType.blog];
-            if menuItem == nil{
-                menuItem = FABMenuItem();
-                //menuItem.title = "blog";
-                menuItem.hideTitleLabel();
-                menuItem.fabButton.image = UIImage(named: "icon_blog.png")?.withRenderingMode(.alwaysTemplate);
-                menuItem.fabButton.tintColor = .white;
-                menuItem.fabButton.pulseColor = .white;
-                menuItem.fabButton.backgroundColor = DATheme.fabButtonBackgroundColor;
-                menuItem.fabButton.addTarget(self, action: #selector(self.onBlog(_:)), for: .touchUpInside);
-                preparedMenuItems[menuType.blog] = menuItem;
-            }
-            
-            searchMenuItems.append(menuItem);
-        }
-        
-        if info.personYoutube?.url != nil{
-            var menuItem : FABMenuItem! = preparedMenuItems[menuType.youtube];
-            if menuItem == nil{
-                menuItem = FABMenuItem();
-                //menuItem.title = "youTube";
-                menuItem.hideTitleLabel();
-                menuItem.fabButton.image = UIImage(named: "icon_youtube.png")?.withRenderingMode(.alwaysTemplate);
-                menuItem.fabButton.tintColor = DATheme.youtubeButtonTintColor;
-                menuItem.fabButton.pulseColor = DATheme.youtubeButtonTintColor;
-                menuItem.fabButton.backgroundColor = DATheme.youtubeButtonBackgroundColor;
-                menuItem.fabButton.addTarget(self, action: #selector(self.onYoutube(_:)), for: .touchUpInside);
-                preparedMenuItems[menuType.youtube] = menuItem;
-            }
-            searchMenuItems.append(menuItem);
-        }
-        
-        if true{
+        /*if true{
             var menuItem : FABMenuItem! = preparedMenuItems[menuType.search];
             if menuItem == nil{
                 menuItem = FABMenuItem();
@@ -218,7 +114,7 @@ class DAContactTableViewCell: UITableViewCell {
                 preparedMenuItems[menuType.search] = menuItem;
             }
             searchMenuItems.append(menuItem);
-        }
+        }*/
         
         /*if self.searchMenu != nil {
          //!self.buttonsStack.subviews.contains(self.searchMenu)
@@ -226,88 +122,6 @@ class DAContactTableViewCell: UITableViewCell {
          self.searchMenu.removeFromSuperview();
          self.searchMenu = nil;
          }*/
-        
-        if self.searchMenu == nil{
-            self.searchMenu = FABMenu();
-            self.searchMenu.fabMenuDirection = .left;
-            self.searchMenu.fabMenuItemSize = self.callButton.frame.size;
-            
-            self.searchMenu.clipsToBounds = false;
-            self.searchMenu.delegate = self;
-        }
-        
-        if searchMenuItems.count > 1{
-            searchMenuItems.insert(self.callButton.cloneAsMenu(), at: 0);
-            let msgMenu : FABMenuItem! = self.msgMenu?.fabButton != nil
-                ? self.msgMenu.fabButton?.cloneAsMenu() : self.msgButton?.cloneAsMenu();
-            if msgMenu != nil{
-                searchMenuItems.insert(msgMenu, at: 0);
-                msgMenu.fabButton.addTarget(self, action: #selector(self.onOpenMsgMenu(_:)), for: .touchUpInside);
-            }
-        }
-        self.searchMenu.fabMenuItems = searchMenuItems;
-        
-        if self.searchButton != nil{
-            self.buttonsStack.removeArrangedSubview(self.searchButton);
-            self.searchButton.removeFromSuperview();
-            self.searchButton = nil;
-        }
-        
-        if searchMenuItems.count <= 1{
-            //self.msgMenu.removeConstraints(self.msgMenu.constraints);
-            self.searchMenu.fabButton = nil;
-            self.buttonsStack.removeArrangedSubview(self.searchMenu);
-            self.searchMenu.removeFromSuperview();
-            self.searchMenu = nil;
-            if searchMenuItems.count == 1{
-                self.searchButton = searchMenuItems[0].fabButton.clone();
-                self.buttonsStack.insertArrangedSubview(self.searchButton, at: self.buttonsStack.arrangedSubviews.count);
-                self.searchButton.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
-                self.searchButton.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
-            }
-        }else{
-            self.searchMenu.fabButton = FABButton();
-            self.searchMenu.fabButton?.image = UIImage(named: "icon_web.png")?.withRenderingMode(.alwaysTemplate);
-            self.searchMenu.fabButton?.tintColor = .white;
-            self.searchMenu.fabButton?.backgroundColor = DATheme.fabMenuBackgroundColor;
-            self.searchMenu.fabButton?.pulseColor = .white;
-            
-            self.buttonsStack.insertArrangedSubview(self.searchMenu, at: self.buttonsStack.arrangedSubviews.count);
-            //self.addSubview(self.msgMenu);
-            self.searchMenu.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
-            self.searchMenu.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
-            self.searchMenu.prepare();
-            self.searchMenu.interimSpace = self.searchMenu.interimSpace - 6;
-            
-            //self.searchMenu.closeWithAnimation();
-        }
-        
-        if self.sponseButton != nil{
-            self.buttonsStack.removeArrangedSubview(self.sponseButton);
-            self.sponseButton.removeFromSuperview();
-            self.sponseButton = nil;
-        }
-        
-        if self.sponseButton == nil && info.sponsor > 0{
-            self.sponseButton = FABButton();
-            self.sponseButton.image = UIImage(named: "icon_money.png")?.withRenderingMode(.alwaysTemplate);
-            self.sponseButton.frame.size = self.callButton.frame.size;
-            
-            self.buttonsStack.insertArrangedSubview(self.sponseButton, at: self.buttonsStack.arrangedSubviews.count);
-            
-            self.sponseButton.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
-            self.sponseButton.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
-            
-            self.sponseButton?.tintColor = DATheme.sponseButtonTintColor;
-            self.sponseButton?.backgroundColor = DATheme.sponseButtonBackgroundColor;
-            self.sponseButton?.pulseColor = DATheme.sponseButtonTintColor;
-            
-            self.sponseButton.addTarget(self, action: #selector(self.onPaySponsor(_:)), for: .touchUpInside);
-            
-        }else if info.sponsor == 0 && self.sponseButton != nil{
-            self.buttonsStack.removeArrangedSubview(self.sponseButton);
-            self.sponseButton.removeFromSuperview();
-        }
         
         //self.layoutSubviews();
     }
@@ -321,17 +135,7 @@ class DAContactTableViewCell: UITableViewCell {
         UIApplication.shared.openURL(url);
     }
     
-    @IBAction func onOpenMsgMenu(_ button : UIButton){
-        guard let info = self.info else{
-            return;
-        }
-        
-        print("open msg menu phones[\(info.phones.debugDescription)]");
-        self.msgMenu.open();
-        self.searchMenu.close();
-    }
-    
-    @IBAction func onCall(_ button : UIButton){
+    /*@IBAction func onCall(_ button : UIButton){
         guard let info = self.info else{
             return;
         }
@@ -444,80 +248,68 @@ class DAContactTableViewCell: UITableViewCell {
         }));
         
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil);
-    }
+    }*/
     
-    @IBAction func onSms(_ button : UIButton){
+    @IBAction func onContact(_ button : UIButton){
         guard let info = self.info else{
             return;
         }
         
-        print("send sms \(info.personSms?.number ?? "")");
-        self.closeMenus();
-        UIApplication.shared.openSms(info.personSms?.number ?? "");
-    }
-    
-    @IBAction func onEmail(_ button : UIButton){
-        guard let info = self.info else{
-            return;
+        switch info.contactType{
+        case .phone:
+            print("prepare sms \(info.value)");
+            UIApplication.shared.openTel(info.value);
+            break;
+        case .sms:
+            print("prepare sms \(info.value)");
+            UIApplication.shared.openSms(info.value);
+            break;
+        case .email:
+            print("send email \(info.value)");
+            UIApplication.shared.openEmail(info.value);
+            break;
+        case .twitter:
+            print("send twitter \(self.info.value)");
+            UIApplication.shared.openTwitter(info.value, webOpen: { (url) in
+                self.openWeb(url);
+            });
+            break;
+        case .facebook:
+            print("send facebook \(info.value)");
+            UIApplication.shared.openFacebook(info.value, webOpen: { (url) in
+                self.openWeb(url);
+            });
+            break;
+        case .kakao:
+            print("send kakao \(info.value)");
+            UIApplication.shared.openFacebook(info.value, webOpen: { (url) in
+                self.openWeb(url);
+            });
+            break;
+        case .youtube:
+            print("go youtube \(info.value)");
+            self.openWeb(URL(string: info.value)!);
+            break;
+        case .web:
+            print("go web \(info.value)");
+            self.openWeb(URL(string: info.value)!);
+            break;
+        case .blog:
+            print("go blog \(info.value)");
+            self.openWeb(URL(string: info.value)!);
+            break;
+        default:
+            break;
         }
-        
-        print("send email \(info.personEmail)");
-        self.closeMenus();
-        UIApplication.shared.openEmail(info.personEmail);
-    }
-    
-    @IBAction func onTwitter(_ button : UIButton){
-        guard let info = self.info else{
-            return;
-        }
-        
-        print("send twitter \(self.info.personTwitter?.account ?? "")");
-        self.closeMenus();
-        UIApplication.shared.openTwitter(info.personTwitter?.account ?? "", webOpen: { (url) in
-            self.openWeb(url);
-        });
-    }
-    
-    @IBAction func onFacebook(_ button : UIButton){
-        guard let info = self.info else{
-            return;
-        }
-        
-        print("send facebook \(info.personFacebook?.account ?? "")");
-        self.closeMenus();
-        UIApplication.shared.openFacebook(info.personFacebook?.account ?? "", webOpen: { (url) in
-            self.openWeb(url);
-        });
     }
     
     @IBAction func onKakao(_ button : UIButton){
-        print("send kakao \(self.info.personKakao?.account ?? "")");
-        self.closeMenus();
-    }
-    
-    @IBAction func onYoutube(_ button : UIButton){
-        print("go youtube \(self.info.personYoutube?.url ?? "")");
-        self.closeMenus();
-        self.openWeb(URL(string: self.info.personYoutube?.url ?? "")!);
-        //UIApplication.shared.openWeb(self.info.personYoutube?.url ?? "");
-    }
-    
-    @IBAction func onWeb(_ button : UIButton){
-        print("go web \(self.info.personHomepage?.url ?? "")");
-        //UIApplication.shared.openWeb(self.info.personHomepage?.url ?? "");
-        self.openWeb(URL(string: self.info.personHomepage?.url ?? "")!);
-        self.closeMenus();
-    }
-    
-    @IBAction func onBlog(_ button : UIButton){
-        print("go blog \(self.info.personBlog?.url ?? "")");
-        //UIApplication.shared.openWeb(self.info.personBlog?.url ?? "");
-        self.openWeb(URL(string: self.info.personBlog?.url ?? "")!);
-        self.closeMenus();
+        //print("send kakao \(self.info.personKakao?.account ?? "")");
+        //self.closeMenus();
     }
     
     @IBAction func onSearch(_ button : UIButton){
-        print("go search \(self.info.personBlog?.url ?? "")");
+        /*print("go search \(self.info.personBlog?.url ?? "")");
         //UIApplication.shared.openWeb(self.info.personBlog?.url ?? "");
         let keyword = "\(self.info.job ?? "") \(self.info.name ?? "")";
         //let viewController = UIApplication.shared.keyWindow?.rootViewController;
@@ -535,52 +327,22 @@ class DAContactTableViewCell: UITableViewCell {
             });
         }), UIAlertAction(title: "취소", style: .default, handler: nil)], style: .alert);
         
-        self.closeMenus();
+        self.closeMenus();*/
     }
     
     @IBAction func onPaySponsor(_ button : UIButton){
-        print("go sponsor \(self.info.personHomepage?.url ?? "")");
+        /*print("go sponsor \(self.info.personHomepage?.url ?? "")");
         //UIApplication.shared.openWeb(self.info.personHomepage?.url ?? "");
         let req = DASponsorPayRequest(party: Int(self.info.group?.sponsor ?? 0), person: Int(self.info.sponsor), source: DASponsor.Sources.leesam).urlRequest;
         //self.openWeb(URL(string: self.info.personHomepage?.url ?? "")!);
         self.openWeb(req.url!);
-        self.closeMenus();
+        self.closeMenus();*/
     }
-    
-    // MARK: FABMenuDelegate
-    func fabMenuWillOpen(fabMenu: FABMenu) {
-        fabMenu.fabButton?.animate(.rotate(-45));
-        if self.msgMenu == fabMenu{
-            self.searchMenu?.closeWithAnimation();
-        }else{
-            self.msgMenu?.closeWithAnimation();
-        }
-    }
-    
-    func fabMenuDidOpen(fabMenu: FABMenu) {
-        let lastfabButton : FABButton! = fabMenu.fabMenuItems.last?.fabButton;
-        let left = lastfabButton.convert(lastfabButton.frame.origin, to: self);
-        guard left.x < 0 else{
-            self.overflowedMenus = [];
-            return;
-        }
-        
-        for menu in fabMenu.fabMenuItems{
-            let fabButton : FABButton! = menu.fabButton;
-            let left = fabButton.convert(fabButton.frame.origin, to: self);
-            if left.x < 0 {
-                self.overflowedMenus.append(menu);
-            }
-        }
-        
-        self.showSwipe(orientation: .left, animated: true, completion: nil);
-    }
-    
-    func fabMenuWillClose(fabMenu: FABMenu) {
-        fabMenu.fabButton?.animate(.rotate(0));
-    }
-    
-    //MARK: CNContactPickerDelegate
+}
+
+#if false
+//MARK: CNContactPickerDelegate
+extension DAContactTableViewCell : CNContactPickerDelegate{
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
         print("contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty)");
     }
@@ -631,3 +393,4 @@ class DAContactTableViewCell: UITableViewCell {
         }
     }
 }
+#endif

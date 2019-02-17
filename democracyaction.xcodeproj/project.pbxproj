@@ -26,6 +26,7 @@
 		2C0BEF0D1F1641110093FAEA /* DAGroupInfo+DAExcelGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BEF0C1F1641110093FAEA /* DAGroupInfo+DAExcelGroupInfo.swift */; };
 		2C0BEF0F1F164AA40093FAEA /* DAGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BEF0E1F164AA40093FAEA /* DAGroupTableViewCell.swift */; };
 		2C0E24EA1F3BEB4D00D2EFFF /* DAModelController+DAEventPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E24E91F3BEB4D00D2EFFF /* DAModelController+DAEventPersonInfo.swift */; };
+		2C0FAB7E2217ACF8009A45F1 /* DAPersonProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0FAB7D2217ACF8009A45F1 /* DAPersonProfileCell.swift */; };
 		2C1094C41F4DA612004A9E1D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C1094C31F4DA612004A9E1D /* Settings.bundle */; };
 		2C10CBC01EF668F0002A07C5 /* GADInterstialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */; };
 		2C10CBC11EF668F0002A07C5 /* GADInterstitial+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */; };
@@ -71,6 +72,7 @@
 		2C24A3821F99B75D002BCDD5 /* DASponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C24A3811F99B75D002BCDD5 /* DASponsor.swift */; };
 		2C250701221129C900D932CE /* Assembly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C250700221129C900D932CE /* Assembly.storyboard */; };
 		2C2507362211426600D932CE /* groups in Resources */ = {isa = PBXBuildFile; fileRef = 2C2507352211426500D932CE /* groups */; };
+		2C2A82E0221908CF004FE74C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A82DF221908CF004FE74C /* UIApplication+.swift */; };
 		2C44686720B7C3C900978A40 /* democracyactionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44686620B7C3C900978A40 /* democracyactionUITests.swift */; };
 		2C65D4171EFEA5AB00EBB5AA /* DAExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4131EFEA5AB00EBB5AA /* DAExcelController.swift */; };
 		2C65D4181EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4141EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift */; };
@@ -107,6 +109,20 @@
 			remoteGlobalIDString = 2C14CBC81EE9552A003BB329;
 			remoteInfo = democracyaction;
 		};
+		2C2A82E622190B84004FE74C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C75E7A82087892B00F1EFE2;
+			remoteInfo = LSExtensions;
+		};
+		2C2A82E822190B84004FE74C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C75E7B12087892C00F1EFE2;
+			remoteInfo = LSExtensionsTests;
+		};
 		2C44686920B7C3C900978A40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C14CBC11EE9552A003BB329 /* Project object */;
@@ -134,6 +150,7 @@
 		2C0BEF0C1F1641110093FAEA /* DAGroupInfo+DAExcelGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAGroupInfo+DAExcelGroupInfo.swift"; sourceTree = "<group>"; };
 		2C0BEF0E1F164AA40093FAEA /* DAGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAGroupTableViewCell.swift; sourceTree = "<group>"; };
 		2C0E24E91F3BEB4D00D2EFFF /* DAModelController+DAEventPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAModelController+DAEventPersonInfo.swift"; sourceTree = "<group>"; };
+		2C0FAB7D2217ACF8009A45F1 /* DAPersonProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAPersonProfileCell.swift; sourceTree = "<group>"; };
 		2C1094C31F4DA612004A9E1D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADInterstialManager.swift; sourceTree = "<group>"; };
 		2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GADInterstitial+.swift"; sourceTree = "<group>"; };
@@ -186,6 +203,8 @@
 		2C24A3811F99B75D002BCDD5 /* DASponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASponsor.swift; sourceTree = "<group>"; };
 		2C250700221129C900D932CE /* Assembly.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Assembly.storyboard; sourceTree = "<group>"; };
 		2C2507352211426500D932CE /* groups */ = {isa = PBXFileReference; lastKnownFileType = folder; path = groups; sourceTree = "<group>"; };
+		2C2A82DF221908CF004FE74C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LSExtensions.xcodeproj; path = ../../../pods/LSExtensions/src/LSExtensions/LSExtensions.xcodeproj; sourceTree = "<group>"; };
 		2C44686420B7C3C900978A40 /* democracyactionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = democracyactionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C44686620B7C3C900978A40 /* democracyactionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = democracyactionUITests.swift; sourceTree = "<group>"; };
 		2C44686820B7C3C900978A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -329,6 +348,7 @@
 				2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */,
 				2C145BE71F20D98A00E29D1A /* LSScrollButton.swift */,
 				2CF293791F4D99E8009D4B0F /* LSWebViewController.swift */,
+				2C2A82DF221908CF004FE74C /* UIApplication+.swift */,
 			);
 			path = leesam;
 			sourceTree = "<group>";
@@ -336,6 +356,7 @@
 		2C14CBC01EE9552A003BB329 = {
 			isa = PBXGroup;
 			children = (
+				2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */,
 				2C12AEA5212027BC0074A914 /* .gitignore */,
 				2C12AEA32120246C0074A914 /* Podfile */,
 				2C04B7061EF16E480084A82F /* leesam */,
@@ -433,6 +454,15 @@
 			path = sponsor;
 			sourceTree = "<group>";
 		};
+		2C2A82E222190B83004FE74C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C2A82E722190B84004FE74C /* LSExtensions.framework */,
+				2C2A82E922190B84004FE74C /* LSExtensionsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2C44686520B7C3C900978A40 /* democracyactionUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +494,7 @@
 			children = (
 				2CF0188A22130708000010D8 /* DAContactTableViewCell.swift */,
 				2C15756122141FA700D764FC /* DAPersonViewController.swift */,
+				2C0FAB7D2217ACF8009A45F1 /* DAPersonProfileCell.swift */,
 			);
 			path = person;
 			sourceTree = "<group>";
@@ -610,6 +641,12 @@
 			mainGroup = 2C14CBC01EE9552A003BB329;
 			productRefGroup = 2C14CBCA1EE9552A003BB329 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2C2A82E222190B83004FE74C /* Products */;
+					ProjectRef = 2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2C14CBC81EE9552A003BB329 /* democracyaction */,
@@ -618,6 +655,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2C2A82E722190B84004FE74C /* LSExtensions.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LSExtensions.framework;
+			remoteRef = 2C2A82E622190B84004FE74C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C2A82E922190B84004FE74C /* LSExtensionsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LSExtensionsTests.xctest;
+			remoteRef = 2C2A82E822190B84004FE74C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2C14CBC71EE9552A003BB329 /* Resources */ = {
@@ -826,6 +880,7 @@
 				2C0BEF0D1F1641110093FAEA /* DAGroupInfo+DAExcelGroupInfo.swift in Sources */,
 				2C14CC0D1EE98AA9003BB329 /* DAInfoTableViewCell.swift in Sources */,
 				2C0B70CA1F0E7DBC00D9D1C0 /* DABannerTableViewCell.swift in Sources */,
+				2C0FAB7E2217ACF8009A45F1 /* DAPersonProfileCell.swift in Sources */,
 				2C65D4181EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift in Sources */,
 				2C65D4171EFEA5AB00EBB5AA /* DAExcelController.swift in Sources */,
 				2C65D4191EFEA5AB00EBB5AA /* DAExcelPersonInfo.swift in Sources */,
@@ -833,6 +888,7 @@
 				2C153FBE1F2075EA00E61F7E /* DAExcelController+DAExcelEventGroupInfo.swift in Sources */,
 				2C09B90C1F03778400BCBFC7 /* DAFavoriteTableViewController.swift in Sources */,
 				2C6D79D81F0105C200237028 /* DAGroupInfo+.swift in Sources */,
+				2C2A82E0221908CF004FE74C /* UIApplication+.swift in Sources */,
 				2C0E24EA1F3BEB4D00D2EFFF /* DAModelController+DAEventPersonInfo.swift in Sources */,
 				2C6D79DA1F010B5300237028 /* DAPersonInfo+.swift in Sources */,
 				2CF194C91F6F8F5F0013CDD9 /* GADRewardManager.swift in Sources */,
