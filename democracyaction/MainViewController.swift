@@ -46,6 +46,10 @@ class MainViewController: UITabBarController {
         nav.pushViewController(viewController, animated: animated);
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        AppDelegate.sharedGADManager?.show(unit: .full);
+    }
+    
     /*
     // MARK: - Navigation
 

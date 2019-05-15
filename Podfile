@@ -17,7 +17,7 @@ target 'democracyaction' do
   
   pod 'Material'
   pod 'FBSDKCoreKit'
-  pod 'SwipeCellKit'
+  pod 'SwipeCellKit', '~> 2.5.1'
   pod 'MBProgressHUD'
   
   #pod 'JSQWebViewController'
@@ -27,6 +27,7 @@ target 'democracyaction' do
   pod 'CryptoSwift'
   #pod 'GoogleAPIClientForREST/Drive', '~> 1.2.1'
   pod 'LSExtensions', :path => '~/Projects/leesam/pods/LSExtensions/src/LSExtensions'
+  pod 'GADManager', :path => '~/Projects/leesam/pods/GADManager/src/GADManager'
   pod 'Alamofire'
   #pod 'LSExtensions'
   pod 'SDWebImage'

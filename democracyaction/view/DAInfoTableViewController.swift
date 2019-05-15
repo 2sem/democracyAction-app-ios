@@ -13,6 +13,7 @@ import SwipeCellKit
 import KakaoLink
 import MBProgressHUD
 import LSExtensions
+//import GADManager
 
 class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate, DAGroupTableViewCellDelegate {
     class CellIDs{
@@ -131,6 +132,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     @IBOutlet weak var groupingSegment: UISegmentedControl!
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
+    var appearCount: Int = 0;
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil);
@@ -139,6 +141,11 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         if #available(iOS 11.0, *) {
             self.navigationItem.hidesSearchBarWhenScrolling = false;
         }
+        
+        if self.appearCount > 0 {
+            AppDelegate.sharedGADManager?.show(unit: .full);
+        }
+        self.appearCount = self.appearCount.advanced(by: 1);
     }
     
     override func viewDidLoad() {

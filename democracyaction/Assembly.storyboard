@@ -393,7 +393,7 @@
         <!--의원 상세 정보-->
         <scene sceneID="Hah-PY-d6V">
             <objects>
-                <viewController id="tcX-u3-Xhf" userLabel="의원 상세 정보" customClass="DAPersonViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="person" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tcX-u3-Xhf" userLabel="의원 상세 정보" customClass="DAPersonViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gr-nV-ewx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

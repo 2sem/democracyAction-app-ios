@@ -48,10 +48,16 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     
     var lastAlarmButton : UIButton?;
     
+    var appearCount: Int = 0;
     override func viewWillAppear(_ animated: Bool) {
         if #available(iOS 11.0, *) {
             self.navigationItem.hidesSearchBarWhenScrolling = false;
         }
+        
+        if self.appearCount > 0 {
+            AppDelegate.sharedGADManager?.show(unit: .full);
+        }
+        self.appearCount = self.appearCount.advanced(by: 1);
     }
     
     override func viewDidLoad() {
@@ -378,16 +384,14 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         }
     }
     
-    /*
-     // MARK: - Navigation
+    // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if let personView = segue.destination as? DAPersonViewController, let cell = sender as? DAInfoTableViewCell{
+            personView.info = cell.info;
+        }
      }
-     */
-    
 }
 
 extension DAFavoriteTableViewController : SwipeActionTransitioning{

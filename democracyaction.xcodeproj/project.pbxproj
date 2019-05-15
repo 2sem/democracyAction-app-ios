@@ -109,20 +109,6 @@
 			remoteGlobalIDString = 2C14CBC81EE9552A003BB329;
 			remoteInfo = democracyaction;
 		};
-		2C2A82E622190B84004FE74C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2C75E7A82087892B00F1EFE2;
-			remoteInfo = LSExtensions;
-		};
-		2C2A82E822190B84004FE74C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2C75E7B12087892C00F1EFE2;
-			remoteInfo = LSExtensionsTests;
-		};
 		2C44686920B7C3C900978A40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C14CBC11EE9552A003BB329 /* Project object */;
@@ -204,7 +190,6 @@
 		2C250700221129C900D932CE /* Assembly.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Assembly.storyboard; sourceTree = "<group>"; };
 		2C2507352211426500D932CE /* groups */ = {isa = PBXFileReference; lastKnownFileType = folder; path = groups; sourceTree = "<group>"; };
 		2C2A82DF221908CF004FE74C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
-		2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LSExtensions.xcodeproj; path = ../../../pods/LSExtensions/src/LSExtensions/LSExtensions.xcodeproj; sourceTree = "<group>"; };
 		2C44686420B7C3C900978A40 /* democracyactionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = democracyactionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C44686620B7C3C900978A40 /* democracyactionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = democracyactionUITests.swift; sourceTree = "<group>"; };
 		2C44686820B7C3C900978A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -335,7 +320,7 @@
 			path = image;
 			sourceTree = "<group>";
 		};
-		2C04B7061EF16E480084A82F /* leesam */ = {
+		2C04B7061EF16E480084A82F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
 				2C04B7071EF16E870084A82F /* FABButton+.swift */,
@@ -350,16 +335,15 @@
 				2CF293791F4D99E8009D4B0F /* LSWebViewController.swift */,
 				2C2A82DF221908CF004FE74C /* UIApplication+.swift */,
 			);
-			path = leesam;
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		2C14CBC01EE9552A003BB329 = {
 			isa = PBXGroup;
 			children = (
-				2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */,
 				2C12AEA5212027BC0074A914 /* .gitignore */,
 				2C12AEA32120246C0074A914 /* Podfile */,
-				2C04B7061EF16E480084A82F /* leesam */,
+				2C04B7061EF16E480084A82F /* extensions */,
 				2C14CBCB1EE9552A003BB329 /* democracyaction */,
 				2C14CBE21EE9552B003BB329 /* democracyactionTests */,
 				2C44686520B7C3C900978A40 /* democracyactionUITests */,
@@ -452,15 +436,6 @@
 				2C1985911F9DDA7A001D3B9B /* DASponsorViewController.swift */,
 			);
 			path = sponsor;
-			sourceTree = "<group>";
-		};
-		2C2A82E222190B83004FE74C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2C2A82E722190B84004FE74C /* LSExtensions.framework */,
-				2C2A82E922190B84004FE74C /* LSExtensionsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		2C44686520B7C3C900978A40 /* democracyactionUITests */ = {
@@ -641,12 +616,6 @@
 			mainGroup = 2C14CBC01EE9552A003BB329;
 			productRefGroup = 2C14CBCA1EE9552A003BB329 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 2C2A82E222190B83004FE74C /* Products */;
-					ProjectRef = 2C2A82E122190B83004FE74C /* LSExtensions.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				2C14CBC81EE9552A003BB329 /* democracyaction */,
@@ -655,23 +624,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		2C2A82E722190B84004FE74C /* LSExtensions.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = LSExtensions.framework;
-			remoteRef = 2C2A82E622190B84004FE74C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2C2A82E922190B84004FE74C /* LSExtensionsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = LSExtensionsTests.xctest;
-			remoteRef = 2C2A82E822190B84004FE74C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2C14CBC71EE9552A003BB329 /* Resources */ = {
@@ -730,7 +682,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-democracyaction/Pods-democracyaction-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -751,7 +702,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",

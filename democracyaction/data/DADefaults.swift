@@ -24,6 +24,8 @@ class DADefaults{
         static let LastNotice = "LastNotice";
         static let DataVersion = "DataVersion"
         static let DataDownloaded = "DataDownloaded";
+        
+        static let LaunchCount = "LaunchCount";
     }
     
     static var LastFullADShown : Date{
@@ -91,4 +93,20 @@ class DADefaults{
             Defaults.set(value, forKey: Keys.DataDownloaded);
         }
     }
+    
+    static func increaseLaunchCount(){
+        self.LaunchCount = self.LaunchCount.advanced(by: 1);
+    }
+    
+    static var LaunchCount : Int{
+        get{
+            //UIApplication.shared.version
+            return Defaults.integer(forKey: Keys.LaunchCount);
+        }
+        
+        set(value){
+            Defaults.set(value, forKey: Keys.LaunchCount);
+        }
+    }
+
 }
