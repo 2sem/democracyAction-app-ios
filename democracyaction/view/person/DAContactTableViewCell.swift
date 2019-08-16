@@ -292,10 +292,14 @@ class DAContactTableViewCell: UITableViewCell {
             break;
         case .web:
             print("go web \(info.value)");
-            self.openWeb(URL(string: info.value)!);
+            self.openWeb(URL(string: info.value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")!);
             break;
         case .blog:
             print("go blog \(info.value)");
+            self.openWeb(URL(string: info.value)!);
+            break;
+        case .cafe:
+            print("go cafe \(info.value)");
             self.openWeb(URL(string: info.value)!);
             break;
         default:
