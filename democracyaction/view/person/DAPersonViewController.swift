@@ -27,6 +27,8 @@ class DAPersonViewController: UIViewController {
     var info : DAPersonInfo!;
     var contactGroups : [DAContactGroup] = [];
     
+    @IBOutlet weak var tableView: UITableView!
+    
     static func instantiate() -> DAPersonViewController?{
         return UIStoryboard.init(name: storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: storyboardId) as? DAPersonViewController;
     }
@@ -36,6 +38,8 @@ class DAPersonViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "\(self.info?.name ?? "") 의원";
+        self.tableView?.contentInset.top = 16;
+        self.tableView?.contentInset.bottom = 16;
         self.loadContacts();
     }
     

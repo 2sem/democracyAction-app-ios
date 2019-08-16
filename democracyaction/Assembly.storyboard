@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PfX-lR-egh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PfX-lR-egh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -399,11 +399,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdt-QM-aBu" userLabel="Frame View">
-                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fQ-yp-tRc">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="571"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-16" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profile" rowHeight="150" id="XGy-En-rpg" customClass="DAPersonProfileCell" customModule="democracyaction" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="343" height="150"/>
@@ -567,9 +568,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gdt-QM-aBu" firstAttribute="leading" secondItem="iqU-HT-rAl" secondAttribute="leading" constant="16" id="Vjw-mf-ueF"/>
-                            <constraint firstItem="gdt-QM-aBu" firstAttribute="top" secondItem="iqU-HT-rAl" secondAttribute="top" constant="16" id="XLc-EV-iQg"/>
-                            <constraint firstItem="iqU-HT-rAl" firstAttribute="bottom" secondItem="gdt-QM-aBu" secondAttribute="bottom" constant="16" id="dAb-i9-rpf"/>
-                            <constraint firstItem="iqU-HT-rAl" firstAttribute="trailing" secondItem="gdt-QM-aBu" secondAttribute="trailing" constant="16" id="tvP-Xq-6YE"/>
+                            <constraint firstItem="gdt-QM-aBu" firstAttribute="top" secondItem="iqU-HT-rAl" secondAttribute="top" id="XLc-EV-iQg"/>
+                            <constraint firstItem="gdt-QM-aBu" firstAttribute="bottom" secondItem="iqU-HT-rAl" secondAttribute="bottom" id="dAb-i9-rpf"/>
+                            <constraint firstItem="gdt-QM-aBu" firstAttribute="trailing" secondItem="iqU-HT-rAl" secondAttribute="trailing" constant="-16" id="tvP-Xq-6YE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iqU-HT-rAl"/>
                     </view>
@@ -583,6 +584,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="1fQ-yp-tRc" id="ilA-hp-9XD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHf-n7-w9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
