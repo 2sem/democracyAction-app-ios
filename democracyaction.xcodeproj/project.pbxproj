@@ -146,7 +146,6 @@
 		2C12AEA32120246C0074A914 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2C12AEA5212027BC0074A914 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = 300korea.plist; sourceTree = "<group>"; };
-		2C12F5CF208D7F8600B6D2D9 /* 300koreatest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 300koreatest.plist; sourceTree = "<group>"; };
 		2C1321561F1F999500390C17 /* DAExcelEventInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExcelEventInfo.swift; sourceTree = "<group>"; };
 		2C145BDB1F20A2E900E29D1A /* DAModelController+DAEventGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAModelController+DAEventGroupInfo.swift"; sourceTree = "<group>"; };
 		2C145BDD1F20AAE000E29D1A /* DAEventGroupInfo+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAEventGroupInfo+.swift"; sourceTree = "<group>"; };
@@ -382,7 +381,6 @@
 				2C14CBD71EE9552B003BB329 /* LaunchScreen.storyboard */,
 				2C14CBDA1EE9552B003BB329 /* Info.plist */,
 				2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */,
-				2C12F5CF208D7F8600B6D2D9 /* 300koreatest.plist */,
 				2C11CF84211F183700B5685C /* GoogleService-Info.plist */,
 				2C14CC011EE9640C003BB329 /* MainViewController.swift */,
 				2C20A7871EF427D700E14173 /* DATheme.swift */,

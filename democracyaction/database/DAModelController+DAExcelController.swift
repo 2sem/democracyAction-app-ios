@@ -112,8 +112,8 @@ extension DAModelController{
                 modelPerson.sponsor = Int32(excelPerson.sponsor);
                 
                 if excelPerson.assembly > "0"{
-                    modelPerson.assembly = Int32(excelPerson.assembly, radix: 10)!;
-                    modelPerson.assemblyNo = Int16(excelPerson.assemblyNo, radix: 10)!;
+                    modelPerson.assembly = Int32(excelPerson.assembly, radix: 10) ?? 0;
+                    modelPerson.assemblyNo = Int16(excelPerson.assemblyNo, radix: 10) ?? 0;
                 }
                 
                 modelPerson.syncPhones(excelPerson);
