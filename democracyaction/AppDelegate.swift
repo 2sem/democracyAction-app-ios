@@ -20,11 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
     var window: UIWindow?
     enum GADUnitName : String{
         case full = "FullAd"
+        case info = "InfoBottom"
+        case fav = "FavBottom"
     }
     static var sharedGADManager : GADManager<GADUnitName>?;
     var rewardAd : GADRewardManager?;
     var reviewManager : ReviewManager?;
-    let reviewInterval = 10;
+    let reviewInterval = 30;
     var deviceToken : String?;
     static var firebase : Messaging!;
 
@@ -37,8 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
         })*/
         
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9684378399371172~5739040449");
+        FirebaseApp.configure();
         Messaging.messaging().delegate = self;
-        FirebaseApp.configure()
         
         self.reviewManager = ReviewManager(self.window!, interval: 60.0 * 60 * 24 * 3);
         self.reviewManager?.delegate = self;
@@ -50,7 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
         var adManager = GADManager<GADUnitName>.init(self.window!);
         AppDelegate.sharedGADManager = adManager;
         adManager.delegate = self;
-        adManager.prepare(interstitialUnit: .full, interval: 60.0 * 60.0 * 2);
+    #if DEBUG
+        adManager.prepare(interstitialUnit: .full, interval: 60.0);
+    #else
+        adManager.prepare(interstitialUnit: .full, interval: 60.0 * 60.0 * 1);
+    #endif
+        
         adManager.canShowFirstTime = true;
         
         if self.rewardAd?.canShow ?? false{
@@ -117,10 +124,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
         }
         
         print("app going to foreground");
-        guard self.reviewManager?.canShow ?? false else{
+        /*guard self.reviewManager?.canShow ?? false else{
             return;
         }
-        self.reviewManager?.show();
+        self.reviewManager?.show();*/
         //self.fullAd?.show();
     }
     

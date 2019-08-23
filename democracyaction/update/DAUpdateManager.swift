@@ -101,7 +101,7 @@ class DAUpdateManger{
                 let res = try JSONDecoder().decode(DAAppVersionResponse.self, from: data);
                 print("app server response - \(res)");
                 let newRequiredVersion = res.requiredVersion;
-                let newDataVersion = res.dataVersion;
+                let newDataVersion = "1.2.2"// res.dataVersion;
 
                 guard UIApplication.shared.version >= newRequiredVersion
                     else{

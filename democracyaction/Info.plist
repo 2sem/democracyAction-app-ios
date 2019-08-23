@@ -38,7 +38,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>13</string>
+	<string>44</string>
 	<key>FacebookAppID</key>
 	<string>301484613596142</string>
 	<key>FacebookDisplayName</key>
@@ -47,8 +47,12 @@
 	<string>ca-app-pub-9684378399371172~5739040449</string>
 	<key>GADUnitIdentifiers</key>
 	<dict>
+		<key>FavBottom</key>
+		<string>ca-app-pub-9684378399371172/7127499644</string>
 		<key>FullAd</key>
 		<string>ca-app-pub-9684378399371172/1169240044</string>
+		<key>InfoBottom</key>
+		<string>ca-app-pub-9684378399371172/7215773643</string>
 	</dict>
 	<key>GoogleADUnitID</key>
 	<dict>

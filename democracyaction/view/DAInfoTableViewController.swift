@@ -13,7 +13,7 @@ import SwipeCellKit
 import KakaoLink
 import MBProgressHUD
 import LSExtensions
-//import GADManager
+
 
 class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate, DAGroupTableViewCellDelegate {
     class CellIDs{
@@ -741,19 +741,19 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }else{*/
             infoCell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.InfoCell, for: indexPath) as? DAInfoTableViewCell;
             cell = infoCell;
-            self.cellPreparingQueue.addOperation{
+            //self.cellPreparingQueue.addOperation{
                 var person : DAPersonInfo?;
                 let group = self.groups[indexPath.section];
                 person = group.persons[indexPath.row];
-                DispatchQueue.main.sync {
-                    guard (self.tableView.indexPathsForVisibleRows ?? []).contains(indexPath) else{
+                //DispatchQueue.main.sync {
+                    /*guard (self.tableView.indexPathsForVisibleRows ?? []).contains(indexPath) else{
                          return;
-                    }
+                    }*/
 
                     infoCell?.info = person;
-                }
+                //}
                 infoCell?.delegate = self;
-            }
+            //}
         //}
         
         return cell!;

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.143281"
+            timestampString = "588261885.439183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "256"
@@ -294,7 +294,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.74547"
+            timestampString = "588174166.039133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
@@ -310,7 +310,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.7455291"
+            timestampString = "588174166.039184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
@@ -326,7 +326,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.143519"
+            timestampString = "588261885.439447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "450"
@@ -342,7 +342,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.7455879"
+            timestampString = "588174166.039502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -535,7 +535,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.745729"
+            timestampString = "588174166.0396529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "640"
@@ -551,7 +551,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.745774"
+            timestampString = "588174166.039698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "632"
@@ -567,7 +567,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.745816"
+            timestampString = "588174166.039741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "644"
@@ -583,7 +583,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.745855"
+            timestampString = "588174166.03978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "639"
@@ -599,7 +599,7 @@
                   moduleName = "democracyaction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewCell.swift"
-                  timestampString = "588088097.750208"
+                  timestampString = "588261103.0426559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "639"
@@ -614,7 +614,7 @@
                   moduleName = "democracyaction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewCell.swift"
-                  timestampString = "588088097.751788"
+                  timestampString = "588261103.044183"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "640"
@@ -631,7 +631,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.745894"
+            timestampString = "588174166.03982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "521"
@@ -647,7 +647,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.745932"
+            timestampString = "588174166.0398591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "522"
@@ -663,7 +663,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.74597"
+            timestampString = "588174166.039899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "681"
@@ -711,7 +711,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.746008"
+            timestampString = "588174166.039937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "684"
@@ -743,7 +743,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/excel/DAExcelController.swift"
-            timestampString = "588088104.394641"
+            timestampString = "588173551.395928"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -759,7 +759,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/excel/DAExcelController.swift"
-            timestampString = "588088104.394979"
+            timestampString = "588173551.396351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -775,7 +775,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/excel/DAExcelController.swift"
-            timestampString = "588088104.395221"
+            timestampString = "588173551.396596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -1046,11 +1046,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.906714"
+            timestampString = "588261885.439881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
@@ -1062,11 +1062,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.913084"
+            timestampString = "588261885.4399329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1078,7 +1078,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.143898"
+            timestampString = "588261885.439977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "317"
@@ -1126,11 +1126,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.913613"
+            timestampString = "588261885.440022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1158,11 +1158,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.914068"
+            timestampString = "588261885.440079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1190,11 +1190,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.914462"
+            timestampString = "588261885.4401489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1206,11 +1206,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.6948169"
+            timestampString = "588261885.440196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "needAds"
             landmarkType = "24">
          </BreakpointContent>
@@ -1222,7 +1222,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144008"
+            timestampString = "588261885.4402471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -1238,7 +1238,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144053"
+            timestampString = "588261885.44029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -1254,7 +1254,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144093"
+            timestampString = "588261885.4403321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "312"
@@ -1270,7 +1270,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144133"
+            timestampString = "588261885.4403729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "339"
@@ -1286,7 +1286,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144171"
+            timestampString = "588261885.4404171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "333"
@@ -1302,7 +1302,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.1442111"
+            timestampString = "588261885.440459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "364"
@@ -1318,7 +1318,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144249"
+            timestampString = "588261885.4405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "353"
@@ -1334,7 +1334,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144289"
+            timestampString = "588261885.4405431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "355"
@@ -1414,7 +1414,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144374"
+            timestampString = "588261885.440637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "344"
@@ -1430,7 +1430,7 @@
                   moduleName = "democracyaction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewController.swift"
-                  timestampString = "588088097.78298"
+                  timestampString = "588261103.07737"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "344"
@@ -1445,7 +1445,7 @@
                   moduleName = "democracyaction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewController.swift"
-                  timestampString = "588088097.784089"
+                  timestampString = "588261103.078586"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "344"
@@ -1460,7 +1460,7 @@
                   moduleName = "democracyaction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewController.swift"
-                  timestampString = "588088097.785187"
+                  timestampString = "588261103.0797909"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "320"
@@ -1477,7 +1477,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144417"
+            timestampString = "588261885.440683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "349"
@@ -1685,7 +1685,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/excel/DAExcelController.swift"
-            timestampString = "588088104.3958859"
+            timestampString = "588173551.39726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -1701,7 +1701,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/excel/DAExcelController.swift"
-            timestampString = "588088104.396127"
+            timestampString = "588173551.397505"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
@@ -1875,7 +1875,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/excel/DAExcelController.swift"
-            timestampString = "588088104.3964109"
+            timestampString = "588173551.397789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -2259,7 +2259,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144819"
+            timestampString = "588261885.4411989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -2339,7 +2339,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.144914"
+            timestampString = "588261885.4413019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "508"
@@ -2355,7 +2355,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.1449569"
+            timestampString = "588261885.4413511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "382"
@@ -2659,7 +2659,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.747009"
+            timestampString = "588174166.0447249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "428"
@@ -2675,7 +2675,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.747056"
+            timestampString = "588174166.044772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "434"
@@ -2787,7 +2787,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.145247"
+            timestampString = "588261885.441669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "653"
@@ -2803,7 +2803,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.145291"
+            timestampString = "588261885.441716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "657"
@@ -2819,11 +2819,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.707618"
+            timestampString = "588261885.441762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
             landmarkName = "DAFavoriteTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2835,11 +2835,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.7077399"
+            timestampString = "588261885.441812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "DAFavoriteTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2883,11 +2883,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.708011"
+            timestampString = "588261885.441901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "DAFavoriteTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2899,27 +2899,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.921191"
+            timestampString = "588261885.441952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "messaging(_:didReceive:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.921558"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2931,11 +2915,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.9219919"
+            timestampString = "588261885.441994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2947,11 +2931,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.922264"
+            timestampString = "588261885.442036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "performPushCommand(_:body:category:info:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2963,11 +2947,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "579612128.922646"
+            timestampString = "588261885.442081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "performPushCommand(_:body:category:info:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2979,27 +2963,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.708277"
+            timestampString = "588261885.4421231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "tableView(_:editActionsForRowAt:for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.7084"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "controller(_:didChange:at:for:newIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3011,27 +2979,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.708497"
+            timestampString = "588261885.44217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "tableView(_:editActionsForRowAt:for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.708643"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3043,11 +2995,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.708779"
+            timestampString = "588261885.442215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3091,7 +3043,7 @@
                   moduleName = "SwipeCellKit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/Pods/SwipeCellKit/Source/SwipeController.swift"
-                  timestampString = "588088097.870497"
+                  timestampString = "588261104.448782"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "450"
@@ -3106,7 +3058,7 @@
                   moduleName = "SwipeCellKit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/Pods/SwipeCellKit/Source/SwipeController.swift"
-                  timestampString = "588088097.871601"
+                  timestampString = "588261104.450308"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "451"
@@ -3171,11 +3123,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.709196"
+            timestampString = "588261885.442324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
             <Locations>
@@ -3219,11 +3171,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.7093149"
+            timestampString = "588261885.442372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3235,11 +3187,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.7094541"
+            timestampString = "588261885.4424191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3251,59 +3203,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.7095931"
+            timestampString = "588261885.4424649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "tableView(_:editActionsForRowAt:for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.70974"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "tableView(_:editActionsForRowAt:for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.709842"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "tableView(_:editActionsForRowAt:for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.70997"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3347,11 +3251,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
-            timestampString = "579537849.710176"
+            timestampString = "588261885.44254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
             <Locations>
@@ -3363,11 +3267,11 @@
                   moduleName = "democracyaction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAFavoriteTableViewController.swift"
-                  timestampString = "588088097.899061"
+                  timestampString = "588261103.268075"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "232"
-                  endingLineNumber = "232"
+                  startingLineNumber = "262"
+                  endingLineNumber = "262"
                   offsetFromSymbolStart = "1248">
                </Location>
                <Location
@@ -3378,11 +3282,11 @@
                   moduleName = "democracyaction"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAFavoriteTableViewController.swift"
-                  timestampString = "588088097.9002481"
+                  timestampString = "588261103.269562"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "235"
-                  endingLineNumber = "235"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
                   offsetFromSymbolStart = "164">
                </Location>
             </Locations>
@@ -3395,7 +3299,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.145641"
+            timestampString = "588261885.442588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
@@ -3411,7 +3315,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.145685"
+            timestampString = "588261885.442633"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -3466,6 +3370,38 @@
             endingLineNumber = "88"
             landmarkName = "update(progress:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in democracyaction.DAUpdateManger.update(progress: Swift.Optional&lt;(democracyaction.DAUpdateManger.UpdateState, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "democracyaction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/update/DAUpdateManager.swift"
+                  timestampString = "588261103.279924"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "5452">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in democracyaction.DAUpdateManger.update(progress: Swift.Optional&lt;(democracyaction.DAUpdateManger.UpdateState, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "democracyaction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/update/DAUpdateManager.swift"
+                  timestampString = "588261103.281446"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3506,54 +3442,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.14578"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Bool) -&gt; () in democracyaction.DAInfoTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "democracyaction"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewController.swift"
-                  timestampString = "588088097.912756"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "181"
-                  endingLineNumber = "181"
-                  offsetFromSymbolStart = "192">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in closure #2 (Swift.Bool) -&gt; () in democracyaction.DAInfoTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "democracyaction"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewController.swift"
-                  timestampString = "588088097.9139121"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "democracyaction/database/DAModelController+DAExcelController.swift"
             timestampString = "588089399.206358"
             startingColumnNumber = "9223372036854775807"
@@ -3570,24 +3458,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "democracyaction/database/DAModelController+DAExcelController.swift"
-            timestampString = "588089399.206596"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "syncGroups(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "587655388.145847"
+            timestampString = "588261885.442762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "603"
@@ -3667,12 +3539,396 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "democracyaction/view/DAInfoTableViewCell.swift"
-            timestampString = "587655259.748702"
+            timestampString = "588174166.047052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "618"
             endingLineNumber = "618"
             landmarkName = "onWeb(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
+            timestampString = "588261885.4428689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "tableView(_:editActionsForRowAt:for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
+            timestampString = "588261885.442919"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "tableView(_:editActionsForRowAt:for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (SwipeCellKit.SwipeAction, Foundation.IndexPath) -&gt; () in democracyaction.DAFavoriteTableViewController.tableView(_: __C.UITableView, editActionsForRowAt: Foundation.IndexPath, for: SwipeCellKit.SwipeActionsOrientation) -&gt; Swift.Optional&lt;Swift.Array&lt;SwipeCellKit.SwipeAction&gt;&gt;"
+                  moduleName = "democracyaction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAFavoriteTableViewController.swift"
+                  timestampString = "588261103.309393"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "884">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #2 (SwipeCellKit.SwipeAction, Foundation.IndexPath) -&gt; () in democracyaction.DAFavoriteTableViewController.tableView(_: __C.UITableView, editActionsForRowAt: Foundation.IndexPath, for: SwipeCellKit.SwipeActionsOrientation) -&gt; Swift.Optional&lt;Swift.Array&lt;SwipeCellKit.SwipeAction&gt;&gt;"
+                  moduleName = "democracyaction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAFavoriteTableViewController.swift"
+                  timestampString = "588261103.31056"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
+            timestampString = "588261885.442966"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "tableView(_:editActionsForRowAt:for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
+            timestampString = "588261885.443013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
+            landmarkName = "tableView(_:editActionsForRowAt:for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (SwipeCellKit.SwipeAction, Foundation.IndexPath) -&gt; () in democracyaction.DAFavoriteTableViewController.tableView(_: __C.UITableView, editActionsForRowAt: Foundation.IndexPath, for: SwipeCellKit.SwipeActionsOrientation) -&gt; Swift.Optional&lt;Swift.Array&lt;SwipeCellKit.SwipeAction&gt;&gt;"
+                  moduleName = "democracyaction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAFavoriteTableViewController.swift"
+                  timestampString = "588261103.316013"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "1320">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #2 (SwipeCellKit.SwipeAction, Foundation.IndexPath) -&gt; () in democracyaction.DAFavoriteTableViewController.tableView(_: __C.UITableView, editActionsForRowAt: Foundation.IndexPath, for: SwipeCellKit.SwipeActionsOrientation) -&gt; Swift.Optional&lt;Swift.Array&lt;SwipeCellKit.SwipeAction&gt;&gt;"
+                  moduleName = "democracyaction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAFavoriteTableViewController.swift"
+                  timestampString = "588261103.31726"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
+            timestampString = "588261885.443061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "tableView(_:editActionsForRowAt:for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/DAFavoriteTableViewController.swift"
+            timestampString = "588261885.443108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "tableView(_:editActionsForRowAt:for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.443154"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "show(unit:force:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.443197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "show(unit:force:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.443238"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "show(unit:force:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.443279"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "canShow(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.443319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "canShow(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.4433579"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "canShow(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/AppDelegate.swift"
+            timestampString = "588261885.443397"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "GAD(manager:updatShownTimeForUnit:showTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/AppDelegate.swift"
+            timestampString = "588261885.443437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "GAD(manager:lastShownTimeForUnit:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.443478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "canShow(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.443517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "canShow(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/person/DAPersonViewController.swift"
+            timestampString = "588261885.44356"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/person/DAPersonViewController.swift"
+            timestampString = "588261885.444136"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.444584"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "prepare(bannerUnit:size:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
+            timestampString = "588261885.444631"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "prepare(bannerUnit:size:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

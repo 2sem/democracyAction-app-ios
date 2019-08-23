@@ -9,6 +9,8 @@
 import UIKit
 import SwipeCellKit
 import CoreData
+import GADManager
+import GoogleMobileAds
 
 class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate, NSFetchedResultsControllerDelegate {
     static let CellID = "DAInfoTableViewCell";
@@ -45,7 +47,8 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     }
 
     @IBOutlet weak var sortButton: UIBarButtonItem!
-    
+    @IBOutlet var banner: GADBannerView!
+
     var lastAlarmButton : UIButton?;
     
     var appearCount: Int = 0;
@@ -101,6 +104,31 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         self.searchBar(self.searchBar, textDidChange: "");
         
         self.needAds = DAInfoTableViewController.shared?.needAds ?? true;
+        
+        switch UIDevice.current.userInterfaceIdiom {
+            case .pad:
+                self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav, size: kGADAdSizeFullBanner);
+                break;
+            default:
+                self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav);
+                break;
+        }
+        
+        self.tableView?.hideExtraRows = true;
+        if let tableView = self.tableView, let banner = self.banner{
+            self.view?.addSubview(banner);
+            //banner.translatesAutoresizingMaskIntoConstraints = false;
+            //banner.heightAnchor.constraint(equalToConstant: 50).isActive = true;
+            //banner.leadingAnchor.constraint(equalTo: tableView.leadingAnchor).isActive = true;
+            //banner.trailingAnchor.constraint(equalTo: tableView.trailingAnchor).isActive = true;
+            //banner.bottomAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true;
+            banner.frame.size.width = tableView.frame.width;
+            
+            banner.delegate = self;
+            banner.rootViewController = self;
+            self.banner?.isHidden = true;
+            banner.load(GADRequest());
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -126,6 +154,26 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         }
         self.modelController.saveChanges();
         self.refresh();*/
+    }
+    
+    override func viewDidLayoutSubviews() {
+        guard let tableView = self.tableView, let banner = self.banner else{
+            return;
+        }
+        
+        banner.frame.size.width = tableView.frame.width;
+    }
+    
+    func layoutBanner(){
+        guard let banner = self.banner else{
+            return;
+        }
+        
+        banner.frame.origin.y = self.view.bounds.maxY - banner.bounds.height * 1.2;
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.layoutBanner();
     }
     
     func refresh(_ needToScrollTop : Bool = false){
@@ -397,5 +445,18 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
 extension DAFavoriteTableViewController : SwipeActionTransitioning{
     func didTransition(with context: SwipeActionTransitioningContext) {
         self.lastAlarmButton = context.button;
+    }
+}
+
+extension DAFavoriteTableViewController : GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("receive info banner");
+        self.banner?.isHidden = false;
+        self.tableView?.contentInset.bottom = 50 + 16;
+        self.layoutBanner();
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print("receive info banner failed. error[\(error.localizedDescription)]");
     }
 }

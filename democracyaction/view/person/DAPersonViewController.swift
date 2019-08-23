@@ -8,6 +8,8 @@
 
 import UIKit
 import Material
+import GADManager
+import GoogleMobileAds
 
 class DAPersonViewController: UIViewController {
 
@@ -28,6 +30,7 @@ class DAPersonViewController: UIViewController {
     var contactGroups : [DAContactGroup] = [];
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var banner: GADBannerView!
     
     static func instantiate() -> DAPersonViewController?{
         return UIStoryboard.init(name: storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: storyboardId) as? DAPersonViewController;
@@ -40,6 +43,38 @@ class DAPersonViewController: UIViewController {
         self.navigationItem.title = "\(self.info?.name ?? "") 의원";
         self.tableView?.contentInset.top = 16;
         self.tableView?.contentInset.bottom = 16;
+        
+        /*switch UIDevice.current.userInterfaceIdiom{
+            //case .pad:
+                //self.banner = GADBannerView.init(adSize: kGADAdSizeful)
+                //break;
+            default:
+                self.banner = GADBannerView.init(adSize: kGADAdSizeBanner)
+                break;
+        }*/
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .info, size: kGADAdSizeFullBanner);
+            break;
+        default:
+            self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .info);
+            break;
+        }
+
+        if let tableView = self.tableView, let banner = self.banner{
+            self.view?.addSubview(banner);
+            banner.translatesAutoresizingMaskIntoConstraints = false;
+            banner.heightAnchor.constraint(equalToConstant: 50).isActive = true;
+            banner.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true;
+            banner.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true;
+            banner.bottomAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true;
+            
+            banner.delegate = self;
+            banner.rootViewController = self;
+            self.banner?.isHidden = true;
+            banner.load(GADRequest());
+        }
         self.loadContacts();
     }
     
@@ -209,5 +244,17 @@ extension DAPersonViewController : UITableViewDelegate{
         }
         
         self.share(["#문자행동 [\(info.name ?? "") 의원] \(contact.name ?? "") - \(contact.value)"]);
+    }
+}
+
+extension DAPersonViewController : GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("receive info banner");
+        self.banner?.isHidden = false;
+        self.tableView?.contentInset.bottom = bannerView.frame.height + 16;
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print("receive info banner failed. error[\(error.localizedDescription)]");
     }
 }
