@@ -47,7 +47,7 @@ class MainViewController: UITabBarController {
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        AppDelegate.sharedGADManager?.show(unit: .full);
+        //AppDelegate.sharedGADManager?.show(unit: .full);
     }
     
     /*

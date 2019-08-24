@@ -14,7 +14,10 @@ import KakaoLink
 import CoreData
 
 class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate, LSScrollButtonDelegate, DAGroupTableViewCellDelegate {
-
+    class Segues{
+        static let personView = "person";
+    }
+    
     static let CellID = "DAInfoTableViewCell";
     static let adCellID = "DABannerTableViewCell";
     static let groupCellID = "DAGroupTableViewCell";
@@ -618,7 +621,31 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     }
     
     // MARK: - Navigation
-     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        var value = true;
+        
+        switch identifier {
+        case Segues.personView:
+            guard let manager = AppDelegate.sharedGADManager else{
+                return value;
+            }
+            
+            guard manager.canShow(.full) else{
+                return value;
+            }
+            
+            manager.show(unit: .full) { [weak self](unit, ad) in
+                self?.performSegue(withIdentifier: identifier, sender: sender);
+            }
+            value = false;
+            break;
+        default:
+            break;
+        }
+        
+        return value;
+    }
+    
      // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let personView = segue.destination as? DAPersonViewController, let cell = sender as? DAInfoTableViewCell{

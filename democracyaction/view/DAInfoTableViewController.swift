@@ -16,6 +16,10 @@ import LSExtensions
 
 
 class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate, DAGroupTableViewCellDelegate {
+    class Segues{
+        static let personView = "person";
+    }
+    
     class CellIDs{
         static let InfoCell = "DAInfoTableViewCell";
         static let BannerCell = "DABannerTableViewCell";
@@ -132,7 +136,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     @IBOutlet weak var groupingSegment: UISegmentedControl!
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
-    var appearCount: Int = 0;
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil);
@@ -141,11 +144,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         if #available(iOS 11.0, *) {
             self.navigationItem.hidesSearchBarWhenScrolling = false;
         }
-        
-        if self.appearCount > 0 {
-            AppDelegate.sharedGADManager?.show(unit: .full);
-        }
-        self.appearCount = self.appearCount.advanced(by: 1);
     }
     
     override func viewDidLoad() {
@@ -948,7 +946,31 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     // MARK: - Navigation
-
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        var value = true;
+        
+        switch identifier {
+        case Segues.personView:
+            guard let manager = AppDelegate.sharedGADManager else{
+                return value;
+            }
+            
+            guard manager.canShow(.full) else{
+                return value;
+            }
+            
+            manager.show(unit: .full) { [weak self](unit, ad) in
+                self?.performSegue(withIdentifier: identifier, sender: sender);
+            }
+            value = false;
+            break;
+        default:
+            break;
+        }
+        
+        return value;
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let personView = segue.destination as?DAPersonViewController, let cell = sender as? DAInfoTableViewCell{
