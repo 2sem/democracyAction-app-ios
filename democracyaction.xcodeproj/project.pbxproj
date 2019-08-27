@@ -73,6 +73,7 @@
 		2C250701221129C900D932CE /* Assembly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C250700221129C900D932CE /* Assembly.storyboard */; };
 		2C2507362211426600D932CE /* groups in Resources */ = {isa = PBXBuildFile; fileRef = 2C2507352211426500D932CE /* groups */; };
 		2C2A82E0221908CF004FE74C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A82DF221908CF004FE74C /* UIApplication+.swift */; };
+		2C4067EF2315505F00430058 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4067EE2315505F00430058 /* UIScreen+.swift */; };
 		2C44686720B7C3C900978A40 /* democracyactionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44686620B7C3C900978A40 /* democracyactionUITests.swift */; };
 		2C65D4171EFEA5AB00EBB5AA /* DAExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4131EFEA5AB00EBB5AA /* DAExcelController.swift */; };
 		2C65D4181EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4141EFEA5AB00EBB5AA /* DAExcelGroupInfo.swift */; };
@@ -189,6 +190,7 @@
 		2C250700221129C900D932CE /* Assembly.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Assembly.storyboard; sourceTree = "<group>"; };
 		2C2507352211426500D932CE /* groups */ = {isa = PBXFileReference; lastKnownFileType = folder; path = groups; sourceTree = "<group>"; };
 		2C2A82DF221908CF004FE74C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		2C4067EE2315505F00430058 /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
 		2C44686420B7C3C900978A40 /* democracyactionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = democracyactionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C44686620B7C3C900978A40 /* democracyactionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = democracyactionUITests.swift; sourceTree = "<group>"; };
 		2C44686820B7C3C900978A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				2C145BE71F20D98A00E29D1A /* LSScrollButton.swift */,
 				2CF293791F4D99E8009D4B0F /* LSWebViewController.swift */,
 				2C2A82DF221908CF004FE74C /* UIApplication+.swift */,
+				2C4067EE2315505F00430058 /* UIScreen+.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				2C153FC01F207A1700E61F7E /* DAExcelController+DAExcelPersonInfo.swift in Sources */,
 				2C153FC21F207AE500E61F7E /* DAExcelController+DAExcelEventInfo.swift in Sources */,
 				2CB61E5F1F29EB3100CB8880 /* String+GoogleDrive.swift in Sources */,
+				2C4067EF2315505F00430058 /* UIScreen+.swift in Sources */,
 				2C145BDE1F20AAE000E29D1A /* DAEventGroupInfo+.swift in Sources */,
 				2C24A3821F99B75D002BCDD5 /* DASponsor.swift in Sources */,
 				2C1575642214212200D764FC /* DAContactGroup.swift in Sources */,

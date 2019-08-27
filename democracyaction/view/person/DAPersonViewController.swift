@@ -227,6 +227,7 @@ extension DAPersonViewController : UITableViewDataSource{
 
 extension DAPersonViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //(UIScreen.main.bounds.width > UIScreen.Size._5s.width ? UITableViewAutomaticDimension : 120)
         return indexPath.section == Sections.profile ? UITableViewAutomaticDimension : 52;
     }
     

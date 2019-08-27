@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PfX-lR-egh">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,15 +15,15 @@
             <objects>
                 <tableViewController id="PfX-lR-egh" userLabel="의원 목록" customClass="DAInfoTableViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VoA-ve-oek">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Uy9-8Z-IYO" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uy9-8Z-IYO" id="wos-G0-2dT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="409-oQ-ES5">
@@ -37,7 +37,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zl8-OD-lDe">
-                                            <rect key="frame" x="40" y="44" width="275" height="21"/>
+                                            <rect key="frame" x="40" y="44" width="220" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="HSa-ZR-g9G"/>
                                             </constraints>
@@ -46,7 +46,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2hS-Zk-ckF">
-                                            <rect key="frame" x="315" y="11" width="44" height="44"/>
+                                            <rect key="frame" x="260" y="11" width="44" height="44"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHn-eg-kVb" customClass="FABButton" customModule="Material">
                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -99,10 +99,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="SS1-2g-EL9" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SS1-2g-EL9" id="men-AO-Thc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_9770933" translatesAutoresizingMaskIntoConstraints="NO" id="xuu-8j-sY8">
@@ -121,7 +121,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-cB-B63" userLabel="Detail Stack View">
-                                            <rect key="frame" x="240" y="8" width="119" height="49.5"/>
+                                            <rect key="frame" x="185" y="8" width="119" height="49.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-L7-jTV" userLabel="Name Stack View">
                                                     <rect key="frame" x="0.0" y="0.0" width="119" height="24.5"/>
@@ -180,10 +180,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DABannerTableViewCell" id="FHM-Ce-FR3" customClass="DABannerTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="160" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="160" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FHM-Ce-FR3" id="zUk-Hn-HKV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문자행동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imt-de-toJ">
@@ -206,7 +206,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6U-HK-ID0" customClass="FABButton" customModule="Material">
-                                            <rect key="frame" x="315" y="11" width="44" height="44"/>
+                                            <rect key="frame" x="260" y="11" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="ilU-nZ-1lZ"/>
                                                 <constraint firstAttribute="height" constant="44" id="pzf-m0-puj"/>
@@ -226,7 +226,7 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRb-vW-pZI" customClass="GADBannerView">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -250,10 +250,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAGroupTableViewCell" id="WT5-9r-Z17" customClass="DAGroupTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="226" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="226" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WT5-9r-Z17" id="ESr-AP-5yc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-eY-wfH">
@@ -267,7 +267,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qjC-Vj-Elx">
-                                            <rect key="frame" x="40" y="44" width="275" height="21"/>
+                                            <rect key="frame" x="40" y="44" width="220" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="4R5-wH-sIj"/>
                                             </constraints>
@@ -276,7 +276,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5mh-Sq-LmV">
-                                            <rect key="frame" x="315" y="11" width="44" height="44"/>
+                                            <rect key="frame" x="260" y="11" width="44" height="44"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4i-Ls-bPy" customClass="FABButton" customModule="Material">
                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -395,46 +395,46 @@
             <objects>
                 <viewController storyboardIdentifier="person" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tcX-u3-Xhf" userLabel="의원 상세 정보" customClass="DAPersonViewController" customModule="democracyaction" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gr-nV-ewx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdt-QM-aBu" userLabel="Frame View">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="16" y="64" width="288" height="504"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fQ-yp-tRc">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="504"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-16" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profile" rowHeight="150" id="XGy-En-rpg" customClass="DAPersonProfileCell" customModule="democracyaction" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="343" height="150"/>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profile" rowHeight="100" id="XGy-En-rpg" customClass="DAPersonProfileCell" customModule="democracyaction" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="288" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XGy-En-rpg" id="OL5-Cl-MO4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_9770933" translatesAutoresizingMaskIntoConstraints="NO" id="B0Z-MH-yhL">
-                                                            <rect key="frame" x="15" y="4" width="33.5" height="45"/>
+                                                            <rect key="frame" x="15" y="4" width="50" height="67"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="PKd-dS-E3H"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="PKd-dS-E3H"/>
                                                                 <constraint firstAttribute="width" secondItem="B0Z-MH-yhL" secondAttribute="height" multiplier="156:209" id="rGI-0n-NF1"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="u1e-LT-OAF" userLabel="Detail Stack View">
-                                                            <rect key="frame" x="56.5" y="8" width="271.5" height="137.5"/>
+                                                            <rect key="frame" x="73" y="8" width="200" height="64"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pi1-tb-aR7" userLabel="Name Stack View">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="271.5" height="34.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="31"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bmz-tw-wee" userLabel="Group Image View">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="34.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="Bmz-tw-wee" secondAttribute="height" multiplier="1:1" id="tBQ-3D-C8l"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한민국당" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-Cw-2yf" userLabel="Group Label">
-                                                                            <rect key="frame" x="42.5" y="0.0" width="229" height="34.5"/>
+                                                                            <rect key="frame" x="39" y="0.0" width="161" height="31"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                             <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -445,18 +445,18 @@
                                                                     </constraints>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qY0-n9-puH">
-                                                                    <rect key="frame" x="0.0" y="38.5" width="271.5" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="35" width="200" height="0.0"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                     <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOE-fS-DDy">
-                                                                    <rect key="frame" x="0.0" y="72.5" width="271.5" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="39" width="200" height="0.0"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역구 갑" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-Ep-mhJ">
-                                                                    <rect key="frame" x="0.0" y="116.5" width="271.5" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="43" width="200" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="0iB-Qt-uZW"/>
                                                                     </constraints>
@@ -467,22 +467,44 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="137.5" id="9ih-t1-8Oz"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="xnC-rM-dJx"/>
                                                             </constraints>
                                                         </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-f2-80E">
+                                                            <rect key="frame" x="43" y="49" width="44" height="44"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="BbI-yQ-6gR"/>
+                                                                <constraint firstAttribute="width" secondItem="6pJ-f2-80E" secondAttribute="height" multiplier="1:1" id="Rtp-p9-eDB"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" image="icon_favor_add"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="22"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="onFavorite:" destination="XGy-En-rpg" eventType="touchUpInside" id="lWH-9B-Ukm"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="6pJ-f2-80E" firstAttribute="centerY" secondItem="B0Z-MH-yhL" secondAttribute="bottom" id="BJw-Ou-PYb"/>
                                                         <constraint firstItem="B0Z-MH-yhL" firstAttribute="leading" secondItem="OL5-Cl-MO4" secondAttribute="leadingMargin" id="BP4-Jr-axx"/>
                                                         <constraint firstItem="B0Z-MH-yhL" firstAttribute="top" secondItem="OL5-Cl-MO4" secondAttribute="top" constant="4" id="EFh-YE-5jk"/>
-                                                        <constraint firstAttribute="bottom" secondItem="u1e-LT-OAF" secondAttribute="bottom" constant="4" id="Ibx-1U-b6W"/>
+                                                        <constraint firstAttribute="bottom" secondItem="u1e-LT-OAF" secondAttribute="bottom" constant="28" id="Ibx-1U-b6W"/>
                                                         <constraint firstItem="u1e-LT-OAF" firstAttribute="trailingMargin" secondItem="OL5-Cl-MO4" secondAttribute="trailingMargin" id="QQH-lO-eIE"/>
                                                         <constraint firstItem="B0Z-MH-yhL" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="u1e-LT-OAF" secondAttribute="bottom" id="Swd-Le-XVI"/>
                                                         <constraint firstItem="u1e-LT-OAF" firstAttribute="leading" secondItem="B0Z-MH-yhL" secondAttribute="trailing" constant="8" id="ZAr-5L-bx4"/>
                                                         <constraint firstItem="u1e-LT-OAF" firstAttribute="top" secondItem="B0Z-MH-yhL" secondAttribute="top" constant="4" id="m1q-m6-TXY"/>
+                                                        <constraint firstItem="6pJ-f2-80E" firstAttribute="centerX" secondItem="B0Z-MH-yhL" secondAttribute="trailing" id="rF5-Tl-Z0Z"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <outlet property="areaLabel" destination="SvE-Ep-mhJ" id="6be-rL-w36"/>
+                                                    <outlet property="favButton" destination="6pJ-f2-80E" id="Um3-pW-0B7"/>
                                                     <outlet property="groupImageView" destination="Bmz-tw-wee" id="fk3-yG-cLZ"/>
                                                     <outlet property="groupNameLabel" destination="fQe-Cw-2yf" id="odI-aq-e9u"/>
                                                     <outlet property="nameLabel" destination="qY0-n9-puH" id="tSt-XV-7RI"/>
@@ -490,10 +512,10 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="contact" rowHeight="44" id="Axu-JS-F3L" customClass="DAContactTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="178" width="343" height="44"/>
+                                                <rect key="frame" x="0.0" y="128" width="288" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Axu-JS-F3L" id="HgA-7J-DAg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-UM-rmz">
@@ -596,6 +618,7 @@
     <resources>
         <image name="icon_asc.png" width="25" height="25"/>
         <image name="icon_call" width="25" height="25"/>
+        <image name="icon_favor_add" width="16" height="16"/>
         <image name="icon_share.png" width="32" height="32"/>
         <image name="icon_share_x25.png" width="25" height="25"/>
         <image name="photo_9770933" width="16" height="16"/>
