@@ -246,6 +246,11 @@ extension AppDelegate{
 
 extension AppDelegate : GADManagerDelegate{
     func GAD<GADUnitName>(manager: GADManager<GADUnitName>, lastShownTimeForUnit unit: GADUnitName) -> Date{
+        let now = Date();
+        if DADefaults.LastFullADShown > now{
+            DADefaults.LastFullADShown = now;
+        }
+        
         return DADefaults.LastFullADShown;
         //Calendar.current.component(<#T##component: Calendar.Component##Calendar.Component#>, from: <#T##Date#>)
     }
