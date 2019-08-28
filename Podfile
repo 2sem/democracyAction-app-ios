@@ -11,6 +11,8 @@ target 'democracyaction' do
   pod 'Google-Mobile-Ads-SDK'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Firebase/RemoteConfig'
+  
   pod 'KakaoOpenSDK'
   pod 'Fabric'
   pod 'Crashlytics'

@@ -80,8 +80,8 @@ class DAUpdateManger{
             progress?(self.state, error);
         }
         updateProgress(.checkingVer, nil);
-        Alamofire.request(self.appServerUrl.appendingPathComponent("versions")).responseJSON { [weak self](response) in
-            guard let data = response.data else{
+        LSRemoteConfig.shared.fetch{ [weak self](config, error) in
+            /*guard let data = response.data else{
                 print("getting versions has been failed. error[\(response.error.debugDescription)]");
                 if DADefaults.DataVersion.isEmpty{
                     updateProgress(.updatingData, nil);
@@ -95,32 +95,35 @@ class DAUpdateManger{
                     completion(false);
                 }
                 return;
-            }
+            }*/
             
             do{
-                let res = try JSONDecoder().decode(DAAppVersionResponse.self, from: data);
-                print("app server response - \(res)");
-                let newRequiredVersion = res.requiredVersion;
-                let newDataVersion = "1.2.2"// res.dataVersion;
-
+                //let res = try JSONDecoder().decode(DAAppVersionResponse.self, from: data);
+                print("fetch config from firebase. min[\(config.minVersion ?? "")] max[\(config.maxVersion ?? "")] data[\(config.dataVersion ?? "")] error[\(error?.localizedDescription ?? "")]");
+                
+                let newRequiredVersion = config.minVersion ?? "";
+                let newDataVersion = config.dataVersion ?? "";
+                
                 guard UIApplication.shared.version >= newRequiredVersion
                     else{
                         //already last update
-                        UIApplication.shared.windows.first?.rootViewController?.showAlert(title: "앱 업데이트", msg: "신규 기능 사용을 위해 앱 업데이트가 필요합니다.", actions: [UIAlertAction(title: "업데이트", style: .default, handler: { (act) in
-                            //self.updateData(progress: progress, completion: completion);
-                            UIApplication.shared.openItunes();
-                            completion(false);
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                assert(false, "updating");
-                            })
-                        }), UIAlertAction(title: "업데이트 안함", style: .cancel, handler: { (act) in
-                            if DAExcelController.shared.version > newDataVersion{
-                                self?.updateData(progress: progress, completion: completion);
-                            }else{
-                                updateProgress(.completed, nil);
-                                completion(true);
-                            }
-                        })], style: .alert);
+                        DispatchQueue.main.async { [weak self] in
+                            UIApplication.shared.windows.first?.rootViewController?.showAlert(title: "앱 업데이트", msg: "신규 기능 사용을 위해 앱 업데이트가 필요합니다.", actions: [UIAlertAction(title: "업데이트", style: .default, handler: { (act) in
+                                //self.updateData(progress: progress, completion: completion);
+                                UIApplication.shared.openItunes();
+                                completion(false);
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    assert(false, "updating");
+                                })
+                            }), UIAlertAction(title: "업데이트 안함", style: .cancel, handler: { (act) in
+                                if DAExcelController.shared.version > newDataVersion{
+                                    self?.updateData(progress: progress, completion: completion);
+                                }else{
+                                    updateProgress(.completed, nil);
+                                    completion(true);
+                                }
+                            })], style: .alert);
+                        }
                         return;
                 }
                 

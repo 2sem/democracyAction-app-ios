@@ -33,6 +33,7 @@
 		2C10CBC51EF66ECB002A07C5 /* DADefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */; };
 		2C11CF85211F183800B5685C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C11CF84211F183700B5685C /* GoogleService-Info.plist */; };
 		2C11CF87211F200300B5685C /* DAAppVersionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11CF86211F200300B5685C /* DAAppVersionResponse.swift */; };
+		2C129C4E23169829001B556E /* LSRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C129C4D23169829001B556E /* LSRemoteConfig.swift */; };
 		2C12AEA42120246C0074A914 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2C12AEA32120246C0074A914 /* Podfile */; };
 		2C12AEA6212027BC0074A914 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2C12AEA5212027BC0074A914 /* .gitignore */; };
 		2C12F5CE208D6E1500B6D2D9 /* 300korea.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */; };
@@ -144,6 +145,7 @@
 		2C10CBC41EF66ECB002A07C5 /* DADefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DADefaults.swift; sourceTree = "<group>"; };
 		2C11CF84211F183700B5685C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C11CF86211F200300B5685C /* DAAppVersionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAAppVersionResponse.swift; sourceTree = "<group>"; };
+		2C129C4D23169829001B556E /* LSRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSRemoteConfig.swift; sourceTree = "<group>"; };
 		2C12AEA32120246C0074A914 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2C12AEA5212027BC0074A914 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2C12F5CD208D6E1500B6D2D9 /* 300korea.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = 300korea.plist; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				2C6D79E41F013D9500237028 /* DAPersonGroup.swift */,
 				2C15755F22141D1000D764FC /* DAContact.swift */,
 				2C1575632214212200D764FC /* DAContactGroup.swift */,
+				2C129C4D23169829001B556E /* LSRemoteConfig.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				2C153FC01F207A1700E61F7E /* DAExcelController+DAExcelPersonInfo.swift in Sources */,
 				2C153FC21F207AE500E61F7E /* DAExcelController+DAExcelEventInfo.swift in Sources */,
 				2CB61E5F1F29EB3100CB8880 /* String+GoogleDrive.swift in Sources */,
+				2C129C4E23169829001B556E /* LSRemoteConfig.swift in Sources */,
 				2C4067EF2315505F00430058 /* UIScreen+.swift in Sources */,
 				2C145BDE1F20AAE000E29D1A /* DAEventGroupInfo+.swift in Sources */,
 				2C24A3821F99B75D002BCDD5 /* DASponsor.swift in Sources */,
