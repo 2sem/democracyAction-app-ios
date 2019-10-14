@@ -73,7 +73,6 @@
 		2C24A3821F99B75D002BCDD5 /* DASponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C24A3811F99B75D002BCDD5 /* DASponsor.swift */; };
 		2C250701221129C900D932CE /* Assembly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C250700221129C900D932CE /* Assembly.storyboard */; };
 		2C2507362211426600D932CE /* groups in Resources */ = {isa = PBXBuildFile; fileRef = 2C2507352211426500D932CE /* groups */; };
-		2C2A82E0221908CF004FE74C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A82DF221908CF004FE74C /* UIApplication+.swift */; };
 		2C4067EF2315505F00430058 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4067EE2315505F00430058 /* UIScreen+.swift */; };
 		2C44686720B7C3C900978A40 /* democracyactionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44686620B7C3C900978A40 /* democracyactionUITests.swift */; };
 		2C65D4171EFEA5AB00EBB5AA /* DAExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65D4131EFEA5AB00EBB5AA /* DAExcelController.swift */; };
@@ -696,7 +695,7 @@
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressWebViewController/ProgressWebViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
@@ -716,7 +715,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressWebViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
@@ -843,7 +842,6 @@
 				2C153FBE1F2075EA00E61F7E /* DAExcelController+DAExcelEventGroupInfo.swift in Sources */,
 				2C09B90C1F03778400BCBFC7 /* DAFavoriteTableViewController.swift in Sources */,
 				2C6D79D81F0105C200237028 /* DAGroupInfo+.swift in Sources */,
-				2C2A82E0221908CF004FE74C /* UIApplication+.swift in Sources */,
 				2C0E24EA1F3BEB4D00D2EFFF /* DAModelController+DAEventPersonInfo.swift in Sources */,
 				2C6D79DA1F010B5300237028 /* DAPersonInfo+.swift in Sources */,
 				2CF194C91F6F8F5F0013CDD9 /* GADRewardManager.swift in Sources */,
@@ -1058,11 +1056,13 @@
 				CODE_SIGN_ENTITLEMENTS = democracyaction/democracyaction.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				INFOPLIST_FILE = democracyaction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1079,10 +1079,12 @@
 				CODE_SIGN_ENTITLEMENTS = democracyaction/democracyaction.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				INFOPLIST_FILE = democracyaction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

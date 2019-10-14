@@ -9,8 +9,11 @@
 import UIKit
 
 extension UIScreen{
-    class Size{
-        static let _5s = CGSize.init(width: 320, height: 568);
+    class Sizes{
+        static let iPhone = CGSize.init(width: 375, height: 667);
+        static let iPhonePlus = CGSize.init(width: 375, height: 667);
+        static let iPhoneX = CGSize.init(width: 375, height: 812);
+        static let iPhoneSE = CGSize.init(width: 320, height: 568);
     }
     //320//568
 }

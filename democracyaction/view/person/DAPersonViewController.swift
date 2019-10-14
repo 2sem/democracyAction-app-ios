@@ -93,8 +93,12 @@ class DAPersonViewController: UIViewController {
     
     func loadPhones(){
         let group = DAContactGroup("전화");
+        guard info === self.info else{
+            return;
+        }
+        
         let phones = info.personPhones.filter{ $0.number != nil }.sorted(by: { (left, right) -> Bool in
-            return left.name! < right.name!;
+            return (left.name ?? "") < (right.name ?? "");
         });
         phones.forEach{ group.append(DAContact.init(type: .phone, name: $0.name ?? "", value: $0.number ?? "")) }
         
