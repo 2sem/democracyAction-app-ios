@@ -770,6 +770,7 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputPaths = (
 			);
@@ -792,7 +793,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$PRODUCT_SETTINGS_PATH\")\necho \"/usr/libexec/PlistBuddy -c 'Print CFBundleVersion $PRODUCT_SETTINGS_PATH'\"\nif [ -z \"$buildNumber\" ] || [ \"$buildNumber\" = \"\\$(CURRENT_PROJECT_VERSION)\" ]\nthen\n        echo \"${PRODUCT_NAME} buildNumber is [empty]\"\n        buildNumber=1\nelse\n        echo \"${PRODUCT_NAME} buildnumber is $buildNumber\"\n        buildNumber=$((buildNumber + 1))\nfi\n\necho \"\\n${PRODUCT_NAME} new buildnumber = $buildNumber\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$PRODUCT_SETTINGS_PATH\"\n";
 		};
 		3B872ECCC43BE4444F55FAA6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

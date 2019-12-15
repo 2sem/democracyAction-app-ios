@@ -79,7 +79,7 @@ class DAPersonViewController: UIViewController {
     }
     
     func loadContacts(){
-        guard info === self.info else{
+        guard let info = self.info else{
             return;
         }
         
@@ -93,7 +93,7 @@ class DAPersonViewController: UIViewController {
     
     func loadPhones(){
         let group = DAContactGroup("전화");
-        guard info === self.info else{
+        guard let info = self.info else{
             return;
         }
         
