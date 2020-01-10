@@ -22,7 +22,6 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     class CellIDs{
         static let InfoCell = "DAInfoTableViewCell";
-        static let BannerCell = "DABannerTableViewCell";
         static let GroupCell = "DAGroupTableViewCell";
     }
 

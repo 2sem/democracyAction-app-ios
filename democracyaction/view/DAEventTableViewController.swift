@@ -19,7 +19,6 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     }
     
     static let CellID = "DAInfoTableViewCell";
-    static let adCellID = "DABannerTableViewCell";
     static let groupCellID = "DAGroupTableViewCell";
     
     fileprivate static var _shared : DAEventTableViewController?;

@@ -18,7 +18,6 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     }
     
     static let CellID = "DAInfoTableViewCell";
-    static let adCellID = "DABannerTableViewCell";
 
     fileprivate static var _shared : DAFavoriteTableViewController?;
     static var shared : DAFavoriteTableViewController?{
