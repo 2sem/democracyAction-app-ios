@@ -698,14 +698,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QF-VO-zMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="5Fb-i3-wa1">
-                    <connections>
-                        <outlet property="delegate" destination="WMC-pP-VSV" id="SU3-nZ-ec0"/>
-                        <outlet property="searchContentsController" destination="WMC-pP-VSV" id="lk9-Fl-Eyp"/>
-                        <outlet property="searchResultsDataSource" destination="WMC-pP-VSV" id="pCo-Rd-94p"/>
-                        <outlet property="searchResultsDelegate" destination="WMC-pP-VSV" id="WU5-hS-MQz"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1902" y="472"/>
         </scene>
