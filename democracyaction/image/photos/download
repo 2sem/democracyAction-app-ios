@@ -1,0 +1,1 @@
+while read f; do curl -O https://assembly.go.kr/photo/$f.jpg; done

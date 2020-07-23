@@ -14,8 +14,12 @@ target 'democracyaction' do
   pod 'Firebase/RemoteConfig'
   
   pod 'KakaoOpenSDK'
-  pod 'Fabric'
-  pod 'Crashlytics'
+  
+  # Add the pod for Firebase Crashlytics
+  pod 'Firebase/Crashlytics'
+
+  # Recommended: Add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
   
   pod 'Material'
   pod 'FBSDKCoreKit'

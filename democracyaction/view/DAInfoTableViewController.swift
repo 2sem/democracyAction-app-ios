@@ -96,7 +96,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     var groups : [DAPersonGroup] = [];
     var groupExpanding : [Int:Bool] = [:];
     
-    var areas = ["서울", "경남", "경북", "제주", "비례대표",  "충남", "충북", "대전", "대구", "강원", "광주", "대전", "경기", "부산", "전북", "인천" , "전남", "세종", "울산", "강원"];
+    var areas = ["서울", "경남", "경북", "제주", "비례대표",  "충남", "충북", "대전", "대구", "강원", "광주", "대전", "경기", "부산", "전북", "인천" , "전남", "세종", "울산"];
     var isAscending = true;
     var cellPreparingQueue = OperationQueue();
     

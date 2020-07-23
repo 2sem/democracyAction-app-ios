@@ -11,7 +11,7 @@ import CoreData
 
 extension DAPersonInfo{
     var photo : URL?{
-        return Bundle.main.url(forResource: "photo_\(self.assembly)", withExtension: "jpg", subdirectory: "photos");
+        return Bundle.main.url(forResource: "\(self.assembly)", withExtension: "jpg", subdirectory: "photos");
     }
     
     var personName : String{

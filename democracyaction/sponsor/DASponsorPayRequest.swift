@@ -25,8 +25,13 @@ class DASponsorPayRequest : NSObject{
     var party = 9001;
     var person = 0;
     var source = DASponsor.Sources.leesam;
+
+    #if DEBUG
+    static let plistName = "servertest";
+    #else
+    static let plistName = "server";
+    #endif
     
-    static let plistName = "300korea";
     var secretKey : String{
         guard let plist = Bundle.main.path(forResource: type(of: self).plistName, ofType: "plist") else{
             preconditionFailure("Please create plist file named of 300korea. file[\(type(of: self).plistName).plist]");

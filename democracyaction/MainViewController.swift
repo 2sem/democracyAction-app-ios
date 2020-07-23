@@ -8,7 +8,7 @@
 
 import UIKit
 import ProgressWebViewController
-import Crashlytics
+import FirebaseCrashlytics
 
 class MainViewController: UITabBarController {
 
@@ -20,7 +20,7 @@ class MainViewController: UITabBarController {
 
         type(of: self).shared = self;
         if let url = type(of: self).staringtUrl{
-            var webView = ProgressWebViewController.init(nibName: nil, bundle: nil);
+            let webView = ProgressWebViewController.init(nibName: nil, bundle: nil);
             webView.url = url;
             webView.hidesBottomBarWhenPushed = true;
         }

@@ -78,8 +78,11 @@ extension DAModelController{
                 //check if the group is already exist in database
                 var modelPerson : DAPersonInfo! = DAModelController.shared.findPerson(Int16(excelPerson.id));
                 
-                if modelPerson == nil || modelPerson.name != excelPerson.name{
-                    modelPerson = DAModelController.shared.findPerson(name: excelPerson.name, area: excelPerson.area, groupNo: Int16(excelGroup.id));
+                if modelPerson == nil{
+                    //modelPerson.name != excelPerson.name
+                    //modelPerson = DAModelController.shared.findPerson(name: excelPerson.name, area: excelPerson.area, groupNo: Int16(excelGroup.id));
+                }else if modelPerson.name != excelPerson.name{
+                    DAModelController.shared.removePerson(modelPerson);
                 }
                 
                 if modelPerson == nil{

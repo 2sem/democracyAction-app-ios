@@ -11,9 +11,16 @@ import FirebaseRemoteConfig
 
 class LSRemoteConfig: NSObject {
     class ConfigNames{
+        #if DEBUG
+        static let maxVersion = "test_max_version";
+        static let minVersion = "test_min_version";
+        static let dataVersion = "test_data_version";
+        #else
         static let maxVersion = "max_version";
         static let minVersion = "min_version";
         static let dataVersion = "data_version";
+        #endif
+        
     }
     
     static let shared = LSRemoteConfig();

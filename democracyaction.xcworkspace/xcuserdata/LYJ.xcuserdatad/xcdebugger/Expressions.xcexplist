@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "DAInfoTableViewController.sectionIndexTitles(for : UITableView) -&gt; [String]?:DAInfoTableViewController.swift">
+         contextName = "GADManager.canShow(_:):GADManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "group.title">
+               value = "self.intervals[unit]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -35,6 +35,14 @@
          <PersistentStrings>
             <PersistentString
                value = "tool.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAPersonInfo.photo.getter:DAPersonInfo+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.assembly">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -240,10 +248,10 @@
                value = "newMembers.count">
             </PersistentString>
             <PersistentString
-               value = "excelEvent.persons.count">
+               value = "excelEvent.persons">
             </PersistentString>
             <PersistentString
-               value = "excelEvent.persons">
+               value = "excelEvent.persons.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -254,10 +262,10 @@
                value = "self.msgMenu.fabMenuItems">
             </PersistentString>
             <PersistentString
-               value = "self.msgMenu?.fabButton">
+               value = "self.msgMenu">
             </PersistentString>
             <PersistentString
-               value = "self.msgMenu">
+               value = "self.msgMenu?.fabButton">
             </PersistentString>
             <PersistentString
                value = "self.msgMenu != nil">
@@ -331,6 +339,9 @@
             <PersistentString
                value = "self.info.name">
             </PersistentString>
+            <PersistentString
+               value = "info.photo">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -345,13 +356,13 @@
          contextName = "DAPersonInfo.syncMessageTools(DAExcelPersonInfo) -&gt; ():DAPersonInfo+DAExcelPersonInfo.swift">
          <PersistentStrings>
             <PersistentString
-               value = "person.facebook">
+               value = "person.twitter">
             </PersistentString>
             <PersistentString
                value = "person.kakao">
             </PersistentString>
             <PersistentString
-               value = "person.twitter">
+               value = "person.facebook">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -452,10 +463,10 @@
                value = "&quot;\(DAInfoTableViewController.startingQuery)&quot;">
             </PersistentString>
             <PersistentString
-               value = "&quot;\(queryId?.value)&quot;">
+               value = "Int16(queryId?.value ?? &quot;0&quot;)">
             </PersistentString>
             <PersistentString
-               value = "Int16(queryId?.value ?? &quot;0&quot;)">
+               value = "&quot;\(queryId?.value)&quot;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -529,6 +540,9 @@
             <PersistentString
                value = "cell!.stringValue()">
             </PersistentString>
+            <PersistentString
+               value = "&quot;\(cell?.stringValue() ?? &quot;&quot;)&quot;">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -587,13 +601,13 @@
                value = "UIApplication.shared.windows.first?.rootViewController.classForCoder">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController">
+               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
             </PersistentString>
             <PersistentString
                value = "UIApplication.shared.keyWindow?.rootViewController?.presentedViewController">
             </PersistentString>
             <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
+               value = "UIApplication.shared.keyWindow?.rootViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -620,10 +634,10 @@
                value = "left.no">
             </PersistentString>
             <PersistentString
-               value = "right.name">
+               value = "left.name">
             </PersistentString>
             <PersistentString
-               value = "left.name">
+               value = "right.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -789,10 +803,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GADManager.canShow(_:):GADManager.swift">
+         contextName = "DAInfoTableViewController.sectionIndexTitles(for : UITableView) -&gt; [String]?:DAInfoTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.intervals[unit]">
+               value = "group.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

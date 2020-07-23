@@ -1,6 +1,6 @@
 *.xlsx
-democracyaction/300korea.plist
-democracyaction/300koreatest.plist
+democracyaction/server.plist
+democracyaction/servertest.plist
 # Created by https://www.gitignore.io/api/xcode,swift,cocoapods
 .DS_Store
 
