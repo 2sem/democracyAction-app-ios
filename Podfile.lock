@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.2.2)
   - CryptoSwift (1.3.1)
   - DownPicker (0.1.34)
   - FBSDKCoreKit (7.1.1):
@@ -143,9 +143,9 @@ PODS:
   - ProgressWebViewController (1.10.0)
   - PromisesObjC (1.2.9)
   - Protobuf (3.12.0)
-  - SDWebImage (5.8.3):
-    - SDWebImage/Core (= 5.8.3)
-  - SDWebImage/Core (5.8.3)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - SSZipArchive (0.4.0)
   - SwipeCellKit (2.5.4)
   - XlsxReaderWriter (1.0.11):
@@ -215,7 +215,7 @@ EXTERNAL SOURCES:
     :path: "~/Projects/leesam/pods/LSExtensions/src/LSExtensions"
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   CryptoSwift: f12f037f6d0fcd6d48c96db0071b653de64e6c4d
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
   FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
@@ -243,7 +243,7 @@ SPEC CHECKSUMS:
   ProgressWebViewController: 8463352dd02cce7e25b84cd62380e18db8556767
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
-  SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SSZipArchive: d3d66fc0e3fb6ac0f723d95481aae71aae916cc3
   SwipeCellKit: 4eada3884ab1bbae5e8d2fb9030c242aa23d7f42
   XlsxReaderWriter: 7e4c5c9fb7c4e78e4edc89fa11f50c086540277c

@@ -125,6 +125,7 @@ class DAInfoTableViewCell:SwipeTableViewCell, FABMenuDelegate, CNContactPickerDe
         self.areaLabel.text = !info.personArea.isEmpty ? info.personArea : info.personName;
         self.photoView.sd_setImage(with: info.photo, placeholderImage: nil, completed: nil);
         
+        return;
         var msgMenuItems : [FABMenuItem] = [];
         
         if !info.personEmail.isEmpty {

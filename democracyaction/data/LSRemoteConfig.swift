@@ -52,15 +52,10 @@ class LSRemoteConfig: NSObject {
     
     override init() {
         super.init();
-        #if B2B
-        self.firebaseConfig.setDefaults([ConfigNames.minVersion : "0.0.1" as NSObject,
-                                         ConfigNames.maxVersion : UIApplication.shared.version as NSObject,
-                                         ConfigNames.reviewingVersion : "9.9.9" as NSObject]);
-        #else
+
         self.firebaseConfig.setDefaults([ConfigNames.minVersion : UIApplication.shared.version as NSObject,
-                                         ConfigNames.maxVersion : UIApplication.shared.version as NSObject,
-                                         ConfigNames.dataVersion : "9.9.9" as NSObject]);
-        #endif
+        ConfigNames.maxVersion : UIApplication.shared.version as NSObject,
+        ConfigNames.dataVersion : "9.9.9" as NSObject]);
     }
     
     func fetch(_ timeout: TimeInterval = 3.0, completion: @escaping (LSRemoteConfig, Error?) -> Void){
@@ -69,12 +64,19 @@ class LSRemoteConfig: NSObject {
          SWToast.hideActivity();
          completion(self, error);
          }*/
-        self.firebaseConfig.fetch(withExpirationDuration: timeout) { (status, error_fetch) in
+        self.firebaseConfig.fetch(withExpirationDuration: timeout) { [weak self](status, error_fetch) in
             guard let rcerror = error_fetch else{
-                self.firebaseConfig.activate(completionHandler: { (error_act) in
+                self?.firebaseConfig.activate(completion: { [weak self](result, error) in
+                    guard let self = self else{
+                        return;
+                    }
                     //SWToast.hideActivity();
-                    completion(self, error_act);
-                });
+                    completion(self, error);
+                })
+                return;
+            }
+            
+            guard let self = self else{
                 return;
             }
             

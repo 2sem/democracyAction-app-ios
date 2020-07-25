@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
+import FirebaseCore
 import FirebaseMessaging
 import UserNotifications
 import LSExtensions
@@ -37,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
             //print("launch option key[\(key)] value[\(value)]\n");
             DAInfoTableViewController.startingSearchName += "launch option key[\(key)] value[\(value)]\n";
         })*/
-        
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-9684378399371172~5739040449");
+        GADMobileAds.sharedInstance().start(completionHandler: nil);
+        //GADMobileAds.configure(withApplicationID: "ca-app-pub-968437x8399371172~5739040449");
         FirebaseApp.configure();
         Messaging.messaging().delegate = self;
         

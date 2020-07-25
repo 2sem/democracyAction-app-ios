@@ -90,6 +90,7 @@
 		2C6D79E01F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */; };
 		2C6D79E51F013D9500237028 /* DAPersonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79E41F013D9500237028 /* DAPersonGroup.swift */; };
 		2C7D22E11F9A2D1D0098A5D0 /* icon_money.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C24A37D1F99B3FA002BCDD5 /* icon_money.png */; };
+		2CB0788E24CB124800108FF4 /* GADNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */; };
 		2CB61E5F1F29EB3100CB8880 /* String+GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */; };
 		2CB61E621F29F31000CB8880 /* DAUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E611F29F31000CB8880 /* DAUpdateManager.swift */; };
 		2CCC44061FAF18C30025C614 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 2CCC44051FAF18C30025C614 /* photos */; };
@@ -210,6 +211,7 @@
 		2C6D79DD1F01280A00237028 /* DAWebInfo+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAWebInfo+.swift"; sourceTree = "<group>"; };
 		2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAPersonInfo+DAExcelPersonInfo.swift"; sourceTree = "<group>"; };
 		2C6D79E41F013D9500237028 /* DAPersonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAPersonGroup.swift; sourceTree = "<group>"; };
+		2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADNativeTableViewCell.swift; sourceTree = "<group>"; };
 		2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+GoogleDrive.swift"; sourceTree = "<group>"; };
 		2CB61E611F29F31000CB8880 /* DAUpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUpdateManager.swift; sourceTree = "<group>"; };
 		2CCC44051FAF18C30025C614 /* photos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = photos; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				2C0BEF0E1F164AA40093FAEA /* DAGroupTableViewCell.swift */,
 				2C145BE31F20C46F00E29D1A /* DAEventTableViewController.swift */,
 				2C145BE51F20C7C400E29D1A /* DAEventTableViewCell.swift */,
+				2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 				2C06DE401EF24A8B00EF40CC /* FABMenu+.swift in Sources */,
 				2C0455491EFE8C51003E94ED /* DAModel.xcdatamodeld in Sources */,
 				2C14CC021EE9640C003BB329 /* MainViewController.swift in Sources */,
+				2CB0788E24CB124800108FF4 /* GADNativeTableViewCell.swift in Sources */,
 				2CF0188B22130708000010D8 /* DAContactTableViewCell.swift in Sources */,
 				2C24A3801F99B5FF002BCDD5 /* DASponsorPayRequest.swift in Sources */,
 				2C0455461EFE8BE5003E94ED /* DAModelController.swift in Sources */,

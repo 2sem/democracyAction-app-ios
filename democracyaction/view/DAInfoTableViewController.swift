@@ -23,6 +23,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     class CellIDs{
         static let InfoCell = "DAInfoTableViewCell";
         static let GroupCell = "DAGroupTableViewCell";
+        static let ads = "ads";
     }
 
     fileprivate static var _shared : DAInfoTableViewController?;
@@ -129,6 +130,45 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             
             return value;
         }
+    }
+    
+    func isAdsCell(_ indexPath: IndexPath) -> Bool{
+//        switch self.groupingType{
+//            case.byName:
+//                return indexPath.section == 0;
+//            default:
+//                break;
+//        }
+        
+        return indexPath.section == 0;
+    }
+    
+    func isAdsSection(_ section: Int) -> Bool{
+//        switch self.groupingType{
+//            case.byName:
+//                return section == 0;
+//            default:
+//                break;
+//        }
+        
+        return section == 0;
+    }
+    
+    var needAdsCell : Bool{
+        get{
+//            switch self.groupingType{
+//                case.byName:
+//                    return true;
+//                default:
+//                    break;
+//            }
+            
+            return true;
+        }
+    }
+    
+    func realGroup(section: Int) -> DAPersonGroup{
+        return self.needAdsCell ? self.groups[section.advanced(by: -1)] : self.groups[section];
     }
     
     @IBOutlet weak var groupingButton: UIButton!
@@ -640,9 +680,10 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     // MARK: SwipeTableViewCellDelegate
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        guard orientation == .left else{
+        guard orientation == .left, !self.isAdsCell(indexPath) else{
             return nil;
         }
+        
         var values : [SwipeAction] = [];
         
         let favAction = SwipeAction.init(style: .default, title: nil) { (act, indexPath) in
@@ -702,19 +743,25 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        let value = self.groups.count;
+        let value =  self.groups.count;
         
-        return value;
+        return value.advanced(by: self.needAdsCell ? 1 : 0);
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var value = self.groups[section].persons.count;
+        
+        
+        guard !self.isAdsSection(section) else{
+            return 1;
+        }
+        
+        var value = self.realGroup(section: section).persons.count;
         // #warning Incomplete implementation, return the number of rows
         switch self.groupingType{
         case .byName:
-            break;
+            return value;
         case .byGroup:
-            if !(self.groupExpanding[self.groups[section].id] ?? true){
+            if !(self.groupExpanding[self.realGroup(section: section).id] ?? true){
                 value = 0;
             }
             break;
@@ -726,9 +773,17 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell?;
+        var cell : UITableViewCell!;
         var infoCell : DAInfoTableViewCell?;
         
+        guard !self.isAdsCell(indexPath) else{
+            if let adsCell = tableView.dequeueReusableCell(withIdentifier: CellIDs.ads, for: indexPath) as? GADNativeTableViewCell{
+                cell = adsCell;
+                adsCell.rootViewController = self;
+                adsCell.loadAds();
+            }
+            return cell;
+        }
         //has only one section or this is large section or this is last section
         //and this is last row
         //self.allHasLessRows &&
@@ -740,7 +795,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             cell = infoCell;
             //self.cellPreparingQueue.addOperation{
                 var person : DAPersonInfo?;
-                let group = self.groups[indexPath.section];
+        let group = self.realGroup(section: indexPath.section);
                 person = group.persons[indexPath.row];
                 //DispatchQueue.main.sync {
                     /*guard (self.tableView.indexPathsForVisibleRows ?? []).contains(indexPath) else{
@@ -753,7 +808,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             //}
         //}
         
-        return cell!;
+        return cell;
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
@@ -764,6 +819,9 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             values = self.groups.map({ (group) -> String in
                 return group.name;
             });
+//            if self.needAdsCell{
+//                values.insert("", at: 0);
+//            }
             break;
         case .byGroup:
             self.automaticallyAdjustsScrollViewInsets = true;
@@ -779,7 +837,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         let value = self.groups.index(where: { (group) -> Bool in
             return group.name == title;
-        }) ?? 0;
+        }) ?? ( self.needAdsCell ? 1 : 0);
         
         return value;
     }
@@ -803,6 +861,10 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var cell : DAGroupTableViewCell?;
         
+        guard !isAdsSection(section) else {
+            return nil;
+        }
+        
         switch self.groupingType{
         case .byName:
             break;
@@ -820,6 +882,10 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         var value : CGFloat = super.tableView(tableView, heightForHeaderInSection: section);
+        
+        guard !isAdsSection(section) else {
+            return value;
+        }
         
         switch self.groupingType{
         case .byName:

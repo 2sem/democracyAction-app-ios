@@ -18,8 +18,11 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
         static let personView = "person";
     }
     
-    static let CellID = "DAInfoTableViewCell";
-    static let groupCellID = "DAGroupTableViewCell";
+    class Cells{
+        static let `default` = "DAInfoTableViewCell";
+        static let group = "DAGroupTableViewCell";
+        static let ads = "ads";
+    }
     
     fileprivate static var _shared : DAEventTableViewController?;
     static var shared : DAEventTableViewController?{
@@ -93,6 +96,45 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
         }
     }
     
+    func isAdsCell(_ indexPath: IndexPath) -> Bool{
+    //        switch self.groupingType{
+    //            case.byName:
+    //                return indexPath.section == 0;
+    //            default:
+    //                break;
+    //        }
+            
+        return indexPath.section == 0;
+    }
+    
+    func isAdsSection(_ section: Int) -> Bool{
+//        switch self.groupingType{
+//            case.byName:
+//                return section == 0;
+//            default:
+//                break;
+//        }
+        
+        return section == 0;
+    }
+    
+    var needAdsCell : Bool{
+        get{
+//            switch self.groupingType{
+//                case.byName:
+//                    return true;
+//                default:
+//                    break;
+//            }
+            
+            return true;
+        }
+    }
+    
+    func realEvent(section: Int) -> DAPersonGroup{
+        return self.needAdsCell ? self.events[section.advanced(by: -1)] : self.events[section];
+    }
+    
     @IBOutlet weak var groupingSegment: UISegmentedControl!
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
@@ -123,7 +165,7 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
         self.groupPicker = UIDownPicker(data: self.groups.map({ (group) -> String in
             return group.name ?? "";
         }));
-        
+
         self.groupPicker.downPicker.setToolbarDoneButtonText("완료");
         self.groupPicker.downPicker.setToolbarCancelButtonText("취소");
         self.groupPicker.downPicker.selectedIndex = self.groups.index(of: self.group) ?? 0;
@@ -418,13 +460,17 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
          break;
          }*/
         
-        return value;
+        return value.advanced(by: self.needAdsCell ? 1 : 0);
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var value = self.events[section].persons.count;
+        guard !self.isAdsSection(section) else{
+            return 1;
+        }
+        
+        var value = self.realEvent(section: section).persons.count;
         // #warning Incomplete implementation, return the number of rows
-        if !(self.eventExpanding[self.events[section].id] ?? true){
+        if !(self.eventExpanding[self.realEvent(section: section).id] ?? true){
             value = 0;
         }
         
@@ -435,8 +481,17 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell?;
+        var cell : UITableViewCell!;
         var infoCell : DAInfoTableViewCell?;
+        
+        guard !self.isAdsCell(indexPath) else{
+            if let adsCell = tableView.dequeueReusableCell(withIdentifier: Cells.ads, for: indexPath) as? GADNativeTableViewCell{
+                cell = adsCell;
+                adsCell.rootViewController = self;
+                adsCell.loadAds();
+            }
+            return cell;
+        }
         
         //has only one section or this is large section or this is last section
         //and this is last row
@@ -445,7 +500,7 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
             && indexPath.row == self.tableView.numberOfRows(inSection: indexPath.section) - 1{
             cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.BannerCell, for: indexPath) as? DABannerTableViewCell;
         }else{*/
-            infoCell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.InfoCell, for: indexPath) as? DAInfoTableViewCell;
+        infoCell = tableView.dequeueReusableCell(withIdentifier: type(of: self).Cells.default, for: indexPath) as? DAInfoTableViewCell;
             cell = infoCell;
             self.cellPreparingQueue.addOperation {
                 /*guard (self.tableView.indexPathsForVisibleRows ?? []).contains(indexPath) else{
@@ -453,7 +508,7 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
                  }*/
                 
                 var person : DAPersonInfo?;
-                let event = self.events[indexPath.section];
+                let event = self.realEvent(section: indexPath.section);
                 person = event.persons[indexPath.row];
                 DispatchQueue.main.sync {
                     guard (self.tableView.indexPathsForVisibleRows ?? []).contains(indexPath) else{
@@ -496,7 +551,7 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var value : String?;
         
-        value = self.events[section].name;
+        value = self.realEvent(section: section).name;
         
         return value;
     }
@@ -504,8 +559,12 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var cell : DAGroupTableViewCell?;
         
+        guard !isAdsSection(section) else {
+            return nil;
+        }
+        
         cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.GroupCell) as? DAGroupTableViewCell;
-        cell?.group = self.events[section];
+        cell?.group = self.realEvent(section: section);
         cell?.delegate = self;
         
         return cell;
@@ -513,6 +572,10 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         var value : CGFloat = super.tableView(tableView, heightForHeaderInSection: section);
+        
+        guard !isAdsSection(section) else {
+            return value;
+        }
         
         //value = tableView.sectionHeaderHeight;
         value = 56.0;
@@ -604,7 +667,7 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     
     // MARK: LSScrollButtonDelegate
     func titleForScrollButtonForSection(_ section: Int) -> String {
-        return self.events[section].name;
+        return self.isAdsSection(section) ? "" : self.realEvent(section: section).name;
     }
     
     // MARK: DAGroupTableViewCellDelegate

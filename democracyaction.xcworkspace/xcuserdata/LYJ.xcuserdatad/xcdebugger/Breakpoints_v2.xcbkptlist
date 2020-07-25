@@ -15,8 +15,8 @@
             timestampString = "588600086.935492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -317,8 +317,8 @@
             timestampString = "588174166.039133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "updateInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +334,8 @@
             timestampString = "588174166.039184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "updateInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -351,8 +351,8 @@
             timestampString = "588600086.9359699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "448"
-            endingLineNumber = "448"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "onGoEndRow(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -368,8 +368,8 @@
             timestampString = "588174166.039502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "updateInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -556,8 +556,8 @@
             timestampString = "588174166.0396529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "640"
-            endingLineNumber = "640"
+            startingLineNumber = "641"
+            endingLineNumber = "641"
             landmarkName = "onSearch(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -573,8 +573,8 @@
             timestampString = "588174166.039698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "632"
-            endingLineNumber = "632"
+            startingLineNumber = "633"
+            endingLineNumber = "633"
             landmarkName = "onSearch(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -590,8 +590,8 @@
             timestampString = "588174166.039741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "644"
-            endingLineNumber = "644"
+            startingLineNumber = "645"
+            endingLineNumber = "645"
             landmarkName = "onSearch(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -607,8 +607,8 @@
             timestampString = "588174166.03978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "639"
-            endingLineNumber = "639"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "onSearch(_:)"
             landmarkType = "7">
             <Locations>
@@ -623,8 +623,8 @@
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "639"
-                  endingLineNumber = "639"
+                  startingLineNumber = "640"
+                  endingLineNumber = "640"
                   offsetFromSymbolStart = "168">
                </Location>
                <Location
@@ -638,8 +638,8 @@
                   urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "640"
-                  endingLineNumber = "640"
+                  startingLineNumber = "641"
+                  endingLineNumber = "641"
                   offsetFromSymbolStart = "116">
                </Location>
             </Locations>
@@ -656,8 +656,8 @@
             timestampString = "588174166.03982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
+            startingLineNumber = "522"
+            endingLineNumber = "522"
             landmarkName = "onEditMobile(phone:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -673,8 +673,8 @@
             timestampString = "588174166.0398591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "522"
-            endingLineNumber = "522"
+            startingLineNumber = "523"
+            endingLineNumber = "523"
             landmarkName = "onEditMobile(phone:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -690,8 +690,8 @@
             timestampString = "588174166.039899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "681"
-            endingLineNumber = "681"
+            startingLineNumber = "682"
+            endingLineNumber = "682"
             landmarkName = "fabMenuDidOpen(fabMenu:)"
             landmarkType = "7">
             <Locations>
@@ -741,8 +741,8 @@
             timestampString = "588174166.039937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "684"
-            endingLineNumber = "684"
+            startingLineNumber = "685"
+            endingLineNumber = "685"
             landmarkName = "fabMenuDidOpen(fabMenu:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1097,10 +1097,10 @@
             timestampString = "588606218.2238851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "AppDelegate"
-            landmarkType = "3">
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "deviceToken"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1114,8 +1114,8 @@
             timestampString = "588606218.223958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1131,8 +1131,8 @@
             timestampString = "588600086.936892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "315"
-            endingLineNumber = "315"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
             <Locations>
@@ -1182,8 +1182,8 @@
             timestampString = "588606218.224046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1216,8 +1216,8 @@
             timestampString = "588606218.224129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1250,8 +1250,8 @@
             timestampString = "588606218.224227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1284,8 +1284,8 @@
             timestampString = "588600086.937186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "startingQuery"
             landmarkType = "24">
          </BreakpointContent>
@@ -1301,8 +1301,8 @@
             timestampString = "588600086.937234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "startingQuery"
             landmarkType = "24">
          </BreakpointContent>
@@ -1318,8 +1318,8 @@
             timestampString = "588600086.937279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1335,8 +1335,8 @@
             timestampString = "588600086.937322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1352,8 +1352,8 @@
             timestampString = "588600086.937364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1369,8 +1369,8 @@
             timestampString = "588600086.937407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
             landmarkName = "DAInfoTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1386,8 +1386,8 @@
             timestampString = "588600086.937448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "351"
-            endingLineNumber = "351"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1403,8 +1403,8 @@
             timestampString = "588600086.937489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
+            startingLineNumber = "393"
+            endingLineNumber = "393"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1488,8 +1488,8 @@
             timestampString = "588600086.937634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1505,8 +1505,8 @@
             timestampString = "588600086.9376791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2269,8 +2269,8 @@
             timestampString = "588600086.9386359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2354,8 +2354,8 @@
             timestampString = "588600086.938789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "506"
-            endingLineNumber = "506"
+            startingLineNumber = "546"
+            endingLineNumber = "546"
             landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2371,8 +2371,8 @@
             timestampString = "588600086.938838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
             landmarkName = "updateEndButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2473,8 +2473,8 @@
             timestampString = "588311304.3914191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
+            startingLineNumber = "480"
+            endingLineNumber = "480"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2490,8 +2490,8 @@
             timestampString = "588311304.391464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
             landmarkName = "onGroupSelected(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2507,8 +2507,8 @@
             timestampString = "588311304.391506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
+            startingLineNumber = "384"
+            endingLineNumber = "384"
             landmarkName = "onGroupSelected(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2524,8 +2524,8 @@
             timestampString = "588311304.391546"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "filter(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2560,57 +2560,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "loadEvents(_:isAscending:name:area:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C3735475-04DE-4A39-BC71-6C4E812736FE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/database/DAModelController+DAEventInfo.swift"
-            timestampString = "549008441.299386"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "loadEvents(_:isAscending:name:area:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1612CCDB-3848-4F67-987A-C771FA529BAB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/database/DAModelController+DAEventInfo.swift"
-            timestampString = "549008441.299469"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "loadEvents(_:isAscending:name:area:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6B2CD4D9-E49B-43CC-8AC1-7E9E5B0AE7FD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/database/DAModelController+DAEventInfo.swift"
-            timestampString = "549008441.299559"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
             landmarkName = "loadEvents(_:isAscending:name:area:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2694,8 +2643,8 @@
             timestampString = "588174166.0447249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
             landmarkName = "openWeb(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2711,8 +2660,8 @@
             timestampString = "588174166.044772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
             landmarkName = "onOpenMsgMenu(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2830,8 +2779,8 @@
             timestampString = "588600086.939472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "651"
-            endingLineNumber = "651"
+            startingLineNumber = "692"
+            endingLineNumber = "692"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2847,8 +2796,8 @@
             timestampString = "588600086.93952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "655"
-            endingLineNumber = "655"
+            startingLineNumber = "696"
+            endingLineNumber = "696"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2949,8 +2898,8 @@
             timestampString = "588606218.226577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2966,8 +2915,8 @@
             timestampString = "588606218.226637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2983,8 +2932,8 @@
             timestampString = "588606218.226689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "performPushCommand(_:body:category:info:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3000,8 +2949,8 @@
             timestampString = "588606218.226742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "performPushCommand(_:body:category:info:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3338,8 +3287,8 @@
             timestampString = "588600086.940253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3355,26 +3304,9 @@
             timestampString = "588600086.940299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "17FB9003-BE8F-40DA-A806-D5E513661E2D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/update/DAUpdateManager.swift"
-            timestampString = "588686616.38958"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "update(progress:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3398,24 +3330,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC81E253-CC13-4014-883C-ECA347B2DE4C"
-            shouldBeEnabled = "Yes"
-            condition = "excelPerson.id == 7"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/database/DAModelController+DAExcelController.swift"
-            timestampString = "588089399.206358"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "syncGroups(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "91D7E36C-FEA1-44BA-A010-678DD04B48E1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -3424,8 +3338,8 @@
             timestampString = "588600086.940506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "601"
-            endingLineNumber = "601"
+            startingLineNumber = "641"
+            endingLineNumber = "641"
             landmarkName = "filterByArea(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3509,8 +3423,8 @@
             timestampString = "588174166.047052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "618"
-            endingLineNumber = "618"
+            startingLineNumber = "619"
+            endingLineNumber = "619"
             landmarkName = "onWeb(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3620,57 +3534,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EA64F0AA-F793-4CBF-B55B-ADD0202E1A9B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
-            timestampString = "588606218.227686"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "show(unit:force:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "162D985E-E554-4713-9A04-D4C7ECDE025E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
-            timestampString = "588606218.227744"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "show(unit:force:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "67B0424E-16DE-47FF-B7C7-68926E0834EA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
-            timestampString = "588606218.22779"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "show(unit:force:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "936045E9-C33B-4B0E-9480-61DC5ED2D5ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -3699,23 +3562,6 @@
             startingLineNumber = "88"
             endingLineNumber = "88"
             landmarkName = "canShow(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "22B23F0A-CFDE-44DB-A287-5019BF989FC9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "588606218.227935"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "GAD(manager:updatShownTimeForUnit:showTime:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3756,74 +3602,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2D1D2AF-E667-4399-9E16-49EEF851EA49"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "588600086.9412"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "955"
-            endingLineNumber = "955"
-            landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6BE0D2AC-27E3-49A7-A3EA-6DC26F2BE6E6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "588600086.9412431"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "971"
-            endingLineNumber = "971"
-            landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7E77FE81-51B6-4B6A-BBB4-802571914F90"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "588600086.941283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "959"
-            endingLineNumber = "959"
-            landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FBEAF4E7-A515-4CAB-9E80-9F2593E43EBE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/view/DAInfoTableViewController.swift"
-            timestampString = "588600086.941323"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "965"
-            endingLineNumber = "965"
-            landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1FB06F60-1038-47E6-8F0D-96D097665C05"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -3832,26 +3610,9 @@
             timestampString = "588600086.941364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "962"
-            endingLineNumber = "962"
+            startingLineNumber = "1028"
+            endingLineNumber = "1028"
             landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E12ACAFC-6F33-4CCC-AD7A-4A7D6D425FBC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
-            timestampString = "588606218.22821"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "canShow(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3866,8 +3627,8 @@
             timestampString = "588606218.228362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "reviewUpdate(showTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3883,77 +3644,9 @@
             timestampString = "588606218.2284141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "reviewGetLastShowTime()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B6E1D7DD-010C-4952-8241-9751BB595DD7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
-            timestampString = "588606218.228465"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "canShow(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "78CB4DD8-52CA-467E-B616-FE3D34DDD81A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
-            timestampString = "588606218.228512"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "canShow(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "81E26EFB-C7E1-4A23-BC4E-4D621C630856"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "588606218.22856"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
-            landmarkName = "GAD(manager:lastShownTimeForUnit:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "51364ADB-E2F6-4917-AB4B-B5E259F87001"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "democracyaction/AppDelegate.swift"
-            timestampString = "588606218.228609"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
-            landmarkName = "GAD(manager:lastShownTimeForUnit:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3976,18 +3669,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "97D642DA-8F12-4A3B-88E1-70E985CBA726"
+            uuid = "53D6A219-F503-47A4-BD15-E78EC4DA766A"
             shouldBeEnabled = "Yes"
-            condition = "excelPerson.id == 7"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "democracyaction/database/DAModelController+DAExcelController.swift"
+            filePath = "../../../pods/GADManager/src/GADManager/GADManager/GADManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "syncGroups(_:)"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "__show(unit:viewController:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FE9DC72-06AA-4CBC-87E5-5B04191257D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "democracyaction/view/DAInfoTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1027"
+            endingLineNumber = "1027"
+            landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3FE9DC72-06AA-4CBC-87E5-5B04191257D6 - 4bdd53122e2feb14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "democracyaction.DAInfoTableViewController.shouldPerformSegue(withIdentifier: Swift.String, sender: Swift.Optional&lt;Any&gt;) -&gt; Swift.Bool"
+                  moduleName = "democracyaction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1027"
+                  endingLineNumber = "1027"
+                  offsetFromSymbolStart = "528">
+               </Location>
+               <Location
+                  uuid = "3FE9DC72-06AA-4CBC-87E5-5B04191257D6 - b1ad7f892a000a3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (democracyaction.AppDelegate.GADUnitName, Swift.Optional&lt;__C.NSObject&gt;) -&gt; () in democracyaction.DAInfoTableViewController.shouldPerformSegue(withIdentifier: Swift.String, sender: Swift.Optional&lt;Any&gt;) -&gt; Swift.Bool"
+                  moduleName = "democracyaction"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LYJ/Projects/leesam/democracyaction/src/democracyaction-ios/democracyaction/view/DAInfoTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1027"
+                  endingLineNumber = "1027"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

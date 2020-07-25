@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -658,6 +658,101 @@
                                     <outlet property="nameLabel" destination="50y-bw-TO2" id="FNS-d3-qg5"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ads" id="JGw-3X-5pT" userLabel="ads" customClass="GADNativeTableViewCell" customModule="democracyaction" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="196" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JGw-3X-5pT" id="bdc-jb-5ue">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oST-xk-IhD" customClass="GADUnifiedNativeAdView">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="56"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ez6-fB-Hwq" userLabel="Title Stack View">
+                                                    <rect key="frame" x="0.0" y="4" width="195.5" height="48"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="othreapp" translatesAutoresizingMaskIntoConstraints="NO" id="HuU-iW-3fp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="48"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="Rnl-Li-KGA"/>
+                                                                <constraint firstAttribute="width" secondItem="HuU-iW-3fp" secondAttribute="height" multiplier="156:209" id="pfi-ln-2oT"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관련주식검색기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-er-NjL">
+                                                            <rect key="frame" x="44" y="0.0" width="151.5" height="48"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VdF-Js-jm4" userLabel="Detail Stack View">
+                                                    <rect key="frame" x="233.5" y="8" width="109.5" height="40"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aXi-ys-dti" userLabel="Name Stack View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="109.5" height="15"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한민국당" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG2-mg-Wtc" userLabel="Group Label">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="86.5" height="15"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                    <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xSq-3T-E1m" userLabel="Group Image View">
+                                                                    <rect key="frame" x="94.5" y="0.0" width="15" height="15"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="xSq-3T-E1m" secondAttribute="height" multiplier="1:1" id="RsF-E3-8hS"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="34.5" id="cUl-rs-ixy"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="66x-7E-oFO">
+                                                            <rect key="frame" x="0.0" y="19" width="109.5" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="V7L-eS-Cvx"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ez6-fB-Hwq" secondAttribute="bottom" constant="4" id="54K-1r-pnu"/>
+                                                <constraint firstItem="VdF-Js-jm4" firstAttribute="bottom" secondItem="ez6-fB-Hwq" secondAttribute="bottom" constant="-4" id="Fme-pz-V9g"/>
+                                                <constraint firstItem="VdF-Js-jm4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ez6-fB-Hwq" secondAttribute="trailing" id="GZL-tF-3kv"/>
+                                                <constraint firstItem="VdF-Js-jm4" firstAttribute="trailingMargin" secondItem="oST-xk-IhD" secondAttribute="trailing" id="ihU-Ah-HyR"/>
+                                                <constraint firstItem="ez6-fB-Hwq" firstAttribute="top" secondItem="oST-xk-IhD" secondAttribute="top" constant="4" id="rgw-4e-RNi"/>
+                                                <constraint firstItem="VdF-Js-jm4" firstAttribute="top" secondItem="ez6-fB-Hwq" secondAttribute="top" constant="4" id="uUC-Ot-j2T"/>
+                                                <constraint firstItem="ez6-fB-Hwq" firstAttribute="leading" secondItem="oST-xk-IhD" secondAttribute="leading" id="vzt-UW-isk"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="advertiserView" destination="mG2-mg-Wtc" id="i28-Z0-CYg"/>
+                                                <outlet property="headlineView" destination="KM8-er-NjL" id="svR-8w-m0k"/>
+                                                <outlet property="iconView" destination="xSq-3T-E1m" id="mng-dv-iWu"/>
+                                                <outlet property="imageView" destination="HuU-iW-3fp" id="8H2-eb-AU7"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oST-xk-IhD" firstAttribute="trailing" secondItem="bdc-jb-5ue" secondAttribute="trailingMargin" id="X6k-ux-Siv"/>
+                                        <constraint firstItem="oST-xk-IhD" firstAttribute="top" secondItem="bdc-jb-5ue" secondAttribute="top" id="Z22-he-lDN"/>
+                                        <constraint firstItem="oST-xk-IhD" firstAttribute="leading" secondItem="bdc-jb-5ue" secondAttribute="leadingMargin" id="dAF-4i-w9V"/>
+                                        <constraint firstItem="oST-xk-IhD" firstAttribute="bottom" secondItem="bdc-jb-5ue" secondAttribute="bottom" id="uT2-AB-gse"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="nativeAdView" destination="oST-xk-IhD" id="9cm-3g-539"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="WMC-pP-VSV" id="2G5-Xe-yDu"/>
@@ -702,6 +797,9 @@
             <point key="canvasLocation" x="1902" y="472"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="P1B-vy-4Yt"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_asc.png" width="25" height="25"/>
         <image name="icon_call" width="25" height="25"/>
@@ -714,9 +812,7 @@
         <image name="icon_people_on" width="37.5" height="37.5"/>
         <image name="icon_tree_off" width="37.5" height="37.5"/>
         <image name="icon_tree_on" width="37.5" height="37.5"/>
+        <image name="othreapp" width="40" height="40"/>
         <image name="photo_9770933" width="156" height="209"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="gMT-JV-XeO"/>
-    </inferredMetricsTieBreakers>
 </document>
