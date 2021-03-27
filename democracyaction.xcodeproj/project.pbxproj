@@ -95,7 +95,7 @@
 		2CB61E621F29F31000CB8880 /* DAUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E611F29F31000CB8880 /* DAUpdateManager.swift */; };
 		2CCC44061FAF18C30025C614 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 2CCC44051FAF18C30025C614 /* photos */; };
 		2CDE309524C9C1E20013E6C5 /* servertest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE309424C9C1E20013E6C5 /* servertest.plist */; };
-		2CEF146B260F590D0095C27B /* .gitlab-ci.yml   in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF146A260F590D0095C27B /* .gitlab-ci.yml   */; };
+		2CEF1473260F82FE0095C27B /* .gitlab-ci.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF1472260F82FE0095C27B /* .gitlab-ci.yml */; };
 		2CF0188B22130708000010D8 /* DAContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0188A22130708000010D8 /* DAContactTableViewCell.swift */; };
 		2CF194C91F6F8F5F0013CDD9 /* GADRewardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */; };
 		2CF194CB1F6F92660013CDD9 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF194CA1F6F92660013CDD9 /* ReviewManager.swift */; };
@@ -218,7 +218,7 @@
 		2CCC44051FAF18C30025C614 /* photos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = photos; sourceTree = "<group>"; };
 		2CDE309424C9C1E20013E6C5 /* servertest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = servertest.plist; sourceTree = "<group>"; };
 		2CE12C221FD16BC1006A965A /* democracyaction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = democracyaction.entitlements; sourceTree = "<group>"; };
-		2CEF146A260F590D0095C27B /* .gitlab-ci.yml   */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".gitlab-ci.yml  "; sourceTree = "<group>"; };
+		2CEF1472260F82FE0095C27B /* .gitlab-ci.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = ".gitlab-ci.yml"; sourceTree = "<group>"; };
 		2CF0188A22130708000010D8 /* DAContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAContactTableViewCell.swift; sourceTree = "<group>"; };
 		2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADRewardManager.swift; sourceTree = "<group>"; };
 		2CF194CA1F6F92660013CDD9 /* ReviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 			children = (
 				2C12AEA5212027BC0074A914 /* .gitignore */,
 				2C12AEA32120246C0074A914 /* Podfile */,
-				2CEF146A260F590D0095C27B /* .gitlab-ci.yml   */,
+				2CEF1472260F82FE0095C27B /* .gitlab-ci.yml */,
 				2C04B7061EF16E480084A82F /* extensions */,
 				2C14CBCB1EE9552A003BB329 /* democracyaction */,
 				2C14CBE21EE9552B003BB329 /* democracyactionTests */,
@@ -657,7 +657,6 @@
 				2CDE309524C9C1E20013E6C5 /* servertest.plist in Resources */,
 				2C12AEA6212027BC0074A914 /* .gitignore in Resources */,
 				2C05841B1EFA747400D45AC8 /* icon_asc.png in Resources */,
-				2CEF146B260F590D0095C27B /* .gitlab-ci.yml   in Resources */,
 				2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */,
 				2C0106B21F091F460046B9A6 /* icon_share.png in Resources */,
 				2C2507362211426600D932CE /* groups in Resources */,
@@ -666,6 +665,7 @@
 				2C12F5CE208D6E1500B6D2D9 /* server.plist in Resources */,
 				2C11CF85211F183800B5685C /* GoogleService-Info.plist in Resources */,
 				2C1CE1131F10B22B00967B5D /* direct_democracy.xlsx in Resources */,
+				2CEF1473260F82FE0095C27B /* .gitlab-ci.yml in Resources */,
 				2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */,
 				2C7D22E11F9A2D1D0098A5D0 /* icon_money.png in Resources */,
 				2C19858F1F9DC83A001D3B9B /* icon_money_stat.png in Resources */,
