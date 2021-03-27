@@ -2,8 +2,8 @@ stages:
     - build
 build_project:
     stage: build
-    only:
-        - tags
+#    only:
+#        - tags
     tags:
         - xcode
         - cocoapods
