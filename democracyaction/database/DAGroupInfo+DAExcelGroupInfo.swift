@@ -68,6 +68,9 @@ extension DAGroupInfo{
         //add message tool info - facebook
         self.syncMessageTool(group, name: DAMessageToolInfo.EntityNames.facebook, value: group.facebook);
         
+        //add message tool info - instagram
+        self.syncMessageTool(group, name: DAMessageToolInfo.EntityNames.instagram, value: group.instagram);
+        
         //add message tool info - kakao
         self.syncMessageTool(group, name: DAMessageToolInfo.EntityNames.kakao, value: group.kakao);
     }

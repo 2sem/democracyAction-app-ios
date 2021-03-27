@@ -17,6 +17,8 @@ class DATheme{
     static let smsButtonBackgroundColor = "#D4E157".toUIColor()!;
     static let facebookButtonTintColor = "#dfe3ee".toUIColor()!;
     static let facebookButtonBackgroundColor = "#3b5998".toUIColor()!;
+    static let instagramButtonTintColor = #colorLiteral(red: 0.7999292612, green: 0.8000453115, blue: 0.7999040484, alpha: 1);
+    static let instagramButtonBackgroundColor = #colorLiteral(red: 0.7108226418, green: 0.1631662548, blue: 0.5341812968, alpha: 1);
     static let twitterButtonTintColor = UIColor.white;
     static let twitterButtonBackgroundColor = "#00aced".toUIColor()!;
     static let youtubeButtonTintColor = "#bb0000".toUIColor()!;

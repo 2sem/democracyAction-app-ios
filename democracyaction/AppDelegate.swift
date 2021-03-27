@@ -200,17 +200,13 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
 }
 
 extension AppDelegate : MessagingDelegate{
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         print("fcm device[\(fcmToken)]");
         let topic = "notice";
         //let topic = "congress_2_9770881_law";
         type(of: self).firebase = messaging;
         messaging.subscribe(toTopic: topic);
         //messaging.unsubscribe(fromTopic: topic);
-    }
-    
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        
     }
 }
 
@@ -246,7 +242,17 @@ extension AppDelegate{
 }
 
 extension AppDelegate : GADManagerDelegate{
-    func GAD<GADUnitName>(manager: GADManager<GADUnitName>, lastShownTimeForUnit unit: GADUnitName) -> Date{
+    typealias E = GADUnitName
+    
+    func GAD<E>(manager: GADManager<E>, lastShownTimeForUnit unit: E) -> Date{
+        return Date();
+    }
+    
+    func GAD<E>(manager: GADManager<E>, updatShownTimeForUnit unit: E, showTime time: Date){
+        
+    }
+    
+    func GAD<E>(manager: GADManager<E>, lastPreparedTimeForUnit unit: E) -> Date{
         let now = Date();
         if DADefaults.LastFullADShown > now{
             DADefaults.LastFullADShown = now;
@@ -256,7 +262,7 @@ extension AppDelegate : GADManagerDelegate{
         //Calendar.current.component(<#T##component: Calendar.Component##Calendar.Component#>, from: <#T##Date#>)
     }
     
-    func GAD<GADUnitName>(manager: GADManager<GADUnitName>, updatShownTimeForUnit unit: GADUnitName, showTime time: Date){
+    func GAD<E>(manager: GADManager<E>, updateLastPreparedTimeForUnit unit: E, preparedTime time: Date){
         DADefaults.LastFullADShown = time;
 
         //RNInfoTableViewController.shared?.needAds = false;

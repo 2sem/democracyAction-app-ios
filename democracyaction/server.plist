@@ -2,12 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Info File ID</key>
-	<string>0B05rDBrnJN-ua2ZNM1NLb0stRDQ</string>
 	<key>Data File ID</key>
 	<string>0B05rDBrnJN-uTHpmcFBUNlliYXM</string>
-	<key>Version File ID</key>
-	<string>1kOGTyfYoaQ2UsV0N4yK8MSX1Rb1E9JSl</string>
 	<key>SecretKey</key>
 	<string>Oq2iAFd6sUH0RUStB1g1LQ==</string>
 	<key>Server URL</key>

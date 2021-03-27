@@ -72,6 +72,12 @@ class DAContactTableViewCell: UITableViewCell {
             self.contactButton.pulseColor = DATheme.facebookButtonTintColor;
             self.contactButton.backgroundColor = DATheme.facebookButtonBackgroundColor;
             break;
+        case .instagram:
+            self.contactButton.image = UIImage(named: "icon_instagram")?.withRenderingMode(.alwaysTemplate);
+            self.contactButton.tintColor = DATheme.facebookButtonTintColor;
+            self.contactButton.pulseColor = DATheme.facebookButtonTintColor;
+            self.contactButton.backgroundColor = DATheme.facebookButtonBackgroundColor;
+            break;
         case .web:
             self.contactButton.image = UIImage(named: "icon_homepage")?.withRenderingMode(.alwaysTemplate);
             self.contactButton.tintColor = DATheme.webButtonTintColor;
@@ -280,9 +286,15 @@ class DAContactTableViewCell: UITableViewCell {
                 self.openWeb(url);
             });
             break;
+        case .instagram:
+            print("send instagram \(info.value)");
+            UIApplication.shared.openInstagram(info.value, webOpen: { (url) in
+                self.openWeb(url);
+            });
+            break;
         case .kakao:
             print("send kakao \(info.value)");
-            UIApplication.shared.openFacebook(info.value, webOpen: { (url) in
+            UIApplication.shared.openKakaoStory(info.value, webOpen: { (url) in
                 self.openWeb(url);
             });
             break;

@@ -140,6 +140,4 @@ extension GADNativeTableViewCell : GADUnifiedNativeAdLoaderDelegate{
         self.loadDeveloper();
         self.tapGesture.isEnabled = true;
     }
-    
-    
 }

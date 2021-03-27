@@ -68,6 +68,9 @@ extension DAPersonInfo{
         //add message tool info - facebook
         self.syncMessageTool(person, name: DAMessageToolInfo.EntityNames.facebook, value: person.facebook);
         
+        //add message tool info - instagram
+        self.syncMessageTool(person, name: DAMessageToolInfo.EntityNames.instagram, value: person.instagram);
+        
         //add message tool info - kakao
         self.syncMessageTool(person, name: DAMessageToolInfo.EntityNames.kakao, value: person.kakao);
     }

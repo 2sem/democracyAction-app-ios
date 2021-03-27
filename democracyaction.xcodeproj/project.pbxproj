@@ -95,6 +95,7 @@
 		2CB61E621F29F31000CB8880 /* DAUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E611F29F31000CB8880 /* DAUpdateManager.swift */; };
 		2CCC44061FAF18C30025C614 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 2CCC44051FAF18C30025C614 /* photos */; };
 		2CDE309524C9C1E20013E6C5 /* servertest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE309424C9C1E20013E6C5 /* servertest.plist */; };
+		2CEF1463260F3AFB0095C27B /*  .gitlab-ci.yml   in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF1462260F3AFB0095C27B /*  .gitlab-ci.yml   */; };
 		2CF0188B22130708000010D8 /* DAContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0188A22130708000010D8 /* DAContactTableViewCell.swift */; };
 		2CF194C91F6F8F5F0013CDD9 /* GADRewardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */; };
 		2CF194CB1F6F92660013CDD9 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF194CA1F6F92660013CDD9 /* ReviewManager.swift */; };
@@ -217,6 +218,7 @@
 		2CCC44051FAF18C30025C614 /* photos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = photos; sourceTree = "<group>"; };
 		2CDE309424C9C1E20013E6C5 /* servertest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = servertest.plist; sourceTree = "<group>"; };
 		2CE12C221FD16BC1006A965A /* democracyaction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = democracyaction.entitlements; sourceTree = "<group>"; };
+		2CEF1462260F3AFB0095C27B /*  .gitlab-ci.yml   */ = {isa = PBXFileReference; lastKnownFileType = text; path = " .gitlab-ci.yml  "; sourceTree = "<group>"; };
 		2CF0188A22130708000010D8 /* DAContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAContactTableViewCell.swift; sourceTree = "<group>"; };
 		2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADRewardManager.swift; sourceTree = "<group>"; };
 		2CF194CA1F6F92660013CDD9 /* ReviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			children = (
 				2C12AEA5212027BC0074A914 /* .gitignore */,
 				2C12AEA32120246C0074A914 /* Podfile */,
+				2CEF1462260F3AFB0095C27B /*  .gitlab-ci.yml   */,
 				2C04B7061EF16E480084A82F /* extensions */,
 				2C14CBCB1EE9552A003BB329 /* democracyaction */,
 				2C14CBE21EE9552B003BB329 /* democracyactionTests */,
@@ -647,6 +650,7 @@
 				2C12AEA42120246C0074A914 /* Podfile in Resources */,
 				2C1BF8151F0F77BD006AB30B /* icon_share_x25.png in Resources */,
 				2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */,
+				2CEF1463260F3AFB0095C27B /*  .gitlab-ci.yml   in Resources */,
 				2C14CBD61EE9552B003BB329 /* Assets.xcassets in Resources */,
 				2C0584211EFA92A100D45AC8 /* icon_down.png in Resources */,
 				2C14CBD41EE9552A003BB329 /* Main.storyboard in Resources */,
@@ -696,6 +700,15 @@
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseABTesting/FirebaseABTesting.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseRemoteConfig/FirebaseRemoteConfig.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/LSExtensions/LSExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -703,7 +716,6 @@
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressWebViewController/ProgressWebViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
@@ -717,6 +729,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseABTesting.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseRemoteConfig.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LSExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -724,7 +745,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressWebViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
@@ -1073,7 +1093,7 @@
 				INFOPLIST_FILE = democracyaction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1095,7 +1115,7 @@
 				INFOPLIST_FILE = democracyaction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

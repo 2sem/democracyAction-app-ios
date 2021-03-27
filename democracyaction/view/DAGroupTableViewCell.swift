@@ -510,6 +510,7 @@ class DAGroupTableViewCell: UITableViewCell, FABMenuDelegate {
     func onKakao(_ button : UIButton){
         print("send kakao[\(self.group.groupKakao?.account ?? "")]");
         self.closeMenus();
+        UIApplication.shared.openKakaoStory(self.group.groupKakao?.account ?? "");
     }
     
     @objc func onYoutube(_ button : UIButton){

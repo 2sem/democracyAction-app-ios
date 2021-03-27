@@ -139,11 +139,11 @@ class DAPersonViewController: UIViewController {
         }
         
         if let value = info.personKakao?.account, value.any {
-            //group.append(DAContact.init(type: .kakao, name: "카카오스토리", value: value));
+            group.append(DAContact.init(type: .kakao, name: "카카오스토리", value: value));
         }
         
         if let value = info.personInstagram?.account, value.any {
-            //group.append(DAContact.init(type: .instagram, name: "인스타그램", value: value));
+            group.append(DAContact.init(type: .instagram, name: "인스타그램", value: value));
         }
         
         guard group.contacts.any else{

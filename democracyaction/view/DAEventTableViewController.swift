@@ -696,7 +696,7 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
                 return value;
             }
             
-            manager.show(unit: .full) { [weak self](unit, ad) in
+            manager.show(unit: .full) { [weak self](unit, ad, result) in
                 self?.performSegue(withIdentifier: identifier, sender: sender);
             }
             value = false;
