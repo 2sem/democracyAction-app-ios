@@ -10,7 +10,7 @@ build_project:
         - ios
     script:
         #- xcodebuild clean -workspace loahelper.xcworkspace -scheme loahelper | xcpretty
-        - LANG=en_US.UTF-8
+        - export LANG=en_US.UTF-8
         - pod repo update
         - pod install
 #        - scheme_list=$(xcodebuild -list -json | tr -d "\n")
