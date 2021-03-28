@@ -12,7 +12,7 @@ build_project:
         #- xcodebuild clean -workspace loahelper.xcworkspace -scheme loahelper | xcpretty
         - export LANG=en_US.UTF-8
         - pod repo update
-        - pod install
+        - pod update
 #        - scheme_list=$(xcodebuild -list -json | tr -d "\n")
 #        - projectname=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
 #        - versionstring=$(xcodebuild -project ${projectname}.xcodeproj -showBuildSettings | grep "MARKETING_VERSION" | cut -d '=' -f 2 | xargs)
