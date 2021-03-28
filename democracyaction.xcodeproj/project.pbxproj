@@ -94,7 +94,6 @@
 		2CB61E5F1F29EB3100CB8880 /* String+GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */; };
 		2CB61E621F29F31000CB8880 /* DAUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E611F29F31000CB8880 /* DAUpdateManager.swift */; };
 		2CCC44061FAF18C30025C614 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 2CCC44051FAF18C30025C614 /* photos */; };
-		2CDE309524C9C1E20013E6C5 /* servertest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE309424C9C1E20013E6C5 /* servertest.plist */; };
 		2CEF1473260F82FE0095C27B /* .gitlab-ci.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2CEF1472260F82FE0095C27B /* .gitlab-ci.yml */; };
 		2CF0188B22130708000010D8 /* DAContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0188A22130708000010D8 /* DAContactTableViewCell.swift */; };
 		2CF194C91F6F8F5F0013CDD9 /* GADRewardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */; };
@@ -654,7 +653,6 @@
 				2C0584211EFA92A100D45AC8 /* icon_down.png in Resources */,
 				2C14CBD41EE9552A003BB329 /* Main.storyboard in Resources */,
 				2C05841F1EFA927D00D45AC8 /* icon_up.png in Resources */,
-				2CDE309524C9C1E20013E6C5 /* servertest.plist in Resources */,
 				2C12AEA6212027BC0074A914 /* .gitignore in Resources */,
 				2C05841B1EFA747400D45AC8 /* icon_asc.png in Resources */,
 				2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */,

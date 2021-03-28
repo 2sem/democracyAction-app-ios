@@ -3544,7 +3544,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
-            landmarkName = "canShow(_:)"
+            landmarkName = "unit(forAdObject:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3561,7 +3561,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
             endingLineNumber = "88"
-            landmarkName = "canShow(_:)"
+            landmarkName = "requestPermission(viewControllerForAlert:title:msg:cancel:settings:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3578,7 +3578,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "canShow(_:)"
+            landmarkName = "requestPermission(viewControllerForAlert:title:msg:cancel:settings:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3595,8 +3595,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
             endingLineNumber = "148"
-            landmarkName = "prepare(bannerUnit:size:)"
-            landmarkType = "7">
+            landmarkName = "GADManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3678,7 +3678,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
             endingLineNumber = "226"
-            landmarkName = "__show(unit:viewController:completion:)"
+            landmarkName = "prepare(openingUnit:isTest:orientation:interval:hideTestLabel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
