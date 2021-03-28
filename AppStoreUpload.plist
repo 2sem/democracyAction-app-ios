@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   AppStoreUpload.plist
+   relatedstocks
+
+   Created by 영준 이 on 2020/11/15.
+   Copyright (c) 2020 leesam. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>uploadSymbols</key>
+        <true/>
+        <key>stripSwiftSymbols</key>
+        <true/>
+        <key>signingStyle</key>
+        <string>automatic</string>
+        <key>compileBitcode</key>
+        <true/>
+        <key>method</key>
+        <string>app-store</string>
+    </dict>
+</plist>

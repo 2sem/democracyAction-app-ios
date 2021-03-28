@@ -91,6 +91,7 @@
 		2C6D79E51F013D9500237028 /* DAPersonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79E41F013D9500237028 /* DAPersonGroup.swift */; };
 		2C7D22E11F9A2D1D0098A5D0 /* icon_money.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C24A37D1F99B3FA002BCDD5 /* icon_money.png */; };
 		2CB0788E24CB124800108FF4 /* GADNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */; };
+		2CB4E8C7261039A7006E9DE2 /* AppStoreUpload.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4E8C6261039A7006E9DE2 /* AppStoreUpload.plist */; };
 		2CB61E5F1F29EB3100CB8880 /* String+GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */; };
 		2CB61E621F29F31000CB8880 /* DAUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E611F29F31000CB8880 /* DAUpdateManager.swift */; };
 		2CCC44061FAF18C30025C614 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 2CCC44051FAF18C30025C614 /* photos */; };
@@ -212,6 +213,7 @@
 		2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAPersonInfo+DAExcelPersonInfo.swift"; sourceTree = "<group>"; };
 		2C6D79E41F013D9500237028 /* DAPersonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAPersonGroup.swift; sourceTree = "<group>"; };
 		2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADNativeTableViewCell.swift; sourceTree = "<group>"; };
+		2CB4E8C6261039A7006E9DE2 /* AppStoreUpload.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppStoreUpload.plist; sourceTree = "<group>"; };
 		2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+GoogleDrive.swift"; sourceTree = "<group>"; };
 		2CB61E611F29F31000CB8880 /* DAUpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUpdateManager.swift; sourceTree = "<group>"; };
 		2CCC44051FAF18C30025C614 /* photos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = photos; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				2C12AEA5212027BC0074A914 /* .gitignore */,
 				2C12AEA32120246C0074A914 /* Podfile */,
 				2CEF1472260F82FE0095C27B /* .gitlab-ci.yml */,
+				2CB4E8C6261039A7006E9DE2 /* AppStoreUpload.plist */,
 				2C04B7061EF16E480084A82F /* extensions */,
 				2C14CBCB1EE9552A003BB329 /* democracyaction */,
 				2C14CBE21EE9552B003BB329 /* democracyactionTests */,
@@ -657,6 +660,7 @@
 				2C05841B1EFA747400D45AC8 /* icon_asc.png in Resources */,
 				2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */,
 				2C0106B21F091F460046B9A6 /* icon_share.png in Resources */,
+				2CB4E8C7261039A7006E9DE2 /* AppStoreUpload.plist in Resources */,
 				2C2507362211426600D932CE /* groups in Resources */,
 				2C05841D1EFA74A100D45AC8 /* icon_desc.png in Resources */,
 				2C1094C41F4DA612004A9E1D /* Settings.bundle in Resources */,
