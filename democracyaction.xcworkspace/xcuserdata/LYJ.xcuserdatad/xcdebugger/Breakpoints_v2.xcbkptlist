@@ -351,8 +351,8 @@
             timestampString = "588600086.9359699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "488"
-            endingLineNumber = "488"
+            startingLineNumber = "493"
+            endingLineNumber = "493"
             landmarkName = "onGoEndRow(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1131,8 +1131,8 @@
             timestampString = "588600086.936892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
             <Locations>
@@ -1318,8 +1318,8 @@
             timestampString = "588600086.937279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1335,8 +1335,8 @@
             timestampString = "588600086.937322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1352,8 +1352,8 @@
             timestampString = "588600086.937364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1369,8 +1369,8 @@
             timestampString = "588600086.937407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
             landmarkName = "DAInfoTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1386,8 +1386,8 @@
             timestampString = "588600086.937448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1403,8 +1403,8 @@
             timestampString = "588600086.937489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1488,8 +1488,8 @@
             timestampString = "588600086.937634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1505,8 +1505,8 @@
             timestampString = "588600086.9376791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
             landmarkName = "searchByLaunchQuery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2354,8 +2354,8 @@
             timestampString = "588600086.938789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "546"
-            endingLineNumber = "546"
+            startingLineNumber = "551"
+            endingLineNumber = "551"
             landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2371,8 +2371,8 @@
             timestampString = "588600086.938838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "423"
+            endingLineNumber = "423"
             landmarkName = "updateEndButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2779,8 +2779,8 @@
             timestampString = "588600086.939472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "692"
-            endingLineNumber = "692"
+            startingLineNumber = "697"
+            endingLineNumber = "697"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2796,8 +2796,8 @@
             timestampString = "588600086.93952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "696"
-            endingLineNumber = "696"
+            startingLineNumber = "701"
+            endingLineNumber = "701"
             landmarkName = "tableView(_:editActionsForRowAt:for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3338,8 +3338,8 @@
             timestampString = "588600086.940506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "641"
-            endingLineNumber = "641"
+            startingLineNumber = "646"
+            endingLineNumber = "646"
             landmarkName = "filterByArea(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3610,8 +3610,8 @@
             timestampString = "588600086.941364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1028"
-            endingLineNumber = "1028"
+            startingLineNumber = "1033"
+            endingLineNumber = "1033"
             landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3692,8 +3692,8 @@
             filePath = "democracyaction/view/DAInfoTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1027"
-            endingLineNumber = "1027"
+            startingLineNumber = "1032"
+            endingLineNumber = "1032"
             landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
             landmarkType = "7">
             <Locations>

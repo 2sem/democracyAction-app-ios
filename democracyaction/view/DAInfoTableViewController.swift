@@ -297,6 +297,8 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
         self.layoutEndButton(self.nextButton);
         
         self.needAds = GADInterstialManager.shared?.canShow ?? true;
+        
+//        self.tableView.contentInset.bottom = self.tableView.rowHeight;
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -336,6 +338,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     func refresh(_ needToScrollTop : Bool = false){
         self.cellPreparingQueue.cancelAllOperations();
         self.tableView.reloadData();
+        self.updateMoveButtons(self.tableView);
         self.updateNextButton();
         if needToScrollTop && self.tableView.numberOfSections > 0 && self.tableView.numberOfRows(inSection: 0) > 0{
             self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false);
@@ -408,42 +411,44 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     func updateBeginButton(_ scrollView : UIScrollView){
         self.beginButton.isHidden = true;
-        if self.tableView.contentOffset.y > scrollView.height * 2{
+        if self.tableView.contentOffset.y > scrollView.height * 0.5{
             self.beginButton.isHidden = (false || self.isDragging) && self.isScrollingToUp;
         }
     }
     
     func updateEndButton(_ scrollView : UIScrollView){
         self.endButton.isHidden = true;
-        if scrollView.contentSize.height - self.tableView.contentOffset.y > scrollView.height * 2{
+        if self.tableView.contentOffset.y < scrollView.contentSize.height.advanced(by: -scrollView.height * 1.33){
             self.endButton.isHidden = (false || self.isDragging) && !self.isScrollingToUp;
         }
     }
     
     func updateNextButton(){
         let maxSection = self.tableView.numberOfSections - 1;
-        var lastIndexPath = self.tableView.indexPathsForVisibleRows?.last;
         
         self.nextButton.isHidden = (false || self.isDragging) && !self.isScrollingToUp;
         if !self.nextButton.isHidden{
-            self.endButton.isHidden = false;
+//            self.endButton.isHidden = false;
         }
-        guard lastIndexPath != nil else{
+        guard let lastIndexPath = self.tableView.indexPathsForVisibleRows?.last else{
             self.nextButton.isHidden = true;
             return;
         }
         
-        guard maxSection > lastIndexPath!.section else{
+        guard maxSection > lastIndexPath.section else{
             self.nextButton.isHidden = true;
             return;
         }
 
-        let nextSection = lastIndexPath!.section + 1;
-        
-        self.nextButton.setTitle(self.groups[nextSection].name, for: .normal);
+        let nextSection = lastIndexPath.section.advanced(by: 1);
+        guard let group = self.groups[safe: nextSection] else{
+            return;
+        }
+    
+        self.nextButton.setTitle(group.name, for: .normal);
         switch self.groupingType{
         case .byName:
-            self.nextButton.setTitle(self.groups[nextSection].name, for: .normal);
+            self.nextButton.setTitle(group.name, for: .normal);
             
             self.nextButton.frame.size.width = 44 + 8;
             break;
@@ -870,7 +875,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
             break;
         case .byGroup:
             cell = tableView.dequeueReusableCell(withIdentifier: DAInfoTableViewController.CellIDs.GroupCell) as? DAGroupTableViewCell;
-            cell?.group = self.groups[section];
+            cell?.group = self.groups[safe: section.advanced(by: -1)];
             cell?.delegate = self;
             break;
         case .byArea:
