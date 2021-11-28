@@ -90,6 +90,8 @@
 		2C6D79E51F013D9500237028 /* DAPersonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79E41F013D9500237028 /* DAPersonGroup.swift */; };
 		2C7D22E11F9A2D1D0098A5D0 /* icon_money.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C24A37D1F99B3FA002BCDD5 /* icon_money.png */; };
 		2C9F3E0F2753453F0016C660 /* GADRewardedAd+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F3E0E2753453F0016C660 /* GADRewardedAd+.swift */; };
+		2C9F3E1227536EC70016C660 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 2C9F3E1027536EC60016C660 /* .github */; };
+		2C9F3E1327536EC70016C660 /* fastlane in Resources */ = {isa = PBXBuildFile; fileRef = 2C9F3E1127536EC70016C660 /* fastlane */; };
 		2CB0788E24CB124800108FF4 /* GADNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */; };
 		2CB4E8C7261039A7006E9DE2 /* AppStoreUpload.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4E8C6261039A7006E9DE2 /* AppStoreUpload.plist */; };
 		2CB61E5F1F29EB3100CB8880 /* String+GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */; };
@@ -212,6 +214,8 @@
 		2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAPersonInfo+DAExcelPersonInfo.swift"; sourceTree = "<group>"; };
 		2C6D79E41F013D9500237028 /* DAPersonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAPersonGroup.swift; sourceTree = "<group>"; };
 		2C9F3E0E2753453F0016C660 /* GADRewardedAd+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GADRewardedAd+.swift"; sourceTree = "<group>"; };
+		2C9F3E1027536EC60016C660 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		2C9F3E1127536EC70016C660 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADNativeTableViewCell.swift; sourceTree = "<group>"; };
 		2CB4E8C6261039A7006E9DE2 /* AppStoreUpload.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppStoreUpload.plist; sourceTree = "<group>"; };
 		2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+GoogleDrive.swift"; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 		2C14CBC01EE9552A003BB329 = {
 			isa = PBXGroup;
 			children = (
+				2C9F3E1027536EC60016C660 /* .github */,
+				2C9F3E1127536EC70016C660 /* fastlane */,
 				2C12AEA5212027BC0074A914 /* .gitignore */,
 				2C12AEA32120246C0074A914 /* Podfile */,
 				2CEF1472260F82FE0095C27B /* .gitlab-ci.yml */,
@@ -648,12 +654,14 @@
 				2CB4E8C7261039A7006E9DE2 /* AppStoreUpload.plist in Resources */,
 				2C2507362211426600D932CE /* groups in Resources */,
 				2C05841D1EFA74A100D45AC8 /* icon_desc.png in Resources */,
+				2C9F3E1327536EC70016C660 /* fastlane in Resources */,
 				2C1094C41F4DA612004A9E1D /* Settings.bundle in Resources */,
 				2C12F5CE208D6E1500B6D2D9 /* server.plist in Resources */,
 				2C11CF85211F183800B5685C /* GoogleService-Info.plist in Resources */,
 				2C1CE1131F10B22B00967B5D /* direct_democracy.xlsx in Resources */,
 				2CEF1473260F82FE0095C27B /* .gitlab-ci.yml in Resources */,
 				2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */,
+				2C9F3E1227536EC70016C660 /* .github in Resources */,
 				2C7D22E11F9A2D1D0098A5D0 /* icon_money.png in Resources */,
 				2C19858F1F9DC83A001D3B9B /* icon_money_stat.png in Resources */,
 			);
