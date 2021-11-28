@@ -13,8 +13,9 @@ import FirebaseCore
 import FirebaseMessaging
 import UserNotifications
 import LSExtensions
-import ProgressWebViewController
+import LProgressWebViewController
 import GADManager
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GADRewardManagerDelegate {
@@ -47,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
         self.reviewManager?.delegate = self;
         //self.reviewManager?.show();
         
-        self.rewardAd = GADRewardManager(self.window!, unitId: GADInterstitial.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 12); //
+        self.rewardAd = GADRewardManager(self.window!, unitId: GADInterstitialAd.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 12); //
         self.rewardAd?.delegate = self;
         
         var adManager = GADManager<GADUnitName>.init(self.window!);

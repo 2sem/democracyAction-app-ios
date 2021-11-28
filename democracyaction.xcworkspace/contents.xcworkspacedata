@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../pods/GADManager/src/GADManager/GADManager.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:democracyaction.xcodeproj">
    </FileRef>
    <FileRef

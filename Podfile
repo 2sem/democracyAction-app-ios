@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '10.0'
 
 target 'democracyaction' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -8,8 +8,6 @@ target 'democracyaction' do
   
   pod 'XlsxReaderWriter'
   pod 'DownPicker'
-  pod 'Google-Mobile-Ads-SDK'
-  pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'Firebase/RemoteConfig'
   
@@ -28,7 +26,7 @@ target 'democracyaction' do
   
   #pod 'JSQWebViewController'
   #pod 'JBWebViewController'
-  pod 'ProgressWebViewController'
+  pod 'LProgressWebViewController'
   
   pod 'CryptoSwift'
   #pod 'GoogleAPIClientForREST/Drive', '~> 1.2.1'
@@ -39,16 +37,6 @@ target 'democracyaction' do
   pod 'SDWebImage'
   
   # Pods for democracyaction
-
-  target 'democracyactionTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'democracyactionUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
     #script to do after install pod projects
     post_install do |installer|

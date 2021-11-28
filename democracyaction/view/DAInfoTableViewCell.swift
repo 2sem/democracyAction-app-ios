@@ -10,8 +10,7 @@ import UIKit
 import Material
 import SwipeCellKit
 import ContactsUI
-//import JSQWebViewController
-import ProgressWebViewController
+import LProgressWebViewController
 import LSExtensions
 import SDWebImage
 

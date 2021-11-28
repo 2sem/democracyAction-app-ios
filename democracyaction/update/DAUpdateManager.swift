@@ -13,7 +13,6 @@ import Alamofire
 class DAUpdateManger{
     static let shared = DAUpdateManger();
     
-    //private var dataUrl : URL?;
     #if DEBUG
     let plistName = "servertest";
     #else
