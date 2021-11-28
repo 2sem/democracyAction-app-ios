@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ProgressWebViewController
+import LProgressWebViewController
 
 class DASponsorViewController: ProgressWebViewController {
 

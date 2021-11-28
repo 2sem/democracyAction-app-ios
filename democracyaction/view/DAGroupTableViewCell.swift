@@ -11,7 +11,7 @@ import UIKit
 import UIKit
 import Material
 import SwipeCellKit
-import ProgressWebViewController
+import LProgressWebViewController
 import LSExtensions
 
 protocol DAGroupTableViewCellDelegate : NSObjectProtocol{

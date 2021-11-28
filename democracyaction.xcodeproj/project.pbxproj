@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E42035C60053EB498F1BBFE /* Pods_democracyactionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A49776F955092608AA0BCB0 /* Pods_democracyactionTests.framework */; };
 		14B42BCD5B15BF30CC822247 /* Pods_democracyaction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99EEE2A5544B0B624A2E980 /* Pods_democracyaction.framework */; };
 		2C0106B21F091F460046B9A6 /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C0106B11F091F460046B9A6 /* icon_share.png */; };
 		2C01130F1F0F91960082B322 /* UIApplication+KakaoLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */; };
@@ -90,6 +89,7 @@
 		2C6D79E01F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */; };
 		2C6D79E51F013D9500237028 /* DAPersonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D79E41F013D9500237028 /* DAPersonGroup.swift */; };
 		2C7D22E11F9A2D1D0098A5D0 /* icon_money.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C24A37D1F99B3FA002BCDD5 /* icon_money.png */; };
+		2C9F3E0F2753453F0016C660 /* GADRewardedAd+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F3E0E2753453F0016C660 /* GADRewardedAd+.swift */; };
 		2CB0788E24CB124800108FF4 /* GADNativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */; };
 		2CB4E8C7261039A7006E9DE2 /* AppStoreUpload.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4E8C6261039A7006E9DE2 /* AppStoreUpload.plist */; };
 		2CB61E5F1F29EB3100CB8880 /* String+GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */; };
@@ -102,7 +102,6 @@
 		2CF495091EF6B09A00FDC401 /* Icons8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF495081EF6B09A00FDC401 /* Icons8.png */; };
 		2CF4950B1EF6B0A500FDC401 /* Y2K.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */; };
 		2CF4950D1EF6B4DA00FDC401 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF4950C1EF6B4DA00FDC401 /* logo.png */; };
-		94F0543E6B8FE71D4A965B6A /* Pods_democracyactionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5633979846B432C841F7399C /* Pods_democracyactionUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +211,7 @@
 		2C6D79DD1F01280A00237028 /* DAWebInfo+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAWebInfo+.swift"; sourceTree = "<group>"; };
 		2C6D79DF1F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DAPersonInfo+DAExcelPersonInfo.swift"; sourceTree = "<group>"; };
 		2C6D79E41F013D9500237028 /* DAPersonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAPersonGroup.swift; sourceTree = "<group>"; };
+		2C9F3E0E2753453F0016C660 /* GADRewardedAd+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GADRewardedAd+.swift"; sourceTree = "<group>"; };
 		2CB0788D24CB124800108FF4 /* GADNativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADNativeTableViewCell.swift; sourceTree = "<group>"; };
 		2CB4E8C6261039A7006E9DE2 /* AppStoreUpload.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppStoreUpload.plist; sourceTree = "<group>"; };
 		2CB61E5E1F29EB3100CB8880 /* String+GoogleDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+GoogleDrive.swift"; sourceTree = "<group>"; };
@@ -228,14 +228,8 @@
 		2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Y2K.PNG; sourceTree = "<group>"; };
 		2CF4950C1EF6B4DA00FDC401 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		33E5B1D4942B4304B4EB6E7C /* Pods-democracyaction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyaction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction.debug.xcconfig"; sourceTree = "<group>"; };
-		3B236724B100BA77C8D64484 /* Pods-democracyactionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionTests/Pods-democracyactionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C1A7FF3ED956BD4762E106C /* Pods-democracyaction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyaction.release.xcconfig"; path = "Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction.release.xcconfig"; sourceTree = "<group>"; };
-		5633979846B432C841F7399C /* Pods_democracyactionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_democracyactionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58FE50530BE2403E91144B46 /* Pods-democracyactionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionUITests/Pods-democracyactionUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8A49776F955092608AA0BCB0 /* Pods_democracyactionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_democracyactionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99EEE2A5544B0B624A2E980 /* Pods_democracyaction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_democracyaction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7011204349875891A6D437F /* Pods-democracyactionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionTests/Pods-democracyactionTests.release.xcconfig"; sourceTree = "<group>"; };
-		BEB017F14168C6A076884615 /* Pods-democracyactionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyactionUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-democracyactionUITests/Pods-democracyactionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +245,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E42035C60053EB498F1BBFE /* Pods_democracyactionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +252,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94F0543E6B8FE71D4A965B6A /* Pods_democracyactionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +329,7 @@
 				2C10CBBE1EF668F0002A07C5 /* GADInterstialManager.swift */,
 				2C10CBBF1EF668F0002A07C5 /* GADInterstitial+.swift */,
 				2CF194C81F6F8F5E0013CDD9 /* GADRewardManager.swift */,
+				2C9F3E0E2753453F0016C660 /* GADRewardedAd+.swift */,
 				2CF194CA1F6F92660013CDD9 /* ReviewManager.swift */,
 				2C0B70CB1F0E7FA400D9D1C0 /* GADBannerView+.swift */,
 				2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */,
@@ -502,8 +495,6 @@
 			isa = PBXGroup;
 			children = (
 				A99EEE2A5544B0B624A2E980 /* Pods_democracyaction.framework */,
-				8A49776F955092608AA0BCB0 /* Pods_democracyactionTests.framework */,
-				5633979846B432C841F7399C /* Pods_democracyactionUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -513,10 +504,6 @@
 			children = (
 				33E5B1D4942B4304B4EB6E7C /* Pods-democracyaction.debug.xcconfig */,
 				4C1A7FF3ED956BD4762E106C /* Pods-democracyaction.release.xcconfig */,
-				3B236724B100BA77C8D64484 /* Pods-democracyactionTests.debug.xcconfig */,
-				B7011204349875891A6D437F /* Pods-democracyactionTests.release.xcconfig */,
-				BEB017F14168C6A076884615 /* Pods-democracyactionUITests.debug.xcconfig */,
-				58FE50530BE2403E91144B46 /* Pods-democracyactionUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -549,7 +536,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C14CBF61EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyactionTests" */;
 			buildPhases = (
-				29F45C0E02D001F9E50AB73B /* [CP] Check Pods Manifest.lock */,
 				2C14CBDB1EE9552B003BB329 /* Sources */,
 				2C14CBDC1EE9552B003BB329 /* Frameworks */,
 				2C14CBDD1EE9552B003BB329 /* Resources */,
@@ -568,7 +554,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C44686B20B7C3C900978A40 /* Build configuration list for PBXNativeTarget "democracyactionUITests" */;
 			buildPhases = (
-				248FA0052866A08FDA893F8C /* [CP] Check Pods Manifest.lock */,
 				2C44686020B7C3C900978A40 /* Sources */,
 				2C44686120B7C3C900978A40 /* Frameworks */,
 				2C44686220B7C3C900978A40 /* Resources */,
@@ -701,22 +686,20 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseABTesting/FirebaseABTesting.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseRemoteConfig/FirebaseRemoteConfig.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/LProgressWebViewController/LProgressWebViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/LSExtensions/LSExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
-				"${BUILT_PRODUCTS_DIR}/ProgressWebViewController/ProgressWebViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
@@ -724,28 +707,29 @@
 				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
 				"${BUILT_PRODUCTS_DIR}/XlsxReaderWriter/XlsxReaderWriter.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBAEMKit/FBAEMKit.framework/FBAEMKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/FBSDKCoreKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit_Basics/FBSDKCoreKit_Basics.framework/FBSDKCoreKit_Basics",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseABTesting.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseRemoteConfig.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LProgressWebViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LSExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressWebViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
@@ -753,46 +737,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XlsxReaderWriter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBAEMKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit_Basics.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-democracyaction/Pods-democracyaction-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		248FA0052866A08FDA893F8C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-democracyactionUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		29F45C0E02D001F9E50AB73B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-democracyactionTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2C11CF83211F154200B5685C /* ShellScript */ = {
@@ -906,6 +857,7 @@
 				2C6D79E01F012ACB00237028 /* DAPersonInfo+DAExcelPersonInfo.swift in Sources */,
 				2C145BEA1F20ECA400E29D1A /* DAModelController+DAEventInfo.swift in Sources */,
 				2C15756222141FA700D764FC /* DAPersonViewController.swift in Sources */,
+				2C9F3E0F2753453F0016C660 /* GADRewardedAd+.swift in Sources */,
 				2C1321571F1F999500390C17 /* DAExcelEventInfo.swift in Sources */,
 				2C1985921F9DDA7A001D3B9B /* DASponsorViewController.swift in Sources */,
 				2CF194CB1F6F92660013CDD9 /* ReviewManager.swift in Sources */,
@@ -1128,7 +1080,6 @@
 		};
 		2C14CBF71EE9552B003BB329 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B236724B100BA77C8D64484 /* Pods-democracyactionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1145,7 +1096,6 @@
 		};
 		2C14CBF81EE9552B003BB329 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7011204349875891A6D437F /* Pods-democracyactionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1162,7 +1112,6 @@
 		};
 		2C44686C20B7C3C900978A40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEB017F14168C6A076884615 /* Pods-democracyactionUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1184,7 +1133,6 @@
 		};
 		2C44686D20B7C3C900978A40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58FE50530BE2403E91144B46 /* Pods-democracyactionUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;

@@ -476,14 +476,14 @@ extension DAFavoriteTableViewController : SwipeActionTransitioning{
 }
 
 extension DAFavoriteTableViewController : GADBannerViewDelegate{
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("receive info banner");
         self.banner?.isHidden = false;
         self.tableView?.contentInset.bottom = 50 + 16;
         self.layoutBanner();
     }
     
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         print("receive info banner failed. error[\(error.localizedDescription)]");
     }
 }

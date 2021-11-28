@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class DABannerTableViewCell: UITableViewCell, GADBannerViewDelegate {
+class DABannerTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var titleView: UILabel!
@@ -49,21 +49,21 @@ class DABannerTableViewCell: UITableViewCell, GADBannerViewDelegate {
         }
         self.bannerView.isHidden = !visible;
     }*/
-    
-    /// MARK: GADBannerViewDelegate
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+}
+
+extension DABannerTableViewCell: GADBannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         //self.showBanner(visible: true);
         self.bannerView.isHidden = false;
         self.titleView.isHidden = !self.bannerView.isHidden;
         self.detailView.isHidden = !self.bannerView.isHidden;
     }
     
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         print("banner error -  \(error)");
         self.bannerView.isHidden = true;
         self.titleView.isHidden = !self.bannerView.isHidden;
         self.detailView.isHidden = !self.bannerView.isHidden;
         //self.showBanner(visible: false);
     }
-
 }

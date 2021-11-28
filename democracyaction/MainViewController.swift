@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ProgressWebViewController
+import LProgressWebViewController
 import FirebaseCrashlytics
 
 class MainViewController: UITabBarController {
