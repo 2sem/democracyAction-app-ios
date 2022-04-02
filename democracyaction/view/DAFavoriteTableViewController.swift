@@ -110,7 +110,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         
         switch UIDevice.current.userInterfaceIdiom {
             case .pad:
-                self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav, size: kGADAdSizeFullBanner);
+                self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav, size: GADAdSizeFullBanner);
                 break;
             default:
                 self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav);

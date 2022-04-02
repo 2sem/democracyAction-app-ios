@@ -55,7 +55,7 @@ class DAPersonViewController: UIViewController {
         
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
-            self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .info, size: kGADAdSizeFullBanner);
+            self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .info, size: GADAdSizeFullBanner);
             break;
         default:
             self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .info);
