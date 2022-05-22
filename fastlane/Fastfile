@@ -25,6 +25,7 @@ platform :ios do
     @team_id = ENV["APPLE_TEAM_ID"]
     @api_key_path = ENV["IOS_KEY_PATH"]
     @xcodeproj = "./#{@project_name}.xcodeproj"
+    @profile_name = "democracyaction"
 
     puts "iOS 프로젝트: #{@project_name}]"
     puts "Fastlane 키파일 경로: #{@api_key_path}]"
@@ -53,24 +54,26 @@ platform :ios do
   def readySigning
     installCert()
     
-    update_code_signing_settings(
-      use_automatic_signing: false,
-      path: @xcodeproj,
-      team_id: @team_id,
-      code_sign_identity: "iPhone Distribution"
+    install_provisioning_profile(
+      path: @provisioning_profile_path
     )
-    puts "Code Signing 수동으로 전환"
-
+    puts "Provisioning Profile 설치"
+    
     update_project_provisioning(
       xcodeproj: @xcodeproj,
       profile: @provisioning_profile_path
     )
     puts "Provisioning Profile 설정"
-
-    install_provisioning_profile(
-      path: @provisioning_profile_path
+    
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: @xcodeproj,
+      team_id: @team_id,
+      code_sign_identity: "iPhone Distribution"
+      profile_name: @profile_name
     )
-    puts "Provisioning Profile 설치"
+    puts "Code Signing 수동으로 전환"
+
   end
 
   def setiOSVersions
@@ -109,7 +112,7 @@ platform :ios do
       skip_profile_detection: true,
       export_options: {
         provisioningProfiles: {
-          @package_name => "democracyaction",
+          @package_name => @profile_name,
         }
       },
       silent: true
