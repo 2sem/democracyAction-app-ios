@@ -21,7 +21,7 @@ target 'democracyaction' do
   
   pod 'Material'
   pod 'FBSDKCoreKit'
-  pod 'SwipeCellKit', '~> 2.5.1'
+  pod 'SwipeCellKit'
   pod 'MBProgressHUD'
   
   #pod 'JSQWebViewController'

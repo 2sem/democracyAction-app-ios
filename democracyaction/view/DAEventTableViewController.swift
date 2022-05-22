@@ -72,7 +72,7 @@ class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UI
     var scrollButton : LSScrollButton?;
     var needAds = true{
         didSet{
-            if self.isViewLoaded && !self.isMovingToParentViewController && self.navigationController?.topViewController === self{
+            if self.isViewLoaded && !self.isMovingToParent && self.navigationController?.topViewController === self{
                 self.refresh();
             }
         }

@@ -43,7 +43,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     
     var needAds = true{
         didSet{
-            if self.isViewLoaded && !self.isMovingToParentViewController && self.navigationController?.topViewController === self{
+            if self.isViewLoaded && !self.isMovingToParent && self.navigationController?.topViewController === self{
                 self.refresh();
             }
         }

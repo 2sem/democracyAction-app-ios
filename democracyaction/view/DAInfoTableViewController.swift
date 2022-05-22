@@ -108,7 +108,7 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     var needAds = true{
         didSet{
-            if self.isViewLoaded && !self.isMovingToParentViewController && self.navigationController?.topViewController === self{
+            if self.isViewLoaded && !self.isMovingToParent && self.navigationController?.topViewController === self{
                 self.refresh();
             }
         }
@@ -176,8 +176,8 @@ class DAInfoTableViewController: UITableViewController, UISearchBarDelegate, UIS
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
     override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil);
         
         self.searchByLaunchQuery();
         if #available(iOS 11.0, *) {
