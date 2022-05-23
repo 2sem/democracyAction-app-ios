@@ -59,11 +59,11 @@ platform :ios do
     )
     puts "Provisioning Profile 설치"
     
-    update_project_provisioning(
-      xcodeproj: @xcodeproj,
-      profile: @provisioning_profile_path
-    )
-    puts "Provisioning Profile 설정"
+    #update_project_provisioning(
+    #  xcodeproj: @xcodeproj,
+    #  profile: @provisioning_profile_path
+    #)
+    #puts "Provisioning Profile 설정"
     
     update_code_signing_settings(
       use_automatic_signing: false,
