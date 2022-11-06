@@ -20,7 +20,7 @@ target 'democracyaction' do
   pod 'Firebase/Analytics'
   
   pod 'Material'
-  pod 'FBSDKCoreKit'
+  pod 'FBSDKCoreKit', '14.1.0'
   pod 'SwipeCellKit'
   pod 'MBProgressHUD'
   
