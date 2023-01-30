@@ -32,9 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
     var deviceToken : String?;
     static var firebase : Messaging!;
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        DAInfoTableViewController.startingQuery = launchOptions?[UIApplicationLaunchOptionsKey.url] as? URL;
+        DAInfoTableViewController.startingQuery = launchOptions?[UIApplication.LaunchOptionsKey.url] as? URL;
         /*launchOptions?.forEach({ (key, value) in
             //print("launch option key[\(key)] value[\(value)]\n");
             DAInfoTableViewController.startingSearchName += "launch option key[\(key)] value[\(value)]\n";
@@ -105,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard url.scheme == "kakao17b433ae9a9c34394a229a2b1bb94a58" else {
             return false;
         }

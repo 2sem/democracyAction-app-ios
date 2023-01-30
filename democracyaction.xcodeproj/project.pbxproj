@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14B42BCD5B15BF30CC822247 /* Pods_democracyaction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99EEE2A5544B0B624A2E980 /* Pods_democracyaction.framework */; };
+		24FBFEFB29BB0DE2071A1601 /* Pods_democracyaction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16F11A3ACA4D355D42B8B5B /* Pods_democracyaction.framework */; };
 		2C0106B21F091F460046B9A6 /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C0106B11F091F460046B9A6 /* icon_share.png */; };
 		2C01130F1F0F91960082B322 /* UIApplication+KakaoLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */; };
 		2C0455461EFE8BE5003E94ED /* DAModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0455451EFE8BE5003E94ED /* DAModelController.swift */; };
@@ -124,6 +124,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B27045D5772C00E44B6424F /* Pods-democracyaction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyaction.release.xcconfig"; path = "Target Support Files/Pods-democracyaction/Pods-democracyaction.release.xcconfig"; sourceTree = "<group>"; };
 		2C0106B11F091F460046B9A6 /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_share.png; sourceTree = "<group>"; };
 		2C01130E1F0F91960082B322 /* UIApplication+KakaoLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+KakaoLink.swift"; sourceTree = "<group>"; };
 		2C0455451EFE8BE5003E94ED /* DAModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAModelController.swift; sourceTree = "<group>"; };
@@ -231,9 +232,8 @@
 		2CF495081EF6B09A00FDC401 /* Icons8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icons8.png; sourceTree = "<group>"; };
 		2CF4950A1EF6B0A500FDC401 /* Y2K.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Y2K.PNG; sourceTree = "<group>"; };
 		2CF4950C1EF6B4DA00FDC401 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		33E5B1D4942B4304B4EB6E7C /* Pods-democracyaction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyaction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction.debug.xcconfig"; sourceTree = "<group>"; };
-		4C1A7FF3ED956BD4762E106C /* Pods-democracyaction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyaction.release.xcconfig"; path = "Pods/Target Support Files/Pods-democracyaction/Pods-democracyaction.release.xcconfig"; sourceTree = "<group>"; };
-		A99EEE2A5544B0B624A2E980 /* Pods_democracyaction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_democracyaction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		402F6826D63AA52BFD356839 /* Pods-democracyaction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-democracyaction.debug.xcconfig"; path = "Target Support Files/Pods-democracyaction/Pods-democracyaction.debug.xcconfig"; sourceTree = "<group>"; };
+		A16F11A3ACA4D355D42B8B5B /* Pods_democracyaction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_democracyaction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14B42BCD5B15BF30CC822247 /* Pods_democracyaction.framework in Frameworks */,
+				24FBFEFB29BB0DE2071A1601 /* Pods_democracyaction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,8 +359,8 @@
 				2C14CBE21EE9552B003BB329 /* democracyactionTests */,
 				2C44686520B7C3C900978A40 /* democracyactionUITests */,
 				2C14CBCA1EE9552A003BB329 /* Products */,
-				99064AE08CA33F5FC6399E2D /* Pods */,
-				890570A70721902B9133E3F4 /* Frameworks */,
+				EE14268725F9B71E7A349C36 /* Pods */,
+				952BE9EC7F490FECEFA191C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -497,21 +497,21 @@
 			name = logo;
 			sourceTree = "<group>";
 		};
-		890570A70721902B9133E3F4 /* Frameworks */ = {
+		952BE9EC7F490FECEFA191C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A99EEE2A5544B0B624A2E980 /* Pods_democracyaction.framework */,
+				A16F11A3ACA4D355D42B8B5B /* Pods_democracyaction.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		99064AE08CA33F5FC6399E2D /* Pods */ = {
+		EE14268725F9B71E7A349C36 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				33E5B1D4942B4304B4EB6E7C /* Pods-democracyaction.debug.xcconfig */,
-				4C1A7FF3ED956BD4762E106C /* Pods-democracyaction.release.xcconfig */,
+				402F6826D63AA52BFD356839 /* Pods-democracyaction.debug.xcconfig */,
+				1B27045D5772C00E44B6424F /* Pods-democracyaction.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,13 +521,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C14CBF31EE9552B003BB329 /* Build configuration list for PBXNativeTarget "democracyaction" */;
 			buildPhases = (
-				3B872ECCC43BE4444F55FAA6 /* [CP] Check Pods Manifest.lock */,
+				4BE866B66C67C256DAA508E7 /* [CP] Check Pods Manifest.lock */,
 				2C14CBC51EE9552A003BB329 /* Sources */,
 				2C14CBC61EE9552A003BB329 /* Frameworks */,
 				2C14CBC71EE9552A003BB329 /* Resources */,
-				049393AEF83F375283265D90 /* [CP] Embed Pods Frameworks */,
 				2C2506FF2211124C00D932CE /* ShellScript */,
 				2C11CF83211F154200B5685C /* ShellScript */,
+				2082083E7D40E4ACF69CC1AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -684,7 +684,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		049393AEF83F375283265D90 /* [CP] Embed Pods Frameworks */ = {
+		2082083E7D40E4ACF69CC1AB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -696,7 +696,7 @@
 				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseABTesting/FirebaseABTesting.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
@@ -716,7 +716,6 @@
 				"${BUILT_PRODUCTS_DIR}/XlsxReaderWriter/XlsxReaderWriter.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBAEMKit/FBAEMKit.framework/FBAEMKit",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/FBSDKCoreKit",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit_Basics/FBSDKCoreKit_Basics.framework/FBSDKCoreKit_Basics",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -726,7 +725,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseABTesting.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
@@ -746,7 +745,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XlsxReaderWriter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBAEMKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit_Basics.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,16 +783,20 @@
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$PRODUCT_SETTINGS_PATH\")\necho \"/usr/libexec/PlistBuddy -c 'Print CFBundleVersion $PRODUCT_SETTINGS_PATH'\"\nif [ -z \"$buildNumber\" ] || [ \"$buildNumber\" = \"\\$(CURRENT_PROJECT_VERSION)\" ]\nthen\n        echo \"${PRODUCT_NAME} buildNumber is [empty]\"\n        buildNumber=1\nelse\n        echo \"${PRODUCT_NAME} buildnumber is $buildNumber\"\n        buildNumber=$((buildNumber + 1))\nfi\n\necho \"\\n${PRODUCT_NAME} new buildnumber = $buildNumber\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$PRODUCT_SETTINGS_PATH\"\n";
 		};
-		3B872ECCC43BE4444F55FAA6 /* [CP] Check Pods Manifest.lock */ = {
+		4BE866B66C67C256DAA508E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-democracyaction-checkManifestLockResult.txt",
 			);
@@ -1043,7 +1045,7 @@
 		};
 		2C14CBF41EE9552B003BB329 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33E5B1D4942B4304B4EB6E7C /* Pods-democracyaction.debug.xcconfig */;
+			baseConfigurationReference = 402F6826D63AA52BFD356839 /* Pods-democracyaction.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = democracyaction/democracyaction.entitlements;
@@ -1053,20 +1055,20 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				INFOPLIST_FILE = democracyaction/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		2C14CBF51EE9552B003BB329 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C1A7FF3ED956BD4762E106C /* Pods-democracyaction.release.xcconfig */;
+			baseConfigurationReference = 1B27045D5772C00E44B6424F /* Pods-democracyaction.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = democracyaction/democracyaction.entitlements;
@@ -1075,14 +1077,14 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				INFOPLIST_FILE = democracyaction/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1097,7 +1099,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyactionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/democracyaction.app/democracyaction";
 			};
 			name = Debug;
@@ -1113,7 +1115,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyactionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/democracyaction.app/democracyaction";
 			};
 			name = Release;
@@ -1133,7 +1135,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyactionUITests.democracyactionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = democracyaction;
 			};
@@ -1154,7 +1156,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.democracyactionUITests.democracyactionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = democracyaction;
 			};

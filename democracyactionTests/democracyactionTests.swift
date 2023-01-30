@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import democracyaction
 
 class democracyactionTests: XCTestCase {
     

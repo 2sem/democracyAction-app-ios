@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '10.0'
+ platform :ios, '13.0'
 
 target 'democracyaction' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -21,7 +21,7 @@ target 'democracyaction' do
   
   pod 'Material'
   pod 'FBSDKCoreKit'
-  pod 'SwipeCellKit', '~> 2.5.1'
+  pod 'SwipeCellKit'
   pod 'MBProgressHUD'
   
   #pod 'JSQWebViewController'
@@ -31,7 +31,7 @@ target 'democracyaction' do
   pod 'CryptoSwift'
   #pod 'GoogleAPIClientForREST/Drive', '~> 1.2.1'
   pod 'LSExtensions' #, :path => '~/Projects/leesam/pods/LSExtensions/src/LSExtensions'
-  pod 'GADManager' #, :path => '~/Projects/leesam/pods/GADManager/src/GADManager'
+  pod 'GADManager'#, :path => '~/Projects/leesam/pods/GADManager/src/GADManager'
   pod 'Alamofire'
   #pod 'LSExtensions'
   pod 'SDWebImage'

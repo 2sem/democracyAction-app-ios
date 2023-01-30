@@ -13,6 +13,9 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+# https://github.com/fastlane/fastlane/issues/20741
+ENV['ITMSTRANSPORTER_FORCE_ITMS_PACKAGE_UPLOAD'] = "true"
+
 platform :ios do
   def loadiOSConfigs()
     @package_name = ENV["PACKAGE_NAME"]
@@ -25,6 +28,7 @@ platform :ios do
     @team_id = ENV["APPLE_TEAM_ID"]
     @api_key_path = ENV["IOS_KEY_PATH"]
     @xcodeproj = "./#{@project_name}.xcodeproj"
+    @profile_name = "democracyaction"
 
     puts "iOS 프로젝트: #{@project_name}]"
     puts "Fastlane 키파일 경로: #{@api_key_path}]"
@@ -53,24 +57,26 @@ platform :ios do
   def readySigning
     installCert()
     
-    update_code_signing_settings(
-      use_automatic_signing: false,
-      path: @xcodeproj,
-      team_id: @team_id,
-      code_sign_identity: "iPhone Distribution"
-    )
-    puts "Code Signing 수동으로 전환"
-
-    update_project_provisioning(
-      xcodeproj: @xcodeproj,
-      profile: @provisioning_profile_path
-    )
-    puts "Provisioning Profile 설정"
-
     install_provisioning_profile(
       path: @provisioning_profile_path
     )
     puts "Provisioning Profile 설치"
+    
+    #update_project_provisioning(
+    #  xcodeproj: @xcodeproj,
+    #  profile: @provisioning_profile_path
+    #)
+    #puts "Provisioning Profile 설정"
+    
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: @xcodeproj,
+      team_id: @team_id,
+      code_sign_identity: "iPhone Distribution",
+      profile_name: @profile_name
+    )
+    puts "Code Signing 수동으로 전환"
+
   end
 
   def setiOSVersions
@@ -98,6 +104,9 @@ platform :ios do
   end
 
   def buildiOS(changelog: 'build from fastlane', isReleasing: false)
+  
+    xcode_select("/Applications/Xcode_14.1.app")
+  
     loadiOSConfigs()
     readySigning()
     setiOSVersions()
@@ -109,7 +118,7 @@ platform :ios do
       skip_profile_detection: true,
       export_options: {
         provisioningProfiles: {
-          @package_name => "democracyaction",
+          @package_name => @profile_name,
         }
       },
       silent: true
@@ -119,9 +128,11 @@ platform :ios do
         puts "iOS 심사 업로드 시작"
         upload_to_app_store(
           api_key_path: @api_key_path,
-          release_notes: changelog,
           app_identifier: @package_name,
           submit_for_review: true,
+          release_notes: {
+            'default' => changelog
+          }
         )
         puts "iOS 심사 제출 완료"
     else

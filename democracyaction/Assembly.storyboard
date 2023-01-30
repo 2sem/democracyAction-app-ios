@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PfX-lR-egh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PfX-lR-egh">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Uy9-8Z-IYO" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="44.5" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uy9-8Z-IYO" id="wos-G0-2dT">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
@@ -46,7 +46,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2hS-Zk-ckF">
                                             <rect key="frame" x="260" y="11" width="44" height="44"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHn-eg-kVb" customClass="FABButton" customModule="Material">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHn-eg-kVb" customClass="FABButton" customModule="Material">
                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="DEe-Jp-us4"/>
@@ -97,7 +97,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="SS1-2g-EL9" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="110.5" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SS1-2g-EL9" id="men-AO-Thc">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
@@ -177,13 +177,13 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ads" id="QxM-zs-wfe" userLabel="ads" customClass="GADNativeTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="160" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="176.5" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QxM-zs-wfe" id="Kt5-UM-XPm">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-Rg-Fcw" customClass="GADUnifiedNativeAdView">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-Rg-Fcw" customClass="GADNativeAdView">
                                             <rect key="frame" x="16" y="0.0" width="288" height="66"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XHW-cg-P07" userLabel="Title Stack View">
@@ -272,7 +272,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAGroupTableViewCell" id="WT5-9r-Z17" customClass="DAGroupTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="226" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="242.5" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WT5-9r-Z17" id="ESr-AP-5yc">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
@@ -300,7 +300,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5mh-Sq-LmV">
                                             <rect key="frame" x="260" y="11" width="44" height="44"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4i-Ls-bPy" customClass="FABButton" customModule="Material">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4i-Ls-bPy" customClass="FABButton" customModule="Material">
                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="L9a-bb-mqS"/>
@@ -420,14 +420,14 @@
                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-16" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profile" rowHeight="100" id="XGy-En-rpg" customClass="DAPersonProfileCell" customModule="democracyaction" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="288" height="100"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="288" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XGy-En-rpg" id="OL5-Cl-MO4">
                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_9770933" translatesAutoresizingMaskIntoConstraints="NO" id="B0Z-MH-yhL">
-                                                            <rect key="frame" x="15" y="4" width="50" height="67"/>
+                                                            <rect key="frame" x="16" y="4" width="48" height="64.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="PKd-dS-E3H"/>
@@ -435,7 +435,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="u1e-LT-OAF" userLabel="Detail Stack View">
-                                                            <rect key="frame" x="73" y="8" width="200" height="64"/>
+                                                            <rect key="frame" x="72" y="8" width="200" height="64"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pi1-tb-aR7" userLabel="Name Stack View">
                                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="31"/>
@@ -484,7 +484,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-f2-80E">
-                                                            <rect key="frame" x="43" y="49" width="44" height="44"/>
+                                                            <rect key="frame" x="42" y="46.5" width="44" height="44"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="BbI-yQ-6gR"/>
@@ -525,7 +525,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="contact" rowHeight="44" id="Axu-JS-F3L" customClass="DAContactTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="128" width="288" height="44"/>
+                                                <rect key="frame" x="0.0" y="144.5" width="288" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Axu-JS-F3L" id="HgA-7J-DAg">
                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
@@ -550,7 +550,7 @@
                                                                     <rect key="frame" x="103.5" y="0.0" width="132.5" height="36"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </view>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="753-dX-TEs" customClass="FABButton" customModule="Material">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="753-dX-TEs" customClass="FABButton" customModule="Material">
                                                                     <rect key="frame" x="244" y="0.0" width="36" height="36"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="753-dX-TEs" secondAttribute="height" multiplier="1:1" id="YM5-oZ-8nt"/>
@@ -600,6 +600,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="iqU-HT-rAl"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gdt-QM-aBu" firstAttribute="leading" secondItem="iqU-HT-rAl" secondAttribute="leading" constant="16" id="Vjw-mf-ueF"/>
@@ -607,7 +608,6 @@
                             <constraint firstItem="gdt-QM-aBu" firstAttribute="bottom" secondItem="iqU-HT-rAl" secondAttribute="bottom" id="dAb-i9-rpf"/>
                             <constraint firstItem="gdt-QM-aBu" firstAttribute="trailing" secondItem="iqU-HT-rAl" secondAttribute="trailing" constant="-16" id="tvP-Xq-6YE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iqU-HT-rAl"/>
                     </view>
                     <navigationItem key="navigationItem" title="의원 정보" id="shG-2I-EVq">
                         <barButtonItem key="backBarButtonItem" title="  " id="Pmz-bs-oJ2"/>

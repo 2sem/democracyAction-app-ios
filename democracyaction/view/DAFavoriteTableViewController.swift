@@ -43,7 +43,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     
     var needAds = true{
         didSet{
-            if self.isViewLoaded && !self.isMovingToParentViewController && self.navigationController?.topViewController === self{
+            if self.isViewLoaded && !self.isMovingToParent && self.navigationController?.topViewController === self{
                 self.refresh();
             }
         }
@@ -110,7 +110,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         
         switch UIDevice.current.userInterfaceIdiom {
             case .pad:
-                self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav, size: kGADAdSizeFullBanner);
+                self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav, size: GADAdSizeFullBanner);
                 break;
             default:
                 self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav);
