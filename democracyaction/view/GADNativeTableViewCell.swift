@@ -21,6 +21,9 @@ class GADNativeTableViewCell: UITableViewCell {
     var tapGesture : UITapGestureRecognizer!;
     
     @IBOutlet weak var nativeAdView: GADNativeAdView!
+    @IBOutlet weak var mediaView: GADMediaView!
+    
+    @IBOutlet weak var defaultImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -71,6 +74,8 @@ class GADNativeTableViewCell: UITableViewCell {
             imageView.image = #imageLiteral(resourceName: "othreapp");
         }
         self.nativeAdView?.iconView?.isHidden = false;
+        self.defaultImageView.isHidden = false;
+        self.mediaView?.isHidden = true;
         if let body = self.nativeAdView?.bodyView as? UILabel{
             body.text = "ads description".localized();
             body.isHidden = false;
@@ -111,19 +116,17 @@ extension GADNativeTableViewCell : GADNativeAdLoaderDelegate{
             imageView.image = nativeAd.icon?.image;
         }
         
-        if let imageView = nativeAdView.iconView as? UIImageView, let icon = nativeAd.icon?.image{
-            imageView.image = icon;
+        if let iconView = nativeAdView.iconView as? UIImageView, let icon = nativeAd.icon?.image{
+            iconView.image = icon;
             print("[\(#function)] icon[\(icon)]")
-            imageView.isHidden = false;
+            iconView.isHidden = false;
         }
         
-        if let imageView = nativeAdView.imageView as? UIImageView, let images = nativeAd.images{
-            imageView.animationImages = images.compactMap{ $0.image };
-            imageView.animationDuration = 3;
-            imageView.animationRepeatCount = 0;
-            imageView.startAnimating();
-            print("[\(#function)] images[\(images)]")
-            imageView.isHidden = false;
+        if let mediaView = self.mediaView{
+            mediaView.mediaContent = nativeAd.mediaContent
+            mediaView.isHidden = false;
+            
+            self.defaultImageView.isHidden = true;
         }
         
         if let body = nativeAdView.bodyView as? UILabel{
