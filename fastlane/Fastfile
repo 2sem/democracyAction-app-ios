@@ -141,6 +141,7 @@ platform :ios do
           api_key_path: @api_key_path,
           changelog: changelog,
           app_identifier: @package_name,
+          skip_waiting_for_build_processing: true
         )
         puts "iOS TestFlight 배포 완료"
     end

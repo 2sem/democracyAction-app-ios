@@ -38,7 +38,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>122</string>
+	<string>120</string>
 	<key>FacebookAppID</key>
 	<string>301484613596142</string>
 	<key>FacebookDisplayName</key>
@@ -63,6 +63,8 @@
 		<key>TableBanner</key>
 		<string>ca-app-pub-9684378399371172/7215773643</string>
 	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>Itunes App Id</key>
 	<string>1243863489</string>
 	<key>KAKAO_APP_KEY</key>
