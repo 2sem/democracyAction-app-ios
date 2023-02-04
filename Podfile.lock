@@ -2,12 +2,12 @@ PODS:
   - Alamofire (5.6.4)
   - CryptoSwift (1.6.0)
   - DownPicker (0.1.34)
-  - FBAEMKit (15.1.0):
-    - FBSDKCoreKit_Basics (= 15.1.0)
-  - FBSDKCoreKit (15.1.0):
-    - FBAEMKit (= 15.1.0)
-    - FBSDKCoreKit_Basics (= 15.1.0)
-  - FBSDKCoreKit_Basics (15.1.0)
+  - FBAEMKit (14.1.0):
+    - FBSDKCoreKit_Basics (= 14.1.0)
+  - FBSDKCoreKit (14.1.0):
+    - FBAEMKit (= 14.1.0)
+    - FBSDKCoreKit_Basics (= 14.1.0)
+  - FBSDKCoreKit_Basics (14.1.0)
   - Firebase/Analytics (10.4.0):
     - Firebase/Core
   - Firebase/Core (10.4.0):
@@ -174,7 +174,7 @@ DEPENDENCIES:
   - Alamofire
   - CryptoSwift
   - DownPicker
-  - FBSDKCoreKit
+  - FBSDKCoreKit (~> 14.1.0)
   - Firebase/Analytics
   - Firebase/Crashlytics
   - Firebase/Messaging
@@ -230,9 +230,9 @@ SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   CryptoSwift: 562f8eceb40e80796fffc668b0cad9313284cfa6
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
-  FBAEMKit: c7f82b5145d446bcbbcd50485c032689032fc6a2
-  FBSDKCoreKit: 7542746fc63a2a38dd6a865eeb54268341f37b83
-  FBSDKCoreKit_Basics: 92d6b26c0bed30ab09bbdd96dccaa26e6c9978d1
+  FBAEMKit: a899515e45476027f73aef377b5cffadcd56ca3a
+  FBSDKCoreKit: 24f8bc8d3b5b2a8c5c656a1329492a12e8efa792
+  FBSDKCoreKit_Basics: 6e578c9bdc7aa1365dbbbde633c9ebb536bcaa98
   Firebase: ba3501b5142a57747eac74d27c96d2b313bdec90
   FirebaseABTesting: ae3b32fe26e761fd54c68e37a632a0097b599c87
   FirebaseAnalytics: 0be84b933ca3222bca03e8cccf020ad9b1c3c6ff
@@ -262,6 +262,6 @@ SPEC CHECKSUMS:
   XlsxReaderWriter: 7e4c5c9fb7c4e78e4edc89fa11f50c086540277c
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 8e53211028073fd1ef6cad2a466cbbf15a0fa379
+PODFILE CHECKSUM: b6e44bf4fa3ca56449002fe0a5c9a9e85f7ac00d
 
 COCOAPODS: 1.11.3
