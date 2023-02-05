@@ -6,7 +6,7 @@ on:
             description: '심사제출'
             type: boolean
             required: true
-            default: true
+            default: false
         body:
             description: 'Version changes'
             required: false
