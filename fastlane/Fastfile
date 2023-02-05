@@ -16,7 +16,7 @@
 # https://github.com/fastlane/fastlane/issues/20741
 ENV['ITMSTRANSPORTER_FORCE_ITMS_PACKAGE_UPLOAD'] = "true"
 
-https://github.com/fastlane/fastlane/issues/20919
+# https://github.com/fastlane/fastlane/issues/20919
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
 
 platform :ios do
