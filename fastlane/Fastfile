@@ -14,7 +14,10 @@
 # update_fastlane
 
 # https://github.com/fastlane/fastlane/issues/20741
-ENV['ITMSTRANSPORTER_FORCE_ITMS_PACKAGE_UPLOAD'] = "true"
+ENV['ITMSTRANSPORTER_FORCE_ITMS_PACKAGE_UPLOAD'] = "false"
+
+# https://github.com/fastlane/fastlane/issues/20919
+ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
 
 platform :ios do
   def loadiOSConfigs()
@@ -141,6 +144,7 @@ platform :ios do
           api_key_path: @api_key_path,
           changelog: changelog,
           app_identifier: @package_name,
+          skip_waiting_for_build_processing: true
         )
         puts "iOS TestFlight 배포 완료"
     end

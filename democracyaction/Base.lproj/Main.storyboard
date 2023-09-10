@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -141,7 +141,7 @@
                         <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="36P-Gi-q8z" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="36P-Gi-q8z" id="CK6-na-rp0">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -222,7 +222,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell_NoImage" id="mWO-HH-Vtl" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100.5" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="106" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mWO-HH-Vtl" id="E3b-Aw-Dix">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -407,7 +407,7 @@
                         <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAGroupTableViewCell" id="9Xc-TH-hBP" customClass="DAGroupTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Xc-TH-hBP" id="eX2-Pr-xFD">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -499,7 +499,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell" id="oNh-AM-Sx8" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100.5" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="106" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oNh-AM-Sx8" id="IWw-zY-kXa">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -580,7 +580,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DAInfoTableViewCell_NoImage" id="Ond-i9-XrB" customClass="DAInfoTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="156.5" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="162" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ond-i9-XrB" id="nEK-Ma-eiW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -659,7 +659,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ads" id="JGw-3X-5pT" userLabel="ads" customClass="GADNativeTableViewCell" customModule="democracyaction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="212.5" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="218" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JGw-3X-5pT" id="bdc-jb-5ue">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -669,7 +669,7 @@
                                             <rect key="frame" x="16" y="0.0" width="343" height="56"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ez6-fB-Hwq" userLabel="Title Stack View">
-                                                    <rect key="frame" x="0.0" y="4" width="195.5" height="48"/>
+                                                    <rect key="frame" x="0.0" y="4" width="239" height="48"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="othreapp" translatesAutoresizingMaskIntoConstraints="NO" id="HuU-iW-3fp">
                                                             <rect key="frame" x="0.0" y="0.0" width="36" height="48"/>
@@ -679,29 +679,40 @@
                                                                 <constraint firstAttribute="width" secondItem="HuU-iW-3fp" secondAttribute="height" multiplier="156:209" id="pfi-ln-2oT"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="othreapp" translatesAutoresizingMaskIntoConstraints="NO" id="jWf-RX-Von" customClass="GADMediaView">
+                                                            <rect key="frame" x="44" y="0.0" width="35.5" height="48"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="jWf-RX-Von" secondAttribute="height" multiplier="156:209" id="BzG-6b-o8X"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="wSA-SO-PhC"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관련주식검색기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-er-NjL">
-                                                            <rect key="frame" x="44" y="0.0" width="151.5" height="48"/>
+                                                            <rect key="frame" x="87.5" y="0.0" width="151.5" height="48"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="jWf-RX-Von" firstAttribute="width" secondItem="jWf-RX-Von" secondAttribute="height" multiplier="156:209" id="7l9-6c-S85"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VdF-Js-jm4" userLabel="Detail Stack View">
-                                                    <rect key="frame" x="233.5" y="8" width="109.5" height="40"/>
+                                                    <rect key="frame" x="239" y="8" width="104" height="40"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aXi-ys-dti" userLabel="Name Stack View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="109.5" height="15"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="104" height="15"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한민국당" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG2-mg-Wtc" userLabel="Group Label">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="86.5" height="15"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="15"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <color key="textColor" red="0.2156862745" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xSq-3T-E1m" userLabel="Group Image View">
-                                                                    <rect key="frame" x="94.5" y="0.0" width="15" height="15"/>
+                                                                    <rect key="frame" x="89" y="0.0" width="15" height="15"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="xSq-3T-E1m" secondAttribute="height" multiplier="1:1" id="RsF-E3-8hS"/>
                                                                     </constraints>
@@ -712,7 +723,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="66x-7E-oFO">
-                                                            <rect key="frame" x="0.0" y="19" width="109.5" height="21"/>
+                                                            <rect key="frame" x="0.0" y="19" width="104" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="V7L-eS-Cvx"/>
                                                             </constraints>
@@ -737,7 +748,6 @@
                                                 <outlet property="advertiserView" destination="mG2-mg-Wtc" id="i28-Z0-CYg"/>
                                                 <outlet property="headlineView" destination="KM8-er-NjL" id="svR-8w-m0k"/>
                                                 <outlet property="iconView" destination="xSq-3T-E1m" id="mng-dv-iWu"/>
-                                                <outlet property="imageView" destination="HuU-iW-3fp" id="8H2-eb-AU7"/>
                                             </connections>
                                         </view>
                                     </subviews>
@@ -750,6 +760,8 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="defaultImageView" destination="HuU-iW-3fp" id="fRW-g5-twq"/>
+                                    <outlet property="mediaView" destination="jWf-RX-Von" id="Xcr-QZ-XB6"/>
                                     <outlet property="nativeAdView" destination="oST-xk-IhD" id="9cm-3g-539"/>
                                 </connections>
                             </tableViewCell>
