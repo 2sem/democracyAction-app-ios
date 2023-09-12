@@ -11,7 +11,7 @@ target 'democracyaction' do
   pod 'Firebase/Messaging'
   pod 'Firebase/RemoteConfig'
   
-  pod 'KakaoOpenSDK'
+  pod 'KakaoSDKShare'
   
   # Add the pod for Firebase Crashlytics
   pod 'Firebase/Crashlytics'
