@@ -10,7 +10,6 @@ import UIKit
 import Material
 import DownPicker
 import SwipeCellKit
-import KakaoLink
 import MBProgressHUD
 import LSExtensions
 

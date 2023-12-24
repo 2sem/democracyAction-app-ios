@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
         //GADMobileAds.configure(withApplicationID: "ca-app-pub-968437x8399371172~5739040449");
         FirebaseApp.configure();
         Messaging.messaging().delegate = self;
+        KakaoManager.initialize()
         
         self.reviewManager = ReviewManager(self.window!, interval: 60.0 * 60 * 24 * 3);
         self.reviewManager?.delegate = self;

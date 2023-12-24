@@ -10,7 +10,6 @@ import UIKit
 import Material
 import DownPicker
 import SwipeCellKit
-import KakaoLink
 import CoreData
 
 class DAEventTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, SwipeTableViewCellDelegate, LSScrollButtonDelegate, DAGroupTableViewCellDelegate {
