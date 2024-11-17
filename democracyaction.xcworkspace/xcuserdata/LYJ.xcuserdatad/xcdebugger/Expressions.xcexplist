@@ -6,796 +6,18 @@
          contextName = "DAPersonInfo.photo.getter:DAPersonInfo+.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.assembly">
+               value = "&quot;\(self.name)&quot;">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAEventTableViewController.viewDidLoad() -&gt; ():DAEventTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.groupingButton">
-            </PersistentString>
-            <PersistentString
-               value = "self.groups.count">
-            </PersistentString>
-            <PersistentString
-               value = "self.groups.index(of: self.group)">
-            </PersistentString>
-            <PersistentString
-               value = "self.group.name">
-            </PersistentString>
-            <PersistentString
-               value = "self.groups.index(of: self.group) ?? 0">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAPersonInfo.(findMessageTool(String) -&gt; DAMessageToolInfo?).(closure #1):DAPersonInfo+.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "tool.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.sectionIndexTitles(for : UITableView) -&gt; [String]?:DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "group.title">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAFavoriteTableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:DAFavoriteTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.needAds">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAContactTableViewCell.updateInfo():DAContactTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIImage(named: &quot;icon_call&quot;)?.withRenderingMode(.alwaysTemplate)">
-            </PersistentString>
-            <PersistentString
-               value = "self.contactButton.image = UIImage(named: &quot;icon_call&quot;)">
-            </PersistentString>
-            <PersistentString
-               value = "self.contactButton">
-            </PersistentString>
-            <PersistentString
-               value = "UIImage(named: &quot;icon_call&quot;)">
-            </PersistentString>
-            <PersistentString
-               value = "&quot; \(info.name)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.onGoEndRow(Any) -&gt; ():DAInfoTableViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "DAPersonViewController.tableView(_:cellForRowAt:):DAPersonViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewCell.info.didset:DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "msgMenuItems[0].fabButton">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAPersonInfo.findMessageTool(String) -&gt; DAMessageToolInfo?:DAPersonInfo+.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.messages?.allObjects as? [DAMessageToolInfo] ?? []">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAModelController.syncEvents(DAExcelController) -&gt; ():DAModelController+DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "newMembers.count">
-            </PersistentString>
-            <PersistentString
-               value = "excelGroup.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.loadGroupFields() -&gt; ():DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.groupCellNames.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in DAInfoTableViewController.viewDidLoad():DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "state.rawValue">
-            </PersistentString>
-            <PersistentString
-               value = "hub?.label.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GADNativeTableViewCell.awakeFromNib():GADNativeTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.nativeAdView">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "FABMenu.hitTestItems(CGPoint, with : UIEvent?) -&gt; UIView?:FABMenu+.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.fabMenuItems">
-            </PersistentString>
-            <PersistentString
-               value = "item.title">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.viewWillAppear(_:):DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.appearCount">
-            </PersistentString>
-            <PersistentString
-               value = "self.isMovingFromParentViewController">
-            </PersistentString>
-            <PersistentString
-               value = "self.isMovingToParentViewController">
-            </PersistentString>
-            <PersistentString
-               value = "self.isBeingPresented">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewCell.awakeFromNib() -&gt; ():DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "nameLabel">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static DAInfoTableViewController.startingQuery.didset:DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "nav.viewControllers.first?.classForCoder()">
-            </PersistentString>
-            <PersistentString
-               value = "infoTable.isBeingPresented">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.tableView(UITableView, sectionForSectionIndexTitle : String, at : Int) -&gt; Int:DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Character.koreanChoSeongs">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Character.getKoreanParts() -&gt; String?:Character+.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "uIndex % UInt32(Character.koreanJungSeongs.count * Character.koreanJongSeongs.count)">
-            </PersistentString>
-            <PersistentString
-               value = "Character.koreanJongSeongs">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "UIApplication.shareByKakao() -&gt; ():UIApplication+KakaoLink.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "kakaoLink.mobileWebURL">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #2 in DAUpdateManger.update(progress:completion:):DAUpdateManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(DAExcelController.shared.version)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "&quot;\(newDataVersion)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.filteredGroupsBySpell">
-            </PersistentString>
-            <PersistentString
-               value = "minimumRowsForAds">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.viewDidLoad() -&gt; ():DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.excelController.noticeDate">
-            </PersistentString>
-            <PersistentString
-               value = "self.groups.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static GADInterstialManager.shared.getter:GADInterstialManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "_shared">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAEventInfo.syncMembers(DAExcelEventInfo) -&gt; ():DAEventInfo+DAExcelEventInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "newMembers.count">
-            </PersistentString>
-            <PersistentString
-               value = "excelEvent.persons.count">
-            </PersistentString>
-            <PersistentString
-               value = "excelEvent.persons">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewCell.updateInfo() -&gt; ():DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.msgMenu.fabMenuItems">
-            </PersistentString>
-            <PersistentString
-               value = "self.msgMenu?.fabButton">
-            </PersistentString>
-            <PersistentString
-               value = "self.msgMenu">
-            </PersistentString>
-            <PersistentString
-               value = "self.msgMenu != nil">
-            </PersistentString>
-            <PersistentString
-               value = "self.buttonsStack.subviews.contains(self.msgMenu)">
-            </PersistentString>
-            <PersistentString
-               value = "self.msgButton">
-            </PersistentString>
-            <PersistentString
-               value = "self.info.sms">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAContactTableViewCell.openWeb(_:):DAContactTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(url)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.loadCongresses([DAExcelGroupInfo]) -&gt; [DAExcelPersonInfo]:DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(self.headerCells[DAExcelPersonInfo.FieldNames.no])\(i)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "self.headerCells[DAExcelPersonInfo.FieldNames.no]">
-            </PersistentString>
-            <PersistentString
-               value = "self.headerCells">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "indexPath.section">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewCell.onCall(UIButton) -&gt; ():DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.msgMenu.fabMenuItems">
-            </PersistentString>
-            <PersistentString
-               value = "self.msgMenu.fabMenuItems[0].fabButton.image">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAModelController.loadEvents(DAEventGroupInfo, isAscending : Bool, name : String, area : String) -&gt; [DAPersonGroup]:DAModelController+DAEventInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "event.eventMembers.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewCell.updateInfo():DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.info.assembly">
-            </PersistentString>
-            <PersistentString
-               value = "self.info.name">
-            </PersistentString>
-            <PersistentString
-               value = "info.photo">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.updateNextButton() -&gt; ():DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.filteredGroupsBySpell">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAPersonInfo.syncMessageTools(DAExcelPersonInfo) -&gt; ():DAPersonInfo+DAExcelPersonInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "person.facebook">
-            </PersistentString>
-            <PersistentString
-               value = "person.twitter">
-            </PersistentString>
-            <PersistentString
-               value = "person.kakao">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.version.getter:DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "cell?.stringValue()">
-            </PersistentString>
-            <PersistentString
-               value = "&quot;\(cell?.stringValue() ?? &quot;&quot;)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "&quot;1.1.6.1&quot;  &gt; &quot;1.1.7&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAModelController.sync(DAExcelController) -&gt; ():DAModelController+DAExcelGroupInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "excelPerson.name">
-            </PersistentString>
-            <PersistentString
-               value = "modelGroup.no">
-            </PersistentString>
-            <PersistentString
-               value = "excelGroup.id">
-            </PersistentString>
-            <PersistentString
-               value = "excelPerson.id">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "specialized DAInfoTableViewCell.(onRegister() -&gt; ()).(closure #2):DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "(self.info.personPhones.allObjects as? [DAPhoneInfo] ?? [])[0].name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.GAD&lt;A&gt;(manager:lastShownTimeForUnit:):AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "DADefaults.LastFullADShown">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAGroupTableViewCell.onTap(AnyObject) -&gt; ():DAGroupTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.groupDelegate">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ReviewManager.show() -&gt; ():ReviewManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.window.rootViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewCell.fabMenuWillOpen(fabMenu : FABMenu) -&gt; ():DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "fabMenu.fabMenuItems">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAEventTableViewController.onGroupSelected(DownPicker) -&gt; ():DAEventTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.group.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.loadGroups([DAExcelPersonInfo]?) -&gt; [DAExcelGroupInfo]:DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "cell?.stringValue()">
-            </PersistentString>
-            <PersistentString
-               value = "cell?.value">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.searchByLaunchQuery(Bool) -&gt; ():DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(DAInfoTableViewController.startingQuery)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "&quot;\(queryId?.value)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "Int16(queryId?.value ?? &quot;0&quot;)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAFavoriteTableViewController.controller(_:didChange:at:for:newIndexPath:):DAFavoriteTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-            <PersistentString
-               value = "newIndexPath.row">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.performPushCommand(_:body:category:info:):AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "MainViewController.shared">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewCell.swipeActions.getter:DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "action.backgroundColor?.stringValue()">
-            </PersistentString>
-            <PersistentString
-               value = "self.overflowedMenus">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.loadFromFlie() -&gt; ():DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.eventGroups.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.loadPersonFields() -&gt; ():DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "cell?.value">
-            </PersistentString>
-            <PersistentString
-               value = "&quot;\(ch)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "cell?.stringValue() ?? &quot;&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.noticeDate.getter:DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;06/18/2017&quot;.toDate(&quot;MM/dd/yyyy&quot;)">
-            </PersistentString>
-            <PersistentString
-               value = "            cell?.dateValue()&#10;">
-            </PersistentString>
-            <PersistentString
-               value = "cell!.value">
-            </PersistentString>
-            <PersistentString
-               value = "cell!.dateValue()">
-            </PersistentString>
-            <PersistentString
-               value = "cell!.stringValue()">
-            </PersistentString>
-            <PersistentString
-               value = "&quot;\(cell?.stringValue() ?? &quot;&quot;)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.getEventCell(column : String?, line : Int) -&gt; BRACell?:DAExcelController+DAExcelEventGroupInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.eventCells">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAUpdateManger.(update(progress : (DAUpdateManger.UpdateState, Error?) -&gt; ()?, completion : (Bool) -&gt; ()) -&gt; ()).(closure #2):DAUpdateManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "DADefaults.DataVersion">
-            </PersistentString>
-            <PersistentString
-               value = "DAExcelController.shared.version">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #2 in DAUpdateManger.updateData(progress:completion:):DAUpdateManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(newVersion)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "&quot;1.1.6.1&quot; &gt; &quot;1.1.7&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "DAExcelController.shared.version">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAFavoriteTableViewController.tableView(_:cellForRowAt:):DAFavoriteTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "favor.person.no">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAPersonInfo.(shareByKakao() -&gt; ()).(closure #1).(closure #1).(closure #1):DAPersonInfo+KLKTalkLinkCenter.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.personHomepage?.url ?? &quot;&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GADInterstialManager._show() -&gt; ():GADInterstialManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIApplication.shared.windows.first?.rootViewController.classForCoder">
-            </PersistentString>
-            <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController">
-            </PersistentString>
-            <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController?.presentedViewController">
-            </PersistentString>
-            <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController.classForCoder">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAFavoriteTableViewController.viewDidAppear(Bool) -&gt; ():DAFavoriteTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.favorites">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAModelController.findGroup(Int16) -&gt; DAGroupInfo?:DAModelController+DAGroupInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;no == \(no)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in DAModelController.loadEvents(_:isAscending:name:area:):DAModelController+DAEventInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "left.no">
-            </PersistentString>
-            <PersistentString
-               value = "right.name">
-            </PersistentString>
-            <PersistentString
-               value = "left.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #2 in closure #2 in DAUpdateManger.updateData(progress:completion:):DAUpdateManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(DAExcelController.shared.version) &gt; \(newVersion)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "specialized closure #2 in DAUpdateManger.update(progress:completion:):DAUpdateManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIApplication.shared.windows.first?.rootViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAPersonInfo.personName.setter:DAPersonInfo+.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.nameFirstCharacters">
-            </PersistentString>
-            <PersistentString
-               value = "self.nameFirstCharacter">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAGroupTableViewCell.updateInfo() -&gt; ():DAGroupTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.nameLabel.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.getCell(sheet : BRAWorksheet?, column : String?, cells : [String : String], line : Int) -&gt; BRACell?:DAExcelController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #2 in DAFavoriteTableViewController.tableView(_:editActionsForRowAt:for:):DAFavoriteTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "AppDelegate.firebase">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.loadFields() -&gt; ():DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(ch)\(line)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAPersonInfo.syncPhones(DAExcelPersonInfo) -&gt; ():DAPersonInfo+DAExcelPersonInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.personPhones.count">
-            </PersistentString>
-            <PersistentString
-               value = "excelPhone.name">
-            </PersistentString>
-            <PersistentString
-               value = "self.phones.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.needToUpdate.getter:DAExcelController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "DADefaults.DataVersion">
-            </PersistentString>
-            <PersistentString
-               value = "self.version">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelPersonInfo._parseNumber(String, title : String) -&gt; [DAPhoneInfo]:DAExcelPersonInfo.swift">
-      </ContextState>
-      <ContextState
-         contextName = "DAExcelController.loadCongresses(_:):DAExcelController+DAExcelPersonInfo.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot; \(name)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.searchByLaunchQuery() -&gt; ():DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "URL(string: &quot;kakaolink://test?name=&#xc190;&#xd61c;&#xc6d0;&amp;area=&#xd638;&#xd638;&quot;.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? &quot;&quot;)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.(filterByName(String) -&gt; ()).(closure #1):DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "person.name">
-            </PersistentString>
-            <PersistentString
-               value = "person.name == keyword">
-            </PersistentString>
-            <PersistentString
-               value = "person.name.getKoreanChoSeongs()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "UIApplication.openFacebook(String) -&gt; ():UIApplication+.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(facebookUrl)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewController.numberOfSections(in : UITableView) -&gt; Int:DAInfoTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "filteredGroups">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DAInfoTableViewCell.contactPicker(CNContactPickerViewController, didSelect : CNContact) -&gt; ():DAInfoTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIApplication.shared.keyWindow?.rootViewController?.classForCoder">
-            </PersistentString>
             <PersistentString
-               value = "self.window?.rootViewController">
+               value = "self.assemblyNo">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DAInfoTableViewController.needAds.didset:DAInfoTableViewController.swift">
+         contextName = "DAExcelController.loadCongress(_:cells:):DAExcelController+DAExcelPersonInfo.swift">
          <PersistentStrings>
-            <PersistentString
-               value = "self.isViewLoaded">
-            </PersistentString>
             <PersistentString
-               value = "self.isBeingPresented">
+               value = "person.assembly">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -803,18 +25,69 @@
          contextName = "DAModelController.syncGroups(_:):DAModelController+DAExcelController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "&quot; \(excelPerson.name)&quot;">
+               value = "excelPerson.assembly ">
             </PersistentString>
             <PersistentString
-               value = "excelPerson.assemblyNo">
+               value = "Int32(Double(excelPerson.assembly) ?? 0.0)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GADManager.canShow(_:):GADManager.swift">
+         contextName = "DAExcelController.loadEvents(sheetName:):DAExcelController+DAExcelEventInfo.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.intervals[unit]">
+               value = "workSheetPaths">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAInfoTableViewCell.updateInfo():DAInfoTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "info.photo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAExcelController.version.getter:DAExcelController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.document.archive.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAExcelController.init(_:):DAExcelController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.document">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in DAUpdateManger.update(progress:completion:):DAUpdateManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DADefaults.DataVersion">
+            </PersistentString>
+            <PersistentString
+               value = "DAExcelController.shared.version">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAExcelController.init():DAExcelController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DAExcelController.localUrl!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in DAUpdateManger.updateData(progress:completion:):DAUpdateManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DAExcelController.localUrl">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

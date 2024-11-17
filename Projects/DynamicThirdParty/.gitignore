@@ -68,7 +68,3 @@ Derived/
 
 ### Tuist managed dependencies ###
 Tuist/.build
-.gitsecret/keys/random_seed
-!*.secret
-Projects/App/Resources/Plists/server.plist
-Projects/App/Resources/Plists/servertest.plist
