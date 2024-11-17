@@ -22,7 +22,8 @@ ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
 platform :ios do
   def loadiOSConfigs()
     @package_name = ENV["PACKAGE_NAME"]
-    @project_name = ENV["PRODUCT_NAME"]
+    @workspace_name = ENV["PRODUCT_NAME"]
+    @project_name = "App"
     @keychain_name = ENV["IOS_KEYCHAIN"]
     @keychain_password = ENV["IOS_KEYCHAIN_PWD"]
     @certificate_path = ENV["IOS_CERT_PATH"]
@@ -30,8 +31,8 @@ platform :ios do
     @provisioning_profile_path = ENV["IOS_PROFILE_PATH"]
     @team_id = ENV["APPLE_TEAM_ID"]
     @api_key_path = ENV["IOS_KEY_PATH"]
-    @xcodeproj = "./#{@project_name}.xcodeproj"
-    @profile_name = "democracyaction"
+    @xcodeproj = "./Projects/#{@project_name}/#{@project_name}.xcodeproj"
+    @profile_name = @workspace_name
 
     puts "iOS 프로젝트: #{@project_name}]"
     puts "Fastlane 키파일 경로: #{@api_key_path}]"
@@ -107,16 +108,13 @@ platform :ios do
   end
 
   def buildiOS(changelog: 'build from fastlane', isReleasing: false)
-  
-    xcode_select("/Applications/Xcode_14.1.app")
-  
     loadiOSConfigs()
     readySigning()
     setiOSVersions()
     
     puts "iOS 운영서버 빌드 시작: #{@full_app_verion}"
     build_app(
-      workspace: "./#{@project_name}.xcworkspace",
+      workspace: "./#{@workspace_name}.xcworkspace",
       scheme: "#{@project_name}",
       skip_profile_detection: true,
       export_options: {
