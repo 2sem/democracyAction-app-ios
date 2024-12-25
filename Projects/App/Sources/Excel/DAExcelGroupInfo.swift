@@ -48,7 +48,6 @@ class DAExcelGroupInfo : NSObject{
     var cafe = "";
     var cyworld = "";
     var image = "";
-    var sponsor = "";
     
     private func _parseNumber(_ value : String, title : String) -> [DAExcelPhoneInfo]{
         var values : [DAExcelPhoneInfo] = []

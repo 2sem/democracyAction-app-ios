@@ -68,7 +68,6 @@ extension DAModelController{
                 print("update group. no[\(modelGroup.no.description)] name[\(modelGroup.name ?? "")]");
             }
             
-            modelGroup.sponsor = Int32(excelGroup.sponsor) ?? 0;
             modelGroup.syncPhones(excelGroup);
             modelGroup.syncMessageTools(excelGroup);
             modelGroup.syncWebUrls(excelGroup);
@@ -112,12 +111,6 @@ extension DAModelController{
                 //sync other datas
                 modelPerson.job  = excelPerson.title;
                 modelPerson.email = excelPerson.email;
-                modelPerson.sponsor = Int32(excelPerson.sponsor);
-                
-                if excelPerson.assembly > "0"{
-                    modelPerson.assembly = Int32(Double(excelPerson.assembly) ?? 0.0)
-                    modelPerson.assemblyNo = Int16(Double(excelPerson.assemblyNo) ?? 0.0)
-                }
                 
                 modelPerson.syncPhones(excelPerson);
                 modelPerson.syncMessageTools(excelPerson);

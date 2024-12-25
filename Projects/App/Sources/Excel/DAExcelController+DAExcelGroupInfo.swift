@@ -70,7 +70,6 @@ extension DAExcelController{
             group.cafe = cafeCell?.stringValue(self.sharedStrings) ?? ""
             group.cyworld = cyworldCell?.stringValue(self.sharedStrings) ?? ""
             group.image = imageCell?.stringValue(self.sharedStrings) ?? ""
-            group.sponsor = sponsorCell?.stringValue(self.sharedStrings) ?? ""
             group.parseNumbers();
             
             //person.sms = sms;
@@ -84,7 +83,6 @@ extension DAExcelController{
             group.cafe = cafeCell?.stringValue(self.sharedStrings) ?? ""
             group.cyworld = cyworldCell?.stringValue(self.sharedStrings) ?? ""
             group.image = imageCell?.stringValue(self.sharedStrings) ?? ""
-            group.sponsor = sponsorCell?.stringValue(self.sharedStrings) ?? ""
             
             print("add new group. id[\(group.id)] title[\(group.title)]");
             values.append(group);

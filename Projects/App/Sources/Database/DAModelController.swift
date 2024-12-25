@@ -24,8 +24,23 @@ class DAModelController : NSObject{
         static let DAFavoriteInfo = "DAFavoriteInfo";
     }
     
-    static let ModelName = "DAModel";
+    static let ModelName = "DAModel"
+    
     static let FileName = "democracyaction";
+    
+    lazy var storeUrl: URL! = {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last?
+            .appendingPathComponent(Self.FileName)
+            .appendingPathExtension("sqlite")
+    }()
+    
+    lazy var modelUrl: URL! = {
+        Bundle.main.url(forResource: Self.ModelName, withExtension: "momd")
+    }()
+    
+    lazy var model = {
+        NSManagedObjectModel(contentsOf: modelUrl)
+    }()
     
     internal static let dispatchGroupForInit = DispatchGroup();
     //    var SingletonQ = DispatchQueue(label: "DAModelController.shared");
@@ -44,57 +59,63 @@ class DAModelController : NSObject{
         }
     }
     
-    var context : NSManagedObjectContext;
+    lazy var context : NSManagedObjectContext = {
+        NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    }()
+    
     internal override init(){
-        //lock on
-        //        objc_sync_enter(DAModelController.self)
-        //        print("begin init DAModelController - \(DAModelController.self) - \(Thread.current)");
-        //get path for model file
-        //load model scheme - xcdatamodel => momd??
-        guard let model_path = Bundle.main.url(forResource: DAModelController.ModelName, withExtension: "momd") else{
-            fatalError("Can not find Model File from Bundle");
-        }
+        super.init()
         
         //load model from model file
-        guard let model = NSManagedObjectModel(contentsOf: model_path) else {
+        guard let model else {
             fatalError("Can not load Model from File");
+        }
+        
+        if isMigrationNeeded {
+            // TODO: migrate
         }
         
         //create store controller??
         let psc = NSPersistentStoreCoordinator(managedObjectModel: model);
         
         //create data context
-        self.context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType);
+//        self.context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType);
         //set store controller??
         self.context.persistentStoreCoordinator = psc;
-        //lazy load??
-        //        var queue = DispatchQueue(label: "DAModelController.init", qos: .background, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil);
+        
         DispatchQueue.global(qos: .background).async(group: DAModelController.dispatchGroupForInit) {
             print("begin init DAModelController");
-            //        DispatchQueue.main.async{
-            
-            //get path for app's url
-            let storeUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last?.appendingPathComponent(DAModelController.FileName).appendingPathExtension("sqlite");
-            //create path for data file
-            //let storeUrl = Bundle.main.url(forResource: DAModelController.FileName, withExtension: "sqlite");
-            //let storeUrl = docUrl;
             
             do {
                 //set store type?
-                try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]);
+                try psc.addPersistentStore(ofType: NSSQLiteStoreType, 
+                                           configurationName: nil,
+                                           at: self.storeUrl,
+                                           options: [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]);
             } catch {
                 
             }
             
-            //lock off
-            //            objc_sync_exit(RSModelController.self);
-            //RSModelController.dispatchGroupForInit.leave();
             print("end init RSModelController");
         }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    var isMigrationNeeded : Bool {
+        guard let metadata = try? NSPersistentStoreCoordinator.metadataForPersistentStore(
+            ofType: NSSQLiteStoreType,
+            at: storeUrl,
+            options: nil
+        ) else {
+            return false
+        }
+        
+        let isConfiguration = model?.isConfiguration(withName: nil, compatibleWithStoreMetadata: metadata) ?? false
+        
+        return !isConfiguration
     }
     
     func waitInit(){

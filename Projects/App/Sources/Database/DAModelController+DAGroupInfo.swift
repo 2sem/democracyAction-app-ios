@@ -202,7 +202,6 @@ extension DAModelController{
                 group?.id = Int(person.group?.no ?? 0);
                 group?.name = person.group?.name ?? "";
                 group?.detail = person.group?.detail ?? "";
-                group?.sponsor = Int(person.group?.sponsor ?? 0);
                 values[Int(person.group?.no ?? 0)] = group;
                 
                 group?.phones = person.group?.groupPhones ?? [];
