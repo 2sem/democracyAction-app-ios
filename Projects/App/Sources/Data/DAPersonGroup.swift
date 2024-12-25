@@ -12,7 +12,6 @@ class DAPersonGroup : NSObject{
     var id : Int = 0;
     var name : String = "";
     var detail : String = "";
-    var sponsor : Int = 0;
     var persons : [DAPersonInfo] = [];
     var phones : [DAPhoneInfo] = [];
     var messages : [DAMessageToolInfo] = [];

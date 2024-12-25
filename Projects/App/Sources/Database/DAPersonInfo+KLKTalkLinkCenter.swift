@@ -19,7 +19,7 @@ extension DAPersonInfo{
                                                   "mobile": (self.personSms?.number?.any ?? false) ? self.personSms?.number?.trim() ?? "" : ""]);
         
         let kakaoContent = Content.init(title: "\(self.job ?? "") \(self.name ?? "")",
-                                        imageUrl: URL.init(string: "http://www.assembly.go.kr/photo/\(self.assembly).jpg")!,
+                                        imageUrl: URL.init(string: "http://www.assembly.go.kr/photo/\(self.no).jpg")!,
                                         imageWidth: 120,
                                         imageHeight: 160,
                                         description: self.area,

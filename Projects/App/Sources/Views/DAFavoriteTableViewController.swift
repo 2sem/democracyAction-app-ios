@@ -241,7 +241,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
                 guard let favor = self.favorController.fetch(indexPath: indexPath), let person = favor.person else{
                     return;
                 }
-                let topic = "congress_\(person.assemblyNo)_\(person.assembly)_law";
+                let topic = "congress_\(person.no)_law";
                 
                 if !favor.isAlarmOn{
                     AppDelegate.firebase?.subscribe(toTopic: topic, completion: { (error) in

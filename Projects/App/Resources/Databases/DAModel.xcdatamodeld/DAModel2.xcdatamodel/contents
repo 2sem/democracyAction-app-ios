@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23H311" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DAEventGroupInfo" representedClassName="DAEventGroupInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="no" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DAEventInfo"/>
+        <fetchIndex name="byNoIndex">
+            <fetchIndexElement property="no" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="DAEventInfo" representedClassName="DAEventInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="no" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DAEventPersonInfo"/>
+        <relationship name="webs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DAWebInfo"/>
+    </entity>
+    <entity name="DAEventPersonInfo" representedClassName="DAEventPersonInfo" syncable="YES" codeGenerationType="class">
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DAPersonInfo"/>
+    </entity>
+    <entity name="DAFavoriteInfo" representedClassName="DAFavoriteInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="isAlarmOn" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="person" maxCount="1" deletionRule="Nullify" destinationEntity="DAPersonInfo" inverseName="favorite" inverseEntity="DAPersonInfo"/>
+    </entity>
+    <entity name="DAGroupInfo" representedClassName="DAGroupInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="no" attributeType="Integer 16" minValueString="1" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="sponsor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DAMessageToolInfo"/>
+        <relationship name="persons" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DAPersonInfo" inverseName="group" inverseEntity="DAPersonInfo"/>
+        <relationship name="phones" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DAPhoneInfo"/>
+        <relationship name="webs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DAWebInfo"/>
+    </entity>
+    <entity name="DAMessageToolInfo" representedClassName="DAMessageToolInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="account" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="DAPersonInfo" representedClassName="DAPersonInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="area" optional="YES" attributeType="String"/>
+        <attribute name="areaCharacters" optional="YES" attributeType="String"/>
+        <attribute name="areaFirstCharacter" optional="YES" attributeType="String"/>
+        <attribute name="areaFirstCharacters" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="job" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="nameCharacters" attributeType="String"/>
+        <attribute name="nameFirstCharacter" attributeType="String"/>
+        <attribute name="nameFirstCharacters" attributeType="String" defaultValueString="?"/>
+        <attribute name="no" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sponsor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="favorite" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="DAFavoriteInfo" inverseName="person" inverseEntity="DAFavoriteInfo"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DAGroupInfo" inverseName="persons" inverseEntity="DAGroupInfo"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DAMessageToolInfo"/>
+        <relationship name="phones" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DAPhoneInfo"/>
+        <relationship name="webs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DAWebInfo"/>
+        <fetchIndex name="byAreaIndex">
+            <fetchIndexElement property="area" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byAreaCharactersIndex">
+            <fetchIndexElement property="areaCharacters" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byAreaFirstCharacterIndex">
+            <fetchIndexElement property="areaFirstCharacter" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byAreaFirstCharactersIndex">
+            <fetchIndexElement property="areaFirstCharacters" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byNameIndex">
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byNameCharactersIndex">
+            <fetchIndexElement property="nameCharacters" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byNameFirstCharacterIndex">
+            <fetchIndexElement property="nameFirstCharacter" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="DAPhoneInfo" representedClassName="DAPhoneInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="sms" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="DAWebInfo" representedClassName="DAWebInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+</model>

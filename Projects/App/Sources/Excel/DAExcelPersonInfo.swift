@@ -29,9 +29,6 @@ class DAExcelPersonInfo : NSObject{
         static let blog = "blog";
         static let cafe = "cafe";
         static let cyworld = "cyworld";
-        static let assembly = "assembly";
-        static let assembly_no = "assembly_no";
-        static let sponsor = "sponsor";
     }
     
     var id : Int = 0;
@@ -53,9 +50,6 @@ class DAExcelPersonInfo : NSObject{
     var blog = "";
     var cafe = "";
     var cyworld = "";
-    var assembly = "";
-    var assemblyNo = "";
-    var sponsor = 0;
 
     var phones : [DAExcelPhoneInfo] = [];
     private func _parseNumber(_ value : String, title : String) -> [DAExcelPhoneInfo]{

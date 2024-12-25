@@ -374,26 +374,6 @@ class DAGroupTableViewCell: UITableViewCell, FABMenuDelegate {
             //self.searchMenu.closeWithAnimation();
         }
         
-        if self.sponseButton == nil && self.group.sponsor > 0{
-            self.sponseButton = FABButton();
-            self.sponseButton.image = UIImage(named: "icon_money.png")?.withRenderingMode(.alwaysTemplate);
-            self.sponseButton.frame.size = self.callButton.frame.size;
-            
-            self.buttonsStack.insertArrangedSubview(self.sponseButton, at: self.buttonsStack.arrangedSubviews.count);
-            
-            self.sponseButton.heightAnchor.constraint(equalTo: self.callButton.heightAnchor).isActive = true;
-            self.sponseButton.widthAnchor.constraint(equalTo: self.callButton.widthAnchor).isActive = true;
-            
-            self.sponseButton?.tintColor = DATheme.sponseButtonTintColor;
-            self.sponseButton?.backgroundColor = DATheme.sponseButtonBackgroundColor;
-            self.sponseButton?.pulseColor = DATheme.sponseButtonTintColor;
-            
-            self.sponseButton.addTarget(self, action: #selector(self.onPaySponsor(_:)), for: .touchUpInside);
-            
-        }else if self.group.sponsor == 0 && self.sponseButton != nil{
-            self.buttonsStack.removeArrangedSubview(self.buttonsStack);
-            self.sponseButton.removeFromSuperview();
-        }
         //self.layoutSubviews();
     }
     
@@ -544,15 +524,6 @@ class DAGroupTableViewCell: UITableViewCell, FABMenuDelegate {
             UIApplication.shared.searchByNaver(keyword);
         }), UIAlertAction(title: "취소", style: .default, handler: nil)], style: .alert);
         
-        self.closeMenus();
-    }
-    
-    @objc func onPaySponsor(_ button : UIButton){
-        //print("go sponsor \(self.info.personHomepage?.url)");
-        //UIApplication.shared.openWeb(self.info.personHomepage?.url ?? "");
-        var req = DASponsorPayRequest(party: Int(self.group?.sponsor ?? 0), source: DASponsor.Sources.leesam).urlRequest;
-        //self.openWeb(URL(string: self.info.personHomepage?.url ?? "")!);
-        self.openWeb(req.url!);
         self.closeMenus();
     }
     

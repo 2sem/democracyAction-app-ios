@@ -27,7 +27,7 @@ extension DAExcelController{
         let office_areaCell = cells[DAExcelPersonInfo.FieldNames.office_area]
         let emailCell = cells[DAExcelPersonInfo.FieldNames.email]
         let twitterCell = cells[DAExcelPersonInfo.FieldNames.twitter]
-        let facebookCell = cells[DAExcelPersonInfo.FieldNames.kakao]
+        let facebookCell = cells[DAExcelPersonInfo.FieldNames.facebook]
         let kakaoCell = cells[DAExcelPersonInfo.FieldNames.kakao]
         let instagramCell = cells[DAExcelPersonInfo.FieldNames.instagram]
         let youtubeCell = cells[DAExcelPersonInfo.FieldNames.youtube]
@@ -35,9 +35,6 @@ extension DAExcelController{
         let blogCell = cells[DAExcelPersonInfo.FieldNames.blog]
         let cafeCell = cells[DAExcelPersonInfo.FieldNames.cafe]
         let cyworldCell = cells[DAExcelPersonInfo.FieldNames.cyworld]
-        let assemblyCell = cells[DAExcelPersonInfo.FieldNames.assembly]
-        let assemblyNoCell = cells[DAExcelPersonInfo.FieldNames.assembly_no]
-        let sponsorCell = cells[DAExcelPersonInfo.FieldNames.sponsor]
         
         person.area = fieldCell?.stringValue(self.sharedStrings) ?? ""
         person.mobile = mobileCells?.stringValue(self.sharedStrings) ?? ""
@@ -56,11 +53,8 @@ extension DAExcelController{
         person.blog = blogCell?.stringValue(self.sharedStrings) ?? ""
         person.cafe = cafeCell?.stringValue(self.sharedStrings) ?? ""
         person.cyworld = cyworldCell?.stringValue(self.sharedStrings) ?? ""
-        person.assembly = assemblyCell?.stringValue(self.sharedStrings) ?? ""
-        person.assemblyNo = assemblyNoCell?.stringValue(self.sharedStrings) ?? ""
-        person.sponsor = sponsorCell?.integerValue(self.sharedStrings) ?? 0
         
-        debugPrint("load congress. no[\(person.assemblyNo)] name[\(person.name)]")
+        debugPrint("load congress. no[\(person.id)] name[\(person.name)]")
         
         person.isLoaded = true;
     }

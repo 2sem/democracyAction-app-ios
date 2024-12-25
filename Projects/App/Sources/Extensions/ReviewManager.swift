@@ -1,6 +1,6 @@
 //
 //  ReviewManager.swift
-//  wherewego
+//  democracyaction
 //
 //  Created by 영준 이 on 2017. 5. 29..
 //  Copyright © 2017년 leesam. All rights reserved.
