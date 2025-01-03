@@ -78,6 +78,14 @@ class DAPersonViewController: UIViewController {
         self.loadContacts();
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if #available(iOS 14, *) {
+            AppDelegate.sharedGADManager?.requestPermission()
+        }
+    }
+    
     func loadContacts(){
         guard let info = self.info else{
             return;
