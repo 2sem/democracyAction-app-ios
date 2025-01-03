@@ -70,7 +70,7 @@ let project = Project(
                                            "FavBottom" : "ca-app-pub-9684378399371172/7127499644",
                                            "FullAd" : "ca-app-pub-9684378399371172/1169240044"],
                     "Itunes App Id": "1243863489",
-                    "NSUserTrackingUsageDescription": "Use location information to explore nearby attractions.",
+                    "NSUserTrackingUsageDescription": "맞춤형 광고 허용을 통해 개발자에게 더많은 수익을 기부할 수 있습니다.",
                     "SKAdNetworkItems": .array(skAdNetworks),
                     "ITSAppUsesNonExemptEncryption": "NO",
                     "CFBundleShortVersionString": "${MARKETING_VERSION}",
