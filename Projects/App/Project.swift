@@ -108,6 +108,7 @@ let project = Project(
                 .Projects.ThirdParty,
                 .Projects.DynamicThirdParty,
                 .package(product: "GADManager", type: .runtime),
+                .sdk(name: "SwiftUI", type: .framework),
             ]
         ),
         .target(
