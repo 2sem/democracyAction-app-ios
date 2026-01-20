@@ -99,7 +99,10 @@ let project = Project(
             ),
             sources: ["Sources/**"],
             resources: [.glob(pattern: "Resources/**",
-                              excluding: ["Resources/Images/photos/*"]),
+                              excluding: [
+                                "Resources/Images/photos/*",
+                                "Resources/Databases/DAModel.xcdatamodeld/**"
+                              ]),
                         .folderReference(path: "Resources/Images/photos")],
             dependencies: [
                 .Projects.ThirdParty,
