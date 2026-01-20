@@ -72,3 +72,6 @@ Tuist/.build
 !*.secret
 Projects/App/Resources/Plists/server.plist
 Projects/App/Resources/Plists/servertest.plist
+
+### Serena mcp
+.serena
