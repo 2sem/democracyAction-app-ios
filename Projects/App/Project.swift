@@ -59,7 +59,7 @@ let project = Project(
             destinations: [.iPhone, .iPad],
             product: .app,
             bundleId: .appBundleId,
-            deploymentTargets: .iOS("13.0"),
+            deploymentTargets: .iOS("18.0"),
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchStoryboardName": "LaunchScreen",
