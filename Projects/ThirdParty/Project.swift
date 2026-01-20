@@ -16,9 +16,10 @@ let project = Project(
                 requirement: .upToNextMajor(from: "3.1.8")),
         .remote(url: "https://github.com/2sem/LProgressWebViewController",
                 requirement: .upToNextMajor(from: "3.1.0")),
-//        .remote(url: "https://github.com/SDWebImage/SDWebImage",
-//                requirement: .upToNextMajor(from: "5.20.0")),
-//        .local(path: "../../../../../spms/DownPicker")
+        .package(id: "krzyzanowskim.CryptoSwift", from: "1.8.3"),
+        .package(id: "CoreOffice.CoreXLSX", exact: "0.14.1"),
+        .package(id: "facebook.facebook-ios-sdk", from: "14.1.0"),
+        .package(id: "SwipeCellKit.SwipeCellKit", from: "2.7.1"),
     ],
     targets: [
         .target(
@@ -26,15 +27,15 @@ let project = Project(
             destinations: .iOS,
             product: .staticFramework,
             bundleId: .appBundleId.appending(".thirdparty"),
-            dependencies: [.external(name: "CoreXLSX"),
+            dependencies: [.package(product: "CoreXLSX"),
                            .package(product: "KakaoSDK", type: .runtime),
-                           .external(name: "SwipeCellKit"),
+                           .package(product: "SwipeCellKit"),
                            .package(product: "MBProgressHUD", type: .runtime),
                            .package(product: "LSExtensions", type: .runtime),
                            .package(product: "Material", type: .runtime),
                            .package(product: "DownPicker", type: .runtime),
                            .package(product: "ProgressWebViewController", type: .runtime),
-                           .external(name: "CryptoSwift"),
+                           .package(product: "CryptoSwift"),
             ]
         ),
     ]
