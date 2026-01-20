@@ -107,7 +107,11 @@ let project = Project(
             dependencies: [
                 .Projects.ThirdParty,
                 .Projects.DynamicThirdParty,
-                .package(product: "GADManager", type: .runtime)
+                .package(product: "GADManager", type: .runtime),
+                .external(name: "FirebaseCrashlytics"),
+                .external(name: "FirebaseAnalytics"),
+                .external(name: "FirebaseMessaging"),
+                .external(name: "FirebaseRemoteConfig"),
             ]
         ),
         .target(
