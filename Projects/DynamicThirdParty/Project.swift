@@ -10,7 +10,7 @@ let project = Project(
             destinations: .iOS,
             product: .framework,
             bundleId: .appBundleId.appending(".thirdparty.dynamic"),
-            dependencies: [.external(name: "SDWebImage"),
+            dependencies: [
                            
             ]
         ),

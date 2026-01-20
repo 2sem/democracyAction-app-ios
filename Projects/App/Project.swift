@@ -108,6 +108,7 @@ let project = Project(
                 .Projects.ThirdParty,
                 .Projects.DynamicThirdParty,
                 .package(product: "GADManager", type: .runtime),
+                .external(name: "SDWebImage"),
                 .external(name: "FirebaseCrashlytics"),
                 .external(name: "FirebaseAnalytics"),
                 .external(name: "FirebaseMessaging"),
