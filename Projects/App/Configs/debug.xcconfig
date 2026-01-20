@@ -13,3 +13,6 @@ SWIFT_SWIFT3_OBJC_INFERENCE=Default
 SWIFT_VERSION=5.0
 
 DEBUG_INFORMATION_FORMAT[config=Debug]=dwarf-with-dsym
+
+// For Firebase
+OTHER_LDFLAGS = -ObjC
