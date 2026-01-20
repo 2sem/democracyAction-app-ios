@@ -15,14 +15,14 @@ class DABannerTableViewCell: UITableViewCell {
     @IBOutlet weak var titleView: UILabel!
     @IBOutlet weak var detailView: UILabel!
     
-    @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var bannerView: BannerView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.bannerView.loadUnitId("TableBanner");
         self.bannerView.rootViewController = UIApplication.shared.keyWindow?.rootViewController;
-        let req = GADRequest();
+        let req = Request();
         #if DEBUG
             //req.testDevices = ["5fb1f297b8eafe217348a756bdb2de56"];
         #endif
@@ -51,15 +51,15 @@ class DABannerTableViewCell: UITableViewCell {
     }*/
 }
 
-extension DABannerTableViewCell: GADBannerViewDelegate {
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+extension DABannerTableViewCell: BannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: BannerView) {
         //self.showBanner(visible: true);
         self.bannerView.isHidden = false;
         self.titleView.isHidden = !self.bannerView.isHidden;
         self.detailView.isHidden = !self.bannerView.isHidden;
     }
     
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
         print("banner error -  \(error)");
         self.bannerView.isHidden = true;
         self.titleView.isHidden = !self.bannerView.isHidden;

@@ -1,5 +1,5 @@
 //
-//  GADInterstitial+.swift
+//  Interstitial+.swift
 //  sendadv
 //
 //  Created by 영준 이 on 2017. 4. 12..
@@ -12,7 +12,7 @@ import GoogleMobileAds
 /**
  GoogleADUnitID/{name}
  */
-extension GADInterstitialAd {
+extension InterstitialAd {
     static func loadUnitId(name : String) -> String?{
         var value : String?;
         var unitList = Bundle.main.infoDictionary?["GoogleADUnitID"] as? [String : String];
@@ -38,7 +38,7 @@ extension GADInterstitialAd {
     func isReady(for viewController: UIViewController? = nil) -> Bool{
         do{
             if let viewController = viewController ?? UIApplication.shared.windows.first?.rootViewController{
-                try self.canPresent(fromRootViewController: viewController);
+                try self.canPresent(from: viewController);
                 return true;
             }
             return false

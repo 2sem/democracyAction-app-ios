@@ -1,5 +1,5 @@
 //
-//  GADBannerView+.swift
+//  BannerView+.swift
 //  democracyaction
 //
 //  Created by 영준 이 on 2017. 7. 6..
@@ -12,7 +12,7 @@ import GoogleMobileAds
 /**
  GoogleADUnitID/{name}
  */
-extension GADBannerView {
+extension BannerView {
     func loadUnitId(_ name : String){
         var unitList = Bundle.main.infoDictionary?["GoogleADUnitID"] as? [String : String];
         guard unitList != nil else{

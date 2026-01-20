@@ -1,5 +1,5 @@
 //
-//  GADRewardedAd+.swift
+//  RewardedAd+.swift
 //  democracyaction
 //
 //  Created by 영준 이 on 2021/11/28.
@@ -9,11 +9,11 @@
 import Foundation
 import GoogleMobileAds
 
-extension GADRewardedAd{
+extension RewardedAd{
     func isReady(for viewController: UIViewController? = nil) -> Bool{
         do{
             if let viewController = viewController ?? UIApplication.shared.windows.first?.rootViewController{
-                try self.canPresent(fromRootViewController: viewController);
+                try self.canPresent(from: viewController);
                 return true;
             }
             return false

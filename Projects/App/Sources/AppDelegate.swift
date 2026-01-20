@@ -38,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
             //print("launch option key[\(key)] value[\(value)]\n");
             DAInfoTableViewController.startingSearchName += "launch option key[\(key)] value[\(value)]\n";
         })*/
-        GADMobileAds.sharedInstance().start(completionHandler: nil);
-        //GADMobileAds.configure(withApplicationID: "ca-app-pub-968437x8399371172~5739040449");
+        MobileAds.shared.start(completionHandler: nil);
+        //MobileAds.configure(withApplicationID: "ca-app-pub-968437x8399371172~5739040449");
         FirebaseApp.configure();
         Messaging.messaging().delegate = self;
         KakaoManager.initialize()
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
         self.reviewManager?.delegate = self;
         //self.reviewManager?.show();
         
-        self.rewardAd = GADRewardManager(self.window!, unitId: GADInterstitialAd.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 12); //
+        self.rewardAd = GADRewardManager(self.window!, unitId: InterstitialAd.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 12); //
         self.rewardAd?.delegate = self;
         
         var adManager = GADManager<GADUnitName>.init(self.window!);

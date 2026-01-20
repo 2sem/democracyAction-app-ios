@@ -50,7 +50,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
     }
 
     @IBOutlet weak var sortButton: UIBarButtonItem!
-    @IBOutlet var banner: GADBannerView!
+    @IBOutlet var banner: BannerView!
 
     var lastAlarmButton : UIButton?;
     
@@ -111,7 +111,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
         
         switch UIDevice.current.userInterfaceIdiom {
             case .pad:
-                self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav, size: GADAdSizeFullBanner);
+                self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav, size: AdSizeFullBanner);
                 break;
             default:
                 self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .fav);
@@ -131,7 +131,7 @@ class DAFavoriteTableViewController: UITableViewController, UISearchBarDelegate,
             banner.delegate = self;
             banner.rootViewController = self;
             self.banner?.isHidden = true;
-            banner.load(GADRequest());
+            banner.load(Request());
         }
     }
     
@@ -476,15 +476,15 @@ extension DAFavoriteTableViewController : SwipeActionTransitioning{
     }
 }
 
-extension DAFavoriteTableViewController : GADBannerViewDelegate{
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+extension DAFavoriteTableViewController : BannerViewDelegate{
+    func bannerViewDidReceiveAd(_ bannerView: BannerView) {
         print("receive info banner");
         self.banner?.isHidden = false;
         self.tableView?.contentInset.bottom = 50 + 16;
         self.layoutBanner();
     }
     
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
         print("receive info banner failed. error[\(error.localizedDescription)]");
     }
 }
