@@ -9,6 +9,18 @@
 import Foundation
 import UIKit
 
+extension DADefaults {
+    static var SwiftDataMigrationCompleted: Bool {
+        get {
+            return Defaults.bool(forKey: Keys.SwiftDataMigrationCompleted)
+        }
+        
+        set(value) {
+            Defaults.set(value, forKey: Keys.SwiftDataMigrationCompleted)
+        }
+    }
+}
+
 class DADefaults{
     static var Defaults : UserDefaults{
         get{
@@ -26,6 +38,7 @@ class DADefaults{
         static let DataDownloaded = "DataDownloaded";
         
         static let LaunchCount = "LaunchCount";
+        static let SwiftDataMigrationCompleted = "SwiftDataMigrationCompleted";
     }
     
     static var LastFullADShown : Date{

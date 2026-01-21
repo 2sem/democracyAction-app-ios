@@ -2,21 +2,22 @@
 //  AppInitializer.swift
 //  democracyaction
 //
-//  Created by SwiftUI Migration
+//  Centralizes app initialization logic
 //
 
 import Foundation
 
 @MainActor
 class AppInitializer {
+    
     static func initialize() async throws {
-        // Increment launch count (moved from AppDelegate)
-        DADefaults.increaseLaunchCount()
+        print("🚀 Initializing app...")
         
-        // Future initialization will go here:
-        // - Database migrations
-        // - UserDefaults setup
-        // - API configuration
-        // - Excel data import if needed
+        // Increment launch count
+        DADefaults.increaseLaunchCount()
+        print("✅ Launch count: \(DADefaults.LaunchCount)")
+        
+        // Add any other initialization here
+        // e.g., API configuration, UserDefaults setup, etc.
     }
 }
