@@ -27,23 +27,7 @@ struct PoliticianListScreen: View {
                 } else {
                     List {
                         ForEach(persons.prefix(20), id: \.no) { person in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(person.name)
-                                    .font(.headline)
-                                
-                                if let area = person.area {
-                                    Text(area)
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
-                                }
-                                
-                                if let group = person.group {
-                                    Text(group.name)
-                                        .font(.caption)
-                                        .foregroundStyle(.blue)
-                                }
-                            }
-                            .padding(.vertical, 4)
+                            PoliticianRow(person: person)
                         }
                     }
                 }
@@ -77,13 +61,18 @@ struct PoliticianListScreen: View {
     
     // Add sample data
     let context = container.mainContext
-    let group = Group(no: 1, name: "Sample Party")
+    let group = Group(no: 1, name: "더불어민주당")
     context.insert(group)
     
-    let person = Person(no: 1, name: "Sample Person", nameCharacters: "샘플", nameFirstCharacter: "샘", nameFirstCharacters: "ㅅㅍ")
-    person.area = "Seoul"
-    person.group = group
-    context.insert(person)
+    let person1 = Person(no: 1, name: "홍길동", nameCharacters: "홍길동", nameFirstCharacter: "홍", nameFirstCharacters: "ㅎㄱㄷ")
+    person1.area = "서울 강남구 갑"
+    person1.group = group
+    context.insert(person1)
+    
+    let person2 = Person(no: 2, name: "김철수", nameCharacters: "김철수", nameFirstCharacter: "김", nameFirstCharacters: "ㄱㅊㅅ")
+    person2.area = "부산 해운대구 을"
+    person2.group = group
+    context.insert(person2)
     
     return PoliticianListScreen()
         .modelContainer(container)
