@@ -55,10 +55,8 @@ struct SplashScreen: View {
         } message: {
             Text(migrationManager.currentStep)
         }
-        .onAppear {
-            Task {
-                await performInitialization()
-            }
+        .task {
+            await performInitialization()
         }
     }
 

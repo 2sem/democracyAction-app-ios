@@ -1,8 +1,8 @@
 //
-//  DemocracyActionApp.swift
+//  App.swift
 //  democracyaction
 //
-//  Created by SwiftUI Migration
+//  SwiftUI App Entry Point
 //
 
 import SwiftUI
@@ -50,11 +50,9 @@ struct DemocracyActionApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                // Main content will go here after splash
+                // Main content - 2 tabs: Politicians and Favorites
                 if isSplashDone {
-                    // Placeholder for now - will add MainScreen later
-                    Text("Main Screen")
-                        .font(.largeTitle)
+                    MainScreen()
                         .transition(.opacity)
                 }
                 
