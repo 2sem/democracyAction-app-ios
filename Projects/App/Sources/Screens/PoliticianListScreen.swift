@@ -17,10 +17,14 @@ struct PoliticianListScreen: View {
     var persons: [Person] {
         viewModel.filteredAndSortedPersons(allPersons)
     }
-    
+
+    var groupedSections: [PoliticianListViewModel.PersonSection] {
+        viewModel.groupedPersons(allPersons)
+    }
+
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 if persons.isEmpty {
                     ContentUnavailableView(
                         "데이터 없음",
@@ -29,15 +33,31 @@ struct PoliticianListScreen: View {
                     )
                 } else {
                     List {
-                        ForEach(persons, id: \.no) { person in
-                            PoliticianRow(person: person)
+                        ForEach(groupedSections) { section in
+                            Section(header: Text(section.title)) {
+                                ForEach(section.persons, id: \.no) { person in
+                                    PoliticianRow(person: person)
+                                }
+                            }
                         }
                     }
+                    .listStyle(.plain)
                 }
             }
             .navigationTitle("국회의원")
             .searchable(text: $viewModel.searchText, prompt: "이름 또는 지역 검색")
             .toolbar {
+                // Grouping Type Picker - moved to toolbar
+                ToolbarItem(placement: .principal) {
+                    Picker("그룹핑", selection: $viewModel.groupingType) {
+                        ForEach(PoliticianListViewModel.GroupingType.allCases, id: \.self) { type in
+                            Text(type.title).tag(type)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+                
+                // Sort toggle button
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         viewModel.toggleSort()
