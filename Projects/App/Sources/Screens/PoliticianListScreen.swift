@@ -58,6 +58,9 @@ struct PoliticianListScreen: View {
             .task {
                 refersh()
             }
+            .navigationDestination(for: Person.self) { person in
+                PersonDetailScreen(person: person)
+            }
         }
     }
     
@@ -108,8 +111,11 @@ struct PoliticianListScreen: View {
     
     @ViewBuilder
     private func politicianRow(person: Person, withGroupId groupId: String) -> some View {
-        PoliticianRow(person: person)
-            .id(person.id.hashValue.description)
+        NavigationLink(value: person) {
+            PoliticianRow(person: person)
+        }
+        .tint(.black)
+        .id(person.id.hashValue.description)
 //            .onScrollVisibilityChange(threshold: 0.5) { isVisible in
 //                if isVisible {
 //                    // Add person to group's visible set
