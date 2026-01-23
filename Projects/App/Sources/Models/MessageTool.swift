@@ -14,6 +14,7 @@ final class MessageTool {
     var account: String?
     
     var person: Person?
+    var group: Group?
     
     init(name: String? = nil, account: String? = nil) {
         self.name = name
@@ -22,9 +23,9 @@ final class MessageTool {
     
     // Entity names for social media
     enum EntityNames {
-        static let twitter = "트위터"
-        static let facebook = "페이스북"
-        static let kakao = "카카오톡"
-        static let instagram = "인스타그램"
+        static let twitter = "twitter"
+        static let facebook = "facebook"
+        static let kakao = "kakao"
+        static let instagram = "instagram"
     }
 }

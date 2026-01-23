@@ -14,6 +14,7 @@ final class Web {
     var url: String?
     
     var person: Person?
+    var group: Group?
     
     init(name: String? = nil, url: String? = nil) {
         self.name = name
@@ -22,10 +23,10 @@ final class Web {
     
     // Entity names for web types
     enum EntityNames {
-        static let youtube = "유튜브"
-        static let blog = "블로그"
-        static let homepage = "홈페이지"
-        static let cafe = "카페"
-        static let cyworld = "싸이월드"
+        static let youtube = "youtube"
+        static let blog = "blog"
+        static let homepage = "homepage"
+        static let cafe = "cafe"
+        static let cyworld = "cyworld"
     }
 }

@@ -15,6 +15,7 @@ final class Phone {
     var sms: Bool = false
     
     var person: Person?
+    var group: Group?
     
     init(name: String? = nil, number: String? = nil, sms: Bool = false) {
         self.name = name

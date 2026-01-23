@@ -32,6 +32,7 @@ class PoliticianListViewModel: ObservableObject {
         var id: String { title }
         let title: String
         let persons: [Person]
+        let group: Group?  // Party/group reference for accessing phones, social media, etc.
     }
 
     // MARK: - Published Properties
@@ -179,7 +180,7 @@ class PoliticianListViewModel: ObservableObject {
             }
             
             // Create group for this chosung
-            groups.append(PersonGroup(title: chosung, persons: matchingPersons))
+            groups.append(PersonGroup(title: chosung, persons: matchingPersons, group: nil))
         }
         
         // Sort groups by title according to sort order
@@ -199,7 +200,9 @@ class PoliticianListViewModel: ObservableObject {
         let sortedKeys = grouped.keys.sorted { isAscending ? $0 < $1 : $0 > $1 }
 
         return sortedKeys.map { key in
-            PersonGroup(title: key, persons: grouped[key] ?? [])
+            let personsInGroup = grouped[key] ?? []
+            let group = personsInGroup.first?.group  // All persons in this group have the same Group
+            return PersonGroup(title: key, persons: personsInGroup, group: group)
         }
     }
 
@@ -220,7 +223,7 @@ class PoliticianListViewModel: ObservableObject {
             }
 
             // Create group for this area
-            groups.append(PersonGroup(title: area, persons: matchingPersons))
+            groups.append(PersonGroup(title: area, persons: matchingPersons, group: nil))
         }
 
         // Sort groups by title according to sort order

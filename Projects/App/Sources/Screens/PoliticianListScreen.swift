@@ -135,8 +135,20 @@ struct PoliticianListScreen: View {
     
     @ViewBuilder
     private func politicianSection(withGroup group: PoliticianListViewModel.PersonGroup) -> some View {
-        Text(group.title)
-            .id(group.id)
+        if viewModel.groupingType == .byGroup, let partyGroup = group.group {
+            // Show special party header with call/SNS/search buttons
+            PartyHeaderView(group: partyGroup)
+                .id(group.id)
+        } else {
+            // Regular text header for name/area grouping
+            Text(group.title)
+                .font(.headline)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color(UIColor.systemGray6))
+                .id(group.id)
+        }
     }
 
         @ViewBuilder

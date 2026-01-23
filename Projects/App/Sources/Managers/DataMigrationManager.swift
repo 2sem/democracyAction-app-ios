@@ -127,6 +127,11 @@ class DataMigrationManager: ObservableObject {
         try await migrateGroups(with: modelContext)
         migrationProgress = 0.10
 
+        // Step 1.5: Migrate Group Phones/Messages/Webs (5% progress)
+        currentStep = "Migrating group contact info..."
+        try await migrateGroupData(with: modelContext)
+        migrationProgress = 0.15
+
         // Step 2: Migrate Persons (40% progress)
         currentStep = "Migrating persons..."
         try await migratePersons(with: modelContext)
@@ -209,6 +214,87 @@ class DataMigrationManager: ObservableObject {
         try modelContext.save()
         print("[DataMigration] Saved \(coreDataGroups.count) groups to SwiftData")
     }
+
+    /// Migrate Group-level phones, messages, and webs from Core Data to SwiftData
+    private func migrateGroupData(with modelContext: ModelContext) async throws {
+        print("[DataMigration] Fetching Core Data groups with related data")
+        let context = DAModelController.shared.context
+
+        let coreDataGroups = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<[DAGroupInfo], Error>) in
+            context.perform {
+                let request = NSFetchRequest<DAGroupInfo>(entityName: "DAGroupInfo")
+
+                do {
+                    let groups = try context.fetch(request)
+                    continuation.resume(returning: groups)
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+
+        // Get all SwiftData groups for linking
+        let sdGroups = try modelContext.fetch(FetchDescriptor<Group>())
+        let groupsByNo = Dictionary(uniqueKeysWithValues: sdGroups.map { ($0.no, $0) })
+
+        var phoneCount = 0
+        var messageCount = 0
+        var webCount = 0
+
+        for cdGroup in coreDataGroups {
+            guard let sdGroup = groupsByNo[cdGroup.no] else { continue }
+
+            // Migrate group phones
+            if let groupPhones = cdGroup.phones?.allObjects as? [DAPhoneInfo] {
+                for cdPhone in groupPhones {
+                    let phone = Phone(
+                        name: cdPhone.name,
+                        number: cdPhone.number,
+                        sms: cdPhone.sms
+                    )
+                    
+                    phone.group = sdGroup
+                    modelContext.insert(phone)
+                    phoneCount += 1
+                }
+            }
+
+            // Migrate group messages (social media)
+            if let groupMessages = cdGroup.messages?.allObjects as? [DAMessageToolInfo] {
+                for cdMessage in groupMessages {
+                    let message = MessageTool(
+                        name: cdMessage.name,
+                        account: cdMessage.account
+                    )
+                    message.group = sdGroup
+                    modelContext.insert(message)
+                    messageCount += 1
+                }
+            }
+
+            // Migrate group webs (homepage, blog, youtube)
+            if let groupWebs = cdGroup.webs?.allObjects as? [DAWebInfo] {
+                for cdWeb in groupWebs {
+                    let web = Web(
+                        name: cdWeb.name,
+                        url: cdWeb.url
+                    )
+                    web.group = sdGroup
+                    modelContext.insert(web)
+                    webCount += 1
+                }
+            }
+
+            // Batch save every 50 groups
+            if phoneCount % 50 == 0 {
+                try modelContext.save()
+            }
+        }
+
+        try modelContext.save()
+        print("[DataMigration] Migrated \(phoneCount) group phones, \(messageCount) group messages, \(webCount) group webs")
+    }
+
 
     /// Migrate Persons from Core Data to SwiftData
     private func migratePersons(with modelContext: ModelContext) async throws {
