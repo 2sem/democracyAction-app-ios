@@ -56,6 +56,11 @@ class PoliticianListViewModel: ObservableObject {
     /// All Korean chosungs in order
     static let allChosungs = ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
 
+    /// Predefined areas for grouping (matches UIKit implementation)
+    static let predefinedAreas = ["서울", "경기", "부산", "인천", "대구", "대전",
+                                  "광주", "울산", "세종", "강원", "충북", "충남",
+                                  "전북", "전남", "경북", "경남", "제주", "비례대표"]
+
     // MARK: - Computed Properties
 
     /// Sort icon name for toolbar button
@@ -166,15 +171,31 @@ class PoliticianListViewModel: ObservableObject {
     }
 
     private func groupByArea(_ persons: [Person]) -> [PersonGroup] {
-        let grouped = Dictionary(grouping: persons) { person in
-            person.area ?? "지역 없음"
+        var groups: [PersonGroup] = []
+
+        // Iterate through predefined areas
+        for area in Self.predefinedAreas {
+            // Filter persons whose area contains this predefined area string
+            let matchingPersons = persons.filter { person in
+                guard let personArea = person.area else { return false }
+                return personArea.contains(area)
+            }
+
+            // Skip empty groups
+            guard !matchingPersons.isEmpty else {
+                continue
+            }
+
+            // Create group for this area
+            groups.append(PersonGroup(title: area, persons: matchingPersons))
         }
 
-        let sortedKeys = grouped.keys.sorted { isAscending ? $0 < $1 : $0 > $1 }
-
-        return sortedKeys.map { key in
-            PersonGroup(title: key, persons: grouped[key] ?? [])
+        // Sort groups by title according to sort order
+        groups.sort { left, right in
+            isAscending ? left.title < right.title : left.title > right.title
         }
+
+        return groups
     }
 
     // MARK: - Chosung Navigation
