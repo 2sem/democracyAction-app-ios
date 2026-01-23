@@ -67,6 +67,8 @@ class PoliticianListViewModel: ObservableObject {
     /// Toggle sort direction
     func toggleSort() {
         isAscending.toggle()
+        // Re-sort the groups without changing person order within groups
+        sortGroups()
     }
     
     /// Apply sorting to persons array
@@ -120,9 +122,17 @@ class PoliticianListViewModel: ObservableObject {
     private func updateGroupIds() {
         self.groupIds = Set(self.groups.map{ $0.id })
     }
-    
+
     func getGroupIds(fromIds ids: [String]) -> Set<String> {
         return self.groupIds.intersection(ids)
+    }
+
+    /// Sort groups only, without changing person order within groups
+    private func sortGroups() {
+        groups.sort { left, right in
+            isAscending ? left.id < right.id : left.id > right.id
+        }
+        updateGroupIds()
     }
 
     // MARK: - Private Grouping Helpers
