@@ -83,39 +83,19 @@ class PoliticianListViewModel: ObservableObject {
     
     /// Apply filtering and sorting to persons array
     func filteredAndSortedPersons(_ persons: [Person]) -> [Person] {
-        var result = persons
-
         guard !searchText.isEmpty else {
-            return result
+            return sortedPersons(persons)
         }
         
-        // Filter by search text with Korean character matching
+        // Pre-calculate Korean parts of the search text once
         let searchParts = searchText.getKoreanParts()?.trim() ?? ""
         let searchChosungs = searchText.getKoreanChoSeongs()?.trim() ?? ""
         
-        result = result.filter { person in
-            // Match by decomposed characters (handles "기" → "김")
-            if !searchParts.isEmpty {
-                if person.nameCharacters.contains(searchParts) {
-                    return true
-                } else if let areaCharacters = person.areaCharacters, areaCharacters.contains(searchParts) {
-                    return true
-                }
-            }
-            
-            // Match by chosung only (handles "ㄱㅈㅎ" → "김종훈")
-            if !searchChosungs.isEmpty, searchChosungs == searchText {
-                if person.nameFirstCharacters.contains(searchChosungs) {
-                    return true
-                } else if let areaFirstCharacters = person.areaFirstCharacters, areaFirstCharacters.contains(searchChosungs) {
-                    return true
-                }
-            }
-            
-            return person.name.contains(searchText)
+        let result = persons.filter { person in
+            person.matches(searchText: searchText, searchParts: searchParts, searchChosungs: searchChosungs)
         }
 
-        // Apply sorting
+        // Apply sorting to the filtered results
         return sortedPersons(result)
     }
 
