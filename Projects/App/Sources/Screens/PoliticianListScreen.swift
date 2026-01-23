@@ -24,7 +24,7 @@ struct PoliticianListScreen: View {
                     listView()
                 }
             }
-            .navigationTitle("국회의원")
+            .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $viewModel.searchText, prompt: "이름 또는 지역 검색")
             .toolbar {
                 // Grouping Type Picker - moved to toolbar
