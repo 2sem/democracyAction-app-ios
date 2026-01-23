@@ -52,6 +52,9 @@ struct PoliticianListScreen: View {
             .onChange(of: viewModel.groupingType, { _, _ in
                 refersh()
             })
+            .onChange(of: viewModel.searchText) { oldValue, newValue in
+                refersh()
+            }
             .task {
                 refersh()
             }
@@ -95,8 +98,6 @@ struct PoliticianListScreen: View {
                 .onScrollTargetVisibilityChange(idType: String.self, threshold: 0.5) { visibleIds in
                     visibleGroupIds = Set(viewModel.getGroupIds(fromIds: visibleIds))
                     updateLastVisibleGroupID()
-                    
-                    print("onScrollTargetVisibilityChange: \(visibleGroupIds)")
                 }
 
                 nextSectionButton(scrollProxy: scrollProxy)
@@ -188,8 +189,6 @@ struct PoliticianListScreen: View {
             .last
 
         self.lastVisibleGroupID = lastVisibleGroupId
-
-        print("\(#function) lastVisibleGroupID: \(lastVisibleGroupID ?? "")" )
     }
 }
 

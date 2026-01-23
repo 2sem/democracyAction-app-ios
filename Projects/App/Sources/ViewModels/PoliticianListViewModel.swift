@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import SwiftData
+import LSExtensions
 
 @MainActor
 class PoliticianListViewModel: ObservableObject {
@@ -84,12 +85,34 @@ class PoliticianListViewModel: ObservableObject {
     func filteredAndSortedPersons(_ persons: [Person]) -> [Person] {
         var result = persons
 
-        // Filter by search text
-        if !searchText.isEmpty {
-            result = result.filter { person in
-                person.name.localizedCaseInsensitiveContains(searchText) ||
-                (person.area?.localizedCaseInsensitiveContains(searchText) ?? false)
+        guard !searchText.isEmpty else {
+            return result
+        }
+        
+        // Filter by search text with Korean character matching
+        let searchParts = searchText.getKoreanParts()?.trim() ?? ""
+        let searchChosungs = searchText.getKoreanChoSeongs()?.trim() ?? ""
+        
+        result = result.filter { person in
+            // Match by decomposed characters (handles "기" → "김")
+            if !searchParts.isEmpty {
+                if person.nameCharacters.contains(searchParts) {
+                    return true
+                } else if let areaCharacters = person.areaCharacters, areaCharacters.contains(searchParts) {
+                    return true
+                }
             }
+            
+            // Match by chosung only (handles "ㄱㅈㅎ" → "김종훈")
+            if !searchChosungs.isEmpty, searchChosungs == searchText {
+                if person.nameFirstCharacters.contains(searchChosungs) {
+                    return true
+                } else if let areaFirstCharacters = person.areaFirstCharacters, areaFirstCharacters.contains(searchChosungs) {
+                    return true
+                }
+            }
+            
+            return person.name.contains(searchText)
         }
 
         // Apply sorting
