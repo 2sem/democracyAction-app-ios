@@ -146,16 +146,49 @@ class PoliticianListViewModel: ObservableObject {
     // MARK: - Private Grouping Helpers
 
     private func groupByName(_ persons: [Person]) -> [PersonGroup] {
-        // Group by chosung (first character of nameFirstCharacters)
-        let grouped = Dictionary(grouping: persons) { person in
-            String(person.nameFirstCharacters.prefix(1))
+        var groups: [PersonGroup] = []
+        
+        // Iterate through predefined chosungs (matches UIKit's koreanSingleChoSeongs)
+        for chosung in Self.allChosungs {
+            // Filter persons whose first character matches this chosung
+            var matchingPersons = persons.filter { person in
+                let firstChar = String(person.nameFirstCharacters.prefix(1))
+                return firstChar == chosung
+            }
+            
+            // For specific chosungs, also include their double consonant versions
+            // This matches UIKit's logic in loadGroupsBySpell
+            switch chosung {
+            case "ㄱ":
+                matchingPersons += persons.filter { String($0.nameFirstCharacters.prefix(1)) == "ㄲ" }
+            case "ㄷ":
+                matchingPersons += persons.filter { String($0.nameFirstCharacters.prefix(1)) == "ㄸ" }
+            case "ㅂ":
+                matchingPersons += persons.filter { String($0.nameFirstCharacters.prefix(1)) == "ㅃ" }
+            case "ㅅ":
+                matchingPersons += persons.filter { String($0.nameFirstCharacters.prefix(1)) == "ㅆ" }
+            case "ㅈ":
+                matchingPersons += persons.filter { String($0.nameFirstCharacters.prefix(1)) == "ㅉ" }
+            default:
+                break
+            }
+            
+            // Skip empty groups
+            guard !matchingPersons.isEmpty else {
+                continue
+            }
+            
+            // Create group for this chosung
+            groups.append(PersonGroup(title: chosung, persons: matchingPersons))
         }
-
-        let sortedKeys = grouped.keys.sorted { isAscending ? $0 < $1 : $0 > $1 }
-
-        return sortedKeys.map { key in
-            PersonGroup(title: key, persons: grouped[key] ?? [])
+        
+        // Sort groups by title according to sort order
+        // Note: allChosungs is already in the correct order, but we need to respect isAscending
+        if !isAscending {
+            groups.reverse()
         }
+        
+        return groups
     }
 
     private func groupByGroup(_ persons: [Person]) -> [PersonGroup] {
