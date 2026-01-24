@@ -21,21 +21,16 @@ class DataMigrationManager: ObservableObject {
         case checking
         case migrating
         case completed
-        case failed(String) // Changed from Error to String for Equatable
-        
-        static func == (lhs: MigrationStatus, rhs: MigrationStatus) -> Bool {
-            switch (lhs, rhs) {
-            case (.idle, .idle),
-                 (.checking, .checking),
-                 (.migrating, .migrating),
-                 (.completed, .completed):
-                return true
-            case (.failed(let lhsMessage), .failed(let rhsMessage)):
-                return lhsMessage == rhsMessage
-            default:
-                return false
-            }
-        }
+        case failed(String)
+        case noCoreDataFound
+        case alreadyMigrated
+    }
+    
+    enum MigrationResult {
+        case migrationCompleted
+        case migrationSkipped
+        case noCoreDataFound
+        case migrationFailed(Error)
     }
 
     var isMigrationCompleted: Bool {
@@ -44,74 +39,69 @@ class DataMigrationManager: ObservableObject {
     }
 
     /// Main entry point - checks if migration is needed and performs it
-    /// - Returns: true if migration was performed, false if skipped
-    func checkAndMigrateIfNeeded(modelContext: ModelContext) async -> Bool {
+    /// - Returns: A `MigrationResult` indicating the outcome.
+    func checkAndMigrateIfNeeded(modelContext: ModelContext) async -> MigrationResult {
         print("[DataMigration] checkAndMigrateIfNeeded started")
 
         if isMigrationCompleted {
             print("[DataMigration] Migration already completed")
-            migrationStatus = .completed
+            migrationStatus = .alreadyMigrated
             currentStep = "Migration already completed"
-            return false
+            return .migrationSkipped
         }
 
         migrationStatus = .checking
         currentStep = "Checking for Core Data..."
         print("[DataMigration] Checking for Core Data")
 
-        guard await hasCoreData() else {
-            print("[DataMigration] No Core Data found, migration not needed")
-            migrationStatus = .completed
-            currentStep = "No migration needed"
-            isMigrationCompleted = true
-            return false
-        }
+        // Check if Core Data exists and has data
+        if await hasCoreData() {
+            // Core Data exists - migrate to SwiftData
+            migrationStatus = .migrating
+            currentStep = "Starting migration..."
+            print("[DataMigration] Core Data found, starting migration")
 
-        migrationStatus = .migrating
-        currentStep = "Starting migration..."
-        print("[DataMigration] Core Data found, starting migration")
-
-        do {
-            try await performMigration(modelContext: modelContext)
-            print("[DataMigration] Migration completed successfully")
-            migrationStatus = .completed
-            currentStep = "Migration completed"
+            do {
+                try await performMigration(modelContext: modelContext)
+                print("[DataMigration] Migration completed successfully")
+                migrationStatus = .completed
+                currentStep = "Migration completed"
+                isMigrationCompleted = true
+                return .migrationCompleted
+            } catch {
+                print("[DataMigration] Migration failed: \(error.localizedDescription)")
+                migrationStatus = .failed(error.localizedDescription)
+                currentStep = "Migration failed: \(error.localizedDescription)"
+                return .migrationFailed(error)
+            }
+        } else {
+            // No Core Data found
+            print("[DataMigration] No Core Data found.")
+            migrationStatus = .noCoreDataFound
+            currentStep = "No Core Data found to migrate."
+            // We set this to true to avoid checking for Core Data again on next launch
+            // for a user who never had Core Data.
             isMigrationCompleted = true
-            return true
-        } catch {
-            print("[DataMigration] Migration failed: \(error.localizedDescription)")
-            migrationStatus = .failed(error.localizedDescription)
-            currentStep = "Migration failed: \(error.localizedDescription)"
-            return false
+            return .noCoreDataFound
         }
     }
 
-    /// Check if Core Data has any data to migrate
+    /// Check if Core Data store file exists
     private func hasCoreData() async -> Bool {
-        print("[DataMigration] Checking Core Data entities")
-        let context = DAModelController.shared.context
+        print("[DataMigration] Checking for Core Data .sqlite file")
 
-        return await withCheckedContinuation { continuation in
-            context.perform {
-                let personRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: "DAPersonInfo")
-                personRequest.fetchLimit = 1
-
-                let groupRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: "DAGroupInfo")
-                groupRequest.fetchLimit = 1
-
-                do {
-                    let personCount = try context.count(for: personRequest)
-                    let groupCount = try context.count(for: groupRequest)
-                    let hasData = personCount > 0 || groupCount > 0
-
-                    print("[DataMigration] Core Data check - persons: \(personCount), groups: \(groupCount), hasData: \(hasData)")
-                    continuation.resume(returning: hasData)
-                } catch {
-                    print("[DataMigration] Error checking Core Data: \(error)")
-                    continuation.resume(returning: false)
-                }
-            }
+        // Build the expected Core Data store path (same as DAModelController)
+        guard let storeURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last?
+            .appendingPathComponent("democracyaction")
+            .appendingPathExtension("sqlite") else {
+            print("[DataMigration] Could not build store URL")
+            return false
         }
+
+        let exists = FileManager.default.fileExists(atPath: storeURL.path)
+        print("[DataMigration] Core Data store exists: \(exists) at path: \(storeURL.path)")
+
+        return exists
     }
 
     /// Perform the actual migration
@@ -627,4 +617,5 @@ class DataMigrationManager: ObservableObject {
         try modelContext.save()
         print("[DataMigration] Saved \(coreDataEvents.count) events to SwiftData")
     }
+
 }

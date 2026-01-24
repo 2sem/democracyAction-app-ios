@@ -19,6 +19,16 @@ extension DADefaults {
             Defaults.set(value, forKey: Keys.SwiftDataMigrationCompleted)
         }
     }
+    
+    static var InitialDataLoaded: Bool {
+        get {
+            return Defaults.bool(forKey: Keys.InitialDataLoaded)
+        }
+        
+        set(value) {
+            Defaults.set(value, forKey: Keys.InitialDataLoaded)
+        }
+    }
 }
 
 class DADefaults{
@@ -39,6 +49,7 @@ class DADefaults{
         
         static let LaunchCount = "LaunchCount";
         static let SwiftDataMigrationCompleted = "SwiftDataMigrationCompleted";
+        static let InitialDataLoaded = "InitialDataLoaded";
     }
     
     static var LastFullADShown : Date{

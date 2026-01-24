@@ -85,22 +85,6 @@ class DAUpdateManger{
         }
         updateProgress(.checkingVer, nil);
         LSRemoteConfig.shared.fetch{ [weak self](config, error) in
-            /*guard let data = response.data else{
-                print("getting versions has been failed. error[\(response.error.debugDescription)]");
-                if DADefaults.DataVersion.isEmpty{
-                    updateProgress(.updatingData, nil);
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        DAModelController.shared.sync(DAExcelController.shared);
-                        updateProgress(.completed, nil);
-                        completion(true);
-                    }
-                }else{
-                    progress?(self!.state, response.error);
-                    completion(false);
-                }
-                return;
-            }*/
-            
             do{
                 //let res = try JSONDecoder().decode(DAAppVersionResponse.self, from: data);
                 print("fetch config from firebase. min[\(config.minVersion ?? "")] max[\(config.maxVersion ?? "")] data[\(config.dataVersion ?? "")] error[\(error?.localizedDescription ?? "")]");

@@ -13,8 +13,28 @@ struct SplashScreen: View {
     let modelContainer: ModelContainer
     
     @StateObject private var migrationManager = DataMigrationManager()
+    @StateObject private var initialDataManager = InitialDataManager()
     @State private var showError = false
+    @State private var errorMessage = ""
 
+    private var currentStep: String {
+        if initialDataManager.status == .loading {
+            return initialDataManager.currentStep
+        }
+        return migrationManager.currentStep
+    }
+    
+    private var progress: Double {
+        if initialDataManager.status == .loading {
+            return initialDataManager.progress
+        }
+        return migrationManager.migrationProgress
+    }
+    
+    private var isProgressActive: Bool {
+        migrationManager.migrationStatus == .migrating || initialDataManager.status == .loading
+    }
+    
     var body: some View {
         ZStack {
             Color(red: 0.2, green: 0.4, blue: 0.8) // Brand color
@@ -26,34 +46,34 @@ struct SplashScreen: View {
                     .scaleEffect(2)
 
                 VStack(spacing: 12) {
-                    Text(migrationManager.currentStep)
+                    Text(currentStep)
                         .foregroundColor(.white)
                         .font(.headline)
                     
-                    if migrationManager.migrationStatus == .migrating {
-                        ProgressView(value: migrationManager.migrationProgress)
+                    if isProgressActive {
+                        ProgressView(value: progress)
                             .progressViewStyle(LinearProgressViewStyle(tint: .white))
                             .frame(width: 200)
                         
-                        Text("\(Int(migrationManager.migrationProgress * 100))%")
+                        Text("\(Int(progress * 100))%")
                             .foregroundColor(.white.opacity(0.8))
                             .font(.caption)
                     }
                 }
             }
         }
-        .alert("Migration Error", isPresented: $showError) {
+        .alert("Initialization Error", isPresented: $showError) {
             Button("Retry") {
                 Task {
                     await performInitialization()
                 }
             }
             Button("Cancel", role: .cancel) {
-                // User can cancel and app will continue without migration
+                // User can cancel and app will continue without data
                 isDone = true
             }
         } message: {
-            Text(migrationManager.currentStep)
+            Text(errorMessage)
         }
         .task {
             await performInitialization()
@@ -67,21 +87,32 @@ struct SplashScreen: View {
             // Initialize app (launch count, etc.)
             try await AppInitializer.initialize()
             
-            // Check if Core Data → SwiftData migration is needed
-            let migrated = await migrationManager.checkAndMigrateIfNeeded(
+            // 1. Attempt Core Data to SwiftData migration
+            let migrationResult = await migrationManager.checkAndMigrateIfNeeded(
                 modelContext: modelContainer.mainContext
             )
             
-            if migrated {
-                print("[SplashScreen] Migration completed")
-            } else {
-                print("[SplashScreen] Migration skipped or already done")
-            }
-            
-            // Check if migration failed
-            if case .failed = migrationManager.migrationStatus {
+            switch migrationResult {
+            case .migrationCompleted:
+                print("[SplashScreen] Migration completed successfully.")
+            case .migrationSkipped:
+                print("[SplashScreen] Migration was already completed.")
+            case .migrationFailed(let error):
+                errorMessage = "Failed to migrate data: \(error.localizedDescription)"
                 showError = true
                 return
+            case .noCoreDataFound:
+                print("[SplashScreen] No Core Data found. Checking for initial data load.")
+                // 2. If no Core Data, check if we need to load initial data
+                _ = await initialDataManager.checkAndLoadIfNeeded(
+                    modelContext: modelContainer.mainContext
+                )
+                
+                if case .failed(let msg) = initialDataManager.status {
+                    errorMessage = "Failed to load initial data: \(msg)"
+                    showError = true
+                    return
+                }
             }
 
             migrationManager.currentStep = "Ready!"
@@ -94,7 +125,7 @@ struct SplashScreen: View {
             }
         } catch {
             await MainActor.run {
-                migrationManager.currentStep = "Error: \(error.localizedDescription)"
+                errorMessage = "An unexpected error occurred: \(error.localizedDescription)"
                 showError = true
             }
         }
