@@ -13,31 +13,20 @@ struct PoliticianRow: View {
     var body: some View {
         HStack(spacing: 12) {
             // Photo on left
-            if let photoURL = person.photo {
-                AsyncImage(url: photoURL) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    Rectangle()
-                        .fill(.gray.opacity(0.2))
-                        .overlay {
-                            Image(systemName: "person.fill")
-                                .foregroundStyle(.gray.opacity(0.5))
-                        }
-                }
-                .frame(width: 50, height: 65)
-                .clipShape(RoundedRectangle(cornerRadius: 4))
-            } else {
+            FileImage(url: person.photo) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
                 Rectangle()
                     .fill(.gray.opacity(0.2))
                     .overlay {
                         Image(systemName: "person.fill")
                             .foregroundStyle(.gray.opacity(0.5))
                     }
-                    .frame(width: 50, height: 65)
-                    .clipShape(RoundedRectangle(cornerRadius: 4))
             }
+            .frame(width: 50, height: 65)
+            .clipShape(RoundedRectangle(cornerRadius: 4))
             
             // Name on left
             Text(person.name)

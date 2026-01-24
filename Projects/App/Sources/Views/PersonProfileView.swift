@@ -89,11 +89,10 @@ struct PersonProfileView: View {
         if let favorite = person.favorite {
             // Remove favorite
             modelContext.delete(favorite)
-            person.favorite = nil
         } else {
             // Add favorite
-            let favorite = Favorite(isAlarmOn: false)
-            favorite.person = person
+            let favorite = Favorite(isAlarmOn: false, person: person)
+            person.favorite = favorite
             modelContext.insert(favorite)
         }
 

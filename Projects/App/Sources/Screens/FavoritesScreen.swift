@@ -22,61 +22,55 @@ struct FavoritesScreen: View {
                         description: Text("국회의원을 즐겨찾기에 추가하면 여기에 표시됩니다")
                     )
                 } else {
-                    List {
-                        ForEach(favorites, id: \.self) { favorite in
-                            if let person = favorite.person {
-                                HStack {
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text(person.name)
-                                            .font(.headline)
-                                        
-                                        if let area = person.area {
-                                            Text(area)
-                                                .font(.subheadline)
-                                                .foregroundStyle(.secondary)
-                                        }
-                                        
-                                        if let group = person.group {
-                                            Text(group.name)
-                                                .font(.caption)
-                                                .foregroundStyle(.blue)
+                    ScrollView {
+                        LazyVStack(spacing: 0) {
+                            ForEach(favorites, id: \.id) { favorite in
+                                if let person = favorite.person {
+                                    NavigationLink(value: person) {
+                                        HStack {
+                                            PoliticianRow(person: person)
+
+                                            // Notification indicator
+                                            if favorite.isAlarmOn {
+                                                Image(systemName: "bell.fill")
+                                                    .foregroundStyle(.blue)
+                                                    .font(.caption)
+                                                    .padding(.trailing, 8)
+                                            }
                                         }
                                     }
-                                    
-                                    Spacer()
-                                    
-                                    // Notification toggle
-                                    if favorite.isAlarmOn {
-                                        Image(systemName: "bell.fill")
-                                            .foregroundStyle(.blue)
-                                            .font(.caption)
+                                    .tint(.black)
+                                    .id(favorite.id)
+                                    .contextMenu {
+//                                        Button {
+//                                            toggleNotification(favorite)
+//                                        } label: {
+//                                            Label(
+//                                                favorite.isAlarmOn ? "알림 끄기" : "알림 켜기",
+//                                                systemImage: favorite.isAlarmOn ? "bell.slash" : "bell"
+//                                            )
+//                                        }
+
+                                        Button(role: .destructive) {
+                                            deleteFavorite(favorite)
+                                        } label: {
+                                            Label("삭제", systemImage: "trash")
+                                        }
                                     }
-                                }
-                                .padding(.vertical, 4)
-                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                    Button(role: .destructive) {
-                                        deleteFavorite(favorite)
-                                    } label: {
-                                        Label("삭제", systemImage: "trash")
-                                    }
-                                }
-                                .swipeActions(edge: .leading) {
-                                    Button {
-                                        toggleNotification(favorite)
-                                    } label: {
-                                        Label(
-                                            favorite.isAlarmOn ? "알림 끄기" : "알림 켜기",
-                                            systemImage: favorite.isAlarmOn ? "bell.slash" : "bell"
-                                        )
-                                    }
-                                    .tint(.blue)
+
+                                    Divider()
+                                        .padding(.leading, 74)
                                 }
                             }
                         }
+                        .padding()
                     }
                 }
             }
             .navigationTitle("즐겨찾기")
+            .navigationDestination(for: Person.self) { person in
+                PersonDetailScreen(person: person)
+            }
         }
     }
     
