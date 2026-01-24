@@ -7,10 +7,12 @@
 
 import SwiftUI
 import SwiftData
+import UIKit
 
 struct PersonDetailScreen: View {
     let person: Person
     @Environment(\.modelContext) private var modelContext
+    @State private var safariURL: URL?
 
     private var hasMessages: Bool {
         person.email != nil || person.personSms != nil
@@ -145,6 +147,10 @@ struct PersonDetailScreen: View {
                 }
             }
         }
+        .sheet(item: $safariURL) { url in
+            SafariView(url: url)
+                .ignoresSafeArea()
+        }
     }
 
     // MARK: - Actions
@@ -162,66 +168,45 @@ struct PersonDetailScreen: View {
     }
 
     private func openTwitter(account: String) {
-        guard !account.isEmpty else { return }
-
-        if let url = URL(string: "twitter://user?screen_name=\(account)") {
-            UIApplication.shared.open(url) { success in
-                if !success {
-                    if let webURL = URL(string: "https://twitter.com/\(account)") {
-                        UIApplication.shared.open(webURL)
-                    }
-                }
-            }
-        }
+        guard !account.isEmpty,
+              let appURL = URL(string: "twitter://user?screen_name=\(account)"),
+              let webURL = URL(string: "https://twitter.com/\(account)") else { return }
+        openWithAppFallback(appURL: appURL, webURL: webURL)
     }
 
     private func openFacebook(account: String) {
-        guard !account.isEmpty else { return }
-
-        if let url = URL(string: "fb://profile/\(account)") {
-            UIApplication.shared.open(url) { success in
-                if !success {
-                    if let webURL = URL(string: "https://www.facebook.com/\(account)") {
-                        UIApplication.shared.open(webURL)
-                    }
-                }
-            }
-        }
+        guard !account.isEmpty,
+              let appURL = URL(string: "fb://profile/\(account)"),
+              let webURL = URL(string: "https://www.facebook.com/\(account)") else { return }
+        openWithAppFallback(appURL: appURL, webURL: webURL)
     }
 
     private func openKakao(account: String) {
-        guard !account.isEmpty else { return }
-
-        if let url = URL(string: "storylink://profile/\(account)") {
-            UIApplication.shared.open(url) { success in
-                if !success {
-                    if let webURL = URL(string: "https://story.kakao.com/\(account)") {
-                        UIApplication.shared.open(webURL)
-                    }
-                }
-            }
-        }
+        guard !account.isEmpty,
+              let appURL = URL(string: "storylink://profile/\(account)"),
+              let webURL = URL(string: "https://story.kakao.com/\(account)") else { return }
+        openWithAppFallback(appURL: appURL, webURL: webURL)
     }
 
     private func openInstagram(account: String) {
         guard !account.isEmpty else { return }
-
         let username = account.hasPrefix("@") ? String(account.dropFirst()) : account
-
-        if let url = URL(string: "instagram://user?username=\(username)") {
-            UIApplication.shared.open(url) { success in
-                if !success {
-                    if let webURL = URL(string: "https://instagram.com/_u/\(username)") {
-                        UIApplication.shared.open(webURL)
-                    }
-                }
-            }
-        }
+        guard let appURL = URL(string: "instagram://user?username=\(username)"),
+              let webURL = URL(string: "https://instagram.com/_u/\(username)") else { return }
+        openWithAppFallback(appURL: appURL, webURL: webURL)
     }
 
     private func openURL(_ urlString: String) {
         guard !urlString.isEmpty, let url = URL(string: urlString) else { return }
-        UIApplication.shared.open(url)
+        safariURL = url
+    }
+    
+    private func openWithAppFallback(appURL: URL, webURL: URL) {
+        UIApplication.shared.open(appURL) { success in
+            if !success {
+                self.safariURL = webURL
+            }
+        }
     }
 
     private func sharePerson() {

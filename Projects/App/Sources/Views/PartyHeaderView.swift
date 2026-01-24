@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct PartyHeaderView: View {
     let group: Group
+    @State private var safariURL: URL?
 
     private var hasMessageTools: Bool {
         group.messages?.isEmpty == false
@@ -129,6 +131,10 @@ struct PartyHeaderView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
         .background(Color(UIColor.systemGray6))
+        .sheet(item: $safariURL) { url in
+            SafariView(url: url)
+                .ignoresSafeArea()
+        }
     }
     
     // MARK: - Actions
@@ -165,75 +171,45 @@ struct PartyHeaderView: View {
     }
     
     private func openTwitter(account: String) {
-        guard !account.isEmpty else { return }
-        
-        // Try Twitter app first, fall back to web
-        if let url = URL(string: "twitter://user?screen_name=\(account)") {
-            UIApplication.shared.open(url) { success in
-                if !success {
-                    // Fall back to web
-                    if let webURL = URL(string: "https://twitter.com/\(account)") {
-                        UIApplication.shared.open(webURL)
-                    }
-                }
-            }
-        }
+        guard !account.isEmpty,
+              let appURL = URL(string: "twitter://user?screen_name=\(account)"),
+              let webURL = URL(string: "https://twitter.com/\(account)") else { return }
+        openWithAppFallback(appURL: appURL, webURL: webURL)
     }
-    
-    private func openFacebook(account: String) {
-        guard !account.isEmpty else { return }
 
-        // Try Facebook app first, fall back to web
-        if let url = URL(string: "fb://profile/\(account)") {
-            UIApplication.shared.open(url) { success in
-                if !success {
-                    // Fall back to web
-                    if let webURL = URL(string: "https://www.facebook.com/\(account)") {
-                        UIApplication.shared.open(webURL)
-                    }
-                }
-            }
-        }
+    private func openFacebook(account: String) {
+        guard !account.isEmpty,
+              let appURL = URL(string: "fb://profile/\(account)"),
+              let webURL = URL(string: "https://www.facebook.com/\(account)") else { return }
+        openWithAppFallback(appURL: appURL, webURL: webURL)
     }
 
     private func openKakao(account: String) {
-        guard !account.isEmpty else { return }
-
-        // Try KakaoStory app first, fall back to web
-        if let url = URL(string: "storylink://profile/\(account)") {
-            UIApplication.shared.open(url) { success in
-                if !success {
-                    // Fall back to web
-                    if let webURL = URL(string: "https://story.kakao.com/\(account)") {
-                        UIApplication.shared.open(webURL)
-                    }
-                }
-            }
-        }
+        guard !account.isEmpty,
+              let appURL = URL(string: "storylink://profile/\(account)"),
+              let webURL = URL(string: "https://story.kakao.com/\(account)") else { return }
+        openWithAppFallback(appURL: appURL, webURL: webURL)
     }
 
     private func openInstagram(account: String) {
         guard !account.isEmpty else { return }
-
-        // Remove @ prefix if present
         let username = account.hasPrefix("@") ? String(account.dropFirst()) : account
-
-        // Try Instagram app first, fall back to web
-        if let url = URL(string: "instagram://user?username=\(username)") {
-            UIApplication.shared.open(url) { success in
-                if !success {
-                    // Fall back to web
-                    if let webURL = URL(string: "https://instagram.com/_u/\(username)") {
-                        UIApplication.shared.open(webURL)
-                    }
-                }
-            }
-        }
+        guard let appURL = URL(string: "instagram://user?username=\(username)"),
+              let webURL = URL(string: "https://instagram.com/_u/\(username)") else { return }
+        openWithAppFallback(appURL: appURL, webURL: webURL)
     }
 
     private func openURL(_ urlString: String) {
-        guard let url = URL(string: urlString) else { return }
-        UIApplication.shared.open(url)
+        guard !urlString.isEmpty, let url = URL(string: urlString) else { return }
+        safariURL = url
+    }
+
+    private func openWithAppFallback(appURL: URL, webURL: URL) {
+        UIApplication.shared.open(appURL) { success in
+            if !success {
+                self.safariURL = webURL
+            }
+        }
     }
     
     private func showSearchOptions() {
@@ -261,7 +237,7 @@ struct PartyHeaderView: View {
     
     private func searchWith(engine: String) {
         let keyword = group.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? group.name
-        
+
         let urlString: String
         switch engine {
         case "daum":
@@ -273,9 +249,9 @@ struct PartyHeaderView: View {
         default:
             return
         }
-        
+
         if let url = URL(string: urlString) {
-            UIApplication.shared.open(url)
+            safariURL = url
         }
     }
 }
