@@ -27,6 +27,16 @@ struct PoliticianListScreen: View {
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $viewModel.searchText, prompt: "이름 또는 지역 검색")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        if let url = URL(string: "https://open.kakao.com/o/g1jk9Xx") {
+                            UIApplication.shared.open(url)
+                        }
+                    } label: {
+                        Image(systemName: "bubble.left.and.bubble.right.fill")
+                    }
+                }
+                
                 // Grouping Type Picker - moved to toolbar
                 ToolbarItem(placement: .principal) {
                     Picker("그룹핑", selection: $viewModel.groupingType) {
