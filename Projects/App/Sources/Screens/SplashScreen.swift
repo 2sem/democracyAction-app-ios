@@ -14,10 +14,14 @@ struct SplashScreen: View {
     
     @StateObject private var migrationManager = DataMigrationManager()
     @StateObject private var initialDataManager = InitialDataManager()
+    @StateObject private var updateManager = DataUpdateManager()
     @State private var showError = false
     @State private var errorMessage = ""
 
     private var currentStep: String {
+        if updateManager.status == .updating {
+            return updateManager.currentStep
+        }
         if initialDataManager.status == .loading {
             return initialDataManager.currentStep
         }
@@ -25,6 +29,9 @@ struct SplashScreen: View {
     }
     
     private var progress: Double {
+        if updateManager.status == .updating {
+            return updateManager.progress
+        }
         if initialDataManager.status == .loading {
             return initialDataManager.progress
         }
@@ -32,7 +39,9 @@ struct SplashScreen: View {
     }
     
     private var isProgressActive: Bool {
-        migrationManager.migrationStatus == .migrating || initialDataManager.status == .loading
+        migrationManager.migrationStatus == .migrating 
+        || initialDataManager.status == .loading
+        || updateManager.status == .updating
     }
     
     var body: some View {
@@ -107,12 +116,24 @@ struct SplashScreen: View {
                 _ = await initialDataManager.checkAndLoadIfNeeded(
                     modelContext: modelContainer.mainContext
                 )
-                
+
                 if case .failed(let msg) = initialDataManager.status {
                     errorMessage = "Failed to load initial data: \(msg)"
                     showError = true
                     return
                 }
+            }
+
+            // 3. Check for Excel data updates (on every launch)
+            print("[SplashScreen] Checking for data updates...")
+            _ = await updateManager.checkAndUpdateIfNeeded(
+                modelContext: modelContainer.mainContext
+            )
+
+            if case .failed(let msg) = updateManager.status {
+                errorMessage = "Failed to update data: \(msg)"
+                showError = true
+                return
             }
 
             migrationManager.currentStep = "Ready!"
