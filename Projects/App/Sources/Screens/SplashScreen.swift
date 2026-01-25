@@ -46,30 +46,45 @@ struct SplashScreen: View {
     
     var body: some View {
         ZStack {
-            Color(red: 0.2, green: 0.4, blue: 0.8) // Brand color
+            Color.white
                 .ignoresSafeArea()
 
-            VStack(spacing: 30) {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                    .scaleEffect(2)
+            VStack(spacing: 40) {
+                Spacer()
 
-                VStack(spacing: 12) {
-                    Text(currentStep)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                    
-                    if isProgressActive {
-                        ProgressView(value: progress)
-                            .progressViewStyle(LinearProgressViewStyle(tint: .white))
-                            .frame(width: 200)
-                        
-                        Text("\(Int(progress * 100))%")
-                            .foregroundColor(.white.opacity(0.8))
-                            .font(.caption)
+                // Logo
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 300)
+
+                Spacer()
+
+                // Loading indicators at bottom
+                VStack(spacing: 16) {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                        .scaleEffect(1.5)
+
+                    VStack(spacing: 12) {
+                        Text(currentStep)
+                            .foregroundColor(.primary)
+                            .font(.headline)
+
+                        if isProgressActive {
+                            ProgressView(value: progress)
+                                .progressViewStyle(LinearProgressViewStyle(tint: .blue))
+                                .frame(width: 200)
+
+                            Text("\(Int(progress * 100))%")
+                                .foregroundColor(.secondary)
+                                .font(.caption)
+                        }
                     }
                 }
+                .padding(.bottom, 60)
             }
+            .padding(.horizontal, 40)
         }
         .alert("Initialization Error", isPresented: $showError) {
             Button("Retry") {
