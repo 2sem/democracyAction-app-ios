@@ -19,7 +19,7 @@ class SwiftUIAdManager: NSObject, ObservableObject {
 
     #if DEBUG
     var testUnits: [GADUnitName] {
-        [.full, .infoBottom, .favBottom, .native]
+        [.full, .infoBottom, .favBottom, .personListNative]
     }
     #else
     var testUnits: [GADUnitName] { [] }

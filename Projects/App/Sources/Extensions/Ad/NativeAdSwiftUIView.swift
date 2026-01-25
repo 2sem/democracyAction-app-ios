@@ -23,13 +23,13 @@ final class NativeAdLoaderCoordinator: NSObject, ObservableObject, AdLoaderDeleg
     private var adLoader: AdLoader?
 
     func load(withAdManager manager: SwiftUIAdManager) {
-        guard let adLoader = manager.createAdLoader(forUnit: .native) else {
+        guard let adLoader = manager.createAdLoader(forUnit: .personListNative) else {
             return
         }
-        
+
         self.adLoader = adLoader
         self.adLoader?.delegate = self
-        
+
         let req = Request()
         self.adLoader?.load(req)
     }
