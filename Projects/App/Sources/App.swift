@@ -90,8 +90,10 @@ struct DemocracyActionApp: App {
 
             #if DEBUG
             adManager.prepare(interstitialUnit: .full, interval: 60.0)
+            adManager.prepare(openingUnit: .launch, interval: 60.0)
             #else
-            adManager.prepare(interstitialUnit: .full, interval: 60.0 * 60.0)
+            adManager.prepare(interstitialUnit: .full, interval: 60.0 * 60)
+            adManager.prepare(openingUnit: .launch, interval: 60.0 * 5)
             #endif
 
             adManager.canShowFirstTime = true
@@ -103,10 +105,28 @@ struct DemocracyActionApp: App {
     private func handleScenePhaseChange(from oldPhase: ScenePhase, to newPhase: ScenePhase) {
         switch newPhase {
         case .active:
-            // Opening ad logic can be added here if needed in the future
+            handleAppDidBecomeActive()
+        case .inactive:
+            // 앱이 비활성화될 때의 처리
             break
-        default:
+        case .background:
+            // 앱이 백그라운드로 갈 때의 처리
             break
+        @unknown default:
+            break
+        }
+    }
+
+    private func handleAppDidBecomeActive() {
+        print("scene become active")
+        Task{
+            defer {
+                DADefaults.increaseLaunchCount()
+            }
+            
+            let isTest = adManager.isTesting(unit: .launch)
+            
+            await adManager.show(unit: .launch)
         }
     }
 }

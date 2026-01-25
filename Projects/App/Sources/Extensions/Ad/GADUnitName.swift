@@ -14,6 +14,7 @@ extension SwiftUIAdManager {
         case favBottom = "FavBottom"
         case personListNative = "PersonListNative"
         case favoritesNative = "FavoritesNative"
+        case launch = "Launch"
 
         // Note: These raw values match the KEY names from GADUnitIdentifiers in Info.plist
         // GADManager will lookup actual ad unit IDs from the plist
