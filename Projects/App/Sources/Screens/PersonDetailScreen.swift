@@ -136,11 +136,7 @@ struct PersonDetailScreen: View {
             }
 
         }
-        .contentMargins(.bottom, 8)
-
-            // Banner at bottom
-            BannerAdView(adUnitName: "InfoBottom")
-                .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 90 : 50)
+            .contentMargins(.bottom, 8)
         }
         .navigationTitle("\(person.name) 의원")
         .navigationBarTitleDisplayMode(.inline)
