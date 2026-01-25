@@ -16,6 +16,7 @@ struct DemocracyActionApp: App {
     @State private var isSetupDone = false
     @StateObject private var adManager = SwiftUIAdManager()
     @Environment(\.scenePhase) private var scenePhase
+    @State private var isFromBackground = false
 
     // SwiftData model container
     let modelContainer: ModelContainer
@@ -103,29 +104,33 @@ struct DemocracyActionApp: App {
     }
 
     private func handleScenePhaseChange(from oldPhase: ScenePhase, to newPhase: ScenePhase) {
+        print("scene changed old[\(oldPhase)] new[\(newPhase)]")
+        
         switch newPhase {
         case .active:
-            handleAppDidBecomeActive()
+            if isFromBackground {
+                handleAppDidBecomeActive()
+            }
+            
+            isFromBackground = false
         case .inactive:
-            // 앱이 비활성화될 때의 처리
             break
         case .background:
-            // 앱이 백그라운드로 갈 때의 처리
+            isFromBackground = true
             break
         @unknown default:
             break
         }
     }
-
+    
     private func handleAppDidBecomeActive() {
         print("scene become active")
-        Task{
+        Task {
             defer {
                 DADefaults.increaseLaunchCount()
             }
             
-            let isTest = adManager.isTesting(unit: .launch)
-            
+            await adManager.requestAppTrackingIfNeed()
             await adManager.show(unit: .launch)
         }
     }
