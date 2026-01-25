@@ -27,24 +27,28 @@ struct FavoritesScreen: View {
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 0) {
-                            ForEach(favorites, id: \.id) { favorite in
-                                if let person = favorite.person {
-                                    NavigationLink(value: person) {
-                                        HStack {
-                                            PoliticianRow(person: person)
+                            let nativeAdInterval = 10
+                            ForEach(Array(favorites.enumerated()), id: \.element.id) { index, favorite in
+                                SwiftUI.Group {
+                                    NativeAdRowView(adUnit: .favoritesNative, index: index, interval: nativeAdInterval)
 
-                                            // Notification indicator
-                                            if favorite.isAlarmOn {
-                                                Image(systemName: "bell.fill")
-                                                    .foregroundStyle(.blue)
-                                                    .font(.caption)
-                                                    .padding(.trailing, 8)
+                                    if let person = favorite.person {
+                                        NavigationLink(value: person) {
+                                            HStack {
+                                                PoliticianRow(person: person)
+
+                                                // Notification indicator
+                                                if favorite.isAlarmOn {
+                                                    Image(systemName: "bell.fill")
+                                                        .foregroundStyle(.blue)
+                                                        .font(.caption)
+                                                        .padding(.trailing, 8)
+                                                }
                                             }
                                         }
-                                    }
-                                    .tint(.black)
-                                    .id(favorite.id)
-                                    .contextMenu {
+                                        .tint(.black)
+                                        .id(favorite.id)
+                                        .contextMenu {
 //                                        Button {
 //                                            toggleNotification(favorite)
 //                                        } label: {
@@ -61,8 +65,9 @@ struct FavoritesScreen: View {
                                         }
                                     }
 
-                                    Divider()
-                                        .padding(.leading, 74)
+                                        Divider()
+                                            .padding(.leading, 74)
+                                    }
                                 }
                             }
                         }

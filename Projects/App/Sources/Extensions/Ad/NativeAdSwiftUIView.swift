@@ -22,8 +22,8 @@ final class NativeAdLoaderCoordinator: NSObject, ObservableObject, AdLoaderDeleg
     var nativeAd: NativeAd?
     private var adLoader: AdLoader?
 
-    func load(withAdManager manager: SwiftUIAdManager) {
-        guard let adLoader = manager.createAdLoader(forUnit: .personListNative) else {
+    func load(withAdManager manager: SwiftUIAdManager, forUnit unit: SwiftUIAdManager.GADUnitName) {
+        guard let adLoader = manager.createAdLoader(forUnit: unit) else {
             return
         }
 
@@ -48,11 +48,13 @@ final class NativeAdLoaderCoordinator: NSObject, ObservableObject, AdLoaderDeleg
 
 struct NativeAdSwiftUIView<Content: View>: View {
     @EnvironmentObject private var adManager: SwiftUIAdManager
-    
+
     @State private var coordinator: NativeAdLoaderCoordinator
     private let contentBuilder: (NativeAd?) -> Content
+    private let adUnit: SwiftUIAdManager.GADUnitName
 
-    init(@ViewBuilder content: @escaping (NativeAd?) -> Content) {
+    init(adUnit: SwiftUIAdManager.GADUnitName, @ViewBuilder content: @escaping (NativeAd?) -> Content) {
+        self.adUnit = adUnit
         _coordinator = State(wrappedValue: NativeAdLoaderCoordinator())
         self.contentBuilder = content
     }
@@ -67,13 +69,13 @@ struct NativeAdSwiftUIView<Content: View>: View {
         }
         .onChange(of: adManager.isReady, initial: false) {
             guard adManager.isReady else { return }
-            
-            coordinator.load(withAdManager: adManager)
+
+            coordinator.load(withAdManager: adManager, forUnit: adUnit)
         }
         .task {
             guard adManager.isReady else { return }
             
-            coordinator.load(withAdManager: adManager)
+            coordinator.load(withAdManager: adManager, forUnit: adUnit)
         }
         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
         .listRowBackground(Color.clear)

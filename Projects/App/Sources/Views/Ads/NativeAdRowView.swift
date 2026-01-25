@@ -11,12 +11,13 @@ import SwiftUI
 struct NativeAdRowView: View {
     @EnvironmentObject private var adManager: SwiftUIAdManager
 
+    let adUnit: SwiftUIAdManager.GADUnitName
     let index: Int
     let interval: Int
 
     var body: some View {
         if index % interval == 0 {
-            NativeAdSwiftUIView { nativeAd in
+            NativeAdSwiftUIView(adUnit: adUnit) { nativeAd in
                 SwiftUI.Group {
                     if let ad = nativeAd {
                         // Match PoliticianRow styling

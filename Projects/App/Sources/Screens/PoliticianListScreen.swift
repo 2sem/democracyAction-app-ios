@@ -101,7 +101,7 @@ struct PoliticianListScreen: View {
                                 let nativeAdInterval = 10
                                 ForEach(Array(group.persons.enumerated()), id: \.element.no) { index, person in
                                     SwiftUI.Group {
-                                        NativeAdRowView(index: index, interval: nativeAdInterval)
+                                        NativeAdRowView(adUnit: .personListNative, index: index, interval: nativeAdInterval)
                                         politicianRow(person: person, withGroupId: group.id)
                                     }
                                 }
