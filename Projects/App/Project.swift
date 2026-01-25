@@ -43,7 +43,7 @@ let project = Project(
                          developmentRegion: "ko"),
     packages: [
         .remote(url: "https://github.com/2sem/GADManager",
-                requirement: .upToNextMajor(from: "1.3.3")),
+                requirement: .upToNextMajor(from: "1.3.8")),
     ],
     settings: .settings(configurations: [
         .debug(
@@ -68,7 +68,8 @@ let project = Project(
                     "GADApplicationIdentifier": "ca-app-pub-9684378399371172~5739040449",
                     "GADUnitIdentifiers": ["InfoBottom" : "ca-app-pub-9684378399371172/7215773643",
                                            "FavBottom" : "ca-app-pub-9684378399371172/7127499644",
-                                           "FullAd" : "ca-app-pub-9684378399371172/1169240044"],
+                                           "FullAd" : "ca-app-pub-9684378399371172/1169240044",
+                                           "Native" : "ca-app-pub-9684378399371172/4345258981"],
                     "Itunes App Id": "1243863489",
                     "NSUserTrackingUsageDescription": "맞춤형 광고 허용을 통해 개발자에게 더많은 수익을 기부할 수 있습니다.",
                     "SKAdNetworkItems": .array(skAdNetworks),

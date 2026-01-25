@@ -12,6 +12,7 @@ struct PoliticianListScreen: View {
     @StateObject private var viewModel = PoliticianListViewModel()
     @State var visibleGroupIds: Set<String> = []
     @Query private var allPersons: [Person]
+    @EnvironmentObject private var adManager: SwiftUIAdManager
 
     @State var lastVisibleGroupID: String?
     
@@ -97,8 +98,12 @@ struct PoliticianListScreen: View {
                     LazyVStack() {
                         ForEach(viewModel.groups) { group in //, id: \.id
                             Section(header: politicianSection(withGroup: group)) {
-                                ForEach(group.persons) { person in
-                                    politicianRow(person: person, withGroupId: group.id)
+                                let nativeAdInterval = 10
+                                ForEach(Array(group.persons.enumerated()), id: \.element.no) { index, person in
+                                    SwiftUI.Group {
+                                        NativeAdRowView(index: index, interval: nativeAdInterval)
+                                        politicianRow(person: person, withGroupId: group.id)
+                                    }
                                 }
                             }
                             .id(group.id)

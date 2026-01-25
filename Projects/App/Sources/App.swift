@@ -7,12 +7,16 @@
 
 import SwiftUI
 import SwiftData
+import GoogleMobileAds
 
 @main
 struct DemocracyActionApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var isSplashDone = false
-    
+    @State private var isSetupDone = false
+    @StateObject private var adManager = SwiftUIAdManager()
+    @Environment(\.scenePhase) private var scenePhase
+
     // SwiftData model container
     let modelContainer: ModelContainer
     
@@ -55,7 +59,7 @@ struct DemocracyActionApp: App {
                     MainScreen()
                         .transition(.opacity)
                 }
-                
+
                 // Splash overlay
                 if !isSplashDone {
                     SplashScreen(
@@ -65,7 +69,44 @@ struct DemocracyActionApp: App {
                     .transition(.opacity)
                 }
             }
+            .environmentObject(adManager)
+            .task {
+                setupAds()
+            }
+            .onChange(of: scenePhase) { oldPhase, newPhase in
+                handleScenePhaseChange(from: oldPhase, to: newPhase)
+            }
         }
         .modelContainer(modelContainer)
+    }
+
+    private func setupAds() {
+        guard !isSetupDone else { return }
+
+        MobileAds.shared.start { [weak adManager] status in
+            guard let adManager = adManager else { return }
+
+            adManager.setup()
+
+            #if DEBUG
+            adManager.prepare(interstitialUnit: .full, interval: 60.0)
+            #else
+            adManager.prepare(interstitialUnit: .full, interval: 60.0 * 60.0)
+            #endif
+
+            adManager.canShowFirstTime = true
+        }
+
+        isSetupDone = true
+    }
+
+    private func handleScenePhaseChange(from oldPhase: ScenePhase, to newPhase: ScenePhase) {
+        switch newPhase {
+        case .active:
+            // Opening ad logic can be added here if needed in the future
+            break
+        default:
+            break
+        }
     }
 }

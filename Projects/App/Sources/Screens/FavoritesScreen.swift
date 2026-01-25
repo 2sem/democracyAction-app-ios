@@ -11,10 +11,13 @@ import SwiftData
 struct FavoritesScreen: View {
     @Query private var favorites: [Favorite]
     @Environment(\.modelContext) private var modelContext
+    @EnvironmentObject private var adManager: SwiftUIAdManager
+    @AppStorage("LaunchCount") var launchCount: Int = 0
+    @State private var appearCount = 0
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 if favorites.isEmpty {
                     ContentUnavailableView(
                         "즐겨찾기 없음",
@@ -66,11 +69,36 @@ struct FavoritesScreen: View {
                         .padding()
                     }
                 }
+
+                // Banner at bottom
+                BannerAdView(adUnitName: "FavBottom")
+                    .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 90 : 50)
             }
             .navigationTitle("즐겨찾기")
             .navigationDestination(for: Person.self) { person in
                 PersonDetailScreen(person: person)
             }
+            .onAppear {
+                appearCount += 1
+                if appearCount > 1 {
+                    presentFullAdThen {
+                        // Ad dismissed
+                    }
+                }
+            }
+        }
+    }
+
+    private func presentFullAdThen(_ action: @escaping () -> Void) {
+        guard launchCount > 1 else {
+            action()
+            return
+        }
+
+        Task {
+            await adManager.requestAppTrackingIfNeed()
+            await adManager.show(unit: .full)
+            action()
         }
     }
     

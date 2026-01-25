@@ -27,10 +27,11 @@ struct PersonDetailScreen: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                // Profile section
-                PersonProfileView(person: person)
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack(spacing: 0) {
+                    // Profile section
+                    PersonProfileView(person: person)
 
                 // Contact sections
                 if !person.personPhones.isEmpty {
@@ -133,9 +134,14 @@ struct PersonDetailScreen: View {
                     }
                 }
             }
-            
+
         }
         .contentMargins(.bottom, 8)
+
+            // Banner at bottom
+            BannerAdView(adUnitName: "InfoBottom")
+                .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 90 : 50)
+        }
         .navigationTitle("\(person.name) 의원")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
