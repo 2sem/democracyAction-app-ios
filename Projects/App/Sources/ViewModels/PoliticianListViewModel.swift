@@ -94,8 +94,8 @@ class PoliticianListViewModel: ObservableObject {
         }
         
         // Pre-calculate Korean parts of the search text once
-        let searchParts = searchText.getKoreanParts()?.trim() ?? ""
-        let searchChosungs = searchText.getKoreanChoSeongs()?.trim() ?? ""
+        let searchParts = searchText.getKoreanParts(false)?.trim() ?? ""
+        let searchChosungs = searchText.getKoreanChoSeongs(false)?.trim() ?? ""
         
         let result = persons.filter { person in
             person.matches(searchText: searchText, searchParts: searchParts, searchChosungs: searchChosungs)

@@ -182,7 +182,7 @@ class DataUpdateManager: ObservableObject {
             if let existingPerson = personsByNo[personNo] {
                 // Update existing person
                 existingPerson.name = excelPerson.name
-                existingPerson.nameCharacters = excelPerson.name
+                existingPerson.nameCharacters = excelPerson.name.getKoreanParts(false) ?? ""
                 existingPerson.nameFirstCharacter = String(excelPerson.name.first ?? Character(""))
                 existingPerson.nameFirstCharacters = excelPerson.name.getKoreanChoSeongs(false) ?? "?"
 
