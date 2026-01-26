@@ -27,6 +27,20 @@ class PoliticianListViewModel: ObservableObject {
             }
         }
     }
+    
+    enum SearchScope: CaseIterable {
+        case all
+        case name
+        case area
+        
+        var title: String {
+            switch self {
+            case .all: return "모두"
+            case .name: return "이름"
+            case .area: return "지역"
+            }
+        }
+    }
 
     struct PersonGroup: Identifiable {
         var id: String { title }
@@ -42,6 +56,9 @@ class PoliticianListViewModel: ObservableObject {
 
     /// Search text for filtering
     @Published var searchText: String = ""
+
+    /// Search scope for filtering
+    @Published var searchScope: SearchScope = .all
 
     /// Grouping type for list organization
     @Published var groupingType: GroupingType = .byName
@@ -98,7 +115,7 @@ class PoliticianListViewModel: ObservableObject {
         let searchChosungs = searchText.getKoreanChoSeongs(false)?.trim() ?? ""
         
         let result = persons.filter { person in
-            person.matches(searchText: searchText, searchParts: searchParts, searchChosungs: searchChosungs)
+            person.matches(searchText: searchText, searchParts: searchParts, searchChosungs: searchChosungs, searchScope: searchScope)
         }
 
         // Apply sorting to the filtered results

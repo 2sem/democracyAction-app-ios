@@ -27,6 +27,16 @@ struct PoliticianListScreen: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $viewModel.searchText, prompt: "이름 또는 지역 검색")
+            .searchScopes($viewModel.searchScope) {
+                ForEach(PoliticianListViewModel.SearchScope.allCases, id: \.self) { scope in
+                    Text(scope.title).tag(scope)
+                }
+            }
+            .searchScopes($viewModel.searchScope) {
+                ForEach(PoliticianListViewModel.SearchScope.allCases, id: \.self) { scope in
+                    Text(scope.title).tag(scope)
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
@@ -64,6 +74,8 @@ struct PoliticianListScreen: View {
                 refersh()
             })
             .onChange(of: viewModel.searchText) { oldValue, newValue in
+                refersh()
+            }.onChange(of: viewModel.searchScope) { _, _ in
                 refersh()
             }
             .task {
