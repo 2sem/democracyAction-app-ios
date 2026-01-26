@@ -101,7 +101,9 @@ struct PoliticianListScreen: View {
                                 let nativeAdInterval = 10
                                 ForEach(Array(group.persons.enumerated()), id: \.element.no) { index, person in
                                     SwiftUI.Group {
-                                        NativeAdRowView(adUnit: .personListNative, index: index, interval: nativeAdInterval)
+                                        if !viewModel.searchText.isEmpty || group.persons.count >= 10 {
+                                            NativeAdRowView(adUnit: .personListNative, index: index, interval: nativeAdInterval)
+                                        }
                                         politicianRow(person: person, withGroupId: group.id)
                                     }
                                 }
