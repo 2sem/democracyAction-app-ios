@@ -62,6 +62,21 @@ class PoliticianListViewModel: ObservableObject {
 
     /// Grouping type for list organization
     @Published var groupingType: GroupingType = .byName
+    
+    /// Debounce timer for search
+    private var searchDebounceTimer: Timer?
+    
+    /// Debounced refresh function
+    func debouncedRefresh(withPersons persons: [Person], completion: @escaping () -> Void) {
+        searchDebounceTimer?.invalidate()
+        
+        searchDebounceTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
+            Task { @MainActor in
+                self.updateGroups(withPersons: persons)
+                completion()
+            }
+        }
+    }
 
     /// Current chosung index for navigation
     @Published var currentChosungIndex: Int = 0

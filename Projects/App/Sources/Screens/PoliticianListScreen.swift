@@ -68,18 +68,25 @@ struct PoliticianListScreen: View {
                 }
             }
             .onChange(of: allPersons) { oldPersons, newPersons in
-                refersh()
+                viewModel.updateGroups(withPersons: newPersons)
+                updateLastVisibleGroupID()
             }
-            .onChange(of: viewModel.groupingType, { _, _ in
-                refersh()
-            })
+            .onChange(of: viewModel.groupingType) { _, _ in
+                viewModel.updateGroups(withPersons: allPersons)
+                updateLastVisibleGroupID()
+            }
             .onChange(of: viewModel.searchText) { oldValue, newValue in
-                refersh()
+                viewModel.debouncedRefresh(withPersons: allPersons) {
+                    updateLastVisibleGroupID()
+                }
             }.onChange(of: viewModel.searchScope) { _, _ in
-                refersh()
+                viewModel.debouncedRefresh(withPersons: allPersons) {
+                    updateLastVisibleGroupID()
+                }
             }
             .task {
-                refersh()
+                viewModel.updateGroups(withPersons: allPersons)
+                updateLastVisibleGroupID()
             }
             .navigationDestination(for: Person.self) { person in
                 PersonDetailScreen(person: person)
@@ -87,7 +94,7 @@ struct PoliticianListScreen: View {
         }
     }
     
-    func refersh() {
+    func refresh() {
         visibleGroupIds = []
         viewModel.updateGroups(withPersons: allPersons)
         updateLastVisibleGroupID()
