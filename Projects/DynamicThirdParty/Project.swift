@@ -3,10 +3,9 @@ import ProjectDescriptionHelpers
 
 let project = Project(
     name: "DynamicThirdParty",
-    packages: [.remote(url: "https://github.com/SDWebImage/SDWebImage.git",
-                       requirement: .upToNextMajor(from: "5.1.0")),
-               .remote(url: "https://github.com/firebase/firebase-ios-sdk",
-                       requirement: .upToNextMajor(from: "11.8.1")),
+    packages: [
+        .package(id: "SDWebImage.SDWebImage", from: "5.21.0"),
+        .package(id: "firebase.firebase-ios-sdk", from: "11.8.1"),
     ],
     targets: [
         .target(
@@ -14,11 +13,12 @@ let project = Project(
             destinations: .iOS,
             product: .framework,
             bundleId: .appBundleId.appending(".thirdparty.dynamic"),
-            dependencies: [.package(product: "SDWebImage", type: .runtime),
-                           .package(product: "FirebaseCrashlytics", type: .runtime),
-                           .package(product: "FirebaseAnalytics", type: .runtime),
-                           .package(product: "FirebaseMessaging", type: .runtime),
-                           .package(product: "FirebaseRemoteConfig", type: .runtime)
+            dependencies: [
+                .package(product: "SDWebImage"),
+                .package(product: "FirebaseCrashlytics"),
+                .package(product: "FirebaseAnalytics"),
+                .package(product: "FirebaseMessaging"),
+                .package(product: "FirebaseRemoteConfig"),       
             ]
         ),
     ]

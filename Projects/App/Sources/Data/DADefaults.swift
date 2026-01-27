@@ -9,6 +9,28 @@
 import Foundation
 import UIKit
 
+extension DADefaults {
+    static var SwiftDataMigrationCompleted: Bool {
+        get {
+            return Defaults.bool(forKey: Keys.SwiftDataMigrationCompleted)
+        }
+        
+        set(value) {
+            Defaults.set(value, forKey: Keys.SwiftDataMigrationCompleted)
+        }
+    }
+    
+    static var InitialDataLoaded: Bool {
+        get {
+            return Defaults.bool(forKey: Keys.InitialDataLoaded)
+        }
+        
+        set(value) {
+            Defaults.set(value, forKey: Keys.InitialDataLoaded)
+        }
+    }
+}
+
 class DADefaults{
     static var Defaults : UserDefaults{
         get{
@@ -26,6 +48,10 @@ class DADefaults{
         static let DataDownloaded = "DataDownloaded";
         
         static let LaunchCount = "LaunchCount";
+        static let SwiftDataMigrationCompleted = "SwiftDataMigrationCompleted";
+        static let InitialDataLoaded = "InitialDataLoaded";
+        static let AdsTrackingRequested = "AdsTrackingRequested";
+        static let LastOpeningAdPrepared = "LastOpeningAdPrepared";
     }
     
     static var LastFullADShown : Date{
@@ -103,9 +129,29 @@ class DADefaults{
             //UIApplication.shared.version
             return Defaults.integer(forKey: Keys.LaunchCount);
         }
-        
+
         set(value){
             Defaults.set(value, forKey: Keys.LaunchCount);
+        }
+    }
+
+    static var AdsTrackingRequested : Bool{
+        get{
+            return Defaults.bool(forKey: Keys.AdsTrackingRequested);
+        }
+
+        set(value){
+            Defaults.set(value, forKey: Keys.AdsTrackingRequested);
+        }
+    }
+
+    static var LastOpeningAdPrepared : Date{
+        get{
+            return Defaults.object(forKey: Keys.LastOpeningAdPrepared) as? Date ?? Date.distantPast;
+        }
+
+        set(value){
+            Defaults.set(value, forKey: Keys.LastOpeningAdPrepared);
         }
     }
 

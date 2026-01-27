@@ -16,7 +16,7 @@ import ProgressWebViewController
 import GADManager
 import StoreKit
 
-@UIApplicationMain
+// @UIApplicationMain - Removed for SwiftUI migration, now using @main in DemocracyActionApp.swift
 class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GADRewardManagerDelegate {
     var window: UIWindow?
     enum GADUnitName : String{
@@ -38,33 +38,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
             //print("launch option key[\(key)] value[\(value)]\n");
             DAInfoTableViewController.startingSearchName += "launch option key[\(key)] value[\(value)]\n";
         })*/
-        GADMobileAds.sharedInstance().start(completionHandler: nil);
-        //GADMobileAds.configure(withApplicationID: "ca-app-pub-968437x8399371172~5739040449");
+        MobileAds.shared.start(completionHandler: nil);
+        //MobileAds.configure(withApplicationID: "ca-app-pub-968437x8399371172~5739040449");
         FirebaseApp.configure();
         Messaging.messaging().delegate = self;
         KakaoManager.initialize()
         
-        self.reviewManager = ReviewManager(self.window!, interval: 60.0 * 60 * 24 * 3);
-        self.reviewManager?.delegate = self;
-        //self.reviewManager?.show();
+        // SwiftUI Migration: Window initialization deferred until window scene is available
+        // These will be initialized in scene(_:willConnectTo:options:) or when window is available
+        // For now, skip window-dependent initializations
         
-        self.rewardAd = GADRewardManager(self.window!, unitId: GADInterstitialAd.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 12); //
-        self.rewardAd?.delegate = self;
+        // self.reviewManager = ReviewManager(self.window!, interval: 60.0 * 60 * 24 * 3);
+        // self.reviewManager?.delegate = self;
         
-        var adManager = GADManager<GADUnitName>.init(self.window!);
-        AppDelegate.sharedGADManager = adManager;
-        adManager.delegate = self;
+        // self.rewardAd = GADRewardManager(self.window!, unitId: InterstitialAd.loadUnitId(name: "RewardAd") ?? "", interval: 60.0 * 60.0 * 12);
+        // self.rewardAd?.delegate = self;
+        
+        // Ad manager initialization commented out during SwiftUI migration
+        // Will be properly implemented in Step 8: AdMob Migration
+        // var adManager = GADManager<GADUnitName>();
+        // AppDelegate.sharedGADManager = adManager;
+        // adManager.delegate = self;
     #if DEBUG
-        adManager.prepare(interstitialUnit: .full, interval: 60.0);
+        // adManager.prepare(interstitialUnit: .full, interval: 60.0);
     #else
-        adManager.prepare(interstitialUnit: .full, interval: 60.0 * 60.0 * 1);
+        // adManager.prepare(interstitialUnit: .full, interval: 60.0 * 60.0 * 1);
     #endif
         
-        adManager.canShowFirstTime = true;
+        // adManager.canShowFirstTime = true;
         
-        if self.rewardAd?.canShow ?? false{
-            //self.fullAd?.show();
-        }
+        // Reward ad check disabled during migration
+        // if self.rewardAd?.canShow ?? false {
+        //     //self.fullAd?.show();
+        // }
         
         UNUserNotificationCenter.current().delegate = self;
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (result, error) in
@@ -90,7 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
             self.performPushCommand(title, body: body, category: category, info: push);
         }
         
-        DADefaults.increaseLaunchCount();
+        // Launch count now handled in AppInitializer (SwiftUI)
+        // DADefaults.increaseLaunchCount();
         
         return true
     }
@@ -120,7 +127,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ReviewManagerDelegate, GA
         guard DADefaults.LaunchCount % reviewInterval != 0 else{
             if #available(iOS 10.3, *) {
                 SKStoreReviewController.requestReview()
-                DADefaults.increaseLaunchCount();
+                // Launch count now handled in AppInitializer (SwiftUI)
+        // DADefaults.increaseLaunchCount();
             }
             return;
         }

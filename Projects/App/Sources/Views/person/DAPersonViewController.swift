@@ -30,7 +30,7 @@ class DAPersonViewController: UIViewController {
     var contactGroups : [DAContactGroup] = [];
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var banner: GADBannerView!
+    @IBOutlet var banner: BannerView!
     
     static func instantiate() -> DAPersonViewController?{
         return UIStoryboard.init(name: storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: storyboardId) as? DAPersonViewController;
@@ -46,16 +46,16 @@ class DAPersonViewController: UIViewController {
         
         /*switch UIDevice.current.userInterfaceIdiom{
             //case .pad:
-                //self.banner = GADBannerView.init(adSize: kGADAdSizeful)
+                //self.banner = BannerView.init(adSize: AdSizeful)
                 //break;
             default:
-                self.banner = GADBannerView.init(adSize: kGADAdSizeBanner)
+                self.banner = BannerView.init(adSize: AdSizeBanner)
                 break;
         }*/
         
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
-            self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .info, size: GADAdSizeFullBanner);
+            self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .info, size: AdSizeFullBanner);
             break;
         default:
             self.banner = AppDelegate.sharedGADManager?.prepare(bannerUnit: .info);
@@ -73,7 +73,7 @@ class DAPersonViewController: UIViewController {
             banner.delegate = self;
             banner.rootViewController = self;
             self.banner?.isHidden = true;
-            banner.load(GADRequest());
+            banner.load(Request());
         }
         self.loadContacts();
     }
@@ -260,14 +260,14 @@ extension DAPersonViewController : UITableViewDelegate{
     }
 }
 
-extension DAPersonViewController : GADBannerViewDelegate{
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+extension DAPersonViewController : BannerViewDelegate{
+    func bannerViewDidReceiveAd(_ bannerView: BannerView) {
         print("receive info banner");
         self.banner?.isHidden = false;
         self.tableView?.contentInset.bottom = bannerView.frame.height + 16;
     }
     
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
         print("receive info banner failed. error[\(error.localizedDescription)]");
     }
 }

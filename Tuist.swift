@@ -8,10 +8,14 @@
 import ProjectDescription
 
 let tuist = Tuist(
-    project: .tuist(compatibleXcodeVersions: .upToNextMajor("16.0")
+    fullHandle: "gamehelper/democracy-action-ios",
+    project: .tuist(
+        compatibleXcodeVersions: .upToNextMajor("26.0"),
 //                    swiftVersion: "",
 //                    plugins: <#T##[PluginLocation]#>,
-//                    generationOptions: <#T##Tuist.GenerationOptions#>,
+        generationOptions: .options(
+            enableCaching: true
+        ),
 //                    installOptions: <#T##Tuist.InstallOptions#>)
     )
 )
