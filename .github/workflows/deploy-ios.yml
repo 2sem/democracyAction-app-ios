@@ -53,10 +53,6 @@ jobs:
         run: |
           tuist install
 
-      - name: Build Tuist
-        run: |
-            tuist build
-
       - name: Log in Tuist
         run: |
           tuist auth login
