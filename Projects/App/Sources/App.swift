@@ -17,6 +17,7 @@ struct DemocracyActionApp: App {
     @StateObject private var adManager = SwiftUIAdManager()
     @Environment(\.scenePhase) private var scenePhase
     @State private var isFromBackground = false
+    @State private var isLaunched = false
 
     // SwiftData model container
     let modelContainer: ModelContainer
@@ -113,6 +114,7 @@ struct DemocracyActionApp: App {
             }
             
             isFromBackground = false
+            increaseLaunchCount()
         case .inactive:
             break
         case .background:
@@ -126,12 +128,18 @@ struct DemocracyActionApp: App {
     private func handleAppDidBecomeActive() {
         print("scene become active")
         Task {
-            defer {
-                DADefaults.increaseLaunchCount()
-            }
-            
             await adManager.requestAppTrackingIfNeed()
             await adManager.show(unit: .launch)
+        }
+    }
+    
+    private func increaseLaunchCount() {
+        defer {
+            isLaunched = true
+        }
+        
+        if !isLaunched {
+            DADefaults.increaseLaunchCount()
         }
     }
 }
