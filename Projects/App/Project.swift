@@ -125,6 +125,7 @@ let project = Project(
                                                           "fbapi",
                                                           "fb-message-api",
                                                           "fbauth2"]),
+                    "UISupportedInterfaceOrientations": .array(["UIInterfaceOrientationPortrait"])
                 ]
             ),
             sources: ["Sources/**"],
