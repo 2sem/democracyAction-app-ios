@@ -46,39 +46,39 @@ class DataMigrationManager: ObservableObject {
         if isMigrationCompleted {
             print("[DataMigration] Migration already completed")
             migrationStatus = .alreadyMigrated
-            currentStep = "Migration already completed"
+            currentStep = "마이그레이션이 이미 완료됨"
             return .migrationSkipped
         }
 
         migrationStatus = .checking
-        currentStep = "Checking for Core Data..."
+        currentStep = "Core Data 확인 중..."
         print("[DataMigration] Checking for Core Data")
 
         // Check if Core Data exists and has data
         if await hasCoreData() {
             // Core Data exists - migrate to SwiftData
             migrationStatus = .migrating
-            currentStep = "Starting migration..."
+            currentStep = "마이그레이션 시작 중..."
             print("[DataMigration] Core Data found, starting migration")
 
             do {
                 try await performMigration(modelContext: modelContext)
                 print("[DataMigration] Migration completed successfully")
                 migrationStatus = .completed
-                currentStep = "Migration completed"
+                currentStep = "마이그레이션 완료"
                 isMigrationCompleted = true
                 return .migrationCompleted
             } catch {
                 print("[DataMigration] Migration failed: \(error.localizedDescription)")
                 migrationStatus = .failed(error.localizedDescription)
-                currentStep = "Migration failed: \(error.localizedDescription)"
+                currentStep = "마이그레이션 실패: \(error.localizedDescription)"
                 return .migrationFailed(error)
             }
         } else {
             // No Core Data found
             print("[DataMigration] No Core Data found.")
             migrationStatus = .noCoreDataFound
-            currentStep = "No Core Data found to migrate."
+            currentStep = "마이그레이션할 Core Data가 없습니다."
             // We set this to true to avoid checking for Core Data again on next launch
             // for a user who never had Core Data.
             isMigrationCompleted = true
@@ -112,53 +112,53 @@ class DataMigrationManager: ObservableObject {
         await Task.yield()
 
         // Step 1: Migrate Groups (10% progress)
-        currentStep = "Migrating groups..."
+        currentStep = "그룹 마이그레이션 중..."
         migrationProgress = 0.0
         try await migrateGroups(with: modelContext)
         migrationProgress = 0.10
 
         // Step 1.5: Migrate Group Phones/Messages/Webs (5% progress)
-        currentStep = "Migrating group contact info..."
+        currentStep = "그룹 연락처 정보 마이그레이션 중..."
         try await migrateGroupData(with: modelContext)
         migrationProgress = 0.15
 
         // Step 2: Migrate Persons (40% progress)
-        currentStep = "Migrating persons..."
+        currentStep = "인물 마이그레이션 중..."
         try await migratePersons(with: modelContext)
         migrationProgress = 0.50
 
         // Step 3: Migrate Phones (10% progress)
-        currentStep = "Migrating phones..."
+        currentStep = "전화번호 마이그레이션 중..."
         try await migratePhones(with: modelContext)
         migrationProgress = 0.60
 
         // Step 4: Migrate Messages (10% progress)
-        currentStep = "Migrating social media..."
+        currentStep = "소셜 미디어 마이그레이션 중..."
         try await migrateMessages(with: modelContext)
         migrationProgress = 0.70
 
         // Step 5: Migrate Webs (10% progress)
-        currentStep = "Migrating websites..."
+        currentStep = "웹사이트 마이그레이션 중..."
         try await migrateWebs(with: modelContext)
         migrationProgress = 0.80
 
         // Step 6: Migrate Favorites (5% progress)
-        currentStep = "Migrating favorites..."
+        currentStep = "즐겨찾기 마이그레이션 중..."
         try await migrateFavorites(with: modelContext)
         migrationProgress = 0.85
 
         // Step 7: Migrate Event Groups (5% progress)
-        currentStep = "Migrating event groups..."
+        currentStep = "이벤트 그룹 마이그레이션 중..."
         try await migrateEventGroups(with: modelContext)
         migrationProgress = 0.90
 
         // Step 8: Migrate Events (10% progress)
-        currentStep = "Migrating events..."
+        currentStep = "이벤트 마이그레이션 중..."
         try await migrateEvents(with: modelContext)
         migrationProgress = 0.95
 
         // Final save
-        currentStep = "Saving data..."
+        currentStep = "데이터 저장 중..."
         try modelContext.save()
 
         migrationProgress = 1.0

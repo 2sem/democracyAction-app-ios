@@ -86,13 +86,13 @@ struct SplashScreen: View {
             }
             .padding(.horizontal, 40)
         }
-        .alert("Initialization Error", isPresented: $showError) {
-            Button("Retry") {
+        .alert("초기화 오류", isPresented: $showError) {
+            Button("다시 시도") {
                 Task {
                     await performInitialization()
                 }
             }
-            Button("Cancel", role: .cancel) {
+            Button("취소", role: .cancel) {
                 // User can cancel and app will continue without data
                 isDone = true
             }
@@ -106,7 +106,7 @@ struct SplashScreen: View {
 
     private func performInitialization() async {
         do {
-            migrationManager.currentStep = "Initializing..."
+            migrationManager.currentStep = "초기화 중..."
             
             // Initialize app (launch count, etc.)
             try await AppInitializer.initialize()
@@ -151,7 +151,7 @@ struct SplashScreen: View {
                 return
             }
 
-            migrationManager.currentStep = "Ready!"
+            migrationManager.currentStep = "준비 완료!"
             try await Task.sleep(nanoseconds: 500_000_000) // 0.5 seconds
 
             await MainActor.run {

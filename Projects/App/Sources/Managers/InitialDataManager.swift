@@ -51,39 +51,39 @@ class InitialDataManager: ObservableObject {
         if isDataLoaded {
             print("[InitialData] Initial data already loaded")
             status = .completed
-            currentStep = "Data already loaded"
+            currentStep = "데이터가 이미 로드됨"
             return false
         }
 
         status = .checking
-        currentStep = "Checking for existing data..."
+        currentStep = "기존 데이터 확인 중..."
         print("[InitialData] Checking if data exists")
 
         // Check if SwiftData already has data
         if await hasData(modelContext: modelContext) {
             print("[InitialData] Data already exists, skipping load")
             status = .completed
-            currentStep = "Data already exists"
+            currentStep = "데이터가 이미 존재함"
             isDataLoaded = true
             return false
         }
 
         // Fresh install - load initial data
         status = .loading
-        currentStep = "Loading initial data..."
+        currentStep = "초기 데이터 로딩 중..."
         print("[InitialData] No data found, loading from Excel")
 
         do {
             try await loadInitialData(modelContext: modelContext)
             print("[InitialData] Initial data load completed successfully")
             status = .completed
-            currentStep = "Data loaded successfully"
+            currentStep = "데이터가 성공적으로 로드됨"
             isDataLoaded = true
             return true
         } catch {
             print("[InitialData] Initial data load failed: \(error.localizedDescription)")
             status = .failed(error.localizedDescription)
-            currentStep = "Data load failed: \(error.localizedDescription)"
+            currentStep = "데이터 로딩 실패: \(error.localizedDescription)"
             return false
         }
     }

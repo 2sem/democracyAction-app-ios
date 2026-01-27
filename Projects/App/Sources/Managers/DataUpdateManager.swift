@@ -43,7 +43,7 @@ class DataUpdateManager: ObservableObject {
         print("[DataUpdate] checkAndUpdateIfNeeded started")
 
         status = .checking
-        currentStep = "Checking for data updates..."
+        currentStep = "데이터 업데이트 확인 중..."
 
         // Load bundled Excel to check version
         guard let excelURL = Bundle.main.url(
@@ -56,7 +56,7 @@ class DataUpdateManager: ObservableObject {
         ) else {
             print("[DataUpdate] Bundled Excel not found")
             status = .completed
-            currentStep = "No updates available"
+            currentStep = "업데이트 가능 없음"
             return false
         }
 
@@ -70,25 +70,25 @@ class DataUpdateManager: ObservableObject {
         guard bundledVersion > currentVersion else {
             print("[DataUpdate] Data is up to date")
             status = .completed
-            currentStep = "Data is up to date"
+            currentStep = "데이터가 최신 상태임"
             return false
         }
 
         // Update needed
         print("[DataUpdate] Update available: \(currentVersion) → \(bundledVersion)")
         status = .updating
-        currentStep = "Updating data..."
+        currentStep = "데이터 업데이트 중..."
 
         do {
             try await syncUpdates(excel: excel, modelContext: modelContext)
             print("[DataUpdate] Update completed successfully")
             status = .completed
-            currentStep = "Update completed"
+            currentStep = "업데이트 완료"
             return true
         } catch {
             print("[DataUpdate] Update failed: \(error.localizedDescription)")
             status = .failed(error.localizedDescription)
-            currentStep = "Update failed: \(error.localizedDescription)"
+            currentStep = "업데이트 실패: \(error.localizedDescription)"
             return false
         }
     }
@@ -101,7 +101,7 @@ class DataUpdateManager: ObservableObject {
         excel.loadFromFlie()
 
         // Progress tracking
-        currentStep = "Syncing groups..."
+        currentStep = "그룹 동기화 중..."
         progress = 0.0
 
         // Sync groups (update existing, add new)
@@ -109,17 +109,17 @@ class DataUpdateManager: ObservableObject {
         progress = 0.25
 
         // Sync persons (update existing, add new, remove deleted)
-        currentStep = "Syncing politicians..."
+        currentStep = "정치인 동기화 중..."
         try await syncPersonUpdates(excel: excel, modelContext: modelContext)
         progress = 0.75
 
         // Sync events
-        currentStep = "Syncing events..."
+        currentStep = "이벤트 동기화 중..."
         try await syncEventUpdates(excel: excel, modelContext: modelContext)
         progress = 0.95
 
         // Final save
-        currentStep = "Saving updates..."
+        currentStep = "업데이트 저장 중..."
         try modelContext.save()
 
         // Update version
