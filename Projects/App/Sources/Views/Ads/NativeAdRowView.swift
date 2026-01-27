@@ -50,9 +50,9 @@ struct NativeAdRowView: View {
                             }
                         }
                         .padding(.vertical, 4)
-                        .task {
-                            await adManager.requestAppTrackingIfNeed()
-                        }
+//                        .task {
+//                            await adManager.requestAppTrackingIfNeed()
+//                        }
                         .overlay(alignment: .topTrailing) {
                             AdMarkView()
                                 .padding(.top, 2)
