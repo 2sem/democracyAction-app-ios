@@ -15,4 +15,4 @@ SWIFT_VERSION=5.0
 DEBUG_INFORMATION_FORMAT[config=Debug]=dwarf-with-dsym
 
 // For Firebase
-OTHER_LDFLAGS = -ObjC
+OTHER_LDFLAGS = $(inherited) -ObjC
