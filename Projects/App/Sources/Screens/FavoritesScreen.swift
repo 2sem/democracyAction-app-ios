@@ -74,10 +74,6 @@ struct FavoritesScreen: View {
                         .padding()
                     }
                 }
-
-                // Banner at bottom
-                BannerAdView(adUnitName: "FavBottom")
-                    .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 90 : 50)
             }
             .navigationTitle("즐겨찾기")
             .navigationDestination(for: Person.self) { person in
