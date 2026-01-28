@@ -22,7 +22,7 @@
       "matchStrings": [
         "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", requirement: \\.(?:upToNextMajor|upToNextMinor)\\(from: \"(?<currentValue>[^\"]+)\"\\)"
       ],
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
@@ -30,7 +30,7 @@
       "matchStrings": [
         "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", requirement: \\.exact\\(\"(?<currentValue>[^\"]+)\"\\)"
       ],
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
@@ -38,7 +38,7 @@
       "matchStrings": [
         "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", \\.branch\\(\"(?<currentValue>[^\"]+)\"\\)\\)"
       ],
-      "datasourceTemplate": "git-refs",
+      "datasourceTemplate": "git-refs"
     }
   ],
   "packageRules": [
