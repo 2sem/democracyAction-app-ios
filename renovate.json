@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "autodiscover": false,
-  "extends": ["config:recommended"],
+  "extends": ["config:base"],
+  "enabledManagers": ["custom.regex"],
   "labels": ["dependencies", "renovate"],
   "prConcurrentLimit": 3,
   "prHourlyLimit": 2,
@@ -11,16 +12,17 @@
       "customType": "regex",
       "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
       "matchStrings": [
-        "\\.package\\(id: \"(?<depName>[\\w\\-.]+?)\", (?:from|exact:) \"(?<currentValue>[^\"]+)\"\\)"
+        "\\.package\\(id:\\s*\"(?<depName>[\\w\\-.]+?)\"[\\s\\S]*?(?:from|exact):\\s*\"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "github-releases",
-      "packageNameTemplate": "{{{replace '.' '/' depName}}}"
+      "packageNameTemplate": "{{{replace '\\.' '/' depName}}}"
     },
     {
       "customType": "regex",
       "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
       "matchStrings": [
-        "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", requirement: \\.(?:upToNextMajor|upToNextMinor)\\(from: \"(?<currentValue>[^\"]+)\"\\)"
+        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?requirement:\\s*\\.(?:upToNextMajor|upToNextMinor)\\(from:\\s*\"(?<currentValue>[^\"]+)\"\\)",
+        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?requirement:\\s*\\.exact\\(\"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "github-releases"
     },
@@ -28,15 +30,16 @@
       "customType": "regex",
       "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
       "matchStrings": [
-        "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", requirement: \\.exact\\(\"(?<currentValue>[^\"]+)\"\\)"
+        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?requirement:\\s*\\.(?:upToNextMajor|upToNextMinor)\\(from:\\s*\"(?<currentValue>[^\"]+)\"\\)",
+        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?requirement:\\s*\\.exact\\(\"(?<currentValue>[^\"]+)\"\\)"
       ],
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-tags"
     },
     {
       "customType": "regex",
       "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
       "matchStrings": [
-        "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", \\.branch\\(\"(?<currentValue>[^\"]+)\"\\)\\)"
+        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?\\.branch\\(\"(?<currentValue>[^\"]+)\"\\)\\)"
       ],
       "datasourceTemplate": "git-refs"
     }
