@@ -1,66 +1,63 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "autodiscover": false,
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:recommended"],
   "labels": ["dependencies", "renovate"],
   "prConcurrentLimit": 3,
   "prHourlyLimit": 2,
   "schedule": ["before 3am on monday"],
-
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["(^|/)Project\\.swift$"],
+      "customType": "regex",
+      "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
       "matchStrings": [
         "\\.package\\(id: \"(?<depName>[\\w\\-.]+?)\", (?:from|exact:) \"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "github-releases",
-      "lookupNameTemplate": "{{{replace depName '.' '/'}}}"
+      "packageNameTemplate": "{{{replace '.' '/' depName}}}"
     },
     {
-      "fileMatch": ["(^|/)Project\\.swift$"],
+      "customType": "regex",
+      "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
       "matchStrings": [
         "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", requirement: \\.(?:upToNextMajor|upToNextMinor)\\(from: \"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "github-releases",
-      "lookupNameTemplate": "{{depName}}"
     },
     {
-      "fileMatch": ["(^|/)Project\\.swift$"],
+      "customType": "regex",
+      "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
       "matchStrings": [
         "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", requirement: \\.exact\\(\"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "github-releases",
-      "lookupNameTemplate": "{{depName}}"
     },
     {
-      "fileMatch": ["(^|/)Project\\.swift$"],
+      "customType": "regex",
+      "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
       "matchStrings": [
         "\\.remote\\(url: \"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\", \\.branch\\(\"(?<currentValue>[^\"]+)\"\\)\\)"
       ],
       "datasourceTemplate": "git-refs",
-      "lookupNameTemplate": "{{depName}}"
     }
   ],
-
   "packageRules": [
     {
       "matchDatasources": ["github-releases"],
-      "matchManagers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "groupName": "Swift/Tuist Dependencies",
       "automerge": false
     },
     {
       "matchDatasources": ["git-refs"],
-      "matchManagers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "groupName": "Branch Dependencies (No Auto-update)",
       "enabled": false
     },
     {
       "matchUpdateTypes": ["patch"],
       "automerge": true,
-      "automergeType": "branch-push",
+      "automergeType": "branch",
       "groupName": "Patch Updates"
     },
     {
