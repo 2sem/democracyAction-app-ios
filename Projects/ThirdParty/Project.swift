@@ -5,7 +5,7 @@ let project = Project(
     name: "ThirdParty",
     packages: [
         .remote(url: "https://github.com/kakao/kakao-ios-sdk",
-                requirement: .upToNextMajor(from: "2.22.2")),
+                requirement: .upToNextMajor(from: "2.27.2")),
         .remote(url: "https://github.com/jdg/MBProgressHUD.git",
                 requirement: .upToNextMajor(from: "1.2.0")),
         .remote(url: "https://github.com/2sem/DownPicker",
@@ -16,7 +16,7 @@ let project = Project(
                 requirement: .upToNextMajor(from: "3.1.8")),
         .remote(url: "https://github.com/2sem/LProgressWebViewController",
                 requirement: .upToNextMajor(from: "3.1.0")),
-        .package(id: "krzyzanowskim.CryptoSwift", from: "1.8.3"),
+        .package(id: "krzyzanowskim.CryptoSwift", from: "1.9.0"),
         .package(id: "CoreOffice.CoreXLSX", exact: "0.14.1"),
         .package(id: "facebook.facebook-ios-sdk", from: "14.1.0"),
         .package(id: "SwipeCellKit.SwipeCellKit", from: "2.7.1"),
