@@ -6,7 +6,7 @@
   "labels": ["dependencies", "renovate"],
   "prConcurrentLimit": 3,
   "prHourlyLimit": 2,
-  "schedule": ["before 3am on monday"],
+  "schedule": [],
   "customManagers": [
     {
       "customType": "regex",
