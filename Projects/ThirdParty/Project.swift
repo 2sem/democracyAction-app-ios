@@ -11,7 +11,7 @@ let project = Project(
         .remote(url: "https://github.com/2sem/DownPicker",
                 requirement: .branch("spm")),
         .remote(url: "https://github.com/2sem/LSExtensions",
-                requirement: .exact("2.27.2")),
+                requirement: .exact("0.1.22")),
         .remote(url: "https://github.com/CosmicMind/Material",
                 requirement: .upToNextMajor(from: "3.1.8")),
         .remote(url: "https://github.com/2sem/LProgressWebViewController",
