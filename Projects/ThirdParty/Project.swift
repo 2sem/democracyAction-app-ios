@@ -18,7 +18,7 @@ let project = Project(
                 requirement: .upToNextMajor(from: "3.1.0")),
         .package(id: "krzyzanowskim.CryptoSwift", from: "1.9.0"),
         .package(id: "CoreOffice.CoreXLSX", exact: "0.14.1"),
-        .package(id: "facebook.facebook-ios-sdk", from: "14.1.0"),
+        .package(id: "facebook.facebook-ios-sdk", from: "18.0.1"),
         .package(id: "SwipeCellKit.SwipeCellKit", from: "2.7.1"),
     ],
     targets: [
