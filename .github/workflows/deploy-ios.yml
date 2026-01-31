@@ -64,6 +64,10 @@ jobs:
         run: |
           tuist setup cache
 
+      - name: Log in Tuist Registry
+        run: |
+          tuist registry login
+
       - name: Import signing certificate
         env:
           IOS_CERT_BASE64: $IOS_CERT_PATH.base64
