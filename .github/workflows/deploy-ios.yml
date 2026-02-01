@@ -83,9 +83,18 @@ jobs:
       #   run: |
       #     /usr/libexec/PlistBuddy -c "delete :NSAppTransportSecurity:NSExceptionDomains" ./ios/$PRODUCT_NAME/Info.plist
       
-      - name: Generate Xcode Project
+      - name: Generate Xcode Project First
+        continue-on-error: true
         run: |
           tuist generate --cache-profile none
+
+      - name: Setup Registry
+        run: |
+          tuist registry setup
+
+      - name: Generate Xcode Project Second
+        run: |
+          tuist generate --cache-profile none    
 
       - name: Upgrade fastlane
         run: |
