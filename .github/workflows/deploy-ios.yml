@@ -110,7 +110,7 @@ jobs:
 
       - name: Setup Certificates and Increment Version
         env:
-          PACKAGE_NAME: 'com.y2k.realtornote'
+          PACKAGE_NAME: 'com.y2k.democracyaction'
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
           IOS_CERT_PWD: ${{ secrets.IOS_CERT_P12_PWD }}
           IOS_KEYCHAIN: ${{ secrets.IOS_KEYCHAIN }}
