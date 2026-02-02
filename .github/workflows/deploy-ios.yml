@@ -135,8 +135,6 @@ jobs:
             <dict>
               <key>$PACKAGE_NAME</key>
               <string>$PRODUCT_NAME</string>
-              <key>$PACKAGE_NAME.widget</key>
-              <string>${PRODUCT_NAME} widget</string>
             </dict>
             <key>signingStyle</key>
             <string>manual</string>
