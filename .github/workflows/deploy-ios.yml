@@ -30,6 +30,13 @@ jobs:
         IOS_KEY_PATH: 'api-key.json'
         GPG_PRIVATE_KEY_PATH: 'private.gpg'
     steps:
+      - name: Validate PACKAGE_NAME
+        run: |
+          if [ -z "$PACKAGE_NAME" ]; then
+            echo "::error::PACKAGE_NAME is not defined. Please ensure PACKAGE_NAME is set in repository secrets."
+            exit 1
+          fi
+
       - name: Checkout project
         uses: actions/checkout@v2
         
