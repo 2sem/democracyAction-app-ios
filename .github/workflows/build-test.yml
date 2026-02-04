@@ -22,7 +22,7 @@ on:
       - '**/*.swift'
 
 jobs:
-  analyze-swift:
+  build-test:
     name: Analyze Swift
     runs-on: macos-26
     permissions:
@@ -69,8 +69,8 @@ jobs:
       run: |
         tuist generate
 
-    - name: Generate Xcode Project
+    - name: Build App
       env:
         SCHEME: App
       run: |
-        tuist xcodebuild build --cheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        tuist xcodebuild build -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
