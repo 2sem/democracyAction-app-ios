@@ -22,44 +22,6 @@ on:
       - '**/*.swift'
 
 jobs:
-  analyze-actions:
-    name: Analyze Actions
-    runs-on: ubuntu-latest
-    permissions:
-      # required for all workflows
-      security-events: write
-
-      # required to fetch internal or private CodeQL packs
-      packages: read
-
-      # only required for workflows in private repositories
-      actions: read
-      contents: read
-
-      id-token: write # OIDC
-
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-        - language: swift
-          build-mode: none
-          
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v4
-      with:
-        languages: ${{ matrix.language }}
-        build-mode: ${{ matrix.build-mode }}
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v4
-      with:
-        category: "/language:${{matrix.language}}"
-
   analyze-swift:
     name: Analyze Swift
     runs-on: macos-26
