@@ -57,13 +57,13 @@ jobs:
     - name: Install Mise
       uses: jdx/mise-action@v2
 
-    - name: Install Dependencies
-      run: |
-        tuist install
-
     - name: Log in Tuist
       run: |
         tuist auth login
+
+    - name: Install Dependencies
+      run: |
+        tuist install
 
     - name: Generate Xcode Project
       run: |
