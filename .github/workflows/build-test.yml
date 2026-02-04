@@ -23,7 +23,7 @@ on:
 
 jobs:
   build-test:
-    name: Analyze Swift
+    name: Build & Test
     runs-on: macos-26
     permissions:
       # required for all workflows
@@ -38,13 +38,6 @@ jobs:
 
       # required for Tuist OIDC authentication
       id-token: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-        - language: swift
-          build-mode: autobuild
 
     steps:
     - name: Checkout repository
@@ -64,6 +57,10 @@ jobs:
     - name: Install Dependencies
       run: |
         tuist install
+
+    - name: Setup Tuist Cache Service
+      run: |
+        tuist setup cache
 
     - name: Generate Xcode Project
       run: |
