@@ -37,6 +37,9 @@ jobs:
       actions: read
       contents: read
 
+      # required for Tuist OIDC authentication
+      id-token: write
+
     strategy:
       fail-fast: false
       matrix:
