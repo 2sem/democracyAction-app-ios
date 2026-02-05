@@ -62,12 +62,8 @@ jobs:
       run: |
         tuist setup cache
 
-    - name: Generate Xcode Project
-      run: |
-        tuist generate
-
-    - name: Build App
+    - name: Build & Test App
       env:
         SCHEME: App
       run: |
-        tuist xcodebuild build -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        tuist test
