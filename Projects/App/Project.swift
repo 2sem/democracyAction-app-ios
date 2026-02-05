@@ -89,7 +89,6 @@ let project = Project(
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchStoryboardName": "LaunchScreen",
-                    "UIMainStoryboardFile": "Main",
                     "UIUserInterfaceStyle": "Light",
                     "GADApplicationIdentifier": "ca-app-pub-9684378399371172~5739040449",
                     "GADUnitIdentifiers": ["InfoBottom" : "ca-app-pub-9684378399371172/7215773643",
