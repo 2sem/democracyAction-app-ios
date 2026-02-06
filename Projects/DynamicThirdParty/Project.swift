@@ -13,6 +13,7 @@ let project = Project(
             destinations: .iOS,
             product: .framework,
             bundleId: .appBundleId.appending(".thirdparty.dynamic"),
+            deploymentTargets: .iOS("18.0"),
             dependencies: [
                 .package(product: "SDWebImage"),
                 .package(product: "FirebaseCrashlytics"),

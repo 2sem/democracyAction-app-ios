@@ -27,6 +27,7 @@ let project = Project(
             destinations: .iOS,
             product: .staticFramework,
             bundleId: .appBundleId.appending(".thirdparty"),
+            deploymentTargets: .iOS("18.0"),
             dependencies: [.package(product: "CoreXLSX"),
                            .package(product: "KakaoSDK", type: .runtime),
                            .package(product: "SwipeCellKit"),
