@@ -50,11 +50,11 @@ extension DAModelController{
                         continue;
                 }
                 
-                if name == nameCho, let person = member.person{
+                if name == nameCho, let _ = member.person{
                     filter = nameFirstCharacters.contains(nameCho);
                 }else if !name.isEmpty{
                     filter = name.contains(nameCho);
-                    if !filter && !nameKors.isEmpty, let person = member.person{
+                    if !filter && !nameKors.isEmpty, let _ = member.person{
                         filter = nameCharacters.contains(nameKors);
                     }
                 }
