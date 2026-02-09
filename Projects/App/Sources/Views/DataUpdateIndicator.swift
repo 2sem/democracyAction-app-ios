@@ -12,6 +12,14 @@ struct DataUpdateIndicator: View {
         DADefaults.DataUpdateDate
     }
 
+    /// Check if the date is unset (Unix epoch = 1970-01-01)
+    /// This happens for existing users who already have data before this feature was added
+    private var isDateUnset: Bool {
+        // Unix epoch is 1970-01-01 00:00:00 UTC
+        // Check if date is within 1 day of epoch to be safe
+        updateDate.timeIntervalSince1970 < 86400 // 86400 seconds = 1 day
+    }
+
     private var daysSinceUpdate: Int {
         let calendar = Calendar.current
         let now = Date()
@@ -36,11 +44,15 @@ struct DataUpdateIndicator: View {
     }
 
     var body: some View {
-        Text(dateText)
-            .font(.caption)
-            .foregroundStyle(isStale ? .orange : .secondary)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .padding(.vertical, 4)
+        // Hide indicator if date is unset (for existing users before this feature)
+        // It will appear after the next data update
+        if !isDateUnset {
+            Text(dateText)
+                .font(.caption)
+                .foregroundStyle(isStale ? .orange : .secondary)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.vertical, 4)
+        }
     }
 }
 
