@@ -42,11 +42,12 @@ class DADefaults{
         static let LastFullADShown = "LastFullADShown";
         static let LastShareShown = "LastShareShown";
         static let LastRewardShown = "LastRewardShown";
-        
+
         static let LastNotice = "LastNotice";
         static let DataVersion = "DataVersion"
+        static let DataUpdateDate = "DataUpdateDate"
         static let DataDownloaded = "DataDownloaded";
-        
+
         static let LaunchCount = "LaunchCount";
         static let SwiftDataMigrationCompleted = "SwiftDataMigrationCompleted";
         static let InitialDataLoaded = "InitialDataLoaded";
@@ -152,6 +153,17 @@ class DADefaults{
 
         set(value){
             Defaults.set(value, forKey: Keys.LastOpeningAdPrepared);
+        }
+    }
+
+    static var DataUpdateDate : Date{
+        get{
+            let seconds = Defaults.double(forKey: Keys.DataUpdateDate);
+            return Date.init(timeIntervalSince1970: seconds);
+        }
+
+        set(value){
+            Defaults.set(value.timeIntervalSince1970, forKey: Keys.DataUpdateDate);
         }
     }
 

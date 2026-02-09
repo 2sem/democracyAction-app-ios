@@ -82,10 +82,11 @@ class ExcelDataLoader {
         try modelContext.save()
         await progressCallback?(1.0, "Data loaded successfully")
 
-        // Update data version
+        // Update data version and date
         DADefaults.DataVersion = excel.version
+        DADefaults.DataUpdateDate = excel.updateDate
 
-        print("[ExcelDataLoader] Initial data load completed - version: \(excel.version)")
+        print("[ExcelDataLoader] Initial data load completed - version: \(excel.version), date: \(excel.updateDate)")
     }
 
     // MARK: - Group Syncing
