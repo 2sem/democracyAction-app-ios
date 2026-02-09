@@ -124,10 +124,10 @@ class DataUpdateManager: ObservableObject {
 
         // Update version and date
         DADefaults.DataVersion = excel.version
-        DADefaults.DataUpdateDate = excel.noticeDate
+        DADefaults.DataUpdateDate = excel.updateDate
         progress = 1.0
 
-        print("[DataUpdate] Sync completed - updated to version \(excel.version), date: \(excel.noticeDate)")
+        print("[DataUpdate] Sync completed - updated to version \(excel.version), date: \(excel.updateDate)")
     }
 
     // MARK: - Update Sync Methods

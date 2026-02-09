@@ -42,7 +42,7 @@ class DAExcelController : NSObject{
         }
     }
     
-    var noticeDate : Date{
+    var updateDate : Date{
         get{
             let cell = self.infoSheet.cells(atRows: [4]).last
             return (cell?.stringValue(self.sharedStrings) ?? "").toDate("MM/dd/yy")!;

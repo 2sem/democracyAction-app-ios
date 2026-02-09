@@ -84,9 +84,9 @@ class ExcelDataLoader {
 
         // Update data version and date
         DADefaults.DataVersion = excel.version
-        DADefaults.DataUpdateDate = excel.noticeDate
+        DADefaults.DataUpdateDate = excel.updateDate
 
-        print("[ExcelDataLoader] Initial data load completed - version: \(excel.version), date: \(excel.noticeDate)")
+        print("[ExcelDataLoader] Initial data load completed - version: \(excel.version), date: \(excel.updateDate)")
     }
 
     // MARK: - Group Syncing
