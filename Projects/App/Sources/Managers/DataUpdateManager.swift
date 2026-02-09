@@ -122,11 +122,12 @@ class DataUpdateManager: ObservableObject {
         currentStep = "업데이트 저장 중..."
         try modelContext.save()
 
-        // Update version
+        // Update version and date
         DADefaults.DataVersion = excel.version
+        DADefaults.DataUpdateDate = excel.noticeDate
         progress = 1.0
 
-        print("[DataUpdate] Sync completed - updated to version \(excel.version)")
+        print("[DataUpdate] Sync completed - updated to version \(excel.version), date: \(excel.noticeDate)")
     }
 
     // MARK: - Update Sync Methods

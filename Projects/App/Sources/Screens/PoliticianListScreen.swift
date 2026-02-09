@@ -19,6 +19,9 @@ struct PoliticianListScreen: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                DataUpdateIndicator()
+                    .background(Color(UIColor.systemBackground))
+
                 if viewModel.groups.isEmpty {
                     emptyView()
                 } else {
