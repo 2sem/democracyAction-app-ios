@@ -36,8 +36,8 @@ extension DAModelController{
                 continue;
             }
             
-            //find 
-            if let index = modelPersons.index(of: modelPerson){
+            //find
+            if let index = modelPersons.firstIndex(of: modelPerson){
                 modelPersons.remove(at: index);
             }
         }
