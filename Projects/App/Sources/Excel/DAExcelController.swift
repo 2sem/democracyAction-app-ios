@@ -45,7 +45,7 @@ class DAExcelController : NSObject{
     var updateDate : Date{
         get{
             let cell = self.infoSheet.cells(atRows: [4]).last
-            return (cell?.stringValue(self.sharedStrings) ?? "").toDate("MM/dd/yy")!;
+            return cell?.dateValue ?? Date.min;
         }
     }
     
