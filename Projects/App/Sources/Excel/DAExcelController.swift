@@ -91,7 +91,7 @@ class DAExcelController : NSObject{
     override convenience init(){
         
         if DADefaults.DataDownloaded{
-            print("DAExcelController init. localUrl: \(DAExcelController.localUrl)")
+            print("DAExcelController init. localUrl: \(DAExcelController.localUrl?.absoluteString ?? "nil")")
             let downloadedExcel = DAExcelController(DAExcelController.localUrl!)
 //            let downloadedExcel = XLSXFile.init(filepath: DAExcelController.localUrl!.path)!
 //            let downloadedWorkbook = try! downloadedExcel.parseWorkbooks().first!
