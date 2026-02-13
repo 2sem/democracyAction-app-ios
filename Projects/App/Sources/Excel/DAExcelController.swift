@@ -123,14 +123,6 @@ class DAExcelController : NSObject{
         //        print("\(cell?.columnName()) - \(cell?.columnIndex()) => \(cell?.stringValue())");
     }
     
-    func loadFromInfos() {
-        let sheet = self.infoSheet!
-        let headers = self.loadHeaders(from: sheet)
-        
-        let row = self.headerRow.advanced(by: 1)
-        _ = self.loadCells(of: row, with: headers, in: sheet)
-    }
-    
     func loadFromFlie(){
         guard self.persons.isEmpty && self.groups.isEmpty else{
             return;
