@@ -74,7 +74,7 @@ let project = Project(
             scripts: [
                 .post(script: "/bin/sh \"${SRCROOT}/Scripts/merge_skadnetworks.sh\"",
                       name: "Merge SKAdNetworkItems",
-                      inputPaths: ["$(SRCROOT)/Resources/InfoPlist/skNetworks.plist"],
+                      inputPaths: ["$(SRCROOT)/Resources/Plists/skNetworks.plist"],
                       outputPaths: []),
             ],
             dependencies: [
