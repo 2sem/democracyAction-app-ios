@@ -46,7 +46,7 @@ struct SplashScreen: View {
     
     var body: some View {
         ZStack {
-            Color.white
+            Color(UIColor.systemBackground)
                 .ignoresSafeArea()
 
             VStack(spacing: 40) {

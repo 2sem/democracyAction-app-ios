@@ -153,7 +153,7 @@ struct PoliticianListScreen: View {
         NavigationLink(value: person) {
             PoliticianRow(person: person)
         }
-        .tint(.black)
+        .tint(.primary)
         .id(person.id.hashValue.description)
 //            .onScrollVisibilityChange(threshold: 0.5) { isVisible in
 //                if isVisible {

@@ -45,9 +45,9 @@ struct PersonProfileView: View {
                 } label: {
                     Image(systemName: isFavorite ? "star.fill" : "star")
                         .font(.system(size: 16))
-                        .foregroundColor(isFavorite ? .yellow : .black)
+                        .foregroundColor(isFavorite ? .yellow : .secondary)
                         .padding(8)
-                        .background(.white)
+                        .background(Color(UIColor.systemBackground))
                         .clipShape(Circle())
                 }
                 .offset(x: 16, y: 16)
