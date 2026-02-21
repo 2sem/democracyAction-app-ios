@@ -46,7 +46,7 @@ struct FavoritesScreen: View {
                                                 }
                                             }
                                         }
-                                        .tint(.black)
+                                        .tint(.primary)
                                         .id(favorite.id)
                                         .contextMenu {
 //                                        Button {
