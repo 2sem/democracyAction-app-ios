@@ -4,8 +4,7 @@ import ProjectDescriptionHelpers
 let project = Project(
     name: "ThirdParty",
     packages: [
-        .remote(url: "https://github.com/kakao/kakao-ios-sdk",
-                requirement: .upToNextMajor(from: "2.27.2")),
+        .package(id: "kakao.kakao-ios-sdk", from: "2.27.2"),
         .remote(url: "https://github.com/jdg/MBProgressHUD.git",
                 requirement: .upToNextMajor(from: "1.2.0")),
         .remote(url: "https://github.com/2sem/DownPicker",
