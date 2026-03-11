@@ -80,6 +80,13 @@ let project = Project(
                                                           "fbauth2"]),
                 ]
             ),
+            sources: ["Sources/**"],
+            resources: [.glob(pattern: "Resources/**",
+                              excluding: [
+                                "Resources/Images/photos/*",
+                                "Resources/Databases/DAModel.xcdatamodeld/**"
+                              ]),
+                        .folderReference(path: "Resources/Images/photos")],
             scripts: [
                 .post(
                     script: "CRASHLYTICS_RUN=$(find \"${BUILD_DIR%/Build/*}/SourcePackages/registry/downloads/firebase/firebase-ios-sdk\" -name run | head -1); \"$CRASHLYTICS_RUN\"",
@@ -94,13 +101,6 @@ let project = Project(
                     runForInstallBuildsOnly: true
                 ),
             ],
-            sources: ["Sources/**"],
-            resources: [.glob(pattern: "Resources/**",
-                              excluding: [
-                                "Resources/Images/photos/*",
-                                "Resources/Databases/DAModel.xcdatamodeld/**"
-                              ]),
-                        .folderReference(path: "Resources/Images/photos")],
             dependencies: [
                 .Projects.ThirdParty,
                 .Projects.DynamicThirdParty,
