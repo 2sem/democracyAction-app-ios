@@ -38,7 +38,7 @@ jobs:
           fi
 
       - name: Checkout project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
         
       - name: Select Xcode
         run: |
