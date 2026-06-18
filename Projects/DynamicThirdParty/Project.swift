@@ -5,7 +5,7 @@ let project = Project(
     name: "DynamicThirdParty",
     packages: [
         .package(id: "SDWebImage.SDWebImage", from: "5.21.7"),
-        .package(id: "firebase.firebase-ios-sdk", from: "12.8.0"),
+        .package(id: "firebase.firebase-ios-sdk", from: "12.13.0"),
     ],
     targets: [
         .target(
