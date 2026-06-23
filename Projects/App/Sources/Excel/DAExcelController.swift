@@ -16,7 +16,7 @@ class DAExcelController : NSObject{
     var document : XLSXFile!;
     var workbook : Workbook!;
     var workSheetPaths: [String : String] = [:]
-    var sharedStrings: SharedStrings!
+    var sharedStrings: SharedStrings?
     let headerRow: UInt = 2
     var infoSheet : Worksheet!{
         get{
@@ -83,7 +83,7 @@ class DAExcelController : NSObject{
             .reduce(into: [String : String](), { dict, sheetPath in
                         dict[sheetPath.name ?? ""] = sheetPath.path
                     })
-        self.sharedStrings = try! document.parseSharedStrings()
+        self.sharedStrings = try? document.parseSharedStrings()
         
 //        self.loadFromInfos()
     }
@@ -146,10 +146,6 @@ class DAExcelController : NSObject{
     var eventCells : [String : String] = [:];
 
     public func loadHeaders(from sheet: Worksheet) -> [String : String] {
-        guard let sharedStrings else {
-            return [:]
-        }
-        
         return sheet.cells(atRows: [self.headerRow])
             .reduce(into: [String : String]()) { dict, cell in
                 let columnId = cell.reference.column.value
@@ -170,4 +166,3 @@ class DAExcelController : NSObject{
             }
     }
 }
-
