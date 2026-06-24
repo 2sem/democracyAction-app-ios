@@ -42,7 +42,7 @@ jobs:
         
       - name: Select Xcode
         run: |
-          sudo xcode-select -s /Applications/Xcode_26.1.1.app
+          sudo xcode-select -s /Applications/Xcode_26.5.app
 
       - name: Import Secret Key
         run: |
@@ -161,7 +161,8 @@ jobs:
             -workspace $WORKSPACE \
             -scheme "$SCHEME" \
             -configuration Release \
-            -archivePath "$ARCHIVE_PATH"
+            -archivePath "$ARCHIVE_PATH" \
+            -destination "generic/platform=iOS"
             # -allowProvisioningUpdates \
             # CODE_SIGN_STYLE=Manual \
             # DEVELOPMENT_TEAM="$TEAM_ID" \
