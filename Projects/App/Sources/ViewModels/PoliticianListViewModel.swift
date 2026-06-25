@@ -21,9 +21,9 @@ class PoliticianListViewModel: ObservableObject {
 
         var title: String {
             switch self {
-            case .byName: return "이름별"
-            case .byGroup: return "소속별"
-            case .byArea: return "지역별"
+            case .byName: return "이름"
+            case .byGroup: return "정당"
+            case .byArea: return "지역구"
             }
         }
     }
