@@ -29,7 +29,7 @@ struct PoliticianListScreen: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .searchable(text: $viewModel.searchText, prompt: "이름 또는 지역 검색")
+            .searchable(text: $viewModel.searchText, prompt: "이름 또는 지역구 검색")
             .searchScopes($viewModel.searchScope) {
                 ForEach(PoliticianListViewModel.SearchScope.allCases, id: \.self) { scope in
                     Text(scope.title).tag(scope)
@@ -105,11 +105,19 @@ struct PoliticianListScreen: View {
     
     @ViewBuilder
     private func emptyView() -> some View {
-        ContentUnavailableView(
-            "데이터 없음",
-            systemImage: "person.slash",
-            description: Text("국회의원 정보가 여기에 표시됩니다")
-        )
+        if viewModel.searchText.isEmpty {
+            ContentUnavailableView(
+                "데이터 없음",
+                systemImage: "person.slash",
+                description: Text("국회의원 정보가 여기에 표시됩니다")
+            )
+        } else {
+            ContentUnavailableView(
+                "검색 결과가 없습니다",
+                systemImage: "magnifyingglass",
+                description: Text("이름이나 지역구를 다시 확인해 주세요")
+            )
+        }
     }
     
     @ViewBuilder
