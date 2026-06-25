@@ -15,12 +15,11 @@ struct PoliticianListScreen: View {
     @EnvironmentObject private var adManager: SwiftUIAdManager
 
     @State var lastVisibleGroupID: String?
+    @State private var isShowingDataUpdateIndicator = false
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                DataUpdateIndicator()
-                    .background(Color(UIColor.systemBackground))
 
                 if viewModel.groups.isEmpty {
                     emptyView()
@@ -145,6 +144,20 @@ struct PoliticianListScreen: View {
                     .padding()
                 }
                 .listStyle(.plain)
+                .overlay(alignment: .top) {
+                    if isShowingDataUpdateIndicator {
+                        DataUpdateIndicator()
+                            .background(Color(UIColor.systemBackground))
+                            .transition(.opacity.combined(with: .move(edge: .top)))
+                    }
+                }
+                .onScrollGeometryChange(for: Bool.self) { geometry in
+                    geometry.contentOffset.y + geometry.contentInsets.top < -8
+                } action: { _, isPullingDown in
+                    withAnimation(.snappy(duration: 0.2)) {
+                        isShowingDataUpdateIndicator = isPullingDown
+                    }
+                }
                 .onScrollTargetVisibilityChange(idType: String.self, threshold: 0.5) { visibleIds in
                     visibleGroupIds = Set(viewModel.getGroupIds(fromIds: visibleIds))
                     updateLastVisibleGroupID()
