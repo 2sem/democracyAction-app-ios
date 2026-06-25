@@ -37,7 +37,7 @@ class PoliticianListViewModel: ObservableObject {
             switch self {
             case .all: return "모두"
             case .name: return "이름"
-            case .area: return "지역"
+            case .area: return "지역구"
             }
         }
     }
