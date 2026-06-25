@@ -48,7 +48,7 @@ jobs:
         sudo xcode-select -s /Applications/Xcode_26.5.app
 
     - name: Install Mise
-      uses: jdx/mise-action@v2
+      uses: jdx/mise-action@v4
 
     - name: Log in Tuist
       run: |
