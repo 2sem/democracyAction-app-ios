@@ -24,7 +24,7 @@ let project = Project(
                          developmentRegion: "ko"),
     packages: [
         .remote(url: "https://github.com/2sem/GADManager",
-                requirement: .upToNextMajor(from: "1.3.8")),
+                requirement: .upToNextMajor(from: "1.4.0")),
     ],
     settings: .settings(configurations: [
         .debug(

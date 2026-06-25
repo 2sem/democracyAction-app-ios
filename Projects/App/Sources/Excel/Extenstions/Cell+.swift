@@ -9,11 +9,26 @@ import CoreXLSX
 import Foundation
 
 extension Cell{
-    func doubleValue(_ sharedStrings: SharedStrings) -> Double?{
+    func stringValue(_ sharedStrings: SharedStrings?) -> String? {
+        if let sharedStrings {
+            return stringValue(sharedStrings) ?? inlineString?.text
+        }
+
+        switch type {
+        case .inlineStr:
+            return inlineString?.text
+        case .sharedString:
+            return nil
+        default:
+            return value
+        }
+    }
+
+    func doubleValue(_ sharedStrings: SharedStrings?) -> Double?{
         Double(self.stringValue(sharedStrings) ?? "")
     }
     
-    func integerValue(_ sharedStrings: SharedStrings) -> Int?{
+    func integerValue(_ sharedStrings: SharedStrings?) -> Int?{
         guard let value = self.doubleValue(sharedStrings) else {
             return nil
         }
@@ -21,7 +36,7 @@ extension Cell{
         return Int(value)
     }
     
-    func boolValue(_ sharedStrings: SharedStrings) -> Bool?{
+    func boolValue(_ sharedStrings: SharedStrings?) -> Bool?{
         guard let value = self.stringValue(sharedStrings) else {
             return nil
         }

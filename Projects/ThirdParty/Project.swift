@@ -15,7 +15,7 @@ let project = Project(
                 requirement: .upToNextMajor(from: "3.1.8")),
         .remote(url: "https://github.com/2sem/LProgressWebViewController",
                 requirement: .upToNextMajor(from: "3.1.0")),
-        .package(id: "krzyzanowskim.CryptoSwift", from: "1.9.0"),
+        .package(id: "krzyzanowskim.CryptoSwift", from: "1.10.0"),
         .package(id: "CoreOffice.CoreXLSX", exact: "0.14.2"),
         .package(id: "facebook.facebook-ios-sdk", from: "18.0.1"),
         .package(id: "SwipeCellKit.SwipeCellKit", from: "2.7.1"),
