@@ -10,12 +10,11 @@ import SwiftData
 
 struct PoliticianListScreen: View {
     @StateObject private var viewModel = PoliticianListViewModel()
-    @State var visibleGroupIds: Set<String> = []
     @Query private var allPersons: [Person]
     @EnvironmentObject private var adManager: SwiftUIAdManager
 
-    @State var lastVisibleGroupID: String?
     @State private var isShowingDataUpdateIndicator = false
+    @State private var sectionIDToScroll: String?
     
     var body: some View {
         NavigationStack {
@@ -29,11 +28,6 @@ struct PoliticianListScreen: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $viewModel.searchText, prompt: "이름 또는 지역구 검색")
-            .searchScopes($viewModel.searchScope) {
-                ForEach(PoliticianListViewModel.SearchScope.allCases, id: \.self) { scope in
-                    Text(scope.title).tag(scope)
-                }
-            }
             .searchScopes($viewModel.searchScope) {
                 ForEach(PoliticianListViewModel.SearchScope.allCases, id: \.self) { scope in
                     Text(scope.title).tag(scope)
@@ -60,35 +54,23 @@ struct PoliticianListScreen: View {
                     .pickerStyle(.segmented)
                 }
                 
-                // Sort toggle button
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        viewModel.toggleSort()
-                    } label: {
-                        Image(systemName: viewModel.sortIconName)
-                    }
+                    sectionJumpMenu
                 }
             }
             .onChange(of: allPersons) { oldPersons, newPersons in
                 viewModel.updateGroups(withPersons: newPersons)
-                updateLastVisibleGroupID()
             }
             .onChange(of: viewModel.groupingType) { _, _ in
                 viewModel.updateGroups(withPersons: allPersons)
-                updateLastVisibleGroupID()
             }
-            .onChange(of: viewModel.searchText) { oldValue, newValue in
-                viewModel.debouncedRefresh(withPersons: allPersons) {
-                    updateLastVisibleGroupID()
-                }
+            .onChange(of: viewModel.searchText) { _, _ in
+                viewModel.debouncedRefresh(withPersons: allPersons) {}
             }.onChange(of: viewModel.searchScope) { _, _ in
-                viewModel.debouncedRefresh(withPersons: allPersons) {
-                    updateLastVisibleGroupID()
-                }
+                viewModel.debouncedRefresh(withPersons: allPersons) {}
             }
             .task {
                 viewModel.updateGroups(withPersons: allPersons)
-                updateLastVisibleGroupID()
             }
             .navigationDestination(for: Person.self) { person in
                 PersonDetailScreen(person: person)
@@ -97,9 +79,7 @@ struct PoliticianListScreen: View {
     }
     
     func refresh() {
-        visibleGroupIds = []
         viewModel.updateGroups(withPersons: allPersons)
-        updateLastVisibleGroupID()
     }
     
     @ViewBuilder
@@ -122,48 +102,49 @@ struct PoliticianListScreen: View {
     @ViewBuilder
     private func listView() -> some View {
         ScrollViewReader { scrollProxy in
-            ZStack(alignment: .bottomTrailing) {
-                ScrollView {
-                    LazyVStack() {
-                        ForEach(viewModel.groups) { group in //, id: \.id
-                            Section(header: politicianSection(withGroup: group)) {
-                                let nativeAdInterval = 10
-                                ForEach(Array(group.persons.enumerated()), id: \.element.no) { index, person in
-                                    SwiftUI.Group {
-                                        if !viewModel.searchText.isEmpty || group.persons.count >= 10 {
-                                            NativeAdRowView(adUnit: .personListNative, index: index, interval: nativeAdInterval)
-                                        }
-                                        politicianRow(person: person, withGroupId: group.id)
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.groups) { group in //, id: \.id
+                        Section(header: politicianSection(withGroup: group)) {
+                            let nativeAdInterval = 10
+                            ForEach(Array(group.persons.enumerated()), id: \.element.no) { index, person in
+                                SwiftUI.Group {
+                                    if !viewModel.searchText.isEmpty || group.persons.count >= 10 {
+                                        NativeAdRowView(adUnit: .personListNative, index: index, interval: nativeAdInterval)
                                     }
+                                    politicianRow(person: person, withGroupId: group.id)
                                 }
                             }
-                            .id(group.id)
                         }
-                    }
-                    .scrollTargetLayout()
-                    .padding()
-                }
-                .listStyle(.plain)
-                .overlay(alignment: .top) {
-                    if isShowingDataUpdateIndicator {
-                        DataUpdateIndicator()
-                            .background(Color(UIColor.systemBackground))
-                            .transition(.opacity.combined(with: .move(edge: .top)))
+                        .id(group.id)
                     }
                 }
-                .onScrollGeometryChange(for: Bool.self) { geometry in
-                    geometry.contentOffset.y + geometry.contentInsets.top < -8
-                } action: { _, isPullingDown in
-                    withAnimation(.snappy(duration: 0.2)) {
-                        isShowingDataUpdateIndicator = isPullingDown
-                    }
+                .scrollTargetLayout()
+                .padding()
+            }
+            .listStyle(.plain)
+            .overlay(alignment: .top) {
+                if isShowingDataUpdateIndicator {
+                    DataUpdateIndicator()
+                        .background(Color(UIColor.systemBackground))
+                        .transition(.opacity.combined(with: .move(edge: .top)))
                 }
-                .onScrollTargetVisibilityChange(idType: String.self, threshold: 0.5) { visibleIds in
-                    visibleGroupIds = Set(viewModel.getGroupIds(fromIds: visibleIds))
-                    updateLastVisibleGroupID()
+            }
+            .onScrollGeometryChange(for: Bool.self) { geometry in
+                geometry.contentOffset.y + geometry.contentInsets.top < -8
+            } action: { _, isPullingDown in
+                withAnimation(.snappy(duration: 0.2)) {
+                    isShowingDataUpdateIndicator = isPullingDown
+                }
+            }
+            .onChange(of: sectionIDToScroll) { _, sectionID in
+                guard let sectionID else { return }
+
+                withAnimation {
+                    scrollProxy.scrollTo(sectionID, anchor: .top)
                 }
 
-                nextSectionButton(scrollProxy: scrollProxy)
+                sectionIDToScroll = nil
             }
             .id(viewModel.groupingType)
         }
@@ -176,27 +157,6 @@ struct PoliticianListScreen: View {
         }
         .tint(.primary)
         .id(person.id.hashValue.description)
-//            .onScrollVisibilityChange(threshold: 0.5) { isVisible in
-//                if isVisible {
-//                    // Add person to group's visible set
-//                    visiblePersonIds[groupId, default: []].insert(person.no)
-//                    
-//                    print("Visible person: \(person.no) group: \(groupId)")
-//                } else {
-//                    print("Invisible person: \(person.no) group: \(groupId)")
-//                    // Remove person from group's visible set
-//                    visiblePersonIds[groupId]?.remove(person.no)
-//
-//                    // If no persons are visible in this group, remove the group
-//                    if visiblePersonIds[groupId]?.isEmpty == true {
-//                        visiblePersonIds.removeValue(forKey: groupId)
-//                        print("Invisible group: \(groupId)")
-//                    }
-//                }
-//
-//                // Update last visible group
-//                updateLastVisibleGroupID()
-//            }
     }
     
     @ViewBuilder
@@ -217,56 +177,18 @@ struct PoliticianListScreen: View {
         }
     }
 
-        @ViewBuilder
-
-        private func nextSectionButton(scrollProxy: ScrollViewProxy) -> some View {
-
-            // Next section floating button
-
-            if let lastVisibleGroupID, let nextGroup = viewModel.nextGroup(ofGroupWithId: lastVisibleGroupID) {
-
-                Button {
-
-                    withAnimation {
-
-                        scrollProxy.scrollTo(nextGroup.id, anchor: .top)
-
-                    }
-
-                } label: {
-                HStack(spacing: 4) {
-                    Image(systemName: "chevron.down")
-                        .font(.system(size: 12, weight: .semibold))
-                    Text(nextGroup.title)
-                        .font(.system(size: viewModel.groupingType == .byName ? 20 : 14, weight: .bold))
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.5)
+    private var sectionJumpMenu: some View {
+        Menu {
+            ForEach(viewModel.groups) { group in
+                Button(group.title) {
+                    sectionIDToScroll = group.id
                 }
-                .padding(.init(top: 8, leading: 16, bottom: 8, trailing: 16))
-                .foregroundColor(.white)
-//                .frame(width: viewModel.groupingType == .byName ? 60 : 88, height: 44)
-                .background(Color(red: 0.47, green: 0.56, blue: 0.61)) // #78909c
-                .cornerRadius(5)
-                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
             }
-            .padding(.trailing, 16)
-            .padding(.bottom, 16)
+        } label: {
+            Image(systemName: "list.bullet")
         }
-    }
-    
-    func updateLastVisibleGroupID() {
-        // Find the last visible group by their actual order in viewModel.groups
-        let lastVisibleGroupId = visibleGroupIds
-            .sorted(by: { leftId, rightId in
-                if viewModel.isAscending {
-                    return leftId < rightId
-                } else {
-                    return leftId > rightId
-                }
-            })
-            .last
-
-        self.lastVisibleGroupID = lastVisibleGroupId
+        .disabled(viewModel.groups.isEmpty)
+        .accessibilityLabel("섹션 선택")
     }
 }
 
