@@ -51,9 +51,6 @@ class PoliticianListViewModel: ObservableObject {
 
     // MARK: - Published Properties
 
-    /// Sort direction: true = ascending, false = descending
-    @Published var isAscending: Bool = true
-
     /// Search text for filtering
     @Published var searchText: String = ""
 
@@ -82,7 +79,6 @@ class PoliticianListViewModel: ObservableObject {
     @Published var currentChosungIndex: Int = 0
     
     @Published var groups: [PersonGroup] = []
-    var groupIds: Set<String> = []
 
     // MARK: - Constants
 
@@ -94,28 +90,10 @@ class PoliticianListViewModel: ObservableObject {
                                   "광주", "울산", "세종", "강원", "충북", "충남",
                                   "전북", "전남", "경북", "경남", "제주", "비례대표"]
 
-    // MARK: - Computed Properties
-
-    /// Sort icon name for toolbar button
-    var sortIconName: String {
-        isAscending ? "arrow.up.circle" : "arrow.down.circle"
-    }
-    
-    // MARK: - Actions
-    
-    /// Toggle sort direction
-    func toggleSort() {
-        isAscending.toggle()
-        // Re-sort the groups without changing person order within groups
-        sortGroups()
-    }
-    
     /// Apply sorting to persons array
     func sortedPersons(_ persons: [Person]) -> [Person] {
         persons.sorted { left, right in
-            isAscending
-                ? left.name < right.name
-                : left.name > right.name
+            left.name < right.name
         }
     }
     
@@ -156,24 +134,6 @@ class PoliticianListViewModel: ObservableObject {
             case .byArea:
                 self.groups = groupByArea(filteredPersons)
         }
-        
-        updateGroupIds()
-    }
-    
-    private func updateGroupIds() {
-        self.groupIds = Set(self.groups.map{ $0.id })
-    }
-
-    func getGroupIds(fromIds ids: [String]) -> Set<String> {
-        return self.groupIds.intersection(ids)
-    }
-
-    /// Sort groups only, without changing person order within groups
-    private func sortGroups() {
-        groups.sort { left, right in
-            isAscending ? left.id < right.id : left.id > right.id
-        }
-        updateGroupIds()
     }
 
     // MARK: - Private Grouping Helpers
@@ -215,12 +175,6 @@ class PoliticianListViewModel: ObservableObject {
             groups.append(PersonGroup(title: chosung, persons: matchingPersons, group: nil))
         }
         
-        // Sort groups by title according to sort order
-        // Note: allChosungs is already in the correct order, but we need to respect isAscending
-        if !isAscending {
-            groups.reverse()
-        }
-        
         return groups
     }
 
@@ -229,7 +183,7 @@ class PoliticianListViewModel: ObservableObject {
             person.group?.name ?? "소속 없음"
         }
 
-        let sortedKeys = grouped.keys.sorted { isAscending ? $0 < $1 : $0 > $1 }
+        let sortedKeys = grouped.keys.sorted()
 
         return sortedKeys.map { key in
             let personsInGroup = grouped[key] ?? []
@@ -258,32 +212,6 @@ class PoliticianListViewModel: ObservableObject {
             groups.append(PersonGroup(title: area, persons: matchingPersons, group: nil))
         }
 
-        // Sort groups by title according to sort order
-        groups.sort { left, right in
-            isAscending ? left.title < right.title : left.title > right.title
-        }
-
         return groups
-    }
-
-    // MARK: - Chosung Navigation
-
-    /// Get the next section to navigate to (based on last visible section)
-    /// - Parameters:
-    ///   - persons: All persons in the list
-    ///   - lastVisibleSectionID: ID of the last visible section (nil if none visible)
-    /// - Returns: The next section, or nil if at the end
-    func nextGroup(ofGroupWithId groupId: String) -> PersonGroup? {
-        guard !groups.isEmpty else { return nil }
-
-        // If no visible section, return first section
-        let endGroupIndex = groups.index(before: groups.endIndex)
-        guard let indexOfGroup = groups.firstIndex(where: { $0.id == groupId }), indexOfGroup < endGroupIndex else {
-            return nil
-        }
-        
-        let nextGroupIndex = groups.index(after: indexOfGroup)
-
-        return groups[nextGroupIndex]
     }
 }
