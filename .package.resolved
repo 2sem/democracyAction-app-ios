@@ -5,8 +5,9 @@
       "identity" : "alamofire.alamofire",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "version" : "5.11.1"
+        "version" : "5.12.0"
       }
     },
     {
@@ -31,7 +32,7 @@
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "18.0.2"
+        "version" : "18.1.0"
       }
     },
     {
@@ -39,13 +40,14 @@
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "12.8.0"
+        "version" : "12.17.0"
       }
     },
     {
       "identity" : "firebase.leveldb",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/firebase/leveldb.git",
       "state" : {
         "version" : "1.22.5"
       }
@@ -54,8 +56,9 @@
       "identity" : "firebase.nanopb",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/firebase/nanopb.git",
       "state" : {
-        "version" : "2.30910.0"
+        "version" : "2.30910.1"
       }
     },
     {
@@ -63,14 +66,15 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/2sem/GADManager",
       "state" : {
-        "revision" : "687d7bbc1862fb9053230bcbe57404e4ed692cbb",
-        "version" : "1.3.8"
+        "revision" : "6e9ef344041e891188af8a42b9f090fbfeefa2f9",
+        "version" : "1.5.0"
       }
     },
     {
       "identity" : "google.abseil-cpp-binary",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/abseil-cpp-binary.git",
       "state" : {
         "version" : "1.2024072200.0"
       }
@@ -79,38 +83,43 @@
       "identity" : "google.app-check",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/app-check.git",
       "state" : {
-        "version" : "11.2.0"
+        "version" : "11.3.1"
       }
     },
     {
-      "identity" : "google.GoogleAppMeasurement",
+      "identity" : "google.googleappmeasurement",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "version" : "12.8.0"
+        "version" : "12.17.0"
       }
     },
     {
-      "identity" : "google.GoogleDataTransport",
+      "identity" : "google.googledatatransport",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/GoogleDataTransport.git",
       "state" : {
-        "version" : "10.1.0"
+        "version" : "10.1.1"
       }
     },
     {
-      "identity" : "google.GoogleUtilities",
+      "identity" : "google.googleutilities",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/GoogleUtilities.git",
       "state" : {
-        "version" : "8.1.0"
+        "version" : "8.1.2"
       }
     },
     {
       "identity" : "google.grpc-binary",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/grpc-binary.git",
       "state" : {
         "version" : "1.69.1"
       }
@@ -119,14 +128,16 @@
       "identity" : "google.gtm-session-fetcher",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "version" : "4.5.0"
+        "version" : "5.3.0"
       }
     },
     {
       "identity" : "google.interop-ios-for-google-sdks",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/interop-ios-for-google-sdks.git",
       "state" : {
         "version" : "101.0.0"
       }
@@ -135,22 +146,25 @@
       "identity" : "google.promises",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/google/promises.git",
       "state" : {
-        "version" : "2.4.0"
+        "version" : "2.4.1"
       }
     },
     {
       "identity" : "googleads.google-ads-on-device-conversion-ios-sdk",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
       "state" : {
-        "version" : "3.2.0"
+        "version" : "3.6.1"
       }
     },
     {
       "identity" : "googleads.swift-package-manager-google-mobile-ads",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/googleads/swift-package-manager-google-mobile-ads",
       "state" : {
         "version" : "12.14.0"
       }
@@ -159,6 +173,7 @@
       "identity" : "googleads.swift-package-manager-google-user-messaging-platform",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
       "state" : {
         "version" : "3.1.0"
       }
@@ -168,7 +183,7 @@
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "2.27.2"
+        "version" : "2.28.0"
       }
     },
     {
@@ -176,7 +191,7 @@
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "1.9.0"
+        "version" : "1.10.0"
       }
     },
     {
@@ -207,6 +222,15 @@
       }
     },
     {
+      "identity" : "maxdesiatov.xmlcoder",
+      "kind" : "registry",
+      "location" : "",
+      "originalLocation" : "https://github.com/maxdesiatov/XMLCoder.git",
+      "state" : {
+        "version" : "0.14.0"
+      }
+    },
+    {
       "identity" : "mbprogresshud",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jdg/MBProgressHUD.git",
@@ -229,7 +253,7 @@
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "5.21.5"
+        "version" : "5.21.7"
       }
     },
     {
@@ -241,20 +265,12 @@
       }
     },
     {
-      "identity" : "weichsel.ZIPFoundation",
+      "identity" : "weichsel.zipfoundation",
       "kind" : "registry",
       "location" : "",
+      "originalLocation" : "https://github.com/weichsel/ZIPFoundation.git",
       "state" : {
         "version" : "0.9.20"
-      }
-    },
-    {
-      "identity" : "xmlcoder",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/maxdesiatov/XMLCoder.git",
-      "state" : {
-        "revision" : "ca932442d7481700f5434a7b138c47dd42d9902b",
-        "version" : "0.14.0"
       }
     }
   ],

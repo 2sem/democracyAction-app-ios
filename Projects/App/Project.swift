@@ -106,6 +106,9 @@ let project = Project(
                 .Projects.DynamicThirdParty,
                 .package(product: "GADManager", type: .runtime),
                 .sdk(name: "SwiftUI", type: .framework),
+            ],
+            coreDataModels: [
+                .coreDataModel("Resources/Databases/DAModel.xcdatamodeld")
             ]
         ),
         .target(
