@@ -16,10 +16,16 @@ on:
     branches: [ "main" ]
     paths:
       - '**/*.swift'
+      - 'mise.toml'
+      - '.package.resolved'
+      - '.github/workflows/build-test.yml'
   pull_request:
     branches: [ "main" ]
     paths:
       - '**/*.swift'
+      - 'mise.toml'
+      - '.package.resolved'
+      - '.github/workflows/build-test.yml'
 
 jobs:
   build-test:
@@ -45,6 +51,14 @@ jobs:
 
     - name: Install Mise
       uses: jdx/mise-action@v4
+
+    - name: Cache Tuist dependencies
+      uses: actions/cache@v6
+      with:
+        path: |
+          Tuist/.build
+          ~/.cache/swifterpm
+        key: tuist-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.package.resolved') }}
 
     - name: Log in Tuist
       run: |
