@@ -1,5 +1,5 @@
 {
-  "originHash" : "e5267bf1a8a8f9767671c5a37b394b93866e623b7a0911a60f7bea2ffb645fd6",
+  "originHash" : "78fa7f3bc2649cf3c8926f6e7083cf584e19ef32c9b3ca9e9f700db89dd2abbf",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -58,7 +58,7 @@
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "12.19.2"
+        "version" : "12.18.0"
       }
     },
     {
@@ -75,8 +75,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
       "state" : {
-        "revision" : "0208e2681ec81f8a9c81084696f60fcce26cb7ee",
-        "version" : "3.7.0"
+        "revision" : "dc39082d8881109d35b94b1c122164c0e8d08a55",
+        "version" : "3.6.1"
       }
     },
     {
@@ -84,8 +84,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "b8455dd2ff55cc269fda7a4f9eac6c1e3588c53f",
-        "version" : "12.19.2"
+        "revision" : "f04760d460296cc0fa430935a7be212e5bd67fc5",
+        "version" : "12.18.0"
       }
     },
     {
