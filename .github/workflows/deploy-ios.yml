@@ -40,10 +40,6 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v7
         
-      - name: Select Xcode
-        run: |
-          sudo xcode-select -s /Applications/Xcode_27.app
-
       - name: Import Secret Key
         run: |
           echo ${{ secrets.GPG_PRIVATE_KEY }} | base64 -d -o $GPG_PRIVATE_KEY_PATH
