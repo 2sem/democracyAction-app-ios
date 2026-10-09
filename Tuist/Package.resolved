@@ -1,5 +1,5 @@
 {
-  "originHash" : "78fa7f3bc2649cf3c8926f6e7083cf584e19ef32c9b3ca9e9f700db89dd2abbf",
+  "originHash" : "48e5f30d0af250be27f47f194f6d96c78d4c6804facba87f379bcd19f8eb6751",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -34,23 +34,6 @@
       "location" : "",
       "state" : {
         "version" : "0.14.2"
-      }
-    },
-    {
-      "identity" : "downpicker",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/2sem/DownPicker",
-      "state" : {
-        "branch" : "spm",
-        "revision" : "42c0a3ffc28bf1ddff8343f4866261c274781e0d"
-      }
-    },
-    {
-      "identity" : "facebook.facebook-ios-sdk",
-      "kind" : "registry",
-      "location" : "",
-      "state" : {
-        "version" : "18.1.1"
       }
     },
     {
@@ -142,14 +125,6 @@
       }
     },
     {
-      "identity" : "krzyzanowskim.CryptoSwift",
-      "kind" : "registry",
-      "location" : "",
-      "state" : {
-        "version" : "1.10.0"
-      }
-    },
-    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
@@ -159,48 +134,12 @@
       }
     },
     {
-      "identity" : "lprogresswebviewcontroller",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/2sem/LProgressWebViewController",
-      "state" : {
-        "revision" : "e67956c993cdcd6414d12ef386df464e86d259ca",
-        "version" : "3.1.0"
-      }
-    },
-    {
       "identity" : "lsextensions",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/2sem/LSExtensions",
       "state" : {
         "revision" : "76152a1fa0d0f5cb4726bdb5b1934567bad26fff",
         "version" : "0.1.22"
-      }
-    },
-    {
-      "identity" : "material",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/CosmicMind/Material",
-      "state" : {
-        "revision" : "059ed9c336d24b5f6383bec0346ae7c314724120",
-        "version" : "3.1.8"
-      }
-    },
-    {
-      "identity" : "mbprogresshud",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jdg/MBProgressHUD.git",
-      "state" : {
-        "revision" : "bca42b801100b2b3a4eda0ba8dd33d858c780b0d",
-        "version" : "1.2.0"
-      }
-    },
-    {
-      "identity" : "motion",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/CosmicMind/Motion.git",
-      "state" : {
-        "revision" : "808ac0cf1b67c5e4163ee867dd6c056836fcbc58",
-        "version" : "3.1.3"
       }
     },
     {
@@ -222,14 +161,6 @@
       }
     },
     {
-      "identity" : "SDWebImage.SDWebImage",
-      "kind" : "registry",
-      "location" : "",
-      "state" : {
-        "version" : "5.21.7"
-      }
-    },
-    {
       "identity" : "swift-package-manager-google-mobile-ads",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads",
@@ -245,14 +176,6 @@
       "state" : {
         "revision" : "13b248eaa73b7826f0efb1bcf455e251d65ecb1b",
         "version" : "3.1.0"
-      }
-    },
-    {
-      "identity" : "SwipeCellKit.SwipeCellKit",
-      "kind" : "registry",
-      "location" : "",
-      "state" : {
-        "version" : "2.7.1"
       }
     },
     {
