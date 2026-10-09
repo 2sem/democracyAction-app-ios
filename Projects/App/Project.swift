@@ -106,7 +106,6 @@ let project = Project(
                 .external(name: "FirebaseMessaging"),
                 .external(name: "FirebaseRemoteConfig"),
                 .external(name: "GADManager"),
-                .sdk(name: "SwiftUI", type: .framework),
             ],
             coreDataModels: [
                 .coreDataModel("Resources/Databases/DAModel.xcdatamodeld")
