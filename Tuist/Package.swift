@@ -5,26 +5,7 @@ import PackageDescription
 import ProjectDescription
 
 let packageSettings = PackageSettings(
-    productTypes: [
-        "FirebaseCore": .framework,
-        "FirebaseCoreInternal": .framework,
-        "FirebaseCoreExtension": .framework,
-        "FirebaseInstallations": .framework,
-        "FirebaseCrashlytics": .framework,
-        "FirebaseSessions": .framework,
-        "FirebaseRemoteConfig": .framework,
-        "FirebaseRemoteConfigInterop": .framework,
-        "FirebaseABTesting": .framework,
-        "FirebaseSharedSwift": .framework,
-        "FirebaseMessaging": .framework,
-        "FirebaseAnalytics": .framework,
-        "GoogleUtilities": .framework,
-        "GoogleDataTransport": .framework,
-        "nanopb": .framework,
-        "FBLPromises": .framework,
-        "GoogleAppMeasurement": .framework,
-        "GoogleAppMeasurementIdentitySupport": .framework,
-    ]
+    productTypes: [:]
 )
 #endif
 
