@@ -22,10 +22,6 @@ let project = Project(
     name: "App",
     options: .options(defaultKnownRegions: ["ko"],
                          developmentRegion: "ko"),
-    packages: [
-        .remote(url: "https://github.com/2sem/GADManager",
-                requirement: .upToNextMajor(from: "1.4.0")),
-    ],
     settings: .settings(configurations: [
         .debug(
             name: "Debug",
@@ -89,7 +85,7 @@ let project = Project(
                         .folderReference(path: "Resources/Images/photos")],
             scripts: [
                 .post(
-                    script: "CRASHLYTICS_RUN=$(find \"${BUILD_DIR%/Build/*}/SourcePackages/registry/downloads/firebase/firebase-ios-sdk\" -name run | head -1); \"$CRASHLYTICS_RUN\"",
+                    script: "CRASHLYTICS_RUN=$(find \"${SRCROOT}/../../Tuist/.build/registry/downloads/firebase/firebase-ios-sdk\" -name run | head -1); \"$CRASHLYTICS_RUN\"",
                     name: "Upload dSYM for Crashlytics",
                     inputPaths: [
                         "${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
@@ -104,7 +100,8 @@ let project = Project(
             dependencies: [
                 .Projects.ThirdParty,
                 .Projects.DynamicThirdParty,
-                .package(product: "GADManager", type: .runtime),
+                .external(name: "GADManager"),
+                .external(name: "FirebaseRemoteConfig"),
                 .sdk(name: "SwiftUI", type: .framework),
             ],
             coreDataModels: [
