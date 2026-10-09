@@ -17,14 +17,14 @@ on:
     paths:
       - '**/*.swift'
       - 'mise.toml'
-      - '.package.resolved'
+      - 'Tuist/Package.resolved'
       - '.github/workflows/build-test.yml'
   pull_request:
     branches: [ "main" ]
     paths:
       - '**/*.swift'
       - 'mise.toml'
-      - '.package.resolved'
+      - 'Tuist/Package.resolved'
       - '.github/workflows/build-test.yml'
 
 jobs:
@@ -58,7 +58,7 @@ jobs:
         path: |
           Tuist/.build
           ~/.cache/swifterpm
-        key: tuist-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.package.resolved') }}
+        key: tuist-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('Tuist/Package.resolved') }}
 
     - name: Log in Tuist
       run: |

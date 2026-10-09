@@ -62,7 +62,7 @@ jobs:
           path: |
             Tuist/.build
             ~/.cache/swifterpm
-          key: tuist-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.package.resolved') }}
+          key: tuist-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('Tuist/Package.resolved') }}
 
       - name: Install Dependencies
         run: |

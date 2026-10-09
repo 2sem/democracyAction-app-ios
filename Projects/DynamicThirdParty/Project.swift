@@ -3,10 +3,6 @@ import ProjectDescriptionHelpers
 
 let project = Project(
     name: "DynamicThirdParty",
-    packages: [
-        .package(id: "SDWebImage.SDWebImage", from: "5.21.7"),
-        .package(id: "firebase.firebase-ios-sdk", from: "12.13.0"),
-    ],
     targets: [
         .target(
             name: "DynamicThirdParty",
@@ -15,11 +11,11 @@ let project = Project(
             bundleId: .appBundleId.appending(".thirdparty.dynamic"),
             deploymentTargets: .iOS("18.0"),
             dependencies: [
-                .package(product: "SDWebImage"),
-                .package(product: "FirebaseCrashlytics"),
-                .package(product: "FirebaseAnalytics"),
-                .package(product: "FirebaseMessaging"),
-                .package(product: "FirebaseRemoteConfig"),       
+                .external(name: "SDWebImage"),
+                .external(name: "FirebaseCrashlytics"),
+                .external(name: "FirebaseAnalytics"),
+                .external(name: "FirebaseMessaging"),
+                .external(name: "FirebaseRemoteConfig"),       
             ]
         ),
     ]

@@ -1,75 +1,104 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "autodiscover": false,
-  "extends": ["config:base"],
-  "enabledManagers": ["custom.regex"],
-  "labels": ["dependencies", "renovate"],
+  "extends": [
+    "config:base"
+  ],
+  "enabledManagers": [
+    "custom.regex"
+  ],
+  "labels": [
+    "dependencies",
+    "renovate"
+  ],
   "prConcurrentLimit": 3,
   "prHourlyLimit": 2,
   "schedule": [],
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
+      "managerFilePatterns": [
+        "/(^|/)Package\\.swift$/"
+      ],
       "matchStrings": [
-        "\\.package\\(id:\\s*\"(?<depName>[\\w\\-.]+?)\"[\\s\\S]*?(?:from|exact):\\s*\"(?<currentValue>[^\"]+)\"\\)"
+        "\\.package\\(id:\\s*\"(?<depName>[\\w\\-.]+?)\"\\s*,\\s*(?:from|exact):\\s*\"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "{{{replace '\\.' '/' depName}}}"
     },
     {
       "customType": "regex",
-      "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
+      "managerFilePatterns": [
+        "/(^|/)Package\\.swift$/"
+      ],
       "matchStrings": [
-        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?requirement:\\s*\\.(?:upToNextMajor|upToNextMinor)\\(from:\\s*\"(?<currentValue>[^\"]+)\"\\)",
-        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?requirement:\\s*\\.exact\\(\"(?<currentValue>[^\"]+)\"\\)"
+        "\\.package\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\",\\s*from:\\s*\"(?<currentValue>[^\"]+)\"\\)",
+        "\\.package\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\",\\s*exact:\\s*\"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
-      "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
+      "managerFilePatterns": [
+        "/(^|/)Package\\.swift$/"
+      ],
       "matchStrings": [
-        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?requirement:\\s*\\.(?:upToNextMajor|upToNextMinor)\\(from:\\s*\"(?<currentValue>[^\"]+)\"\\)",
-        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?requirement:\\s*\\.exact\\(\"(?<currentValue>[^\"]+)\"\\)"
+        "\\.package\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\",\\s*from:\\s*\"(?<currentValue>[^\"]+)\"\\)",
+        "\\.package\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\",\\s*exact:\\s*\"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "github-tags"
     },
     {
       "customType": "regex",
-      "managerFilePatterns": ["/(^|/)Project\\.swift$/"],
+      "managerFilePatterns": [
+        "/(^|/)Package\\.swift$/"
+      ],
       "matchStrings": [
-        "\\.remote\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\"[\\s\\S]*?\\.branch\\(\"(?<currentValue>[^\"]+)\"\\)\\)"
+        "\\.package\\(url:\\s*\"(?:https?:\\/\\/)?github\\.com\\/(?<depName>[\\w\\-_]+\\/[\\w\\-_.]+?)(?:\\.git)?\",\\s*branch:\\s*\"(?<currentValue>[^\"]+)\"\\)"
       ],
       "datasourceTemplate": "git-refs"
     }
   ],
   "packageRules": [
     {
-      "matchDatasources": ["github-releases"],
-      "matchManagers": ["custom.regex"],
+      "matchDatasources": [
+        "github-releases"
+      ],
+      "matchManagers": [
+        "custom.regex"
+      ],
       "groupName": "Swift/Tuist Dependencies",
       "automerge": false
     },
     {
-      "matchDatasources": ["git-refs"],
-      "matchManagers": ["custom.regex"],
+      "matchDatasources": [
+        "git-refs"
+      ],
+      "matchManagers": [
+        "custom.regex"
+      ],
       "groupName": "Branch Dependencies (No Auto-update)",
       "enabled": false
     },
     {
-      "matchUpdateTypes": ["patch"],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "automerge": true,
       "automergeType": "branch",
       "groupName": "Patch Updates"
     },
     {
-      "matchUpdateTypes": ["minor"],
+      "matchUpdateTypes": [
+        "minor"
+      ],
       "automerge": false,
       "groupName": "Minor Updates"
     },
     {
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false,
       "groupName": "Major Updates (Manual Review)"
     }
