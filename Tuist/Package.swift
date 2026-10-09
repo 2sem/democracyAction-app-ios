@@ -31,7 +31,6 @@ let packageSettings = PackageSettings(
 let package = Package(
     name: "democracyaction",
     dependencies: [
-        // ThirdParty
         .package(id: "kakao.kakao-ios-sdk", from: "2.27.3"),
         .package(url: "https://github.com/jdg/MBProgressHUD.git", from: "1.2.0"),
         .package(url: "https://github.com/2sem/DownPicker", branch: "spm"),
@@ -42,10 +41,8 @@ let package = Package(
         .package(id: "CoreOffice.CoreXLSX", exact: "0.14.2"),
         .package(id: "facebook.facebook-ios-sdk", from: "18.0.3"),
         .package(id: "SwipeCellKit.SwipeCellKit", from: "2.7.1"),
-        // DynamicThirdParty
         .package(id: "SDWebImage.SDWebImage", from: "5.21.7"),
         .package(id: "firebase.firebase-ios-sdk", from: "12.13.0"),
-        // App
         .package(url: "https://github.com/2sem/GADManager", from: "1.4.0"),
     ]
 )
