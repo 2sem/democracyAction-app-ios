@@ -129,6 +129,7 @@ platform :ios do
           release_notes: { 'ko' => changelog },
           app_identifier: @package_name,
           submit_for_review: true,
+          force: true,
         )
         puts "iOS 심사 제출 완료"
     else
