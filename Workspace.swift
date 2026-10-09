@@ -7,7 +7,7 @@
 
 import ProjectDescription
 
-fileprivate let projects: [Path] = ["App", "ThirdParty", "DynamicThirdParty"]
+fileprivate let projects: [Path] = ["App"]
     .map{ "Projects/\($0)" }
 
 let workspace = Workspace(name: "democracyaction", projects: projects)
