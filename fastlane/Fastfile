@@ -126,7 +126,7 @@ platform :ios do
         upload_to_app_store(
           ipa: @ipa_path,
           api_key_path: @api_key_path,
-          release_notes: changelog,
+          release_notes: { 'ko' => changelog },
           app_identifier: @package_name,
           submit_for_review: true,
         )
