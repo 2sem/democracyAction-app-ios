@@ -42,7 +42,7 @@ let package = Package(
         .package(id: "facebook.facebook-ios-sdk", from: "18.0.3"),
         .package(id: "SwipeCellKit.SwipeCellKit", from: "2.7.1"),
         .package(id: "SDWebImage.SDWebImage", from: "5.21.7"),
-        .package(id: "firebase.firebase-ios-sdk", from: "12.13.0"),
-        .package(url: "https://github.com/2sem/GADManager", from: "1.4.0"),
+        .package(id: "firebase.firebase-ios-sdk", from: "12.18.0"),
+        .package(url: "https://github.com/2sem/GADManager", from: "1.5.0"),
     ]
 )
