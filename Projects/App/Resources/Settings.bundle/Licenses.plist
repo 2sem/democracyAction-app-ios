@@ -10,21 +10,41 @@
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Key</key>
-			<string>Material</string>
+			<string>Alamofire</string>
 			<key>Title</key>
-			<string>Material</string>
+			<string>Alamofire</string>
 			<key>File</key>
-			<string>Material</string>
+			<string>Alamofire</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Key</key>
-			<string>XlsxReaderWriter</string>
+			<string>CoreXLSX</string>
 			<key>Title</key>
-			<string>XlsxReaderWriter</string>
+			<string>CoreXLSX</string>
 			<key>File</key>
-			<string>XlsxReaderWriter</string>
+			<string>CoreXLSX</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Key</key>
+			<string>KakaoSDK</string>
+			<key>Title</key>
+			<string>KakaoSDK</string>
+			<key>File</key>
+			<string>KakaoSDK</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Key</key>
+			<string>Firebase</string>
+			<key>Title</key>
+			<string>Firebase</string>
+			<key>File</key>
+			<string>Firebase</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -35,36 +55,6 @@
 			<string>Icon8</string>
 			<key>File</key>
 			<string>Icon8</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-			<key>Key</key>
-			<string>DownPicker</string>
-			<key>Title</key>
-			<string>DownPicker</string>
-			<key>File</key>
-			<string>DownPicker</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-			<key>Key</key>
-			<string>ProgressWebViewController</string>
-			<key>Title</key>
-			<string>ProgressWebViewController</string>
-			<key>File</key>
-			<string>ProgressWebViewController</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-			<key>Key</key>
-			<string>ProgressWebViewController</string>
-			<key>Title</key>
-			<string>ProgressWebViewController</string>
-			<key>File</key>
-			<string>ProgressWebViewController</string>
 		</dict>
 	</array>
 </dict>
