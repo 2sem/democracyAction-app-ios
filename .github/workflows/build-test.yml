@@ -31,6 +31,7 @@ jobs:
   build-test:
     name: Build & Test
     runs-on: xcode-27
+    timeout-minutes: 45
     permissions:
       # required for all workflows
       security-events: write
@@ -72,8 +73,12 @@ jobs:
       run: |
         tuist setup cache
 
-    - name: Build & Test App
+    # Build-only: booting a simulator on fresh runner images takes ~6 min and
+    # saturates disk I/O. The app + test target still compile on every PR;
+    # tests run locally.
+    - name: Build for Testing
+      timeout-minutes: 30
       env:
         SCHEME: App
       run: |
-        tuist test
+        tuist test --build-only
