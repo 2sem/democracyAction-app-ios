@@ -50,6 +50,33 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v7
 
+    # `simctl boot` blocks for minutes on fresh runners. Start it in the
+    # background now so it overlaps mise / tuist install / build.
+    - name: Start Simulator Boot
+      run: |
+        # Newest plain iOS runtime (skips device-specific ones like iOS-27-2-iPhone19-4)
+        DEVICE_JSON=$(xcrun simctl list devices available --json | jq -c '
+          [.devices | to_entries[]
+            | select(.key | test("iOS-[0-9]+-[0-9]+$"))
+            | .key as $runtime
+            | .value[]
+            | select(.name | startswith("iPhone"))
+            | . + {os: ($runtime | capture("iOS-(?<v>[0-9]+-[0-9]+)$").v | gsub("-"; "."))}]
+          | sort_by(.os | split(".") | map(tonumber)) | last')
+        if [ -z "$DEVICE_JSON" ] || [ "$DEVICE_JSON" = "null" ]; then
+          echo "::error::No available iPhone simulator found"
+          xcrun simctl list devices available
+          exit 1
+        fi
+        UDID=$(echo "$DEVICE_JSON" | jq -r '.udid')
+        NAME=$(echo "$DEVICE_JSON" | jq -r '.name')
+        OS=$(echo "$DEVICE_JSON" | jq -r '.os')
+        echo "Booting $NAME (iOS $OS) $UDID in background"
+        nohup xcrun simctl boot "$UDID" > "$RUNNER_TEMP/sim-boot.log" 2>&1 &
+        echo "SIM_UDID=$UDID" >> "$GITHUB_ENV"
+        echo "SIM_NAME=$NAME" >> "$GITHUB_ENV"
+        echo "SIM_OS=$OS" >> "$GITHUB_ENV"
+
     - name: Install Mise
       uses: jdx/mise-action@v4
 
@@ -73,37 +100,24 @@ jobs:
       run: |
         tuist setup cache
 
-    # Boot the simulator up front so a slow or stuck boot fails here, visibly,
-    # instead of hanging silently after "Testing started".
-    - name: Boot Simulator
-      timeout-minutes: 10
-      run: |
-        # Newest plain iOS runtime (skips device-specific ones like iOS-27-2-iPhone19-4)
-        DEVICE_JSON=$(xcrun simctl list devices available --json | jq -c '
-          [.devices | to_entries[]
-            | select(.key | test("iOS-[0-9]+-[0-9]+$"))
-            | .key as $runtime
-            | .value[]
-            | select(.name | startswith("iPhone"))
-            | . + {os: ($runtime | capture("iOS-(?<v>[0-9]+-[0-9]+)$").v | gsub("-"; "."))}]
-          | sort_by(.os | split(".") | map(tonumber)) | last')
-        if [ -z "$DEVICE_JSON" ] || [ "$DEVICE_JSON" = "null" ]; then
-          echo "::error::No available iPhone simulator found"
-          xcrun simctl list devices available
-          exit 1
-        fi
-        UDID=$(echo "$DEVICE_JSON" | jq -r '.udid')
-        NAME=$(echo "$DEVICE_JSON" | jq -r '.name')
-        OS=$(echo "$DEVICE_JSON" | jq -r '.os')
-        echo "Booting $NAME (iOS $OS) $UDID"
-        xcrun simctl boot "$UDID" || true
-        xcrun simctl bootstatus "$UDID" -b
-        echo "SIM_NAME=$NAME" >> "$GITHUB_ENV"
-        echo "SIM_OS=$OS" >> "$GITHUB_ENV"
-
-    - name: Build & Test App
+    - name: Build for Testing
       timeout-minutes: 30
       env:
         SCHEME: App
       run: |
-        tuist test --device "$SIM_NAME" --os "$SIM_OS"
+        tuist test --build-only --device "$SIM_NAME" --os "$SIM_OS"
+
+    # A stuck boot fails here, visibly, instead of hanging after "Testing started".
+    - name: Wait for Simulator
+      timeout-minutes: 10
+      run: |
+        xcrun simctl bootstatus "$SIM_UDID" -b
+        echo "--- simctl boot log ---"
+        cat "$RUNNER_TEMP/sim-boot.log" || true
+
+    - name: Run Tests
+      timeout-minutes: 10
+      env:
+        SCHEME: App
+      run: |
+        tuist test --without-building --device "$SIM_NAME" --os "$SIM_OS"
